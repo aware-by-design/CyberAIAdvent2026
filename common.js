@@ -293,10 +293,10 @@
     const q0 = qs[0];
     const li = `🎄 Door ${n} of ${total}: ${d.title}\n\n${dot(d.topic)}\n\n✅ DO: ${d.do}\n❌ DON’T: ${d.dont}\n\n📌 Lesson learnt: ${c0.name} (${c0.when}). ${firstSentence(c0.text)}\n\n` +
       (q0 ? `📜 ${shortRef(q0)}: “${cut(q0.text, 180)}”\n\n` : "") +
-      `Try today’s 20-second challenge and read the full briefing: ${link}\n\n${tags}\n\nAI-assisted · reviewed by [YOUR NAME] · an independent initiative by an ENISA Ambassador`;
+      `Try today’s 20-second challenge and read the full briefing: ${link}\n\n${tags}\n\nAI-assisted · reviewed by aware-by-design · an independent initiative by an ENISA Ambassador`;
     const wa = `*Door ${n}/${total} · ${d.title}*\n✅ ${d.do}\n❌ ${d.dont}\n🏠 Try today: ${acts[0] || ""}\n👉 ${link}`;
     const subj = `Door ${n}: ${d.title} — a two-minute security habit`;
-    const body = `Hi all,\n\nToday’s habit: ${d.do}\nPlease avoid: ${d.dont}\n\nWhy it matters for us: ${d.explain.business}\n\nOne thing to do at work today: ${acts[1] || ""}\n\nThe full briefing, with the case study and what the rules say: ${link}\n\nThanks,\n[YOUR NAME]`;
+    const body = `Hi all,\n\nToday’s habit: ${d.do}\nPlease avoid: ${d.dont}\n\nWhy it matters for us: ${d.explain.business}\n\nOne thing to do at work today: ${acts[1] || ""}\n\nThe full briefing, with the case study and what the rules say: ${link}\n\nThanks,`;
     const nl = `${d.title}\n\n${d.explain.simple}\n\nDo this: ${d.do}\nAvoid this: ${d.dont}\n\nWhat happened: ${c0.name} (${c0.when}, ${c0.location}). ${c0.text}\n\n` +
       `What the rules say: ${qs.map(shortRef).join("; ")}.\n\nToday’s activities\n• At home — ${acts[0]}\n• At work — ${acts[1]}\n• Leaders — ${acts[2]}\n• Tech teams — ${acts[3]}\n\n` +
       `Read more: ${d.readMore.map((m) => m.org + " — " + m.ref).join(" · ")}\nFull briefing: ${link}`;
