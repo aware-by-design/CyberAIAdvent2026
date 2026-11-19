@@ -1,0 +1,70 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Winterwatch Cyber & AI//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:door-30-single-2026@cyber-advent-calendar
+DTSTAMP:20261119T125744Z
+DTSTART:20261230T073000Z
+DTEND:20261230T073500Z
+SUMMARY:Door 30: Speak up\, fast
+DESCRIPTION:DO: Report a wrong click\, a lost device or a regretted paste i
+ nto a chatbot straight away - minutes matter.\nDON’T: Hide a mistake out
+  of embarrassment. Under NIS2\, significant incidents need an early warnin
+ g within 24 hours.\n\nLesson learnt (Co-op\, Apr 2025): Co-op spotted intr
+ uders and shut systems down early. Members’ data was still stolen\, but 
+ by the attackers’ own account the fast shutdown stopped ransomware being
+  deployed.\n\nOpen the door: https://aware-by-design.github.io/CyberAIAdve
+ nt2026/?day=30\n\nAI-assisted · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=30"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-30.jpg" width="600" height="300" a
+ lt="Door 30: Speak up\, fast" style="display:block\;width:100%\;max-width:
+ 600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></td></tr
+ ><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.04em\;">
+ Wednesday 30 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr><tr>
+ <td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,Arial
+ \,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-weight
+ :bold\;">Door 30: Speak up\, fast</td></tr><tr><td style="padding:0 24px 1
+ 0px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\
+ ;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A\;">DO:</st
+ rong> Report a wrong click\, a lost device or a regretted paste into a cha
+ tbot straight away - minutes matter.</td></tr><tr><td style="padding:0 24p
+ x 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16
+ px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DON
+ ’T:</strong> Hide a mistake out of embarrassment. Under NIS2\, significa
+ nt incidents need an early warning within 24 hours.</td></tr><tr><td style
+ ="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-seri
+ f\;font-size:14px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt
+ </strong> (Co-op\, Apr 2025): Co-op spotted intruders and shut systems dow
+ n early. Members’ data was still stolen\, but by the attackers’ own ac
+ count the fast shutdown stopped ransomware being deployed.</td></tr><tr><t
+ d style="padding:0 24px 22px\;"><table role="presentation" cellpadding="0"
+  cellspacing="0" border="0"><tr><td style="background:#102C30\;border-radi
+ us:999px\;"><a href="https://aware-by-design.github.io/CyberAIAdvent2026/?
+ day=30" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe
+  UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;colo
+ r:#F5F1E8\;text-decoration:none\;">Open door 30 &rarr\;</a></td></tr></tab
+ le></td></tr><tr><td style="padding:14px 24px 18px\;border-top:1px solid #
+ E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:12
+ px\;line-height:1.5\;color:#5A5060\;">AI-assisted · an initiative of ENIS
+ A’s ARCH AHWG</td></tr></table></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-30.jpg
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=30
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 30 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

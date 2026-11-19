@@ -1,0 +1,70 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Winterwatch Cyber & AI//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:door-06-single-2026@cyber-advent-calendar
+DTSTAMP:20261119T125744Z
+DTSTART:20261206T073000Z
+DTEND:20261206T073500Z
+SUMMARY:Door 6: Smart gifts\, safe setup
+DESCRIPTION:DO: Change default passwords\, switch on updates\, and check wh
+ at an AI toy records and where it sends it.\nDON’T: Buy connected toys o
+ r cameras with no security-update promise or clear privacy policy.\n\nLess
+ on learnt (FoloToy\, Nov 2025): After a US PIRG “Trouble in Toyland” t
+ est found its AI teddy bear discussing inappropriate topics with children\
+ , the maker suspended sales of its AI toys.\n\nOpen the door: https://awar
+ e-by-design.github.io/CyberAIAdvent2026/?day=6\n\nAI-assisted · an initia
+ tive of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=6"><img src="https://aware-by-design.gith
+ ub.io/CyberAIAdvent2026/img/doors/door-06.jpg" width="600" height="300" al
+ t="Door 6: Smart gifts\, safe setup" style="display:block\;width:100%\;max
+ -width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></
+ td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helv
+ etica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.0
+ 4em\;">Sunday 6 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr><
+ tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,Ar
+ ial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-wei
+ ght:bold\;">Door 6: Smart gifts\, safe setup</td></tr><tr><td style="paddi
+ ng:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font
+ -size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A
+ \;">DO:</strong> Change default passwords\, switch on updates\, and check 
+ what an AI toy records and where it sends it.</td></tr><tr><td style="padd
+ ing:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fon
+ t-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A8323
+ A\;">DON’T:</strong> Buy connected toys or cameras with no security-upda
+ te promise or clear privacy policy.</td></tr><tr><td style="padding:0 24px
+  18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14p
+ x\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (FoloT
+ oy\, Nov 2025): After a US PIRG “Trouble in Toyland” test found its AI
+  teddy bear discussing inappropriate topics with children\, the maker susp
+ ended sales of its AI toys.</td></tr><tr><td style="padding:0 24px 22px\;"
+ ><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr
+ ><td style="background:#102C30\;border-radius:999px\;"><a href="https://aw
+ are-by-design.github.io/CyberAIAdvent2026/?day=6" style="display:inline-bl
+ ock\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-ser
+ if\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\
+ ;">Open door 6 &rarr\;</a></td></tr></table></td></tr><tr><td style="paddi
+ ng:14px 24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,H
+ elvetica\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A506
+ 0\;">AI-assisted · an initiative of ENISA’s ARCH AHWG</td></tr></table>
+ </td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-06.jpg
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=6
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 6 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

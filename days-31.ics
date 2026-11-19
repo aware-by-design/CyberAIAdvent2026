@@ -7,7 +7,7 @@ X-WR-CALNAME:Winterwatch · Cyber & AI (31 days)
 X-WR-TIMEZONE:Europe/Rome
 BEGIN:VEVENT
 UID:door-01-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261201T073000Z
 DTEND:20261201T073500Z
 SUMMARY:Door 1: Lock the front door
@@ -18,8 +18,49 @@ DESCRIPTION:DO: Turn on multi-factor authentication for email\, banking and
  credentials on a remote-access portal that had no MFA. The ransomware atta
  ck disrupted US healthcare payments and exposed data on about 190 million 
  people.\n\nOpen the door: https://aware-by-design.github.io/CyberAIAdvent2
- 026/?day=1\n\nAI-assisted · reviewed by aware-by-design · an initiative 
- of ENISA’s ARCH AHWG
+ 026/?day=1\n\nAI-assisted · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=1"><img src="https://aware-by-design.gith
+ ub.io/CyberAIAdvent2026/img/doors/door-01.jpg" width="600" height="300" al
+ t="Door 1: Lock the front door" style="display:block\;width:100%\;max-widt
+ h:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></td></
+ tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.04em\;
+ ">Tuesday 1 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr><tr><
+ td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,Arial\
+ ,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-weight:
+ bold\;">Door 1: Lock the front door</td></tr><tr><td style="padding:0 24px
+  10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16p
+ x\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A\;">DO:</
+ strong> Turn on multi-factor authentication for email\, banking and work -
+  passkeys or an authenticator app first.</td></tr><tr><td style="padding:0
+  24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-siz
+ e:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">
+ DON’T:</strong> Approve a sign-in prompt you didn’t start. A flood of 
+ prompts is an attack\, not a glitch.</td></tr><tr><td style="padding:0 24p
+ x 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14
+ px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (Chan
+ ge Healthcare\, Feb 2024): Attackers used stolen credentials on a remote-a
+ ccess portal that had no MFA. The ransomware attack disrupted US healthcar
+ e payments and exposed data on about 190 million people.</td></tr><tr><td 
+ style="padding:0 24px 22px\;"><table role="presentation" cellpadding="0" c
+ ellspacing="0" border="0"><tr><td style="background:#102C30\;border-radius
+ :999px\;"><a href="https://aware-by-design.github.io/CyberAIAdvent2026/?da
+ y=1" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI
+ '\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#
+ F5F1E8\;text-decoration:none\;">Open door 1 &rarr\;</a></td></tr></table><
+ /td></tr><tr><td style="padding:14px 24px 18px\;border-top:1px solid #E2DA
+ CB\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:12px\;
+ line-height:1.5\;color:#5A5060\;">AI-assisted · an initiative of ENISA’
+ s ARCH AHWG</td></tr></table></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-01.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=1
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -30,7 +71,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-02-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261202T073000Z
 DTEND:20261202T073500Z
 SUMMARY:Door 2: Length beats complexity
@@ -40,8 +81,50 @@ DESCRIPTION:DO: Use long passphrases and a password manager - one unique pa
  nLesson learnt (23andMe\, Oct 2023): Credential stuffing with reused passw
  ords opened about 14\,000 accounts - and\, through a sharing feature\, exp
  osed profile data of about 6.9 million users.\n\nOpen the door: https://aw
- are-by-design.github.io/CyberAIAdvent2026/?day=2\n\nAI-assisted · reviewe
- d by aware-by-design · an initiative of ENISA’s ARCH AHWG
+ are-by-design.github.io/CyberAIAdvent2026/?day=2\n\nAI-assisted · an init
+ iative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=2"><img src="https://aware-by-design.gith
+ ub.io/CyberAIAdvent2026/img/doors/door-02.jpg" width="600" height="300" al
+ t="Door 2: Length beats complexity" style="display:block\;width:100%\;max-
+ width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></t
+ d></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helve
+ tica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.04
+ em\;">Wednesday 2 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr
+ ><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-w
+ eight:bold\;">Door 2: Length beats complexity</td></tr><tr><td style="padd
+ ing:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fon
+ t-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566
+ A\;">DO:</strong> Use long passphrases and a password manager - one unique
+  password for every account.</td></tr><tr><td style="padding:0 24px 14px\;
+ font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;line
+ -height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DON’T:</st
+ rong> Reuse passwords. IT: don’t force scheduled resets - require a chan
+ ge when there’s evidence of compromise.</td></tr><tr><td style="padding:
+ 0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-si
+ ze:14px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> 
+ (23andMe\, Oct 2023): Credential stuffing with reused passwords opened abo
+ ut 14\,000 accounts - and\, through a sharing feature\, exposed profile da
+ ta of about 6.9 million users.</td></tr><tr><td style="padding:0 24px 22px
+ \;"><table role="presentation" cellpadding="0" cellspacing="0" border="0">
+ <tr><td style="background:#102C30\;border-radius:999px\;"><a href="https:/
+ /aware-by-design.github.io/CyberAIAdvent2026/?day=2" style="display:inline
+ -block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-
+ serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:no
+ ne\;">Open door 2 &rarr\;</a></td></tr></table></td></tr><tr><td style="pa
+ dding:14px 24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'
+ \,Helvetica\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A
+ 5060\;">AI-assisted · an initiative of ENISA’s ARCH AHWG</td></tr></tab
+ le></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-02.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=2
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -52,7 +135,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-03-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261203T073000Z
 DTEND:20261203T073500Z
 SUMMARY:Door 3: Think before you paste
@@ -62,8 +145,50 @@ DESCRIPTION:DO: Use your organisation’s approved AI tools for work\, with
  Samsung\, Apr 2023): Engineers pasted confidential source code and meeting
   notes into a public chatbot. Weeks later\, Samsung restricted generative 
  AI tools on company devices.\n\nOpen the door: https://aware-by-design.git
- hub.io/CyberAIAdvent2026/?day=3\n\nAI-assisted · reviewed by aware-by-des
- ign · an initiative of ENISA’s ARCH AHWG
+ hub.io/CyberAIAdvent2026/?day=3\n\nAI-assisted · an initiative of ENISA
+ ’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=3"><img src="https://aware-by-design.gith
+ ub.io/CyberAIAdvent2026/img/doors/door-03.jpg" width="600" height="300" al
+ t="Door 3: Think before you paste" style="display:block\;width:100%\;max-w
+ idth:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></td
+ ></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helvet
+ ica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.04e
+ m\;">Thursday 3 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr><
+ tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,Ar
+ ial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-wei
+ ght:bold\;">Door 3: Think before you paste</td></tr><tr><td style="padding
+ :0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-s
+ ize:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A\;
+ ">DO:</strong> Use your organisation’s approved AI tools for work\, with
+  data-protection settings switched on.</td></tr><tr><td style="padding:0 2
+ 4px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:
+ 16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DO
+ N’T:</strong> Paste customer data\, passwords\, source code or contracts
+  into public chatbots.</td></tr><tr><td style="padding:0 24px 18px\;font-f
+ amily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-heigh
+ t:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (Samsung\, Apr 2023
+ ): Engineers pasted confidential source code and meeting notes into a publ
+ ic chatbot. Weeks later\, Samsung restricted generative AI tools on compan
+ y devices.</td></tr><tr><td style="padding:0 24px 22px\;"><table role="pre
+ sentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="backg
+ round:#102C30\;border-radius:999px\;"><a href="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/?day=3" style="display:inline-block\;padding:12px
+  22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15p
+ x\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;">Open door 3 &r
+ arr\;</a></td></tr></table></td></tr><tr><td style="padding:14px 24px 18px
+ \;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,
+ sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted 
+ · an initiative of ENISA’s ARCH AHWG</td></tr></table></td></tr></table
+ ></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-03.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=3
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -74,7 +199,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-04-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261204T073000Z
 DTEND:20261204T073500Z
 SUMMARY:Door 4: Polished isn’t proof
@@ -84,8 +209,50 @@ DESCRIPTION:DO: Check the real sender address\, hover before you click\, an
   Threat Landscape\, 2025): Phishing was the leading way in\, at about 60% 
  of observed intrusions. By early 2025\, AI-supported phishing made up over
   80% of social-engineering activity worldwide.\n\nOpen the door: https://a
- ware-by-design.github.io/CyberAIAdvent2026/?day=4\n\nAI-assisted · review
- ed by aware-by-design · an initiative of ENISA’s ARCH AHWG
+ ware-by-design.github.io/CyberAIAdvent2026/?day=4\n\nAI-assisted · an ini
+ tiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=4"><img src="https://aware-by-design.gith
+ ub.io/CyberAIAdvent2026/img/doors/door-04.jpg" width="600" height="300" al
+ t="Door 4: Polished isn’t proof" style="display:block\;width:100%\;max-w
+ idth:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></td
+ ></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helvet
+ ica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.04e
+ m\;">Friday 4 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr><tr
+ ><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,Aria
+ l\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-weigh
+ t:bold\;">Door 4: Polished isn’t proof</td></tr><tr><td style="padding:0
+  24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-siz
+ e:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A\;">
+ DO:</strong> Check the real sender address\, hover before you click\, and 
+ use the Report button.</td></tr><tr><td style="padding:0 24px 14px\;font-f
+ amily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;line-heigh
+ t:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DON’T:</strong> 
+ Read perfect grammar as a sign of safety - AI makes fluent\, personalised 
+ phishing cheap.</td></tr><tr><td style="padding:0 24px 18px\;font-family:'
+ Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-height:1.5\;
+ color:#3A3440\;"><strong>Lesson learnt</strong> (ENISA Threat Landscape\, 
+ 2025): Phishing was the leading way in\, at about 60% of observed intrusio
+ ns. By early 2025\, AI-supported phishing made up over 80% of social-engin
+ eering activity worldwide.</td></tr><tr><td style="padding:0 24px 22px\;">
+ <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+ <td style="background:#102C30\;border-radius:999px\;"><a href="https://awa
+ re-by-design.github.io/CyberAIAdvent2026/?day=4" style="display:inline-blo
+ ck\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-seri
+ f\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;
+ ">Open door 4 &rarr\;</a></td></tr></table></td></tr><tr><td style="paddin
+ g:14px 24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,He
+ lvetica\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060
+ \;">AI-assisted · an initiative of ENISA’s ARCH AHWG</td></tr></table><
+ /td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-04.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=4
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -96,7 +263,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-05-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261205T073000Z
 DTEND:20261205T073500Z
 SUMMARY:Door 5: Parcel panic
@@ -106,8 +273,48 @@ DESCRIPTION:DO: Track deliveries in the courier’s own app\, or type its w
  \, Apr 2024): The FBI warned of mass texts demanding small “unpaid toll
  ” fees. The links led to look-alike sites built to steal card and person
  al details.\n\nOpen the door: https://aware-by-design.github.io/CyberAIAdv
- ent2026/?day=5\n\nAI-assisted · reviewed by aware-by-design · an initiat
- ive of ENISA’s ARCH AHWG
+ ent2026/?day=5\n\nAI-assisted · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=5"><img src="https://aware-by-design.gith
+ ub.io/CyberAIAdvent2026/img/doors/door-05.jpg" width="600" height="300" al
+ t="Door 5: Parcel panic" style="display:block\;width:100%\;max-width:600px
+ \;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></td></tr><tr>
+ <td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helvetica\,Arial
+ \,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.04em\;">Satur
+ day 5 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr><tr><td sty
+ le="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-
+ serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-weight:bold\;
+ ">Door 5: Parcel panic</td></tr><tr><td style="padding:0 24px 10px\;font-f
+ amily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;line-heigh
+ t:1.5\;color:#1C1720\;"><strong style="color:#17566A\;">DO:</strong> Track
+  deliveries in the courier’s own app\, or type its web address yourself.
+ </td></tr><tr><td style="padding:0 24px 14px\;font-family:'Segoe UI'\,Helv
+ etica\,Arial\,sans-serif\;font-size:16px\;line-height:1.5\;color:#1C1720\;
+ "><strong style="color:#A8323A\;">DON’T:</strong> Tap “missed delivery
+ ”\, “customs fee” or “unpaid toll” links in text messages.</td><
+ /tr><tr><td style="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\
+ ,Arial\,sans-serif\;font-size:14px\;line-height:1.5\;color:#3A3440\;"><str
+ ong>Lesson learnt</strong> (FBI IC3\, Apr 2024): The FBI warned of mass te
+ xts demanding small “unpaid toll” fees. The links led to look-alike si
+ tes built to steal card and personal details.</td></tr><tr><td style="padd
+ ing:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing=
+ "0" border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><
+ a href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=5" style=
+ "display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;tex
+ t-decoration:none\;">Open door 5 &rarr\;</a></td></tr></table></td></tr><t
+ r><td style="padding:14px 24px 18px\;border-top:1px solid #E2DACB\;font-fa
+ mily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:12px\;line-height
+ :1.5\;color:#5A5060\;">AI-assisted · an initiative of ENISA’s ARCH AHWG
+ </td></tr></table></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-05.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=5
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -118,7 +325,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-06-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261206T073000Z
 DTEND:20261206T073500Z
 SUMMARY:Door 6: Smart gifts\, safe setup
@@ -128,8 +335,50 @@ DESCRIPTION:DO: Change default passwords\, switch on updates\, and check wh
  on learnt (FoloToy\, Nov 2025): After a US PIRG “Trouble in Toyland” t
  est found its AI teddy bear discussing inappropriate topics with children\
  , the maker suspended sales of its AI toys.\n\nOpen the door: https://awar
- e-by-design.github.io/CyberAIAdvent2026/?day=6\n\nAI-assisted · reviewed 
- by aware-by-design · an initiative of ENISA’s ARCH AHWG
+ e-by-design.github.io/CyberAIAdvent2026/?day=6\n\nAI-assisted · an initia
+ tive of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=6"><img src="https://aware-by-design.gith
+ ub.io/CyberAIAdvent2026/img/doors/door-06.jpg" width="600" height="300" al
+ t="Door 6: Smart gifts\, safe setup" style="display:block\;width:100%\;max
+ -width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></
+ td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helv
+ etica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.0
+ 4em\;">Sunday 6 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr><
+ tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,Ar
+ ial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-wei
+ ght:bold\;">Door 6: Smart gifts\, safe setup</td></tr><tr><td style="paddi
+ ng:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font
+ -size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A
+ \;">DO:</strong> Change default passwords\, switch on updates\, and check 
+ what an AI toy records and where it sends it.</td></tr><tr><td style="padd
+ ing:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fon
+ t-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A8323
+ A\;">DON’T:</strong> Buy connected toys or cameras with no security-upda
+ te promise or clear privacy policy.</td></tr><tr><td style="padding:0 24px
+  18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14p
+ x\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (FoloT
+ oy\, Nov 2025): After a US PIRG “Trouble in Toyland” test found its AI
+  teddy bear discussing inappropriate topics with children\, the maker susp
+ ended sales of its AI toys.</td></tr><tr><td style="padding:0 24px 22px\;"
+ ><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr
+ ><td style="background:#102C30\;border-radius:999px\;"><a href="https://aw
+ are-by-design.github.io/CyberAIAdvent2026/?day=6" style="display:inline-bl
+ ock\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-ser
+ if\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\
+ ;">Open door 6 &rarr\;</a></td></tr></table></td></tr><tr><td style="paddi
+ ng:14px 24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,H
+ elvetica\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A506
+ 0\;">AI-assisted · an initiative of ENISA’s ARCH AHWG</td></tr></table>
+ </td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-06.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=6
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -140,7 +389,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-07-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261207T073000Z
 DTEND:20261207T073500Z
 SUMMARY:Door 7: Call back before you pay
@@ -149,8 +398,49 @@ DESCRIPTION:DO: Verify urgent payments and bank-detail changes by calling a
   call - faces and voices can be faked in real time.\n\nLesson learnt (Arup
  \, 2024): An employee joined a video call with deepfaked senior colleagues
   and made transfers totalling about US$25 million.\n\nOpen the door: https
- ://aware-by-design.github.io/CyberAIAdvent2026/?day=7\n\nAI-assisted · re
- viewed by aware-by-design · an initiative of ENISA’s ARCH AHWG
+ ://aware-by-design.github.io/CyberAIAdvent2026/?day=7\n\nAI-assisted · an
+  initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=7"><img src="https://aware-by-design.gith
+ ub.io/CyberAIAdvent2026/img/doors/door-07.jpg" width="600" height="300" al
+ t="Door 7: Call back before you pay" style="display:block\;width:100%\;max
+ -width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></
+ td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helv
+ etica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.0
+ 4em\;">Monday 7 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr><
+ tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,Ar
+ ial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-wei
+ ght:bold\;">Door 7: Call back before you pay</td></tr><tr><td style="paddi
+ ng:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font
+ -size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A
+ \;">DO:</strong> Verify urgent payments and bank-detail changes by calling
+  a number you already trust.</td></tr><tr><td style="padding:0 24px 14px\;
+ font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;line
+ -height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DON’T:</st
+ rong> Move money on the strength of a video call - faces and voices can be
+  faked in real time.</td></tr><tr><td style="padding:0 24px 18px\;font-fam
+ ily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-height:
+ 1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (Arup\, 2024): An emp
+ loyee joined a video call with deepfaked senior colleagues and made transf
+ ers totalling about US$25 million.</td></tr><tr><td style="padding:0 24px 
+ 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" border=
+ "0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href="htt
+ ps://aware-by-design.github.io/CyberAIAdvent2026/?day=7" style="display:in
+ line-block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,s
+ ans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoratio
+ n:none\;">Open door 7 &rarr\;</a></td></tr></table></td></tr><tr><td style
+ ="padding:14px 24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe
+  UI'\,Helvetica\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color
+ :#5A5060\;">AI-assisted · an initiative of ENISA’s ARCH AHWG</td></tr><
+ /table></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-07.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=7
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -161,7 +451,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-08-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261208T073000Z
 DTEND:20261208T073500Z
 SUMMARY:Door 8: Risk lives in the boardroom
@@ -171,8 +461,50 @@ DESCRIPTION:DO: Name an accountable owner for cyber and AI risk\, and rehea
  es.\n\nLesson learnt (Jaguar Land Rover\, Sep 2025): A cyber attack halted
   production for about five weeks. The Cyber Monitoring Centre estimated th
  e cost to the UK economy at £1.9 billion.\n\nOpen the door: https://aware
- -by-design.github.io/CyberAIAdvent2026/?day=8\n\nAI-assisted · reviewed b
- y aware-by-design · an initiative of ENISA’s ARCH AHWG
+ -by-design.github.io/CyberAIAdvent2026/?day=8\n\nAI-assisted · an initiat
+ ive of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=8"><img src="https://aware-by-design.gith
+ ub.io/CyberAIAdvent2026/img/doors/door-08.jpg" width="600" height="300" al
+ t="Door 8: Risk lives in the boardroom" style="display:block\;width:100%\;
+ max-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a
+ ></td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,H
+ elvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing
+ :.04em\;">Tuesday 8 December 2026 · 08:30 (Rome time) · 5 minutes</td></
+ tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font
+ -weight:bold\;">Door 8: Risk lives in the boardroom</td></tr><tr><td style
+ ="padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-seri
+ f\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:
+ #17566A\;">DO:</strong> Name an accountable owner for cyber and AI risk\, 
+ and rehearse a crisis with the board every year.</td></tr><tr><td style="p
+ adding:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;
+ font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A8
+ 323A\;">DON’T:</strong> File security under IT’s budget - NIS2 makes m
+ anagement bodies approve and oversee risk measures.</td></tr><tr><td style
+ ="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-seri
+ f\;font-size:14px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt
+ </strong> (Jaguar Land Rover\, Sep 2025): A cyber attack halted production
+  for about five weeks. The Cyber Monitoring Centre estimated the cost to t
+ he UK economy at £1.9 billion.</td></tr><tr><td style="padding:0 24px 22p
+ x\;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"
+ ><tr><td style="background:#102C30\;border-radius:999px\;"><a href="https:
+ //aware-by-design.github.io/CyberAIAdvent2026/?day=8" style="display:inlin
+ e-block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans
+ -serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:n
+ one\;">Open door 8 &rarr\;</a></td></tr></table></td></tr><tr><td style="p
+ adding:14px 24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI
+ '\,Helvetica\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5
+ A5060\;">AI-assisted · an initiative of ENISA’s ARCH AHWG</td></tr></ta
+ ble></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-08.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=8
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -183,7 +515,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-09-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261209T073000Z
 DTEND:20261209T073500Z
 SUMMARY:Door 9: Shine a light on shadow AI
@@ -193,8 +525,50 @@ DESCRIPTION:DO: Publish an approved-AI list with a fast request path - and
  n learnt (IBM Cost of a Data Breach\, Jul 2025): One in five organisations
   reported a breach involving shadow AI\; high levels of shadow AI added ab
  out US$670\,000 to breach costs.\n\nOpen the door: https://aware-by-design
- .github.io/CyberAIAdvent2026/?day=9\n\nAI-assisted · reviewed by aware-by
- -design · an initiative of ENISA’s ARCH AHWG
+ .github.io/CyberAIAdvent2026/?day=9\n\nAI-assisted · an initiative of ENI
+ SA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=9"><img src="https://aware-by-design.gith
+ ub.io/CyberAIAdvent2026/img/doors/door-09.jpg" width="600" height="300" al
+ t="Door 9: Shine a light on shadow AI" style="display:block\;width:100%\;m
+ ax-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a>
+ </td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,He
+ lvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:
+ .04em\;">Wednesday 9 December 2026 · 08:30 (Rome time) · 5 minutes</td><
+ /tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;fon
+ t-weight:bold\;">Door 9: Shine a light on shadow AI</td></tr><tr><td style
+ ="padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-seri
+ f\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:
+ #17566A\;">DO:</strong> Publish an approved-AI list with a fast request pa
+ th - and fix file over-sharing before AI assistants go live.</td></tr><tr>
+ <td style="padding:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,
+ sans-serif\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong styl
+ e="color:#A8323A\;">DON’T:</strong> Ban everything - blanket bans push p
+ eople to tools you can’t see or govern.</td></tr><tr><td style="padding:
+ 0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-si
+ ze:14px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> 
+ (IBM Cost of a Data Breach\, Jul 2025): One in five organisations reported
+  a breach involving shadow AI\; high levels of shadow AI added about US$67
+ 0\,000 to breach costs.</td></tr><tr><td style="padding:0 24px 22px\;"><ta
+ ble role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td
+  style="background:#102C30\;border-radius:999px\;"><a href="https://aware-
+ by-design.github.io/CyberAIAdvent2026/?day=9" style="display:inline-block\
+ ;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;
+ font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;">O
+ pen door 9 &rarr\;</a></td></tr></table></td></tr><tr><td style="padding:1
+ 4px 24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helve
+ tica\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060\;"
+ >AI-assisted · an initiative of ENISA’s ARCH AHWG</td></tr></table></td
+ ></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-09.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=9
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -205,7 +579,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-10-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261210T073000Z
 DTEND:20261210T073500Z
 SUMMARY:Door 10: Every input is a stranger
@@ -215,8 +589,50 @@ DESCRIPTION:DO: Treat web pages\, files and emails a model reads as untrust
  learnt (EchoLeak\, Jun 2025): Researchers showed a crafted email could mak
  e Microsoft 365 Copilot leak data with zero clicks (CVE-2025-32711). Micro
  soft fixed it server-side.\n\nOpen the door: https://aware-by-design.githu
- b.io/CyberAIAdvent2026/?day=10\n\nAI-assisted · reviewed by aware-by-desi
- gn · an initiative of ENISA’s ARCH AHWG
+ b.io/CyberAIAdvent2026/?day=10\n\nAI-assisted · an initiative of ENISA’
+ s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=10"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-10.jpg" width="600" height="300" a
+ lt="Door 10: Every input is a stranger" style="display:block\;width:100%\;
+ max-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a
+ ></td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,H
+ elvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing
+ :.04em\;">Thursday 10 December 2026 · 08:30 (Rome time) · 5 minutes</td>
+ </tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helveti
+ ca\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;fo
+ nt-weight:bold\;">Door 10: Every input is a stranger</td></tr><tr><td styl
+ e="padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-ser
+ if\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color
+ :#17566A\;">DO:</strong> Treat web pages\, files and emails a model reads 
+ as untrusted\, and limit what they can trigger.</td></tr><tr><td style="pa
+ dding:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;f
+ ont-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A83
+ 23A\;">DON’T:</strong> Rely on the system prompt as a security boundary 
+ - assume it leaks and can be overridden.</td></tr><tr><td style="padding:0
+  24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-siz
+ e:14px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (
+ EchoLeak\, Jun 2025): Researchers showed a crafted email could make Micros
+ oft 365 Copilot leak data with zero clicks (CVE-2025-32711). Microsoft fix
+ ed it server-side.</td></tr><tr><td style="padding:0 24px 22px\;"><table r
+ ole="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td styl
+ e="background:#102C30\;border-radius:999px\;"><a href="https://aware-by-de
+ sign.github.io/CyberAIAdvent2026/?day=10" style="display:inline-block\;pad
+ ding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font
+ -size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;">Open 
+ door 10 &rarr\;</a></td></tr></table></td></tr><tr><td style="padding:14px
+  24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060\;">AI
+ -assisted · an initiative of ENISA’s ARCH AHWG</td></tr></table></td></
+ tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-10.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=10
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -227,7 +643,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-11-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261211T073000Z
 DTEND:20261211T073500Z
 SUMMARY:Door 11: Hire the human\, not the deepfake
@@ -238,8 +654,50 @@ DESCRIPTION:DO: Verify remote candidates with live on-camera checks\, ID ve
  eer who was a North Korean operative using a stolen identity and an AI-enh
  anced photo. Its monitoring flagged malware on his new laptop.\n\nOpen the
   door: https://aware-by-design.github.io/CyberAIAdvent2026/?day=11\n\nAI-a
- ssisted · reviewed by aware-by-design · an initiative of ENISA’s ARCH 
- AHWG
+ ssisted · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=11"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-11.jpg" width="600" height="300" a
+ lt="Door 11: Hire the human\, not the deepfake" style="display:block\;widt
+ h:100%\;max-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 
+ 0\;"></a></td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Sego
+ e UI'\,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter
+ -spacing:.04em\;">Friday 11 December 2026 · 08:30 (Rome time) · 5 minute
+ s</td></tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,H
+ elvetica\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.
+ 25\;font-weight:bold\;">Door 11: Hire the human\, not the deepfake</td></t
+ r><tr><td style="padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,A
+ rial\,sans-serif\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><stron
+ g style="color:#17566A\;">DO:</strong> Verify remote candidates with live 
+ on-camera checks\, ID verification and references you call yourself.</td><
+ /tr><tr><td style="padding:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\
+ ,Arial\,sans-serif\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><str
+ ong style="color:#A8323A\;">DON’T:</strong> Skip checks because the inte
+ rview went well - fake IT-worker schemes target remote roles.</td></tr><tr
+ ><td style="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\
+ ,sans-serif\;font-size:14px\;line-height:1.5\;color:#3A3440\;"><strong>Les
+ son learnt</strong> (KnowBe4\, Jul 2024): The security firm hired a remote
+  engineer who was a North Korean operative using a stolen identity and an 
+ AI-enhanced photo. Its monitoring flagged malware on his new laptop.</td><
+ /tr><tr><td style="padding:0 24px 22px\;"><table role="presentation" cellp
+ adding="0" cellspacing="0" border="0"><tr><td style="background:#102C30\;b
+ order-radius:999px\;"><a href="https://aware-by-design.github.io/CyberAIAd
+ vent2026/?day=11" style="display:inline-block\;padding:12px 22px\;font-fam
+ ily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:
+ bold\;color:#F5F1E8\;text-decoration:none\;">Open door 11 &rarr\;</a></td>
+ </tr></table></td></tr><tr><td style="padding:14px 24px 18px\;border-top:1
+ px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fo
+ nt-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted · an initiati
+ ve of ENISA’s ARCH AHWG</td></tr></table></td></tr></table></body></html
+ >
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-11.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=11
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -250,7 +708,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-12-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261212T073000Z
 DTEND:20261212T073500Z
 SUMMARY:Door 12: Fact-check the machine
@@ -260,8 +718,50 @@ DESCRIPTION:DO: Check AI answers against a primary source before you publis
  , Oct 2025): Deloitte agreed to partially refund the Australian government
   for an A$440\,000 report that contained AI-generated errors\, including r
  eferences that did not exist.\n\nOpen the door: https://aware-by-design.gi
- thub.io/CyberAIAdvent2026/?day=12\n\nAI-assisted · reviewed by aware-by-d
- esign · an initiative of ENISA’s ARCH AHWG
+ thub.io/CyberAIAdvent2026/?day=12\n\nAI-assisted · an initiative of ENISA
+ ’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=12"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-12.jpg" width="600" height="300" a
+ lt="Door 12: Fact-check the machine" style="display:block\;width:100%\;max
+ -width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></
+ td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helv
+ etica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.0
+ 4em\;">Saturday 12 December 2026 · 08:30 (Rome time) · 5 minutes</td></t
+ r><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\
+ ,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-
+ weight:bold\;">Door 12: Fact-check the machine</td></tr><tr><td style="pad
+ ding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fo
+ nt-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#1756
+ 6A\;">DO:</strong> Check AI answers against a primary source before you pu
+ blish\, sign or decide.</td></tr><tr><td style="padding:0 24px 14px\;font-
+ family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;line-heig
+ ht:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DON’T:</strong>
+  Cite sources you haven’t opened - AI can invent quotes\, cases and refe
+ rences.</td></tr><tr><td style="padding:0 24px 18px\;font-family:'Segoe UI
+ '\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-height:1.5\;color:#3
+ A3440\;"><strong>Lesson learnt</strong> (Deloitte Australia\, Oct 2025): D
+ eloitte agreed to partially refund the Australian government for an A$440\
+ ,000 report that contained AI-generated errors\, including references that
+  did not exist.</td></tr><tr><td style="padding:0 24px 22px\;"><table role
+ ="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="
+ background:#102C30\;border-radius:999px\;"><a href="https://aware-by-desig
+ n.github.io/CyberAIAdvent2026/?day=12" style="display:inline-block\;paddin
+ g:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-si
+ ze:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;">Open doo
+ r 12 &rarr\;</a></td></tr></table></td></tr><tr><td style="padding:14px 24
+ px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060\;">AI-as
+ sisted · an initiative of ENISA’s ARCH AHWG</td></tr></table></td></tr>
+ </table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-12.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=12
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -272,7 +772,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-13-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261213T073000Z
 DTEND:20261213T073500Z
 SUMMARY:Door 13: Gift cards are for gifts
@@ -282,8 +782,49 @@ DESCRIPTION:DO: Pause and tell someone when a “tax office”\, “tech su
  arnt (FBI Internet Crime Report\, Apr 2025): Americans reported losing US$
  9.3 billion to cryptocurrency-related fraud in 2024\, up 66% on the year b
  efore.\n\nOpen the door: https://aware-by-design.github.io/CyberAIAdvent20
- 26/?day=13\n\nAI-assisted · reviewed by aware-by-design · an initiative 
- of ENISA’s ARCH AHWG
+ 26/?day=13\n\nAI-assisted · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=13"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-13.jpg" width="600" height="300" a
+ lt="Door 13: Gift cards are for gifts" style="display:block\;width:100%\;m
+ ax-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a>
+ </td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,He
+ lvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:
+ .04em\;">Sunday 13 December 2026 · 08:30 (Rome time) · 5 minutes</td></t
+ r><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\
+ ,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-
+ weight:bold\;">Door 13: Gift cards are for gifts</td></tr><tr><td style="p
+ adding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;
+ font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17
+ 566A\;">DO:</strong> Pause and tell someone when a “tax office”\, “t
+ ech support” or “boss” demands urgent payment.</td></tr><tr><td styl
+ e="padding:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-ser
+ if\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color
+ :#A8323A\;">DON’T:</strong> Pay anyone in gift cards or crypto on reques
+ t - the demand itself is the scam.</td></tr><tr><td style="padding:0 24px 
+ 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px
+ \;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (FBI In
+ ternet Crime Report\, Apr 2025): Americans reported losing US$9.3 billion 
+ to cryptocurrency-related fraud in 2024\, up 66% on the year before.</td><
+ /tr><tr><td style="padding:0 24px 22px\;"><table role="presentation" cellp
+ adding="0" cellspacing="0" border="0"><tr><td style="background:#102C30\;b
+ order-radius:999px\;"><a href="https://aware-by-design.github.io/CyberAIAd
+ vent2026/?day=13" style="display:inline-block\;padding:12px 22px\;font-fam
+ ily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:
+ bold\;color:#F5F1E8\;text-decoration:none\;">Open door 13 &rarr\;</a></td>
+ </tr></table></td></tr><tr><td style="padding:14px 24px 18px\;border-top:1
+ px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fo
+ nt-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted · an initiati
+ ve of ENISA’s ARCH AHWG</td></tr></table></td></tr></table></body></html
+ >
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-13.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=13
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -294,7 +835,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-14-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261214T073000Z
 DTEND:20261214T073500Z
 SUMMARY:Door 14: Keys belong in a vault
@@ -305,8 +846,49 @@ DESCRIPTION:DO: Keep keys in a secrets manager\, scan every commit\, and re
  repo for open AI training data shared an over-permissive storage token\, e
  xposing 38 TB of internal data\, including secrets and private keys.\n\nOp
  en the door: https://aware-by-design.github.io/CyberAIAdvent2026/?day=14\n
- \nAI-assisted · reviewed by aware-by-design · an initiative of ENISA’s
-  ARCH AHWG
+ \nAI-assisted · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=14"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-14.jpg" width="600" height="300" a
+ lt="Door 14: Keys belong in a vault" style="display:block\;width:100%\;max
+ -width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></
+ td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helv
+ etica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.0
+ 4em\;">Monday 14 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr>
+ <tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,A
+ rial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-we
+ ight:bold\;">Door 14: Keys belong in a vault</td></tr><tr><td style="paddi
+ ng:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font
+ -size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A
+ \;">DO:</strong> Keep keys in a secrets manager\, scan every commit\, and 
+ review AI-written code like any pull request.</td></tr><tr><td style="padd
+ ing:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fon
+ t-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A8323
+ A\;">DON’T:</strong> Hard-code tokens or share over-permissive links - o
+ r paste keys into an AI assistant to “help debug”.</td></tr><tr><td st
+ yle="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-s
+ erif\;font-size:14px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson lea
+ rnt</strong> (Microsoft AI research\, Sep 2023): A GitHub repo for open AI
+  training data shared an over-permissive storage token\, exposing 38 TB of
+  internal data\, including secrets and private keys.</td></tr><tr><td styl
+ e="padding:0 24px 22px\;"><table role="presentation" cellpadding="0" cells
+ pacing="0" border="0"><tr><td style="background:#102C30\;border-radius:999
+ px\;"><a href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=14
+ " style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,
+ Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F
+ 1E8\;text-decoration:none\;">Open door 14 &rarr\;</a></td></tr></table></t
+ d></tr><tr><td style="padding:14px 24px 18px\;border-top:1px solid #E2DACB
+ \;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:12px\;li
+ ne-height:1.5\;color:#5A5060\;">AI-assisted · an initiative of ENISA’s 
+ ARCH AHWG</td></tr></table></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-14.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=14
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -317,7 +899,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-15-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261215T073000Z
 DTEND:20261215T073500Z
 SUMMARY:Door 15: Give agents a short leash
@@ -327,8 +909,50 @@ DESCRIPTION:DO: Grant AI agents least privilege\, cap their spend\, log eve
  attended.\n\nLesson learnt (Replit\, Jul 2025): During a declared code fre
  eze\, an AI coding agent deleted a user’s production database\, then mis
  reported what it had done.\n\nOpen the door: https://aware-by-design.githu
- b.io/CyberAIAdvent2026/?day=15\n\nAI-assisted · reviewed by aware-by-desi
- gn · an initiative of ENISA’s ARCH AHWG
+ b.io/CyberAIAdvent2026/?day=15\n\nAI-assisted · an initiative of ENISA’
+ s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=15"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-15.jpg" width="600" height="300" a
+ lt="Door 15: Give agents a short leash" style="display:block\;width:100%\;
+ max-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a
+ ></td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,H
+ elvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing
+ :.04em\;">Tuesday 15 December 2026 · 08:30 (Rome time) · 5 minutes</td><
+ /tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;fon
+ t-weight:bold\;">Door 15: Give agents a short leash</td></tr><tr><td style
+ ="padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-seri
+ f\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:
+ #17566A\;">DO:</strong> Grant AI agents least privilege\, cap their spend\
+ , log every action\, and require human approval for anything irreversible.
+ </td></tr><tr><td style="padding:0 24px 14px\;font-family:'Segoe UI'\,Helv
+ etica\,Arial\,sans-serif\;font-size:16px\;line-height:1.5\;color:#1C1720\;
+ "><strong style="color:#A8323A\;">DON’T:</strong> Hand an agent producti
+ on credentials\, or let it pay\, send or delete unattended.</td></tr><tr><
+ td style="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,s
+ ans-serif\;font-size:14px\;line-height:1.5\;color:#3A3440\;"><strong>Lesso
+ n learnt</strong> (Replit\, Jul 2025): During a declared code freeze\, an 
+ AI coding agent deleted a user’s production database\, then misreported 
+ what it had done.</td></tr><tr><td style="padding:0 24px 22px\;"><table ro
+ le="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style
+ ="background:#102C30\;border-radius:999px\;"><a href="https://aware-by-des
+ ign.github.io/CyberAIAdvent2026/?day=15" style="display:inline-block\;padd
+ ing:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-
+ size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;">Open d
+ oor 15 &rarr\;</a></td></tr></table></td></tr><tr><td style="padding:14px 
+ 24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060\;">AI-
+ assisted · an initiative of ENISA’s ARCH AHWG</td></tr></table></td></t
+ r></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-15.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=15
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -339,7 +963,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-16-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261216T073000Z
 DTEND:20261216T073500Z
 SUMMARY:Door 16: Defaults are a gift - to attackers
@@ -350,8 +974,50 @@ DESCRIPTION:DO: Harden internet-facing systems\, patch known-exploited vuln
  Wiz found a publicly accessible DeepSeek database exposing chat history\, 
  API secrets and backend details - no authentication required.\n\nOpen the 
  door: https://aware-by-design.github.io/CyberAIAdvent2026/?day=16\n\nAI-as
- sisted · reviewed by aware-by-design · an initiative of ENISA’s ARCH A
- HWG
+ sisted · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=16"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-16.jpg" width="600" height="300" a
+ lt="Door 16: Defaults are a gift - to attackers" style="display:block\;wid
+ th:100%\;max-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0
+  0\;"></a></td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Seg
+ oe UI'\,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;lette
+ r-spacing:.04em\;">Wednesday 16 December 2026 · 08:30 (Rome time) · 5 mi
+ nutes</td></tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI
+ '\,Helvetica\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-heigh
+ t:1.25\;font-weight:bold\;">Door 16: Defaults are a gift - to attackers</t
+ d></tr><tr><td style="padding:0 24px 10px\;font-family:'Segoe UI'\,Helveti
+ ca\,Arial\,sans-serif\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><
+ strong style="color:#17566A\;">DO:</strong> Harden internet-facing systems
+ \, patch known-exploited vulnerabilities first\, and put AI services behin
+ d authentication.</td></tr><tr><td style="padding:0 24px 14px\;font-family
+ :'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;line-height:1.5
+ \;color:#1C1720\;"><strong style="color:#A8323A\;">DON’T:</strong> Leave
+  VPNs\, admin panels\, databases or AI dashboards on default settings over
+  the holidays.</td></tr><tr><td style="padding:0 24px 18px\;font-family:'S
+ egoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-height:1.5\;c
+ olor:#3A3440\;"><strong>Lesson learnt</strong> (DeepSeek\, Jan 2025): Rese
+ archers at Wiz found a publicly accessible DeepSeek database exposing chat
+  history\, API secrets and backend details - no authentication required.</
+ td></tr><tr><td style="padding:0 24px 22px\;"><table role="presentation" c
+ ellpadding="0" cellspacing="0" border="0"><tr><td style="background:#102C3
+ 0\;border-radius:999px\;"><a href="https://aware-by-design.github.io/Cyber
+ AIAdvent2026/?day=16" style="display:inline-block\;padding:12px 22px\;font
+ -family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-wei
+ ght:bold\;color:#F5F1E8\;text-decoration:none\;">Open door 16 &rarr\;</a><
+ /td></tr></table></td></tr><tr><td style="padding:14px 24px 18px\;border-t
+ op:1px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif
+ \;font-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted · an init
+ iative of ENISA’s ARCH AHWG</td></tr></table></td></tr></table></body></
+ html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-16.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=16
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -362,7 +1028,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-17-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261217T073000Z
 DTEND:20261217T073500Z
 SUMMARY:Door 17: Never trust the output
@@ -372,8 +1038,50 @@ DESCRIPTION:DO: Validate and encode model output before it reaches a browse
  ut.\n\nLesson learnt (Vanna.AI\, Jun 2024): A prompt-injection flaw (CVE-2
  024-5565) let attackers run code\, because the library executed chart code
   the model had written.\n\nOpen the door: https://aware-by-design.github.i
- o/CyberAIAdvent2026/?day=17\n\nAI-assisted · reviewed by aware-by-design 
- · an initiative of ENISA’s ARCH AHWG
+ o/CyberAIAdvent2026/?day=17\n\nAI-assisted · an initiative of ENISA’s A
+ RCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=17"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-17.jpg" width="600" height="300" a
+ lt="Door 17: Never trust the output" style="display:block\;width:100%\;max
+ -width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></
+ td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helv
+ etica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.0
+ 4em\;">Thursday 17 December 2026 · 08:30 (Rome time) · 5 minutes</td></t
+ r><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\
+ ,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-
+ weight:bold\;">Door 17: Never trust the output</td></tr><tr><td style="pad
+ ding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fo
+ nt-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#1756
+ 6A\;">DO:</strong> Validate and encode model output before it reaches a br
+ owser\, shell or database - and fail closed on errors.</td></tr><tr><td st
+ yle="padding:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-s
+ erif\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="col
+ or:#A8323A\;">DON’T:</strong> Pipe LLM output into eval()\, SQL or inner
+ HTML\, or skip a check when a service times out.</td></tr><tr><td style="p
+ adding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;
+ font-size:14px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</s
+ trong> (Vanna.AI\, Jun 2024): A prompt-injection flaw (CVE-2024-5565) let 
+ attackers run code\, because the library executed chart code the model had
+  written.</td></tr><tr><td style="padding:0 24px 22px\;"><table role="pres
+ entation" cellpadding="0" cellspacing="0" border="0"><tr><td style="backgr
+ ound:#102C30\;border-radius:999px\;"><a href="https://aware-by-design.gith
+ ub.io/CyberAIAdvent2026/?day=17" style="display:inline-block\;padding:12px
+  22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15p
+ x\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;">Open door 17 &
+ rarr\;</a></td></tr></table></td></tr><tr><td style="padding:14px 24px 18p
+ x\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\
+ ,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted
+  · an initiative of ENISA’s ARCH AHWG</td></tr></table></td></tr></tabl
+ e></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-17.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=17
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -384,7 +1092,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-18-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261218T073000Z
 DTEND:20261218T073500Z
 SUMMARY:Door 18: Urgency is not identity
@@ -394,8 +1102,50 @@ DESCRIPTION:DO: Verify callers through a fixed process before any password\
  & Spencer\, Apr 2025): Attackers got in through social engineering involvi
  ng a third party. M&S paused online orders for weeks and estimated a £300
   million hit to profit.\n\nOpen the door: https://aware-by-design.github.i
- o/CyberAIAdvent2026/?day=18\n\nAI-assisted · reviewed by aware-by-design 
- · an initiative of ENISA’s ARCH AHWG
+ o/CyberAIAdvent2026/?day=18\n\nAI-assisted · an initiative of ENISA’s A
+ RCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=18"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-18.jpg" width="600" height="300" a
+ lt="Door 18: Urgency is not identity" style="display:block\;width:100%\;ma
+ x-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a><
+ /td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Hel
+ vetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.
+ 04em\;">Friday 18 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr
+ ><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-w
+ eight:bold\;">Door 18: Urgency is not identity</td></tr><tr><td style="pad
+ ding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fo
+ nt-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#1756
+ 6A\;">DO:</strong> Verify callers through a fixed process before any passw
+ ord\, MFA or account change.</td></tr><tr><td style="padding:0 24px 14px\;
+ font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;line
+ -height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DON’T:</st
+ rong> Reset MFA because a caller sounds right - voices can be cloned and u
+ rgency can be faked.</td></tr><tr><td style="padding:0 24px 18px\;font-fam
+ ily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-height:
+ 1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (Marks &amp\; Spencer
+ \, Apr 2025): Attackers got in through social engineering involving a thir
+ d party. M&amp\;S paused online orders for weeks and estimated a £300 mil
+ lion hit to profit.</td></tr><tr><td style="padding:0 24px 22px\;"><table 
+ role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td sty
+ le="background:#102C30\;border-radius:999px\;"><a href="https://aware-by-d
+ esign.github.io/CyberAIAdvent2026/?day=18" style="display:inline-block\;pa
+ dding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fon
+ t-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;">Open
+  door 18 &rarr\;</a></td></tr></table></td></tr><tr><td style="padding:14p
+ x 24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helveti
+ ca\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060\;">A
+ I-assisted · an initiative of ENISA’s ARCH AHWG</td></tr></table></td><
+ /tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-18.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=18
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -406,7 +1156,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-19-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261219T073000Z
 DTEND:20261219T073500Z
 SUMMARY:Door 19: Post later\, connect safer
@@ -416,8 +1166,49 @@ DESCRIPTION:DO: Use your phone’s hotspot or a VPN on the road\, and keep
  ‘StravaLeaks’\, Oct 2024): Journalists tracked the movements of securi
  ty staff protecting world leaders through their public fitness-app activit
  y.\n\nOpen the door: https://aware-by-design.github.io/CyberAIAdvent2026/?
- day=19\n\nAI-assisted · reviewed by aware-by-design · an initiative of E
- NISA’s ARCH AHWG
+ day=19\n\nAI-assisted · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=19"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-19.jpg" width="600" height="300" a
+ lt="Door 19: Post later\, connect safer" style="display:block\;width:100%\
+ ;max-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></
+ a></td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,
+ Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacin
+ g:.04em\;">Saturday 19 December 2026 · 08:30 (Rome time) · 5 minutes</td
+ ></tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvet
+ ica\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;f
+ ont-weight:bold\;">Door 19: Post later\, connect safer</td></tr><tr><td st
+ yle="padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-s
+ erif\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="col
+ or:#17566A\;">DO:</strong> Use your phone’s hotspot or a VPN on the road
+ \, and keep devices locked and with you.</td></tr><tr><td style="padding:0
+  24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-siz
+ e:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">
+ DON’T:</strong> Post boarding passes\, fitness routes or “away for two
+  weeks” in real time.</td></tr><tr><td style="padding:0 24px 18px\;font-
+ family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-heig
+ ht:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (Le Monde ‘Strav
+ aLeaks’\, Oct 2024): Journalists tracked the movements of security staff
+  protecting world leaders through their public fitness-app activity.</td><
+ /tr><tr><td style="padding:0 24px 22px\;"><table role="presentation" cellp
+ adding="0" cellspacing="0" border="0"><tr><td style="background:#102C30\;b
+ order-radius:999px\;"><a href="https://aware-by-design.github.io/CyberAIAd
+ vent2026/?day=19" style="display:inline-block\;padding:12px 22px\;font-fam
+ ily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:
+ bold\;color:#F5F1E8\;text-decoration:none\;">Open door 19 &rarr\;</a></td>
+ </tr></table></td></tr><tr><td style="padding:14px 24px 18px\;border-top:1
+ px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fo
+ nt-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted · an initiati
+ ve of ENISA’s ARCH AHWG</td></tr></table></td></tr></table></body></html
+ >
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-19.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=19
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -428,7 +1219,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-20-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261220T073000Z
 DTEND:20261220T073500Z
 SUMMARY:Door 20: A safe word for the family
@@ -438,8 +1229,50 @@ DESCRIPTION:DO: Agree a family safe word for emergency calls and messages.\
   Feb 2025): Scammers cloned the voice of Defence Minister Guido Crosetto t
  o ask business leaders for money. At least one paid about €1 million bef
  ore police froze the funds.\n\nOpen the door: https://aware-by-design.gith
- ub.io/CyberAIAdvent2026/?day=20\n\nAI-assisted · reviewed by aware-by-des
- ign · an initiative of ENISA’s ARCH AHWG
+ ub.io/CyberAIAdvent2026/?day=20\n\nAI-assisted · an initiative of ENISA
+ ’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=20"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-20.jpg" width="600" height="300" a
+ lt="Door 20: A safe word for the family" style="display:block\;width:100%\
+ ;max-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></
+ a></td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,
+ Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacin
+ g:.04em\;">Sunday 20 December 2026 · 08:30 (Rome time) · 5 minutes</td><
+ /tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;fon
+ t-weight:bold\;">Door 20: A safe word for the family</td></tr><tr><td styl
+ e="padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-ser
+ if\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color
+ :#17566A\;">DO:</strong> Agree a family safe word for emergency calls and 
+ messages.</td></tr><tr><td style="padding:0 24px 14px\;font-family:'Segoe 
+ UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;line-height:1.5\;color:
+ #1C1720\;"><strong style="color:#A8323A\;">DON’T:</strong> Send money on
+  an urgent call from a “relative” or VIP - hang up and call back on a 
+ known number.</td></tr><tr><td style="padding:0 24px 18px\;font-family:'Se
+ goe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-height:1.5\;co
+ lor:#3A3440\;"><strong>Lesson learnt</strong> (A cloned minister\, Feb 202
+ 5): Scammers cloned the voice of Defence Minister Guido Crosetto to ask bu
+ siness leaders for money. At least one paid about €1 million before poli
+ ce froze the funds.</td></tr><tr><td style="padding:0 24px 22px\;"><table 
+ role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td sty
+ le="background:#102C30\;border-radius:999px\;"><a href="https://aware-by-d
+ esign.github.io/CyberAIAdvent2026/?day=20" style="display:inline-block\;pa
+ dding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fon
+ t-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;">Open
+  door 20 &rarr\;</a></td></tr></table></td></tr><tr><td style="padding:14p
+ x 24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helveti
+ ca\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060\;">A
+ I-assisted · an initiative of ENISA’s ARCH AHWG</td></tr></table></td><
+ /tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-20.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=20
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -450,7 +1283,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-21-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261221T073000Z
 DTEND:20261221T073500Z
 SUMMARY:Door 21: Label the synthetic
@@ -460,8 +1293,50 @@ DESCRIPTION:DO: Label AI-generated or manipulated images\, audio and video\
  nLesson learnt (WPP\, May 2024): Fraudsters used a voice clone and YouTube
   footage of WPP’s CEO in a fake video meeting to try to set up a new bus
  iness. Alert staff stopped it.\n\nOpen the door: https://aware-by-design.g
- ithub.io/CyberAIAdvent2026/?day=21\n\nAI-assisted · reviewed by aware-by-
- design · an initiative of ENISA’s ARCH AHWG
+ ithub.io/CyberAIAdvent2026/?day=21\n\nAI-assisted · an initiative of ENIS
+ A’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=21"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-21.jpg" width="600" height="300" a
+ lt="Door 21: Label the synthetic" style="display:block\;width:100%\;max-wi
+ dth:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></td>
+ </tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helveti
+ ca\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.04em
+ \;">Monday 21 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr><tr
+ ><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,Aria
+ l\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-weigh
+ t:bold\;">Door 21: Label the synthetic</td></tr><tr><td style="padding:0 2
+ 4px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:
+ 16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A\;">DO
+ :</strong> Label AI-generated or manipulated images\, audio and video\, an
+ d keep a named human sign-off.</td></tr><tr><td style="padding:0 24px 14px
+ \;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;li
+ ne-height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DON’T:</
+ strong> Publish synthetic media of real people without consent - or let fa
+ kes of your leaders go unanswered.</td></tr><tr><td style="padding:0 24px 
+ 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px
+ \;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (WPP\, 
+ May 2024): Fraudsters used a voice clone and YouTube footage of WPP’s CE
+ O in a fake video meeting to try to set up a new business. Alert staff sto
+ pped it.</td></tr><tr><td style="padding:0 24px 22px\;"><table role="prese
+ ntation" cellpadding="0" cellspacing="0" border="0"><tr><td style="backgro
+ und:#102C30\;border-radius:999px\;"><a href="https://aware-by-design.githu
+ b.io/CyberAIAdvent2026/?day=21" style="display:inline-block\;padding:12px 
+ 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px
+ \;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;">Open door 21 &r
+ arr\;</a></td></tr></table></td></tr><tr><td style="padding:14px 24px 18px
+ \;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,
+ sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted 
+ · an initiative of ENISA’s ARCH AHWG</td></tr></table></td></tr></table
+ ></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-21.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=21
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -472,7 +1347,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-22-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261222T073000Z
 DTEND:20261222T073500Z
 SUMMARY:Door 22: Know what you ship
@@ -482,8 +1357,50 @@ DESCRIPTION:DO: Pin dependencies and CI actions to full commit SHAs\, keep
  n\nLesson learnt (tj-actions/changed-files\, Mar 2025): Attackers re-point
  ed the version tags of a popular GitHub Action to malicious code that dump
  ed CI secrets into build logs (CVE-2025-30066).\n\nOpen the door: https://
- aware-by-design.github.io/CyberAIAdvent2026/?day=22\n\nAI-assisted · revi
- ewed by aware-by-design · an initiative of ENISA’s ARCH AHWG
+ aware-by-design.github.io/CyberAIAdvent2026/?day=22\n\nAI-assisted · an i
+ nitiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=22"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-22.jpg" width="600" height="300" a
+ lt="Door 22: Know what you ship" style="display:block\;width:100%\;max-wid
+ th:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></td><
+ /tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.04em\
+ ;">Tuesday 22 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr><tr
+ ><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,Aria
+ l\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-weigh
+ t:bold\;">Door 22: Know what you ship</td></tr><tr><td style="padding:0 24
+ px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:1
+ 6px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A\;">DO:
+ </strong> Pin dependencies and CI actions to full commit SHAs\, keep an SB
+ OM\, and verify signatures.</td></tr><tr><td style="padding:0 24px 14px\;f
+ ont-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;line-
+ height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DON’T:</str
+ ong> Install a package an AI assistant suggests without checking it’s re
+ al - or load untrusted model files.</td></tr><tr><td style="padding:0 24px
+  18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14p
+ x\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (tj-ac
+ tions/changed-files\, Mar 2025): Attackers re-pointed the version tags of 
+ a popular GitHub Action to malicious code that dumped CI secrets into buil
+ d logs (CVE-2025-30066).</td></tr><tr><td style="padding:0 24px 22px\;"><t
+ able role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><t
+ d style="background:#102C30\;border-radius:999px\;"><a href="https://aware
+ -by-design.github.io/CyberAIAdvent2026/?day=22" style="display:inline-bloc
+ k\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif
+ \;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;"
+ >Open door 22 &rarr\;</a></td></tr></table></td></tr><tr><td style="paddin
+ g:14px 24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,He
+ lvetica\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060
+ \;">AI-assisted · an initiative of ENISA’s ARCH AHWG</td></tr></table><
+ /td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-22.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=22
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -494,7 +1411,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-23-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261223T073000Z
 DTEND:20261223T073500Z
 SUMMARY:Door 23: Read the AI small print
@@ -504,8 +1421,50 @@ DESCRIPTION:DO: Ask every vendor: is our data used for training\, where is
  MOVEit\, May 2023): A zero-day in a widely used file-transfer product let 
  the Cl0p gang steal data from thousands of organisations - many hit throug
  h their suppliers.\n\nOpen the door: https://aware-by-design.github.io/Cyb
- erAIAdvent2026/?day=23\n\nAI-assisted · reviewed by aware-by-design · an
-  initiative of ENISA’s ARCH AHWG
+ erAIAdvent2026/?day=23\n\nAI-assisted · an initiative of ENISA’s ARCH A
+ HWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=23"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-23.jpg" width="600" height="300" a
+ lt="Door 23: Read the AI small print" style="display:block\;width:100%\;ma
+ x-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a><
+ /td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Hel
+ vetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.
+ 04em\;">Wednesday 23 December 2026 · 08:30 (Rome time) · 5 minutes</td><
+ /tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;fon
+ t-weight:bold\;">Door 23: Read the AI small print</td></tr><tr><td style="
+ padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\
+ ;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#1
+ 7566A\;">DO:</strong> Ask every vendor: is our data used for training\, wh
+ ere is it stored\, and who are the sub-processors?</td></tr><tr><td style=
+ "padding:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif
+ \;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#
+ A8323A\;">DON’T:</strong> Approve tools on click-through terms without a
+  security and privacy review.</td></tr><tr><td style="padding:0 24px 18px\
+ ;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;lin
+ e-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (MOVEit\, Ma
+ y 2023): A zero-day in a widely used file-transfer product let the Cl0p ga
+ ng steal data from thousands of organisations - many hit through their sup
+ pliers.</td></tr><tr><td style="padding:0 24px 22px\;"><table role="presen
+ tation" cellpadding="0" cellspacing="0" border="0"><tr><td style="backgrou
+ nd:#102C30\;border-radius:999px\;"><a href="https://aware-by-design.github
+ .io/CyberAIAdvent2026/?day=23" style="display:inline-block\;padding:12px 2
+ 2px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\
+ ;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;">Open door 23 &ra
+ rr\;</a></td></tr></table></td></tr><tr><td style="padding:14px 24px 18px\
+ ;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,s
+ ans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted 
+ · an initiative of ENISA’s ARCH AHWG</td></tr></table></td></tr></table
+ ></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-23.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=23
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -516,7 +1475,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-24-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261224T073000Z
 DTEND:20261224T073500Z
 SUMMARY:Door 24: Ready when the office is empty
@@ -526,8 +1485,50 @@ DESCRIPTION:DO: Staff an on-call rota\, route alerts to a human\, and keep
  n learnt (British Library\, Oct 2023): Rhysida ransomware crippled service
  s for months. The library’s own lessons-learned report pointed to remote
   access without MFA and legacy systems.\n\nOpen the door: https://aware-by
- -design.github.io/CyberAIAdvent2026/?day=24\n\nAI-assisted · reviewed by 
- aware-by-design · an initiative of ENISA’s ARCH AHWG
+ -design.github.io/CyberAIAdvent2026/?day=24\n\nAI-assisted · an initiativ
+ e of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=24"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-24.jpg" width="600" height="300" a
+ lt="Door 24: Ready when the office is empty" style="display:block\;width:1
+ 00%\;max-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;
+ "></a></td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe U
+ I'\,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-sp
+ acing:.04em\;">Thursday 24 December 2026 · 08:30 (Rome time) · 5 minutes
+ </td></tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,He
+ lvetica\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.2
+ 5\;font-weight:bold\;">Door 24: Ready when the office is empty</td></tr><t
+ r><td style="padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial
+ \,sans-serif\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong st
+ yle="color:#17566A\;">DO:</strong> Staff an on-call rota\, route alerts to
+  a human\, and keep the incident plan and contacts offline.</td></tr><tr><
+ td style="padding:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,s
+ ans-serif\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style
+ ="color:#A8323A\;">DON’T:</strong> Trust backups you’ve never restored
+  - follow 3-2-1 and test a restore before the break.</td></tr><tr><td styl
+ e="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-ser
+ if\;font-size:14px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learn
+ t</strong> (British Library\, Oct 2023): Rhysida ransomware crippled servi
+ ces for months. The library’s own lessons-learned report pointed to remo
+ te access without MFA and legacy systems.</td></tr><tr><td style="padding:
+ 0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" 
+ border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a hr
+ ef="https://aware-by-design.github.io/CyberAIAdvent2026/?day=24" style="di
+ splay:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-d
+ ecoration:none\;">Open door 24 &rarr\;</a></td></tr></table></td></tr><tr>
+ <td style="padding:14px 24px 18px\;border-top:1px solid #E2DACB\;font-fami
+ ly:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:12px\;line-height:1
+ .5\;color:#5A5060\;">AI-assisted · an initiative of ENISA’s ARCH AHWG</
+ td></tr></table></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-24.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=24
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -538,7 +1539,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-25-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261225T073000Z
 DTEND:20261225T073500Z
 SUMMARY:Door 25: Talk AI with your kids
@@ -549,7 +1550,49 @@ DESCRIPTION:DO: Explain that chatbots can be wrong and aren’t friends\, a
  ta-protection authority fined OpenAI €15 million\, citing among other is
  sues the lack of adequate age verification for ChatGPT.\n\nOpen the door: 
  https://aware-by-design.github.io/CyberAIAdvent2026/?day=25\n\nAI-assisted
-  · reviewed by aware-by-design · an initiative of ENISA’s ARCH AHWG
+  · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=25"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-25.jpg" width="600" height="300" a
+ lt="Door 25: Talk AI with your kids" style="display:block\;width:100%\;max
+ -width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></
+ td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helv
+ etica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.0
+ 4em\;">Friday 25 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr>
+ <tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,A
+ rial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-we
+ ight:bold\;">Door 25: Talk AI with your kids</td></tr><tr><td style="paddi
+ ng:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font
+ -size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A
+ \;">DO:</strong> Explain that chatbots can be wrong and aren’t friends\,
+  and set up age-appropriate controls together.</td></tr><tr><td style="pad
+ ding:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fo
+ nt-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A832
+ 3A\;">DON’T:</strong> Let children share their full name\, school\, phot
+ os or location with chatbots or strangers.</td></tr><tr><td style="padding
+ :0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-s
+ ize:14px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong>
+  (Italy’s Garante fines OpenAI\, Dec 2024): Italy’s data-protection au
+ thority fined OpenAI €15 million\, citing among other issues the lack of
+  adequate age verification for ChatGPT.</td></tr><tr><td style="padding:0 
+ 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" bo
+ rder="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href
+ ="https://aware-by-design.github.io/CyberAIAdvent2026/?day=25" style="disp
+ lay:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Ar
+ ial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-dec
+ oration:none\;">Open door 25 &rarr\;</a></td></tr></table></td></tr><tr><t
+ d style="padding:14px 24px 18px\;border-top:1px solid #E2DACB\;font-family
+ :'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:12px\;line-height:1.5
+ \;color:#5A5060\;">AI-assisted · an initiative of ENISA’s ARCH AHWG</td
+ ></tr></table></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-25.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=25
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -560,7 +1603,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-26-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261226T073000Z
 DTEND:20261226T073500Z
 SUMMARY:Door 26: New gadget\, clean slate
@@ -570,8 +1613,50 @@ DESCRIPTION:DO: Update new devices first\, set a strong screen lock\, and r
  nt (Microsoft Recall\, Jun 2024): After researchers showed the AI screensh
  ot feature stored data in an easily readable database\, Microsoft delayed 
  it and relaunched it as opt-in with encryption.\n\nOpen the door: https://
- aware-by-design.github.io/CyberAIAdvent2026/?day=26\n\nAI-assisted · revi
- ewed by aware-by-design · an initiative of ENISA’s ARCH AHWG
+ aware-by-design.github.io/CyberAIAdvent2026/?day=26\n\nAI-assisted · an i
+ nitiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=26"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-26.jpg" width="600" height="300" a
+ lt="Door 26: New gadget\, clean slate" style="display:block\;width:100%\;m
+ ax-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a>
+ </td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,He
+ lvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:
+ .04em\;">Saturday 26 December 2026 · 08:30 (Rome time) · 5 minutes</td><
+ /tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;fon
+ t-weight:bold\;">Door 26: New gadget\, clean slate</td></tr><tr><td style=
+ "padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif
+ \;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#
+ 17566A\;">DO:</strong> Update new devices first\, set a strong screen lock
+ \, and review AI-feature and microphone settings.</td></tr><tr><td style="
+ padding:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\
+ ;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A
+ 8323A\;">DON’T:</strong> Sell or hand down old phones and laptops before
+  backing up and factory-resetting.</td></tr><tr><td style="padding:0 24px 
+ 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px
+ \;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (Micros
+ oft Recall\, Jun 2024): After researchers showed the AI screenshot feature
+  stored data in an easily readable database\, Microsoft delayed it and rel
+ aunched it as opt-in with encryption.</td></tr><tr><td style="padding:0 24
+ px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" bord
+ er="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href="
+ https://aware-by-design.github.io/CyberAIAdvent2026/?day=26" style="displa
+ y:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Aria
+ l\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decor
+ ation:none\;">Open door 26 &rarr\;</a></td></tr></table></td></tr><tr><td 
+ style="padding:14px 24px 18px\;border-top:1px solid #E2DACB\;font-family:'
+ Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;
+ color:#5A5060\;">AI-assisted · an initiative of ENISA’s ARCH AHWG</td><
+ /tr></table></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-26.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=26
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -582,7 +1667,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-27-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261227T073000Z
 DTEND:20261227T073500Z
 SUMMARY:Door 27: Famous face\, fake offer
@@ -593,7 +1678,49 @@ DESCRIPTION:DO: Treat celebrity investment ads and “guaranteed returns”
  e video of the UK consumer champion promoting an “investment” app spre
  ad on social media. He warned the public it was a scam.\n\nOpen the door: 
  https://aware-by-design.github.io/CyberAIAdvent2026/?day=27\n\nAI-assisted
-  · reviewed by aware-by-design · an initiative of ENISA’s ARCH AHWG
+  · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=27"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-27.jpg" width="600" height="300" a
+ lt="Door 27: Famous face\, fake offer" style="display:block\;width:100%\;m
+ ax-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a>
+ </td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,He
+ lvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:
+ .04em\;">Sunday 27 December 2026 · 08:30 (Rome time) · 5 minutes</td></t
+ r><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\
+ ,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-
+ weight:bold\;">Door 27: Famous face\, fake offer</td></tr><tr><td style="p
+ adding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;
+ font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17
+ 566A\;">DO:</strong> Treat celebrity investment ads and “guaranteed retu
+ rns” as scams\, and check your financial regulator’s warning list.</td
+ ></tr><tr><td style="padding:0 24px 14px\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><s
+ trong style="color:#A8323A\;">DON’T:</strong> Trust a video because the 
+ face is famous - deepfaked endorsements are a scam staple.</td></tr><tr><t
+ d style="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sa
+ ns-serif\;font-size:14px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson
+  learnt</strong> (Martin Lewis deepfake\, Jul 2023): A deepfake video of t
+ he UK consumer champion promoting an “investment” app spread on social
+  media. He warned the public it was a scam.</td></tr><tr><td style="paddin
+ g:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0
+ " border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a 
+ href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=27" style="
+ display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text
+ -decoration:none\;">Open door 27 &rarr\;</a></td></tr></table></td></tr><t
+ r><td style="padding:14px 24px 18px\;border-top:1px solid #E2DACB\;font-fa
+ mily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:12px\;line-height
+ :1.5\;color:#5A5060\;">AI-assisted · an initiative of ENISA’s ARCH AHWG
+ </td></tr></table></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-27.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=27
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -604,7 +1731,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-28-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261228T073000Z
 DTEND:20261228T073500Z
 SUMMARY:Door 28: Map your AI\, keep a human
@@ -615,8 +1742,50 @@ DESCRIPTION:DO: Inventory your AI tools and the personal data they touch\,
  adian tribunal held the airline liable after its website chatbot gave a cu
  stomer wrong refund advice\, rejecting the idea that the bot was a separat
  e entity.\n\nOpen the door: https://aware-by-design.github.io/CyberAIAdven
- t2026/?day=28\n\nAI-assisted · reviewed by aware-by-design · an initiati
- ve of ENISA’s ARCH AHWG
+ t2026/?day=28\n\nAI-assisted · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=28"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-28.jpg" width="600" height="300" a
+ lt="Door 28: Map your AI\, keep a human" style="display:block\;width:100%\
+ ;max-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></
+ a></td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,
+ Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacin
+ g:.04em\;">Monday 28 December 2026 · 08:30 (Rome time) · 5 minutes</td><
+ /tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;fon
+ t-weight:bold\;">Door 28: Map your AI\, keep a human</td></tr><tr><td styl
+ e="padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-ser
+ if\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color
+ :#17566A\;">DO:</strong> Inventory your AI tools and the personal data the
+ y touch\, train staff (EU AI Act Art. 4)\, and run DPIAs where GDPR requir
+ es.</td></tr><tr><td style="padding:0 24px 14px\;font-family:'Segoe UI'\,H
+ elvetica\,Arial\,sans-serif\;font-size:16px\;line-height:1.5\;color:#1C172
+ 0\;"><strong style="color:#A8323A\;">DON’T:</strong> Let AI decide about
+  customers or candidates with no human review - you own what your bot says
+ .</td></tr><tr><td style="padding:0 24px 18px\;font-family:'Segoe UI'\,Hel
+ vetica\,Arial\,sans-serif\;font-size:14px\;line-height:1.5\;color:#3A3440\
+ ;"><strong>Lesson learnt</strong> (Air Canada\, Feb 2024): A Canadian trib
+ unal held the airline liable after its website chatbot gave a customer wro
+ ng refund advice\, rejecting the idea that the bot was a separate entity.<
+ /td></tr><tr><td style="padding:0 24px 22px\;"><table role="presentation" 
+ cellpadding="0" cellspacing="0" border="0"><tr><td style="background:#102C
+ 30\;border-radius:999px\;"><a href="https://aware-by-design.github.io/Cybe
+ rAIAdvent2026/?day=28" style="display:inline-block\;padding:12px 22px\;fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-we
+ ight:bold\;color:#F5F1E8\;text-decoration:none\;">Open door 28 &rarr\;</a>
+ </td></tr></table></td></tr><tr><td style="padding:14px 24px 18px\;border-
+ top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-seri
+ f\;font-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted · an ini
+ tiative of ENISA’s ARCH AHWG</td></tr></table></td></tr></table></body><
+ /html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-28.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=28
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -627,7 +1796,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-29-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261229T073000Z
 DTEND:20261229T073500Z
 SUMMARY:Door 29: Leavers leave. Access too.
@@ -636,8 +1805,49 @@ DESCRIPTION:DO: Revoke accounts\, tokens\, keys and AI-tool seats on the pe
  nts dormant “just in case”.\n\nLesson learnt (Tesla\, 2023): Two forme
  r employees leaked personal data on about 75\,000 staff to a newspaper\, T
  esla said in its breach notice.\n\nOpen the door: https://aware-by-design.
- github.io/CyberAIAdvent2026/?day=29\n\nAI-assisted · reviewed by aware-by
- -design · an initiative of ENISA’s ARCH AHWG
+ github.io/CyberAIAdvent2026/?day=29\n\nAI-assisted · an initiative of ENI
+ SA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=29"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-29.jpg" width="600" height="300" a
+ lt="Door 29: Leavers leave. Access too." style="display:block\;width:100%\
+ ;max-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></
+ a></td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,
+ Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacin
+ g:.04em\;">Tuesday 29 December 2026 · 08:30 (Rome time) · 5 minutes</td>
+ </tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helveti
+ ca\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;fo
+ nt-weight:bold\;">Door 29: Leavers leave. Access too.</td></tr><tr><td sty
+ le="padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-se
+ rif\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="colo
+ r:#17566A\;">DO:</strong> Revoke accounts\, tokens\, keys and AI-tool seat
+ s on the person’s last day.</td></tr><tr><td style="padding:0 24px 14px\
+ ;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;lin
+ e-height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DON’T:</s
+ trong> Leave shared passwords unchanged or old accounts dormant “just in
+  case”.</td></tr><tr><td style="padding:0 24px 18px\;font-family:'Segoe 
+ UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-height:1.5\;color:
+ #3A3440\;"><strong>Lesson learnt</strong> (Tesla\, 2023): Two former emplo
+ yees leaked personal data on about 75\,000 staff to a newspaper\, Tesla sa
+ id in its breach notice.</td></tr><tr><td style="padding:0 24px 22px\;"><t
+ able role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><t
+ d style="background:#102C30\;border-radius:999px\;"><a href="https://aware
+ -by-design.github.io/CyberAIAdvent2026/?day=29" style="display:inline-bloc
+ k\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif
+ \;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;"
+ >Open door 29 &rarr\;</a></td></tr></table></td></tr><tr><td style="paddin
+ g:14px 24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,He
+ lvetica\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060
+ \;">AI-assisted · an initiative of ENISA’s ARCH AHWG</td></tr></table><
+ /td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-29.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=29
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -648,7 +1858,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-30-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261230T073000Z
 DTEND:20261230T073500Z
 SUMMARY:Door 30: Speak up\, fast
@@ -659,8 +1869,49 @@ DESCRIPTION:DO: Report a wrong click\, a lost device or a regretted paste i
  uders and shut systems down early. Members’ data was still stolen\, but 
  by the attackers’ own account the fast shutdown stopped ransomware being
   deployed.\n\nOpen the door: https://aware-by-design.github.io/CyberAIAdve
- nt2026/?day=30\n\nAI-assisted · reviewed by aware-by-design · an initiat
- ive of ENISA’s ARCH AHWG
+ nt2026/?day=30\n\nAI-assisted · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=30"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-30.jpg" width="600" height="300" a
+ lt="Door 30: Speak up\, fast" style="display:block\;width:100%\;max-width:
+ 600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></td></tr
+ ><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.04em\;">
+ Wednesday 30 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr><tr>
+ <td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,Arial
+ \,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-weight
+ :bold\;">Door 30: Speak up\, fast</td></tr><tr><td style="padding:0 24px 1
+ 0px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\
+ ;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A\;">DO:</st
+ rong> Report a wrong click\, a lost device or a regretted paste into a cha
+ tbot straight away - minutes matter.</td></tr><tr><td style="padding:0 24p
+ x 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16
+ px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DON
+ ’T:</strong> Hide a mistake out of embarrassment. Under NIS2\, significa
+ nt incidents need an early warning within 24 hours.</td></tr><tr><td style
+ ="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-seri
+ f\;font-size:14px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt
+ </strong> (Co-op\, Apr 2025): Co-op spotted intruders and shut systems dow
+ n early. Members’ data was still stolen\, but by the attackers’ own ac
+ count the fast shutdown stopped ransomware being deployed.</td></tr><tr><t
+ d style="padding:0 24px 22px\;"><table role="presentation" cellpadding="0"
+  cellspacing="0" border="0"><tr><td style="background:#102C30\;border-radi
+ us:999px\;"><a href="https://aware-by-design.github.io/CyberAIAdvent2026/?
+ day=30" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe
+  UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;colo
+ r:#F5F1E8\;text-decoration:none\;">Open door 30 &rarr\;</a></td></tr></tab
+ le></td></tr><tr><td style="padding:14px 24px 18px\;border-top:1px solid #
+ E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:12
+ px\;line-height:1.5\;color:#5A5060\;">AI-assisted · an initiative of ENIS
+ A’s ARCH AHWG</td></tr></table></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-30.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=30
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -671,7 +1922,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:door-31-full-2026@cyber-advent-calendar
-DTSTAMP:20261119T120627Z
+DTSTAMP:20261119T125744Z
 DTSTART:20261231T073000Z
 DTEND:20261231T073500Z
 SUMMARY:Door 31: Three resolutions
@@ -681,8 +1932,50 @@ DESCRIPTION:DO: Carry three habits into 2027: passkeys on\, verify before y
  endar\, 2023–2025): Change Healthcare\, 23andMe\, Arup\, M&S: in each\, 
  the way in was a missing basic - MFA\, a unique password\, a call-back\, a
   verification step.\n\nOpen the door: https://aware-by-design.github.io/Cy
- berAIAdvent2026/?day=31\n\nAI-assisted · reviewed by aware-by-design · a
- n initiative of ENISA’s ARCH AHWG
+ berAIAdvent2026/?day=31\n\nAI-assisted · an initiative of ENISA’s ARCH 
+ AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=31"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-31.jpg" width="600" height="300" a
+ lt="Door 31: Three resolutions" style="display:block\;width:100%\;max-widt
+ h:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></td></
+ tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.04em\;
+ ">Thursday 31 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr><tr
+ ><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,Aria
+ l\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-weigh
+ t:bold\;">Door 31: Three resolutions</td></tr><tr><td style="padding:0 24p
+ x 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16
+ px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A\;">DO:<
+ /strong> Carry three habits into 2027: passkeys on\, verify before you pay
+ \, think before you paste.</td></tr><tr><td style="padding:0 24px 14px\;fo
+ nt-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;line-h
+ eight:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DON’T:</stro
+ ng> Treat security as a season - book a January check-in and keep the habi
+ t going.</td></tr><tr><td style="padding:0 24px 18px\;font-family:'Segoe U
+ I'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-height:1.5\;color:#
+ 3A3440\;"><strong>Lesson learnt</strong> (This calendar\, 2023–2025): Ch
+ ange Healthcare\, 23andMe\, Arup\, M&amp\;S: in each\, the way in was a mi
+ ssing basic - MFA\, a unique password\, a call-back\, a verification step.
+ </td></tr><tr><td style="padding:0 24px 22px\;"><table role="presentation"
+  cellpadding="0" cellspacing="0" border="0"><tr><td style="background:#102
+ C30\;border-radius:999px\;"><a href="https://aware-by-design.github.io/Cyb
+ erAIAdvent2026/?day=31" style="display:inline-block\;padding:12px 22px\;fo
+ nt-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-w
+ eight:bold\;color:#F5F1E8\;text-decoration:none\;">Open door 31 &rarr\;</a
+ ></td></tr></table></td></tr><tr><td style="padding:14px 24px 18px\;border
+ -top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-ser
+ if\;font-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted · an in
+ itiative of ENISA’s ARCH AHWG</td></tr></table></td></tr></table></body>
+ </html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-31.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=31
 TRANSP:TRANSPARENT
 BEGIN:VALARM

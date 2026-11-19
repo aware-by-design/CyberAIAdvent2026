@@ -72,7 +72,7 @@
       "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
       "who": "Financial entities - and EU oversight of critical ICT third-party providers.",
       "duty": "ICT third-party risk and a register of information (Art. 28); key contract provisions including incident help, audit and exit (Art. 30); resilience testing (Art. 24–26).",
-      "clock": "Initial 4 h after classifying as major (≤ 24 h after detection) · intermediate 72 h · final 1 month"
+      "clock": "Initial 4 h after classifying as major (≤ 24 h after becoming aware) · intermediate 72 h after the initial notification · final 1 month after the last intermediate report"
     },
     {
       "name": "GDPR",
@@ -88,7 +88,7 @@
       "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj",
       "who": "Manufacturers of products with digital elements sold in the EU.",
       "duty": "Security by design, vulnerability handling and a software bill of materials for products.",
-      "clock": "Actively exploited vulnerabilities and severe incidents: early warning within 24 h, from 11 September 2026"
+      "clock": "Actively exploited vulnerabilities and severe incidents: early warning within 24 h, since 11 September 2026"
     },
     {
       "name": "EU AI Act",
@@ -96,7 +96,7 @@
       "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
       "who": "Providers and deployers of AI systems, and providers of general-purpose AI models.",
       "duty": "Responsibilities along the AI value chain (Art. 25); GPAI providers give documentation to downstream providers (Art. 53); deployers monitor and inform providers (Art. 26).",
-      "clock": "Providers report serious incidents of high-risk AI (Art. 73) - within 15 days, faster in the most critical cases"
+      "clock": "Providers report serious incidents of high-risk AI (Art. 73) - within 15 days, faster in the most critical cases; applies from 2 December 2027 (2 August 2028 for AI in regulated products)"
     }
   ],
   "clock": [

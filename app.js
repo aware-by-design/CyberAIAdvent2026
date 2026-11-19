@@ -44,8 +44,12 @@
     const KEY = "cyber-advent:" + data.year;
     const saved = sanitize(store.get(KEY), data);
     const qMode = params.get("mode");
+    /* A link to door 25-31 (31-day calendar, single invites, shared links) only makes sense in the 31-day mode,
+       so it opens that mode even for a visitor who last used the 24-door Advent calendar. */
+    const qDay = Number.parseInt(params.get("day") || "", 10);
+    const needsFull = Number.isInteger(qDay) && qDay > data.modes.advent.doors && qDay <= data.modes.full.doors;
     const state = {
-      mode: qMode === "advent" || qMode === "full" ? qMode : (saved.mode || (settings.defaultMode === "advent" ? "advent" : "full")),
+      mode: qMode === "advent" || qMode === "full" ? qMode : needsFull ? "full" : (saved.mode || (settings.defaultMode === "advent" ? "advent" : "full")),
       opened: saved.opened, answers: saved.answers, acts: saved.acts, team: saved.team, aud: saved.aud,
       country: saved.country || (data.countries.some((c) => c.id === settings.defaultCountry) ? settings.defaultCountry : "eu"),
       filter: "all", selected: 1, celebrate: false,
@@ -348,6 +352,7 @@
           h("button", { type: "button", class: "sq", "aria-label": "Previous door", "data-k": "prev", disabled: n <= 1, onclick: () => select(n - 1) }, svg(P.left)),
           h("button", { type: "button", class: "sq", "aria-label": "Next door", "data-k": "next", disabled: n >= total() || isLocked(n + 1), onclick: () => select(n + 1) }, svg(P.right)),
           h("span", { class: "grow" }),
+          h("a", { class: "share", href: `invites/door-${pad(n)}.ics`, type: "text/calendar", "aria-label": `Add door ${n} to your calendar (.ics file)`, text: "Add to calendar" }),
           h("a", { class: "share", href: briefHref(n) + "#share", text: "Share kit for 5 channels" }),
           h("button", { type: "button", class: "back-up", onclick: () => {
             el("house").scrollIntoView({ behavior: A.reducedMotion() ? "auto" : "smooth", block: "start" });
@@ -389,21 +394,22 @@
       state.mode = b.dataset.mode; state.celebrate = false; persist(); render();
     }));
     el("follow").addEventListener("click", () => { state.follow = !state.follow; state.celebrate = false; persist(); render(); });
-    /* Resetting erases points, answers and Santa's list, so it takes a second click within five seconds. */
-    const reset = el("reset"), RESET_LABEL = "Reset my progress";
-    let armed = 0;
-    reset.textContent = RESET_LABEL;
-    reset.addEventListener("click", () => {
-      if (!armed) {
-        reset.textContent = "Click again to erase your points, answers and Santa’s list";
-        armed = window.setTimeout(() => { armed = 0; reset.textContent = RESET_LABEL; }, 5000);
-        return;
-      }
-      window.clearTimeout(armed); armed = 0; reset.textContent = RESET_LABEL;
+    /* Resetting erases points, answers and Santa's list, so it asks first. "Keep my progress" has the focus,
+       Escape or a click outside keeps everything, and only "Yes, reset" erases. */
+    const reset = el("reset"), dlg = el("resetdlg");
+    const doReset = () => {
       state.opened = {}; state.answers = {}; state.acts = {}; state.celebrate = false;
       state.selected = Math.min(Math.max(today, 1), total());
       persist(); render();
+    };
+    reset.addEventListener("click", () => {
+      if (typeof dlg.showModal === "function") { dlg.showModal(); el("resetno").focus(); return; }
+      if (window.confirm("Reset your progress? This erases your points, answers, activities and Santa’s list on this device.")) doReset();
     });
+    el("resetno").addEventListener("click", () => dlg.close("keep"));
+    el("resetyes").addEventListener("click", () => { dlg.close("reset"); doReset(); reset.focus(); });
+    dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close("keep"); });
+    dlg.addEventListener("close", () => { if (dlg.returnValue !== "reset") reset.focus(); });
     /* A page left open moves on at midnight: the new door unlocks and the counter changes, without a reload.
        The selected door stays as it is, unless it was the locked one now opening. */
     A.onNewDay(() => {

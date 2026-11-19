@@ -1,0 +1,68 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Winterwatch Cyber & AI//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:door-29-single-2026@cyber-advent-calendar
+DTSTAMP:20261119T125744Z
+DTSTART:20261229T073000Z
+DTEND:20261229T073500Z
+SUMMARY:Door 29: Leavers leave. Access too.
+DESCRIPTION:DO: Revoke accounts\, tokens\, keys and AI-tool seats on the pe
+ rson’s last day.\nDON’T: Leave shared passwords unchanged or old accou
+ nts dormant “just in case”.\n\nLesson learnt (Tesla\, 2023): Two forme
+ r employees leaked personal data on about 75\,000 staff to a newspaper\, T
+ esla said in its breach notice.\n\nOpen the door: https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=29\n\nAI-assisted · an initiative of ENI
+ SA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=29"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-29.jpg" width="600" height="300" a
+ lt="Door 29: Leavers leave. Access too." style="display:block\;width:100%\
+ ;max-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></
+ a></td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,
+ Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacin
+ g:.04em\;">Tuesday 29 December 2026 · 08:30 (Rome time) · 5 minutes</td>
+ </tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helveti
+ ca\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;fo
+ nt-weight:bold\;">Door 29: Leavers leave. Access too.</td></tr><tr><td sty
+ le="padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-se
+ rif\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="colo
+ r:#17566A\;">DO:</strong> Revoke accounts\, tokens\, keys and AI-tool seat
+ s on the person’s last day.</td></tr><tr><td style="padding:0 24px 14px\
+ ;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;lin
+ e-height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DON’T:</s
+ trong> Leave shared passwords unchanged or old accounts dormant “just in
+  case”.</td></tr><tr><td style="padding:0 24px 18px\;font-family:'Segoe 
+ UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-height:1.5\;color:
+ #3A3440\;"><strong>Lesson learnt</strong> (Tesla\, 2023): Two former emplo
+ yees leaked personal data on about 75\,000 staff to a newspaper\, Tesla sa
+ id in its breach notice.</td></tr><tr><td style="padding:0 24px 22px\;"><t
+ able role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><t
+ d style="background:#102C30\;border-radius:999px\;"><a href="https://aware
+ -by-design.github.io/CyberAIAdvent2026/?day=29" style="display:inline-bloc
+ k\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif
+ \;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;"
+ >Open door 29 &rarr\;</a></td></tr></table></td></tr><tr><td style="paddin
+ g:14px 24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,He
+ lvetica\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060
+ \;">AI-assisted · an initiative of ENISA’s ARCH AHWG</td></tr></table><
+ /td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-29.jpg
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=29
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 29 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

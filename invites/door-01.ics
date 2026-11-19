@@ -1,0 +1,70 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Winterwatch Cyber & AI//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:door-01-single-2026@cyber-advent-calendar
+DTSTAMP:20261119T125744Z
+DTSTART:20261201T073000Z
+DTEND:20261201T073500Z
+SUMMARY:Door 1: Lock the front door
+DESCRIPTION:DO: Turn on multi-factor authentication for email\, banking and
+  work - passkeys or an authenticator app first.\nDON’T: Approve a sign-i
+ n prompt you didn’t start. A flood of prompts is an attack\, not a glitc
+ h.\n\nLesson learnt (Change Healthcare\, Feb 2024): Attackers used stolen 
+ credentials on a remote-access portal that had no MFA. The ransomware atta
+ ck disrupted US healthcare payments and exposed data on about 190 million 
+ people.\n\nOpen the door: https://aware-by-design.github.io/CyberAIAdvent2
+ 026/?day=1\n\nAI-assisted · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=1"><img src="https://aware-by-design.gith
+ ub.io/CyberAIAdvent2026/img/doors/door-01.jpg" width="600" height="300" al
+ t="Door 1: Lock the front door" style="display:block\;width:100%\;max-widt
+ h:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></td></
+ tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.04em\;
+ ">Tuesday 1 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr><tr><
+ td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,Arial\
+ ,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-weight:
+ bold\;">Door 1: Lock the front door</td></tr><tr><td style="padding:0 24px
+  10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16p
+ x\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A\;">DO:</
+ strong> Turn on multi-factor authentication for email\, banking and work -
+  passkeys or an authenticator app first.</td></tr><tr><td style="padding:0
+  24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-siz
+ e:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">
+ DON’T:</strong> Approve a sign-in prompt you didn’t start. A flood of 
+ prompts is an attack\, not a glitch.</td></tr><tr><td style="padding:0 24p
+ x 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14
+ px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (Chan
+ ge Healthcare\, Feb 2024): Attackers used stolen credentials on a remote-a
+ ccess portal that had no MFA. The ransomware attack disrupted US healthcar
+ e payments and exposed data on about 190 million people.</td></tr><tr><td 
+ style="padding:0 24px 22px\;"><table role="presentation" cellpadding="0" c
+ ellspacing="0" border="0"><tr><td style="background:#102C30\;border-radius
+ :999px\;"><a href="https://aware-by-design.github.io/CyberAIAdvent2026/?da
+ y=1" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI
+ '\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#
+ F5F1E8\;text-decoration:none\;">Open door 1 &rarr\;</a></td></tr></table><
+ /td></tr><tr><td style="padding:14px 24px 18px\;border-top:1px solid #E2DA
+ CB\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:12px\;
+ line-height:1.5\;color:#5A5060\;">AI-assisted · an initiative of ENISA’
+ s ARCH AHWG</td></tr></table></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-01.jpg
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=1
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 1 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

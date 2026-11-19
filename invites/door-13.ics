@@ -1,0 +1,69 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Winterwatch Cyber & AI//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:door-13-single-2026@cyber-advent-calendar
+DTSTAMP:20261119T125744Z
+DTSTART:20261213T073000Z
+DTEND:20261213T073500Z
+SUMMARY:Door 13: Gift cards are for gifts
+DESCRIPTION:DO: Pause and tell someone when a “tax office”\, “tech su
+ pport” or “boss” demands urgent payment.\nDON’T: Pay anyone in gif
+ t cards or crypto on request - the demand itself is the scam.\n\nLesson le
+ arnt (FBI Internet Crime Report\, Apr 2025): Americans reported losing US$
+ 9.3 billion to cryptocurrency-related fraud in 2024\, up 66% on the year b
+ efore.\n\nOpen the door: https://aware-by-design.github.io/CyberAIAdvent20
+ 26/?day=13\n\nAI-assisted · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=13"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-13.jpg" width="600" height="300" a
+ lt="Door 13: Gift cards are for gifts" style="display:block\;width:100%\;m
+ ax-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a>
+ </td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,He
+ lvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:
+ .04em\;">Sunday 13 December 2026 · 08:30 (Rome time) · 5 minutes</td></t
+ r><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\
+ ,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-
+ weight:bold\;">Door 13: Gift cards are for gifts</td></tr><tr><td style="p
+ adding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;
+ font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17
+ 566A\;">DO:</strong> Pause and tell someone when a “tax office”\, “t
+ ech support” or “boss” demands urgent payment.</td></tr><tr><td styl
+ e="padding:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-ser
+ if\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color
+ :#A8323A\;">DON’T:</strong> Pay anyone in gift cards or crypto on reques
+ t - the demand itself is the scam.</td></tr><tr><td style="padding:0 24px 
+ 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px
+ \;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (FBI In
+ ternet Crime Report\, Apr 2025): Americans reported losing US$9.3 billion 
+ to cryptocurrency-related fraud in 2024\, up 66% on the year before.</td><
+ /tr><tr><td style="padding:0 24px 22px\;"><table role="presentation" cellp
+ adding="0" cellspacing="0" border="0"><tr><td style="background:#102C30\;b
+ order-radius:999px\;"><a href="https://aware-by-design.github.io/CyberAIAd
+ vent2026/?day=13" style="display:inline-block\;padding:12px 22px\;font-fam
+ ily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:
+ bold\;color:#F5F1E8\;text-decoration:none\;">Open door 13 &rarr\;</a></td>
+ </tr></table></td></tr><tr><td style="padding:14px 24px 18px\;border-top:1
+ px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fo
+ nt-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted · an initiati
+ ve of ENISA’s ARCH AHWG</td></tr></table></td></tr></table></body></html
+ >
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-13.jpg
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=13
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 13 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

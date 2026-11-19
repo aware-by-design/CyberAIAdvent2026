@@ -1,0 +1,70 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Winterwatch Cyber & AI//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:door-25-single-2026@cyber-advent-calendar
+DTSTAMP:20261119T125744Z
+DTSTART:20261225T073000Z
+DTEND:20261225T073500Z
+SUMMARY:Door 25: Talk AI with your kids
+DESCRIPTION:DO: Explain that chatbots can be wrong and aren’t friends\, a
+ nd set up age-appropriate controls together.\nDON’T: Let children share 
+ their full name\, school\, photos or location with chatbots or strangers.\
+ n\nLesson learnt (Italy’s Garante fines OpenAI\, Dec 2024): Italy’s da
+ ta-protection authority fined OpenAI €15 million\, citing among other is
+ sues the lack of adequate age verification for ChatGPT.\n\nOpen the door: 
+ https://aware-by-design.github.io/CyberAIAdvent2026/?day=25\n\nAI-assisted
+  · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=25"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-25.jpg" width="600" height="300" a
+ lt="Door 25: Talk AI with your kids" style="display:block\;width:100%\;max
+ -width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></
+ td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helv
+ etica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.0
+ 4em\;">Friday 25 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr>
+ <tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,A
+ rial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-we
+ ight:bold\;">Door 25: Talk AI with your kids</td></tr><tr><td style="paddi
+ ng:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font
+ -size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A
+ \;">DO:</strong> Explain that chatbots can be wrong and aren’t friends\,
+  and set up age-appropriate controls together.</td></tr><tr><td style="pad
+ ding:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fo
+ nt-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A832
+ 3A\;">DON’T:</strong> Let children share their full name\, school\, phot
+ os or location with chatbots or strangers.</td></tr><tr><td style="padding
+ :0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-s
+ ize:14px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong>
+  (Italy’s Garante fines OpenAI\, Dec 2024): Italy’s data-protection au
+ thority fined OpenAI €15 million\, citing among other issues the lack of
+  adequate age verification for ChatGPT.</td></tr><tr><td style="padding:0 
+ 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" bo
+ rder="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href
+ ="https://aware-by-design.github.io/CyberAIAdvent2026/?day=25" style="disp
+ lay:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Ar
+ ial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-dec
+ oration:none\;">Open door 25 &rarr\;</a></td></tr></table></td></tr><tr><t
+ d style="padding:14px 24px 18px\;border-top:1px solid #E2DACB\;font-family
+ :'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:12px\;line-height:1.5
+ \;color:#5A5060\;">AI-assisted · an initiative of ENISA’s ARCH AHWG</td
+ ></tr></table></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-25.jpg
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=25
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 25 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1698,7 +1698,7 @@
         {
           "org": "EU AI Act",
           "ref": "Art. 15",
-          "text": "High-risk AI must be resilient against attempts to alter its use, outputs or performance by exploiting vulnerabilities.",
+          "text": "From 2 December 2027, high-risk AI must be resilient against attempts to alter its use, outputs or performance by exploiting vulnerabilities.",
           "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
         },
         {
@@ -2362,7 +2362,7 @@
         {
           "org": "EU AI Act",
           "ref": "Art. 14",
-          "text": "High-risk AI must be designed for effective human oversight, including the ability to intervene or stop it.",
+          "text": "From 2 December 2027, high-risk AI must be designed for effective human oversight, including the ability to intervene or stop it.",
           "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
         },
         {
@@ -3297,7 +3297,7 @@
         {
           "org": "EU AI Act",
           "ref": "Art. 15",
-          "text": "High-risk AI must resist data poisoning, model poisoning, adversarial examples and model flaws.",
+          "text": "From 2 December 2027, high-risk AI must resist data poisoning, model poisoning, adversarial examples and model flaws.",
           "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
         },
         {
@@ -4089,7 +4089,7 @@
         {
           "org": "EU AI Act",
           "ref": "Art. 4 & 26",
-          "text": "AI literacy for staff; deployers of high-risk AI must use it as instructed, assign human oversight and monitor it.",
+          "text": "AI literacy for staff now; from 2 December 2027, deployers of high-risk AI must use it as instructed, assign human oversight and monitor it.",
           "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
         },
         {
@@ -4703,7 +4703,7 @@
       "ref": "Regulation (EU) 2022/2554 · Article 19(1)",
       "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
       "text": "Financial entities shall report major ICT-related incidents to the relevant competent authority as referred to in Article 46 in accordance with paragraph 4 of this Article.",
-      "note": "Deadlines are set by Delegated Regulation (EU) 2025/301: initial notification within 4 hours of classifying the incident as major (no later than 24 hours after detection), intermediate report within 72 hours, final report within one month."
+      "note": "Deadlines are set by Delegated Regulation (EU) 2025/301: initial notification within 4 hours of classifying the incident as major and no later than 24 hours after becoming aware of it; intermediate report within 72 hours of the initial notification; final report within one month of the latest intermediate report."
     },
     "dora_28_1a": {
       "src": "DORA",
@@ -4722,7 +4722,7 @@
       "ref": "Regulation (EU) 2024/1689 · Article 4(1), as amended",
       "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-4",
       "text": "Providers and deployers of AI systems shall take measures to support the development of AI literacy of their staff and other persons dealing with the operation and use of AI systems on their behalf taking into account their technical knowledge, experience, education and training and the context the AI systems are to be used in, and considering the persons or groups of persons on whom the AI systems are to be used. This obligation does not require providers or deployers to guarantee any specific level of AI literacy of any individual.",
-      "note": "Amended by the Digital Omnibus on AI. Wording from the European Commission’s AI Act Service Desk, consolidated text as at 27 July 2026."
+      "note": "As amended by Regulation (EU) 2026/1744 (Digital Omnibus on AI), in force since 27 July 2026. Wording from the European Commission’s AI Act Service Desk consolidated text."
     },
     "ai_5_1b": {
       "src": "EU AI Act",
@@ -4734,19 +4734,22 @@
       "src": "EU AI Act",
       "ref": "Regulation (EU) 2024/1689 · Article 14(1)",
       "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
-      "text": "High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use."
+      "text": "High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use.",
+      "note": "Applies from 2 December 2027 to high-risk AI listed in Annex III, and from 2 August 2028 to AI in regulated products (Annex I), as set by Regulation (EU) 2026/1744 (Digital Omnibus on AI)."
     },
     "ai_15_1": {
       "src": "EU AI Act",
       "ref": "Regulation (EU) 2024/1689 · Article 15(1)",
       "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
-      "text": "High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."
+      "text": "High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle.",
+      "note": "Applies from 2 December 2027 to high-risk AI listed in Annex III, and from 2 August 2028 to AI in regulated products (Annex I), as set by Regulation (EU) 2026/1744 (Digital Omnibus on AI)."
     },
     "ai_15_5": {
       "src": "EU AI Act",
       "ref": "Regulation (EU) 2024/1689 · Article 15(5)",
       "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
-      "text": "High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities."
+      "text": "High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities.",
+      "note": "Applies from 2 December 2027 to high-risk AI listed in Annex III, and from 2 August 2028 to AI in regulated products (Annex I), as set by Regulation (EU) 2026/1744 (Digital Omnibus on AI)."
     },
     "ai_50_1": {
       "src": "EU AI Act",

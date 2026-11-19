@@ -1,0 +1,70 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Winterwatch Cyber & AI//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:door-27-single-2026@cyber-advent-calendar
+DTSTAMP:20261119T125744Z
+DTSTART:20261227T073000Z
+DTEND:20261227T073500Z
+SUMMARY:Door 27: Famous face\, fake offer
+DESCRIPTION:DO: Treat celebrity investment ads and “guaranteed returns”
+  as scams\, and check your financial regulator’s warning list.\nDON’T:
+  Trust a video because the face is famous - deepfaked endorsements are a s
+ cam staple.\n\nLesson learnt (Martin Lewis deepfake\, Jul 2023): A deepfak
+ e video of the UK consumer champion promoting an “investment” app spre
+ ad on social media. He warned the public it was a scam.\n\nOpen the door: 
+ https://aware-by-design.github.io/CyberAIAdvent2026/?day=27\n\nAI-assisted
+  · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=27"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-27.jpg" width="600" height="300" a
+ lt="Door 27: Famous face\, fake offer" style="display:block\;width:100%\;m
+ ax-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a>
+ </td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,He
+ lvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:
+ .04em\;">Sunday 27 December 2026 · 08:30 (Rome time) · 5 minutes</td></t
+ r><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\
+ ,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-
+ weight:bold\;">Door 27: Famous face\, fake offer</td></tr><tr><td style="p
+ adding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;
+ font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17
+ 566A\;">DO:</strong> Treat celebrity investment ads and “guaranteed retu
+ rns” as scams\, and check your financial regulator’s warning list.</td
+ ></tr><tr><td style="padding:0 24px 14px\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><s
+ trong style="color:#A8323A\;">DON’T:</strong> Trust a video because the 
+ face is famous - deepfaked endorsements are a scam staple.</td></tr><tr><t
+ d style="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sa
+ ns-serif\;font-size:14px\;line-height:1.5\;color:#3A3440\;"><strong>Lesson
+  learnt</strong> (Martin Lewis deepfake\, Jul 2023): A deepfake video of t
+ he UK consumer champion promoting an “investment” app spread on social
+  media. He warned the public it was a scam.</td></tr><tr><td style="paddin
+ g:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0
+ " border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a 
+ href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=27" style="
+ display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text
+ -decoration:none\;">Open door 27 &rarr\;</a></td></tr></table></td></tr><t
+ r><td style="padding:14px 24px 18px\;border-top:1px solid #E2DACB\;font-fa
+ mily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:12px\;line-height
+ :1.5\;color:#5A5060\;">AI-assisted · an initiative of ENISA’s ARCH AHWG
+ </td></tr></table></td></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-27.jpg
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=27
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 27 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

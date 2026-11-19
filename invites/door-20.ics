@@ -1,0 +1,70 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Winterwatch Cyber & AI//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:door-20-single-2026@cyber-advent-calendar
+DTSTAMP:20261119T125744Z
+DTSTART:20261220T073000Z
+DTEND:20261220T073500Z
+SUMMARY:Door 20: A safe word for the family
+DESCRIPTION:DO: Agree a family safe word for emergency calls and messages.\
+ nDON’T: Send money on an urgent call from a “relative” or VIP - hang
+  up and call back on a known number.\n\nLesson learnt (A cloned minister\,
+  Feb 2025): Scammers cloned the voice of Defence Minister Guido Crosetto t
+ o ask business leaders for money. At least one paid about €1 million bef
+ ore police froze the funds.\n\nOpen the door: https://aware-by-design.gith
+ ub.io/CyberAIAdvent2026/?day=20\n\nAI-assisted · an initiative of ENISA
+ ’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=20"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-20.jpg" width="600" height="300" a
+ lt="Door 20: A safe word for the family" style="display:block\;width:100%\
+ ;max-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></
+ a></td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,
+ Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacin
+ g:.04em\;">Sunday 20 December 2026 · 08:30 (Rome time) · 5 minutes</td><
+ /tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;fon
+ t-weight:bold\;">Door 20: A safe word for the family</td></tr><tr><td styl
+ e="padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-ser
+ if\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color
+ :#17566A\;">DO:</strong> Agree a family safe word for emergency calls and 
+ messages.</td></tr><tr><td style="padding:0 24px 14px\;font-family:'Segoe 
+ UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;line-height:1.5\;color:
+ #1C1720\;"><strong style="color:#A8323A\;">DON’T:</strong> Send money on
+  an urgent call from a “relative” or VIP - hang up and call back on a 
+ known number.</td></tr><tr><td style="padding:0 24px 18px\;font-family:'Se
+ goe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-height:1.5\;co
+ lor:#3A3440\;"><strong>Lesson learnt</strong> (A cloned minister\, Feb 202
+ 5): Scammers cloned the voice of Defence Minister Guido Crosetto to ask bu
+ siness leaders for money. At least one paid about €1 million before poli
+ ce froze the funds.</td></tr><tr><td style="padding:0 24px 22px\;"><table 
+ role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td sty
+ le="background:#102C30\;border-radius:999px\;"><a href="https://aware-by-d
+ esign.github.io/CyberAIAdvent2026/?day=20" style="display:inline-block\;pa
+ dding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fon
+ t-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;">Open
+  door 20 &rarr\;</a></td></tr></table></td></tr><tr><td style="padding:14p
+ x 24px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helveti
+ ca\,Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060\;">A
+ I-assisted · an initiative of ENISA’s ARCH AHWG</td></tr></table></td><
+ /tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-20.jpg
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=20
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 20 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

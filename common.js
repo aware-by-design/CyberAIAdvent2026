@@ -267,7 +267,9 @@
     ["path", { d: "M10 68L26 52L36 70L22 82Z", fill: "#1A1A1D" }], ["path", { d: "M58 54L76 66L64 82L50 70Z", fill: "#2A2A2F" }],
     ["path", { d: "M30 40l3-2M64 42l2 2M18 64l2-1", stroke: "#9A9AA4", "stroke-width": 1.5, "stroke-linecap": "round" }],
     ["ellipse", { cx: 34, cy: 57, rx: 8, ry: 9, fill: "#FFFFFF" }], ["ellipse", { cx: 54, cy: 57, rx: 8, ry: 9, fill: "#FFFFFF" }],
-    ["circle", { cx: 37.5, cy: 59, r: 3.6, fill: "#111" }], ["circle", { cx: 57.5, cy: 59, r: 3.6, fill: "#111" }],
+    ["circle", { cx: 37.5, cy: 59, r: 3.6, fill: "#111", class: "pupil" }], ["circle", { cx: 57.5, cy: 59, r: 3.6, fill: "#111", class: "pupil" }],
+    // Eyelids: coal-coloured, folded away (scaleY 0) until a blink drops them over the eyes.
+    ["ellipse", { cx: 34, cy: 57, rx: 8.6, ry: 9.6, fill: "#232326", class: "lid" }], ["ellipse", { cx: 54, cy: 57, rx: 8.6, ry: 9.6, fill: "#232326", class: "lid" }],
     ["path", { d: "M25 46L41 51M63 46L47 51", stroke: "#111", "stroke-width": 3.2, "stroke-linecap": "round" }],
     ["path", { d: "M36 73Q46 77 57 68", fill: "none", stroke: "#E8E2D6", "stroke-width": 2.6, "stroke-linecap": "round" }],
     ["path", { d: "M24 34Q36 8 66 10Q58 18 60 30Z", fill: "#C8202F" }],
@@ -309,7 +311,7 @@
 
   /* Ready-made summaries of a door for five channels. `link` is this site's own URL for the door. */
   /* The AI disclosure every share text carries (Door 21 asks readers to label AI-assisted content too). */
-  const AI_LABEL = "AI-assisted · reviewed by aware-by-design · an initiative of ENISA’s ARCH AHWG";
+  const AI_LABEL = "AI-assisted · an initiative of ENISA’s ARCH AHWG";
   const AI_SHORT = "AI-assisted · ENISA ARCH AHWG initiative";
 
   function shareKit(data, d, total, link) {

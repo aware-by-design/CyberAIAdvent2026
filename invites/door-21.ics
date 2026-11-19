@@ -1,0 +1,70 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Winterwatch Cyber & AI//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:door-21-single-2026@cyber-advent-calendar
+DTSTAMP:20261119T125744Z
+DTSTART:20261221T073000Z
+DTEND:20261221T073500Z
+SUMMARY:Door 21: Label the synthetic
+DESCRIPTION:DO: Label AI-generated or manipulated images\, audio and video\
+ , and keep a named human sign-off.\nDON’T: Publish synthetic media of re
+ al people without consent - or let fakes of your leaders go unanswered.\n\
+ nLesson learnt (WPP\, May 2024): Fraudsters used a voice clone and YouTube
+  footage of WPP’s CEO in a fake video meeting to try to set up a new bus
+ iness. Alert staff stopped it.\n\nOpen the door: https://aware-by-design.g
+ ithub.io/CyberAIAdvent2026/?day=21\n\nAI-assisted · an initiative of ENIS
+ A’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=21"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-21.jpg" width="600" height="300" a
+ lt="Door 21: Label the synthetic" style="display:block\;width:100%\;max-wi
+ dth:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></td>
+ </tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helveti
+ ca\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.04em
+ \;">Monday 21 December 2026 · 08:30 (Rome time) · 5 minutes</td></tr><tr
+ ><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,Aria
+ l\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-weigh
+ t:bold\;">Door 21: Label the synthetic</td></tr><tr><td style="padding:0 2
+ 4px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:
+ 16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#17566A\;">DO
+ :</strong> Label AI-generated or manipulated images\, audio and video\, an
+ d keep a named human sign-off.</td></tr><tr><td style="padding:0 24px 14px
+ \;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;li
+ ne-height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DON’T:</
+ strong> Publish synthetic media of real people without consent - or let fa
+ kes of your leaders go unanswered.</td></tr><tr><td style="padding:0 24px 
+ 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px
+ \;line-height:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (WPP\, 
+ May 2024): Fraudsters used a voice clone and YouTube footage of WPP’s CE
+ O in a fake video meeting to try to set up a new business. Alert staff sto
+ pped it.</td></tr><tr><td style="padding:0 24px 22px\;"><table role="prese
+ ntation" cellpadding="0" cellspacing="0" border="0"><tr><td style="backgro
+ und:#102C30\;border-radius:999px\;"><a href="https://aware-by-design.githu
+ b.io/CyberAIAdvent2026/?day=21" style="display:inline-block\;padding:12px 
+ 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px
+ \;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;">Open door 21 &r
+ arr\;</a></td></tr></table></td></tr><tr><td style="padding:14px 24px 18px
+ \;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,
+ sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted 
+ · an initiative of ENISA’s ARCH AHWG</td></tr></table></td></tr></table
+ ></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-21.jpg
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=21
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 21 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

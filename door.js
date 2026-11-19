@@ -96,7 +96,10 @@
     const KEY = "cyber-advent:" + data.year;
     const saved = sanitize(store.get(KEY), data);
     const qMode = params.get("mode");
-    const mode = qMode === "advent" || qMode === "full" ? qMode : (saved.mode || (settings.defaultMode === "advent" ? "advent" : "full"));
+    // A briefing for door 25-31 only exists in the 31-day mode (same rule as the calendar page).
+    const qDay = Number.parseInt(params.get("day") || "", 10);
+    const needsFull = Number.isInteger(qDay) && qDay > data.modes.advent.doors && qDay <= data.modes.full.doors;
+    const mode = qMode === "advent" || qMode === "full" ? qMode : needsFull ? "full" : (saved.mode || (settings.defaultMode === "advent" ? "advent" : "full"));
     const total = data.modes[mode].doors;
     let today = A.todayFor(data); // refreshed at midnight by A.onNewDay below
     let follow = saved.follow === null ? settings.lockFuture !== false : saved.follow;
@@ -123,6 +126,8 @@
         h("span", { class: "pos", text: `FULL BRIEFING · DOOR ${n} OF ${total}` }),
         n > 1 ? h("a", { class: "sq", href: "door.html" + q(n - 1), "aria-label": "Previous door" }, "←") : null,
         n < total && !isLocked(n + 1) ? h("a", { class: "sq", href: "door.html" + q(n + 1), "aria-label": "Next door" }, "→") : null,
+        h("a", { class: "ghost cal", href: `invites/door-${pad(n)}.ics`, type: "text/calendar", "aria-label": `Add door ${n} to your calendar (.ics file)` }, "Add to calendar"),
+        h("a", { class: "ghost cal", href: `invites/door-${pad(n)}.html` }, "Invite preview"),
         h("button", { type: "button", class: "ghost", onclick: () => window.print() }, "Print or save as PDF"));
       r.append(bar);
       if (isLocked(n)) {

@@ -1,0 +1,69 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Winterwatch Cyber & AI//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:door-19-single-2026@cyber-advent-calendar
+DTSTAMP:20261119T125744Z
+DTSTART:20261219T073000Z
+DTEND:20261219T073500Z
+SUMMARY:Door 19: Post later\, connect safer
+DESCRIPTION:DO: Use your phone’s hotspot or a VPN on the road\, and keep 
+ devices locked and with you.\nDON’T: Post boarding passes\, fitness rout
+ es or “away for two weeks” in real time.\n\nLesson learnt (Le Monde 
+ ‘StravaLeaks’\, Oct 2024): Journalists tracked the movements of securi
+ ty staff protecting world leaders through their public fitness-app activit
+ y.\n\nOpen the door: https://aware-by-design.github.io/CyberAIAdvent2026/?
+ day=19\n\nAI-assisted · an initiative of ENISA’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=19"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-19.jpg" width="600" height="300" a
+ lt="Door 19: Post later\, connect safer" style="display:block\;width:100%\
+ ;max-width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></
+ a></td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,
+ Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacin
+ g:.04em\;">Saturday 19 December 2026 · 08:30 (Rome time) · 5 minutes</td
+ ></tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvet
+ ica\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;f
+ ont-weight:bold\;">Door 19: Post later\, connect safer</td></tr><tr><td st
+ yle="padding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-s
+ erif\;font-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="col
+ or:#17566A\;">DO:</strong> Use your phone’s hotspot or a VPN on the road
+ \, and keep devices locked and with you.</td></tr><tr><td style="padding:0
+  24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-siz
+ e:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">
+ DON’T:</strong> Post boarding passes\, fitness routes or “away for two
+  weeks” in real time.</td></tr><tr><td style="padding:0 24px 18px\;font-
+ family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-heig
+ ht:1.5\;color:#3A3440\;"><strong>Lesson learnt</strong> (Le Monde ‘Strav
+ aLeaks’\, Oct 2024): Journalists tracked the movements of security staff
+  protecting world leaders through their public fitness-app activity.</td><
+ /tr><tr><td style="padding:0 24px 22px\;"><table role="presentation" cellp
+ adding="0" cellspacing="0" border="0"><tr><td style="background:#102C30\;b
+ order-radius:999px\;"><a href="https://aware-by-design.github.io/CyberAIAd
+ vent2026/?day=19" style="display:inline-block\;padding:12px 22px\;font-fam
+ ily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:
+ bold\;color:#F5F1E8\;text-decoration:none\;">Open door 19 &rarr\;</a></td>
+ </tr></table></td></tr><tr><td style="padding:14px 24px 18px\;border-top:1
+ px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fo
+ nt-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted · an initiati
+ ve of ENISA’s ARCH AHWG</td></tr></table></td></tr></table></body></html
+ >
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-19.jpg
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=19
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 19 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

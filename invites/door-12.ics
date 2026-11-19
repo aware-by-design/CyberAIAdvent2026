@@ -1,0 +1,70 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Winterwatch Cyber & AI//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:door-12-single-2026@cyber-advent-calendar
+DTSTAMP:20261119T125744Z
+DTSTART:20261212T073000Z
+DTEND:20261212T073500Z
+SUMMARY:Door 12: Fact-check the machine
+DESCRIPTION:DO: Check AI answers against a primary source before you publis
+ h\, sign or decide.\nDON’T: Cite sources you haven’t opened - AI can i
+ nvent quotes\, cases and references.\n\nLesson learnt (Deloitte Australia\
+ , Oct 2025): Deloitte agreed to partially refund the Australian government
+  for an A$440\,000 report that contained AI-generated errors\, including r
+ eferences that did not exist.\n\nOpen the door: https://aware-by-design.gi
+ thub.io/CyberAIAdvent2026/?day=12\n\nAI-assisted · an initiative of ENISA
+ ’s ARCH AHWG
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=12"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/door-12.jpg" width="600" height="300" a
+ lt="Door 12: Fact-check the machine" style="display:block\;width:100%\;max
+ -width:600px\;height:auto\;border:0\;border-radius:12px 12px 0 0\;"></a></
+ td></tr><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\,Helv
+ etica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spacing:.0
+ 4em\;">Saturday 12 December 2026 · 08:30 (Rome time) · 5 minutes</td></t
+ r><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\
+ ,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-
+ weight:bold\;">Door 12: Fact-check the machine</td></tr><tr><td style="pad
+ ding:0 24px 10px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fo
+ nt-size:16px\;line-height:1.5\;color:#1C1720\;"><strong style="color:#1756
+ 6A\;">DO:</strong> Check AI answers against a primary source before you pu
+ blish\, sign or decide.</td></tr><tr><td style="padding:0 24px 14px\;font-
+ family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;line-heig
+ ht:1.5\;color:#1C1720\;"><strong style="color:#A8323A\;">DON’T:</strong>
+  Cite sources you haven’t opened - AI can invent quotes\, cases and refe
+ rences.</td></tr><tr><td style="padding:0 24px 18px\;font-family:'Segoe UI
+ '\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-height:1.5\;color:#3
+ A3440\;"><strong>Lesson learnt</strong> (Deloitte Australia\, Oct 2025): D
+ eloitte agreed to partially refund the Australian government for an A$440\
+ ,000 report that contained AI-generated errors\, including references that
+  did not exist.</td></tr><tr><td style="padding:0 24px 22px\;"><table role
+ ="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="
+ background:#102C30\;border-radius:999px\;"><a href="https://aware-by-desig
+ n.github.io/CyberAIAdvent2026/?day=12" style="display:inline-block\;paddin
+ g:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-si
+ ze:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;">Open doo
+ r 12 &rarr\;</a></td></tr></table></td></tr><tr><td style="padding:14px 24
+ px 18px\;border-top:1px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;font-size:12px\;line-height:1.5\;color:#5A5060\;">AI-as
+ sisted · an initiative of ENISA’s ARCH AHWG</td></tr></table></td></tr>
+ </table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/door-12.jpg
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=12
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 12 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

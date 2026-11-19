@@ -80,6 +80,7 @@ h1, h2, h3, h4, p { margin: 0; }
 .brandline { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
 .foot-mark { width: 22px; height: 22px; flex: none; }
 .foot-org { font: 600 14px var(--serif); color: var(--text); letter-spacing: 0; }
+.foot-meta { flex-basis: 100%; } /* address and fonts on their own line, so a wrapped line never starts with a stray separator */
 .brand-name { font: 13px var(--mono); letter-spacing: .08em; color: var(--muted); }
 .seg { display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
 .seg button { border: 0; border-radius: 999px; min-height: 44px; padding: 0 18px; font: 500 13px var(--mono); letter-spacing: .04em; background: transparent; color: var(--muted); transition: background-color .25s ease; }
@@ -134,6 +135,18 @@ select { min-height: 44px; padding: 0 12px; border-radius: 12px; background: var
 /* Doors */
   background-image: radial-gradient(#ffffff14 1px, transparent 1.5px); background-size: 12px 12px; }
 .legend { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; font-size: 13px; color: var(--faint); }
+/* Reset confirmation */
+dialog.confirm { width: min(440px, calc(100vw - 32px)); padding: 24px; border-radius: 20px; border: 1px solid var(--line); background: var(--surface); color: var(--text); box-shadow: 0 30px 60px #00000099; }
+dialog.confirm::backdrop { background: #0D2118CC; }
+dialog.confirm h2 { margin: 0 0 8px; font: 500 26px/1.15 var(--serif); }
+dialog.confirm p { margin: 0 0 20px; color: var(--muted); line-height: 1.5; }
+dialog.confirm .row { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
+dialog.confirm button { min-height: 44px; padding: 0 18px; border-radius: 999px; font-weight: 600; }
+dialog.confirm .keep { background: var(--gold); color: #0D2118; border: 0; }
+dialog.confirm .erase { background: transparent; color: #FFB3B3; border: 1px solid var(--red); }
+dialog.confirm button:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+a.ghost.cal { display: inline-flex; align-items: center; margin-left: 0; text-decoration: none; }
+a.ghost.cal:hover { color: var(--text); border-color: var(--muted); }
 .ghost { margin-left: auto; min-height: 36px; padding: 0 12px; border-radius: 999px; background: transparent; border: 1px solid var(--line); color: var(--muted); font-size: 13px; }
 
 /* Map */
@@ -195,7 +208,7 @@ select { min-height: 44px; padding: 0 12px; border-radius: 12px; background: var
 .dd.dont .dot { background: var(--red); }
 .dd .dot svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .dd .lbl { display: block; font: 600 12px var(--mono); letter-spacing: .12em; color: var(--gold); }
-.dd.dont .lbl { color: var(--red); }
+.dd.dont .lbl { color: #FF8080; } /* lighter than --red so the 12px label meets WCAG AA (4.9:1) on the card */
 .dd p { margin-top: 2px; text-wrap: pretty; }
 .h3 { font: 600 12px var(--mono); letter-spacing: .12em; color: var(--text); }
 
@@ -501,8 +514,14 @@ select { min-height: 44px; padding: 0 12px; border-radius: 12px; background: var
 .act.done .atext { color: var(--muted); text-decoration: line-through; text-decoration-color: #F5C45199; }
 .clinker { display: flex; align-items: flex-end; gap: 12px; }
 .clinker .coal { flex: none; width: 86px; height: 92px; overflow: visible; animation: bob 2.6s ease-in-out infinite; }
+/* Clinker's eyes: a blink every few seconds (a double blink now and then) and a sideways glance.
+   Without motion (prefers-reduced-motion) the lids stay folded away and the eyes simply stay open. */
+.clinker .coal .lid { transform-box: fill-box; transform-origin: 50% 0; transform: scaleY(0); animation: blink 5.2s ease-in-out infinite; }
+.clinker .coal .pupil { transform-box: fill-box; transform-origin: center; animation: glance 7.8s ease-in-out infinite; }
+@keyframes blink { 0%, 44%, 50%, 90%, 94.5%, 96%, 100% { transform: scaleY(0) } 47% { transform: scaleY(1) } 92.2%, 97.6% { transform: scaleY(1) } }
+@keyframes glance { 0%, 22%, 100% { transform: translate(0, 0) } 28%, 46% { transform: translate(-2.4px, .4px) } 54%, 72% { transform: translate(2px, -.6px) } 80% { transform: translate(0, 0) } }
 .clinker .bubble { padding: 10px 14px; border-radius: 14px 14px 14px 4px; background: var(--text); color: #1B1712; font-size: 14px; line-height: 1.4; font-weight: 500; animation: rise .4s ease both; }
-.clinker .who { display: block; font: 700 10px var(--mono); letter-spacing: .1em; color: #8A1F2B; }
+.clinker .who { display: block; min-height: 0; padding: 0; border-radius: 0; background: none; font: 700 10px var(--mono); letter-spacing: .1em; color: #8A1F2B; }
 .case.headline .kind { background: var(--gold); color: var(--on); }
 .clamp { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
 .brief-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 60px; padding: 12px 18px; border-radius: 14px; background: var(--gold); color: var(--on); text-decoration: none; box-shadow: 0 8px 24px #F5C45133; }
