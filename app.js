@@ -106,6 +106,7 @@
     function updateDown() {
       const end = atEnd();
       down.textContent = end ? "Back to top ↑" : "Scroll down ↓";
+      down.dataset.arrow = end ? "↑" : "↓"; // phones show just the arrow (styles.css)
       down.setAttribute("aria-label", end ? "Back to the top of this door" : "Scroll down to the next part of this door");
     }
     /* Scroll down: jump to the next part of the day (challenge, activities, lesson, briefing...); at the end, back to the top. */
