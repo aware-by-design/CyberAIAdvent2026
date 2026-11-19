@@ -62,8 +62,7 @@
       h("div", { class: "lsec" },
         h("div", { class: "inject" }, h("span", { class: "lk", text: "TABLETOP · 20-MINUTE INJECT" }), h("p", { text: L.tabletop.inject })),
         h("span", { class: "lk", text: "DISCUSS" }), L.tabletop.questions.map((q) => h("span", { class: "q-item" }, h("b", { "aria-hidden": "true", text: "?" }), q)),
-        h("span", { class: "roles", text: "Roles: incident lead · IT & security · legal & privacy · comms · business owner. Capture decisions, owners and gaps - then update the playbook." })),
-      d.day === 22 || d.day === 23 ? h("a", { class: "cta", href: "supply.html" }, "Open the supplier toolkit →") : null);
+        h("span", { class: "roles", text: "Roles: incident lead · IT & security · legal & privacy · comms · business owner. Capture decisions, owners and gaps - then update the playbook." })));
   }
 
   function lens(data, d, state, persist, rerender) {
@@ -123,17 +122,14 @@
       const bar = h("nav", { class: "bf-bar", "aria-label": "Briefing navigation" },
         h("a", { class: "back", href: "index.html" + q(n) }, "← Back to the calendar"),
         h("span", { class: "grow" }),
-        h("span", { class: "pos", text: `FULL BRIEFING · DOOR ${n} OF ${total}` }),
+        h("span", { class: "pos", text: isLocked(n) ? `DOOR ${n} OF ${total} · NOT OPEN YET` : `FULL BRIEFING · DOOR ${n} OF ${total}` }),
         n > 1 ? h("a", { class: "sq", href: "door.html" + q(n - 1), "aria-label": "Previous door" }, "←") : null,
         n < total && !isLocked(n + 1) ? h("a", { class: "sq", href: "door.html" + q(n + 1), "aria-label": "Next door" }, "→") : null,
-        h("a", { class: "ghost cal", href: `invites/door-${pad(n)}.ics`, type: "text/calendar", "aria-label": `Add door ${n} to your calendar (.ics file)` }, "Add to calendar"),
-        isLocked(n) ? null : h("a", { class: "ghost cal", href: `invites/door-${pad(n)}.html` }, "Invite preview"),
         isLocked(n) ? null : h("button", { type: "button", class: "ghost", onclick: () => window.print() }, "Print or save as PDF"));
       r.append(bar);
       if (isLocked(n)) {
-        r.append(h("div", { class: "locked-msg nestor-inline" }, ...A.nestorNote(data, n, today, "h1"),
-          h("p", { class: "nestor-links" }, h("a", { href: "index.html" + (mq ? "?" + mq : ""), text: "Back to the calendar" }), " · ",
-            h("a", { href: `invites/door-${pad(n)}.ics`, type: "text/calendar", text: `Add door ${n} to your calendar` }))));
+        r.append(h("div", { class: "locked-msg nestor-inline" }, ...A.nestorNote(data, n, today, "h1", null, { page: true }),
+          h("p", { class: "nestor-links" }, h("a", { href: "index.html" + (mq ? "?" + mq : ""), text: "Back to the calendar and its reminders" }))));
         A.startTicker();
         return;
       }
@@ -174,7 +170,8 @@
       const link = new URL(`index.html?day=${n}${mq ? "&" + mq : ""}`, window.location.href).toString();
       r.append(shareKitBlock(A.shareKit(data, d, total, link)));
       r.append(sec("READ MORE AT THE SOURCE", null,
-        d.readMore.map((m) => extLink(m.url, "rm", h("span", { class: "top2" }, h("span", { class: "org", text: m.org }), h("span", { class: "ref", text: m.ref })), h("span", { class: "t", text: m.text }), h("span", { class: "go", text: "Read at source ↗" })))));
+        d.readMore.map((m) => extLink(m.url, "rm", h("span", { class: "top2" }, h("span", { class: "org", text: m.org }), h("span", { class: "ref", text: m.ref })), h("span", { class: "t", text: m.text }), h("span", { class: "go", text: "Read at source ↗" }))),
+        A.toolkitReading(n)));
       r.append(lens(data, d, state, persist, render));
       r.append(h("div", { class: "refs" }, h("span", { class: "k", text: "GROUNDED IN" }), h("span", { class: "txt", text: d.refs }),
         d.owasp.length ? h("div", { class: "codes" }, d.owasp.map((c) => h("span", { class: "code", text: "OWASP " + c }))) : null));

@@ -186,15 +186,18 @@
       if (preview) { num = `All ${n} doors open`; text = "Test mode preview: every door is unlocked"; filled = n; }
       else if (today < 1) {
         const left = A.daysUntil(data, 1);
-        num = left <= 0 ? "Opens tonight" : `${left} ${left === 1 ? "day" : "days"} to go`; text = `Door 1 opens on ${A.opensLabel(data, 1)}`; filled = 0; next = 1;
+        // Before 1 December the counter cell says when it starts; the live countdown beside it has the exact time.
+        num = left <= 0 ? "Starts tonight" : `Starts 1 December`; text = left <= 0 ? `Door 1 opens tonight, ${A.opensLabel(data, 1)}` : `One door a day until ${n} December`; filled = 0; next = 1;
       } else if (today <= n) { num = `Day ${today} of ${n}`; text = today === n ? "The last door is open" : A.nextOpensText(data, today + 1); filled = today; next = today < n ? today + 1 : 0; }
       else { num = `All ${n} doors open`; text = "Catch up on any you missed"; filled = n; }
       el("dcnum").textContent = num;
       el("dctext").textContent = text;
       const tk = el("dctick");
-      tk.replaceChildren(...(next ? [svg("M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"), next === 1 && today < 1 ? "Door 1 opens in " : `Door ${next} opens in `,
+      tk.replaceChildren(...(next ? [svg("M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"), `Door ${next} opens in `,
         h("strong", { "data-cd": String(A.opensAt(data, next).getTime()), text: A.fmtLeft(A.opensAt(data, next) - A.now()) })] : []));
-      tk.hidden = !next;
+      el("dcnext").hidden = !next;
+      el("dcleft").textContent = String(n - filled);
+      el("dcof").textContent = `of ${n}`;
       const bar = el("dcbar"); bar.replaceChildren();
       bar.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
       for (let i = 1; i <= n; i++) bar.append(h("span", { class: i <= filled ? (i === filled && !preview && today >= 1 && today <= n ? "on now" : "on") : "" }));
@@ -203,8 +206,16 @@
     function renderTop(s) {
       renderDayCount();
       document.querySelectorAll("#mode button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === state.mode)));
-      el("eyebrow").textContent = state.mode === "advent" ? `ADVENT CALENDAR · 1–24 DECEMBER ${data.year} · CYBERSECURITY & AI` : `31 DAYS · 1–31 DECEMBER ${data.year} · CYBERSECURITY & AI`;
+      /* The banner follows the calendar length: dates, the one calendar invite (a reminder for every door at the
+         days.json reminder time, Europe/Rome, which is CET in December) and the shortcut to today's door. */
+      const n = total(), dates = `1–${n} December ${data.year}`;
+      el("eyebrow").textContent = `${state.mode === "advent" ? "ADVENT CALENDAR" : "31 DAYS"} · ${dates.toUpperCase()} · REMINDERS AT ${data.reminder} CET`;
+      el("bndates").textContent = dates;
       el("ics").setAttribute("href", state.mode === "advent" ? "advent-24.ics" : "days-31.ics");
+      el("ics").setAttribute("aria-label", `Download calendar invite: ${n} daily reminders (.ics file)`);
+      el("icsnote").textContent = `One file with ${n} daily reminders, one for each door. No sign-up, no personal data.`;
+      const t = !preview && today >= 1 && today <= n ? today : 0, go = el("bntoday");
+      go.hidden = !t; go.textContent = `Open today’s door (${t})`;
     }
 
     function renderHUD(s) {
@@ -421,7 +432,6 @@
           h("button", { type: "button", class: "sq", "aria-label": "Previous door", "data-k": "prev", disabled: n <= 1, onclick: () => select(n - 1) }, svg(P.left)),
           h("button", { type: "button", class: "sq", "aria-label": isLocked(n + 1) ? `Next door (opens ${A.inDays(A.daysUntil(data, n + 1))})` : "Next door", "data-k": "next", disabled: n >= total(), onclick: () => select(n + 1) }, svg(P.right)),
           h("span", { class: "grow" }),
-          h("a", { class: "share", href: `invites/door-${pad(n)}.ics`, type: "text/calendar", "aria-label": `Add door ${n} to your calendar (.ics file)`, text: "Add to calendar" }),
           h("a", { class: "share", href: briefHref(n) + "#share", text: "Share kit for 5 channels" }),
           h("button", { type: "button", class: "back-up", onclick: () => dlg.close() }, "Close")));
       el("daylabel").textContent = `DOOR ${pad(n)} OF ${total()}`;
@@ -454,6 +464,7 @@
       render();
     });
 
+    el("bntoday").addEventListener("click", () => { if (today >= 1 && today <= total()) select(today, "now"); });
     document.querySelectorAll("#mode button").forEach((b) => b.addEventListener("click", () => {
       if (b.dataset.mode !== "advent" && b.dataset.mode !== "full") return;
       state.mode = state.pick = b.dataset.mode; state.celebrate = false; persist(); setUrl(0); render();

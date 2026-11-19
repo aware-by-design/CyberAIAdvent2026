@@ -210,9 +210,11 @@
   let testOffset = 0;
   const TEST_KEY = "cyber-advent:test-date";
   function now() { return new Date(Date.now() + testOffset); }
+  let testOn = false;
   function applyTestMode(settings) {
-    testOffset = 0;
+    testOffset = 0; testOn = false;
     if (!settings || settings.testMode !== true) return false;
+    testOn = true;
     let v = null;
     try { v = window.localStorage.getItem(TEST_KEY); } catch (e) { v = null; }
     if (v && /^\d{4}-\d\d-\d\dT\d\d:\d\d(:\d\d)?$/.test(v)) { const t = new Date(v); if (!Number.isNaN(t.getTime())) testOffset = t.getTime() - Date.now(); }
@@ -345,8 +347,9 @@
   }
 
   /* A note from the NESTOR family for a door that isn't open yet: when it opens, and a live countdown.
-     Used by the calendar's "Come back tomorrow" popup and by the briefing page of a locked door. */
-  function nestorNote(data, n, today, headTag, ids) {
+     Used by the calendar's "Come back tomorrow" popup and by the briefing page of a locked door ({ page: true },
+     which says the briefing appears there). In test mode it also points testers to the test bar and a preview link. */
+  function nestorNote(data, n, today, headTag, ids, opts) {
     const img = h("img", { class: "nestor-img", src: "img/nestor-family.webp", width: "760", height: "714", alt: "" });
     const eyebrow = h("p", { class: "nestor-eyebrow", text: "A NOTE FROM THE NESTOR FAMILY" });
     /* The countdown has run out while the note was open: say so, and the page offers an "Open door n" button. */
@@ -357,15 +360,32 @@
     }
     const k = daysUntil(data, n), label = opensLabel(data, n);
     const head = k <= 0 ? "Come back tonight!" : k === 1 ? "Come back tomorrow!" : `Come back in ${k} days!`;
-    const when = k <= 0 ? `Door ${n} opens tonight, ${label}.` : k === 1 ? `Door ${n} opens tomorrow, ${label}.` : `Door ${n} opens on ${label}.`;
+    const when = (k <= 0 ? `Door ${n} opens tonight, ${label}.` : k === 1 ? `Door ${n} opens tomorrow, ${label}.` : `Door ${n} opens on ${label}.`)
+      + (opts && opts.page ? " Its full briefing appears on this page then." : "");
     const why = today >= 1 ? `Today’s door is ${today}. One door a day keeps the surprise - see you then.`
       : n === 1 ? "Add the reminders to your calendar and we’ll tell you when it opens."
         : `The calendar starts with Door 1 on ${opensLabel(data, 1)}.`;
     return [img, eyebrow,
       h(headTag || "h2", { id: ids ? ids.head : null, class: "nestor-h", text: head }),
       h("p", { id: ids ? ids.text : null, class: "nestor-t" }, when, " ", why),
-      h("p", { class: "nestor-cd" }, "Opens in ", h("strong", { "data-cd": String(opensAt(data, n).getTime()), text: fmtLeft(opensAt(data, n) - now()) }))
+      h("p", { class: "nestor-cd" }, "Opens in ", h("strong", { "data-cd": String(opensAt(data, n).getTime()), text: fmtLeft(opensAt(data, n) - now()) })),
+      testOn ? h("p", { class: "nestor-test" }, h("strong", { text: "Testing?" }), " Pick a December date in the test bar, or ",
+        h("a", { href: previewHref(n), text: "preview this door" }), " (test mode only).") : null
     ];
+  }
+  /* Doors 22 and 23 cover the supply chain: their briefings list the supplier toolkit as further reading. */
+  function toolkitReading(n) {
+    if (n !== 22 && n !== 23) return null;
+    return h("a", { class: "rm", href: "supply.html" },
+      h("span", { class: "top2" }, h("span", { class: "org", text: "WINTERWATCH" }), h("span", { class: "ref", text: "Supplier toolkit" })),
+      h("span", { class: "t", text: "What to ask suppliers at every stage, what EU law expects when a supplier’s incident hits you, and a joint tabletop exercise." }),
+      h("span", { class: "go", text: "Open the toolkit →" }));
+  }
+  /* This page, showing door n with every door open (only honoured while test mode is on). */
+  function previewHref(n) {
+    const u = new URL(window.location.href);
+    u.searchParams.set("day", String(n)); u.searchParams.set("preview", "all"); u.hash = "";
+    return u.pathname + u.search;
   }
 
   /* "in 12 days" / "tomorrow" / "tonight", for locked doors and the countdown. A locked door opening on the
@@ -499,5 +519,5 @@
     try { await navigator.clipboard.writeText(text); return true; } catch (e) { return false; }
   }
 
-  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, defaultMode, startMode, modeParam, todayFor, daysUntil, onNewDay, inDays, reminderAt, opensAt, opensLabel, nextOpensText, now, applyTestMode, testBar, fmtLeft, startTicker, nestorNote, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
+  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, defaultMode, startMode, modeParam, todayFor, daysUntil, onNewDay, inDays, reminderAt, opensAt, opensLabel, nextOpensText, now, applyTestMode, testBar, fmtLeft, startTicker, nestorNote, toolkitReading, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
 })();

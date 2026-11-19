@@ -32,12 +32,29 @@
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-text">
-    <p class="eyebrow" id="eyebrow">31 DAYS · CYBERSECURITY &amp; AI</p>
-    <h1>Winterwatch <em>Cyber &amp; AI</em></h1>
-    <div class="daycount" id="daycount"><p class="dc-line"><strong class="dc-num" id="dcnum"></strong> <span class="dc-text" id="dctext"></span></p><p class="dc-tick" id="dctick" aria-hidden="true"></p><span class="dc-bar" id="dcbar" aria-hidden="true"></span></div>
-    <p class="lede">One door a day, one do, one don’t. Bite-sized cybersecurity, AI and privacy habits, real case studies from Europe and beyond, activities for every audience, an incident lab with timelines and playbooks, and a 20-second challenge behind every door - from the boardroom to the kitchen table.</p>
+<!-- The welcome banner: NESTOR introduces the calendar, the one calendar invite (all the daily reminders) and the day counter. -->
+<section class="hero banner" aria-labelledby="welcome">
+  <div class="bn-main">
+    <p class="eyebrow bn-eyebrow">A DAILY HELLO FROM THE NESTOR FAMILY</p>
+    <h1 id="welcome">Welcome to the Winterwatch <em>Cyber &amp; AI Advent Calendar</em></h1>
+    <p class="bn-hello">I’m <span class="acro"><b>N</b>ext-gen <b>E</b>thical <b>S</b>afeguards <b>T</b>raining for <b>O</b>rganizational <b>R</b>esilience in Artificial Intelligence</span>, but you can call me <strong>NESTOR</strong>&nbsp;😉</p>
+    <p class="lede">My family and I open one door a day: one do, one don’t and a 20-second challenge. Bite-sized cybersecurity, AI and privacy habits, real case studies from Europe and beyond, activities for every audience and an incident lab, from the boardroom to the kitchen table. Learn something, share something and, most of all, have fun.</p>
+    <p class="bn-meta" id="eyebrow">1–24 DECEMBER 2026 · REMINDERS AT 08:30 CET</p>
+    <div class="bn-actions">
+      <a class="bn-cta" id="ics" href="advent-24.ics" type="text/calendar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4M12 13v5M9.5 15.5 12 18l2.5-2.5"/></svg><span id="icstext">Download calendar invite</span></a>
+      <button type="button" class="bn-today" id="bntoday" hidden></button>
+    </div>
+    <p class="bn-note" id="icsnote">One file with a reminder for every door. No sign-up, no personal data.</p>
+  </div>
+  <figure class="bn-family">
+    <img src="img/nestor-family.webp" width="760" height="714" alt="The NESTOR family: four hedgehogs in Christmas jumpers and Santa hats, holding a little calendar that reads 1 to 24 December 2026.">
+    <figcaption><span>THE NESTOR FAMILY</span><strong id="bndates">1–24 December 2026</strong></figcaption>
+  </figure>
+  <div class="daycount" id="daycount">
+    <div class="dc-cell"><span class="dc-k">CALENDAR DAY</span><p class="dc-line"><strong class="dc-num" id="dcnum"></strong> <span class="dc-text" id="dctext"></span></p></div>
+    <div class="dc-cell" id="dcnext"><span class="dc-k">NEXT DOOR</span><p class="dc-tick" id="dctick" aria-hidden="true"></p></div>
+    <div class="dc-cell"><span class="dc-k">DOORS TO COME</span><p class="dc-left"><strong id="dcleft"></strong> <span id="dcof"></span></p></div>
+    <span class="dc-bar" id="dcbar" aria-hidden="true"></span>
   </div>
 </section>
 
@@ -224,9 +241,6 @@
 </svg>
     </div>
     
-    <div class="legend">
-      <a id="ics" href="days-31.ics">Add reminders to your calendar (.ics)</a>
-    </div>
   </section>
   <section class="europe" aria-label="Around Europe">
       <div class="europe-head"><h2>Around Europe</h2><span class="note">Where this calendar’s case studies happened · pins glow for the open door</span></div>
@@ -241,8 +255,7 @@
     <span class="ai-pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>AI-ASSISTED</span>
     <p>Drafted with AI and fact-checked against the cited sources. We label AI-assisted content because we ask you to do the same (Door 21).</p>
   </div>
-  <p class="fine">Mapped to OWASP Top 10:2025 and the OWASP Top 10 for LLM Applications 2025 - every category appears within the first 24 doors. Read-more summaries paraphrase ENISA, OWASP, NIST, the EU AI Act, NIS2, DORA, GDPR and national authorities; follow the links for the authoritative text. Detection rules are illustrative starting points. An initiative of ENISA’s Awareness Raising and Cyber-Hygiene Ad-Hoc Working Group (ARCH AHWG). Not legal advice. Every door has a <a href="door.html">full briefing</a> with verbatim rule excerpts and a share kit. <a href="supply.html">Supplier toolkit</a>.</p>
-  <p class="fine mono brandline"><img class="foot-mark" src="aware-by-design-mark.png" srcset="aware-by-design-mark.png 1x, aware-by-design-mark@2x.png 2x" width="22" height="22" alt=""><span class="foot-org">aware-by-design</span><span class="foot-meta">aware-by-design.github.io/CyberAIAdvent2026 · Fonts: Fraunces and IBM Plex (SIL OFL 1.1), self-hosted - no third-party requests.</span></p>
+  <p class="fine">Mapped to OWASP Top 10:2025 and the OWASP Top 10 for LLM Applications 2025 - every category appears within the first 24 doors. Read-more summaries paraphrase ENISA, OWASP, NIST, the EU AI Act, NIS2, DORA, GDPR and national authorities; follow the links for the authoritative text. Detection rules are illustrative starting points. An initiative of ENISA’s Awareness Raising and Cyber-Hygiene Ad-Hoc Working Group (ARCH AHWG). <a href="https://www.enisa.europa.eu/topics/awareness-and-cyber-hygiene/ar-in-a-box" target="_blank" rel="noopener noreferrer">Learn more about AR-in-a-Box ↗</a>. Not legal advice.</p>
 </footer>
 </div>
 <!-- Each door opens in this popup: the whole day, a Scroll down button that steps through it, and Close. -->
