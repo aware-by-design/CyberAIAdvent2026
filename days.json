@@ -260,12 +260,12 @@
   },
   "national": {
     "de": {
-      "auth": "BSI — Federal Office for Information Security",
+      "auth": "BSI - Federal Office for Information Security",
       "url": "https://www.bsi.bund.de",
       "general": "IT-Grundschutz Compendium and BSI Standards 200-1 to 200-4 for running an ISMS and business continuity.",
       "identity": "IT-Grundschutz module ORP.4 Identity and Access Management. BSI dropped mandatory regular password changes from IT-Grundschutz in 2020.",
       "awareness": "IT-Grundschutz module ORP.3 Awareness and Training, plus BSI’s consumer guidance on recognising phishing.",
-      "ai": "BSI’s ‘Generative AI Models — Opportunities and Risks for Industry and Authorities’ and the AIC4 criteria catalogue for AI cloud services.",
+      "ai": "BSI’s ‘Generative AI Models - Opportunities and Risks for Industry and Authorities’ and the AIC4 criteria catalogue for AI cloud services.",
       "fraud": "BSI consumer guidance on scams; report crimes to your state police’s online station (Onlinewache).",
       "governance": "NIS2 applies in Germany through the NIS2 Implementation Act (NIS2UmsuCG), in force since 6 December 2025, which amends the BSI Act (BSIG).",
       "hr": "IT-Grundschutz module ORP.2 Personnel.",
@@ -278,7 +278,7 @@
       "iot": "BSI IT Security Label (IT-Sicherheitskennzeichen) for consumer devices."
     },
     "fr": {
-      "auth": "ANSSI — National Cybersecurity Agency of France",
+      "auth": "ANSSI - National Cybersecurity Agency of France",
       "url": "https://cyber.gouv.fr",
       "general": "ANSSI’s ‘Guide d’hygiène informatique’: 42 measures for organisations; CERT-FR alerts.",
       "identity": "ANSSI recommendations on multi-factor authentication and passwords (2021).",
@@ -289,16 +289,16 @@
       "incident": "CERT-FR alerts and incident response support."
     },
     "it": {
-      "auth": "ACN — National Cybersecurity Agency",
+      "auth": "ACN - National Cybersecurity Agency",
       "url": "https://www.acn.gov.it",
       "general": "ACN guidance; CSIRT Italia alerts and incident notifications.",
       "governance": "NIS2 is transposed by Legislative Decree 138/2024, supervised by ACN.",
       "ai": "Law 132/2025, Italy’s national framework law on artificial intelligence.",
-      "privacy": "The Garante enforces GDPR — including its ChatGPT and OpenAI decisions.",
+      "privacy": "The Garante enforces GDPR - including its ChatGPT and OpenAI decisions.",
       "incident": "Notify CSIRT Italia (part of ACN) under the NIS2 decree."
     },
     "es": {
-      "auth": "INCIBE — National Cybersecurity Institute",
+      "auth": "INCIBE - National Cybersecurity Institute",
       "url": "https://www.incibe.es",
       "general": "CCN-CERT’s CCN-STIC guides and the Esquema Nacional de Seguridad (Royal Decree 311/2022) for public bodies and their suppliers.",
       "awareness": "INCIBE’s free 017 helpline answers cybersecurity questions.",
@@ -306,7 +306,7 @@
       "ai": "AESIA, Spain’s Agency for the Supervision of Artificial Intelligence."
     },
     "be": {
-      "auth": "CCB — Centre for Cybersecurity Belgium",
+      "auth": "CCB - Centre for Cybersecurity Belgium",
       "url": "https://ccb.belgium.be",
       "general": "CCB CyberFundamentals framework (Basic, Important, Essential levels).",
       "governance": "Belgium’s NIS2 law of 26 April 2024, with CyberFundamentals as a route to compliance.",
@@ -314,7 +314,7 @@
       "fraud": "Forward suspicious messages to suspicious@safeonweb.be."
     },
     "nl": {
-      "auth": "NCSC-NL — National Cyber Security Centre",
+      "auth": "NCSC-NL - National Cyber Security Centre",
       "url": "https://www.ncsc.nl",
       "general": "NCSC-NL advisories and guidance; the BIO security baseline for government.",
       "fraud": "Report scams to the Fraudehelpdesk.",
@@ -327,7 +327,7 @@
       "privacy": "The Data Protection Commission is lead EU regulator for many big tech firms, including in the TikTok children’s-data case."
     },
     "uk": {
-      "auth": "NCSC — National Cyber Security Centre (UK, non-EU)",
+      "auth": "NCSC - National Cyber Security Centre (UK, non-EU)",
       "url": "https://www.ncsc.gov.uk",
       "general": "Cyber Essentials certification and the Cyber Assessment Framework (CAF).",
       "identity": "NCSC: use three random words and turn on 2-step verification.",
@@ -386,7 +386,7 @@
       ],
       "icon": "shield",
       "category": "identity",
-      "do": "Turn on multi-factor authentication for email, banking and work — passkeys or an authenticator app first.",
+      "do": "Turn on multi-factor authentication for email, banking and work - passkeys or an authenticator app first.",
       "dont": "Approve a sign-in prompt you didn’t start. A flood of prompts is an attack, not a glitch.",
       "cases": [
         {
@@ -445,7 +445,7 @@
           "Brief executives; prepare regulator and customer notices"
         ],
         "tabletop": {
-          "inject": "Monday 07:00: your remote-access portal shows a successful admin login from an unknown country — and that portal has no MFA.",
+          "inject": "Monday 07:00: your remote-access portal shows a successful admin login from an unknown country - and that portal has no MFA.",
           "questions": [
             "Who can switch the portal off, and how fast?",
             "What tells us whether data has already left?"
@@ -473,7 +473,7 @@
         }
       ],
       "explain": {
-        "simple": "MFA is a second lock. Even if someone steals your password, they still can’t get in without your phone or key — unless you approve their prompt.",
+        "simple": "MFA is a second lock. Even if someone steals your password, they still can’t get in without your phone or key - unless you approve their prompt.",
         "technical": "Attackers push-bomb users (MFA fatigue) to coerce approval. Prefer FIDO2 passkeys, enable number matching, and alert on bursts of denied prompts.",
         "business": "One approved prompt can hand an attacker your systems. Phishing-resistant MFA is cheap, NIS2 names it explicitly, and insurers ask about it."
       },
@@ -528,15 +528,15 @@
       ],
       "icon": "password",
       "category": "identity",
-      "do": "Use long passphrases and a password manager — one unique password for every account.",
-      "dont": "Reuse passwords. IT: don’t force scheduled resets — require a change when there’s evidence of compromise.",
+      "do": "Use long passphrases and a password manager - one unique password for every account.",
+      "dont": "Reuse passwords. IT: don’t force scheduled resets - require a change when there’s evidence of compromise.",
       "cases": [
         {
           "kind": "Attack",
           "when": "Oct 2023",
           "name": "23andMe",
           "location": "United States",
-          "text": "Credential stuffing with reused passwords opened about 14,000 accounts — and, through a sharing feature, exposed profile data of about 6.9 million users.",
+          "text": "Credential stuffing with reused passwords opened about 14,000 accounts - and, through a sharing feature, exposed profile data of about 6.9 million users.",
           "source": "23andMe filings"
         },
         {
@@ -586,7 +586,7 @@
           "inject": "Support tickets surge: customers report logins they didn’t make.",
           "questions": [
             "How do we tell credential stuffing from a breach of our own database?",
-            "Do we force MFA for everyone today — and what breaks?"
+            "Do we force MFA for everyone today - and what breaks?"
           ]
         }
       },
@@ -594,7 +594,7 @@
         {
           "org": "NIST",
           "ref": "SP 800-63B-4",
-          "text": "Favours longer passwords, screening against breached lists and no forced periodic changes — change on evidence of compromise.",
+          "text": "Favours longer passwords, screening against breached lists and no forced periodic changes - change on evidence of compromise.",
           "url": "https://csrc.nist.gov/pubs/sp/800/63/b/4/final"
         },
         {
@@ -607,7 +607,7 @@
       "explain": {
         "simple": "A long sentence-like password is harder to guess than a short tricky one. A password manager remembers them so every account can be different.",
         "technical": "Length drives entropy. Screen against breach corpora, rate-limit, enforce MFA, and drop composition rules and scheduled rotation per SP 800-63B-4.",
-        "business": "One reused or guessable password can end a company — KNP did. A password manager and MFA cost little next to a shutdown."
+        "business": "One reused or guessable password can end a company - KNP did. A password manager and MFA cost little next to a shutdown."
       },
       "refs": "NIST SP 800-63B-4 · OWASP A07:2025",
       "owasp": [
@@ -714,7 +714,7 @@
           "Publish an approved-AI path and guidance"
         ],
         "tabletop": {
-          "inject": "An engineer admits pasting a customer’s database schema — with credentials — into a free chatbot.",
+          "inject": "An engineer admits pasting a customer’s database schema - with credentials - into a free chatbot.",
           "questions": [
             "Is this a personal-data breach we must report within 72 hours?",
             "Which secrets do we rotate first?"
@@ -742,7 +742,7 @@
         }
       ],
       "explain": {
-        "simple": "A public chatbot is like a stranger’s notebook. Anything you paste may be stored, reviewed or leaked — so keep work secrets out.",
+        "simple": "A public chatbot is like a stranger’s notebook. Anything you paste may be stored, reviewed or leaked - so keep work secrets out.",
         "technical": "Consumer LLM services may retain prompts for abuse review or training. Use enterprise tenants with retention controls, SSO and DLP on paste/upload.",
         "business": "Leaked contracts or code can breach NDAs and GDPR. Approved AI tools with data controls keep the productivity and remove the exposure."
       },
@@ -797,7 +797,7 @@
       "icon": "hook",
       "category": "awareness",
       "do": "Check the real sender address, hover before you click, and use the Report button.",
-      "dont": "Read perfect grammar as a sign of safety — AI makes fluent, personalised phishing cheap.",
+      "dont": "Read perfect grammar as a sign of safety - AI makes fluent, personalised phishing cheap.",
       "cases": [
         {
           "kind": "Report",
@@ -879,7 +879,7 @@
         }
       ],
       "explain": {
-        "simple": "Scammers now use AI to write perfect emails. Don’t judge by spelling — check who really sent it, and report anything odd.",
+        "simple": "Scammers now use AI to write perfect emails. Don’t judge by spelling - check who really sent it, and report anything odd.",
         "technical": "LLMs remove linguistic tells, so detection shifts to sender authentication (SPF/DKIM/DMARC), link and attachment analysis, and user reports into the SOC.",
         "business": "Phishing is the most common way in. A one-click report button turns every employee into an early-warning sensor."
       },
@@ -888,8 +888,8 @@
       "quiz": {
         "question": "An email from “IT” is flawless, personal and urgent. What does that prove?",
         "options": [
-          "It’s genuine — scams have typos",
-          "Nothing — verify the sender and report it",
+          "It’s genuine - scams have typos",
+          "Nothing - verify the sender and report it",
           "It’s safe if the logo looks right"
         ],
         "answer": 1
@@ -911,7 +911,7 @@
         {
           "audience": "leaders",
           "type": "c",
-          "text": "Thank the last person who reported a phish — publicly."
+          "text": "Thank the last person who reported a phish - publicly."
         },
         {
           "audience": "tech",
@@ -997,7 +997,7 @@
         {
           "org": "CISA",
           "ref": "Secure Our World",
-          "text": "Recognise and report phishing — including text messages (smishing).",
+          "text": "Recognise and report phishing - including text messages (smishing).",
           "url": "https://www.cisa.gov/secure-our-world"
         },
         {
@@ -1017,7 +1017,7 @@
       "quiz": {
         "question": "A text says your parcel is held for a €1.99 fee. What do you do?",
         "options": [
-          "Pay — it’s only €1.99",
+          "Pay - it’s only €1.99",
           "Reply STOP to the sender",
           "Open the courier’s app or website yourself"
         ],
@@ -1188,7 +1188,7 @@
       "icon": "mask",
       "category": "fraud",
       "do": "Verify urgent payments and bank-detail changes by calling a number you already trust.",
-      "dont": "Move money on the strength of a video call — faces and voices can be faked in real time.",
+      "dont": "Move money on the strength of a video call - faces and voices can be faked in real time.",
       "cases": [
         {
           "kind": "Attack",
@@ -1247,7 +1247,7 @@
         "tabletop": {
           "inject": "The ‘CEO’ joins a video call and asks finance to wire €2 million today for a confidential acquisition.",
           "questions": [
-            "What is the exact verification step — and who can override it?",
+            "What is the exact verification step - and who can override it?",
             "How fast can our bank recall a transfer?"
           ]
         }
@@ -1282,7 +1282,7 @@
       "quiz": {
         "question": "The “CFO” on a video call asks for an urgent transfer. Your next step?",
         "options": [
-          "Transfer — you saw their face",
+          "Transfer - you saw their face",
           "Hang up and call back on a known number",
           "Ask them to confirm in the chat"
         ],
@@ -1326,7 +1326,7 @@
       "icon": "building",
       "category": "governance",
       "do": "Name an accountable owner for cyber and AI risk, and rehearse a crisis with the board every year.",
-      "dont": "File security under IT’s budget — NIS2 makes management bodies approve and oversee risk measures.",
+      "dont": "File security under IT’s budget - NIS2 makes management bodies approve and oversee risk measures.",
       "cases": [
         {
           "kind": "Attack",
@@ -1412,7 +1412,7 @@
         }
       ],
       "explain": {
-        "simple": "A cyber attack can stop a whole company. Leaders must own the risk — not just the IT team.",
+        "simple": "A cyber attack can stop a whole company. Leaders must own the risk - not just the IT team.",
         "technical": "Map crown-jewel processes, set risk appetite, fund controls, and rehearse decisions (ransom, disclosure, shutdown) in board tabletop exercises.",
         "business": "JLR’s halt was estimated at £1.9 billion to the UK economy. Under NIS2, boards approve risk measures and can be held liable."
       },
@@ -1466,8 +1466,8 @@
       ],
       "icon": "eye",
       "category": "ai",
-      "do": "Publish an approved-AI list with a fast request path — and fix file over-sharing before AI assistants go live.",
-      "dont": "Ban everything — blanket bans push people to tools you can’t see or govern.",
+      "do": "Publish an approved-AI list with a fast request path - and fix file over-sharing before AI assistants go live.",
+      "dont": "Ban everything - blanket bans push people to tools you can’t see or govern.",
       "cases": [
         {
           "kind": "Study",
@@ -1482,7 +1482,7 @@
           "when": "May 2024",
           "name": "Hugging Face Spaces",
           "location": "Global AI platform",
-          "text": "The AI platform detected unauthorised access to its Spaces service, suspected some stored secrets were exposed, and revoked tokens — a reminder that AI tools hold your keys too.",
+          "text": "The AI platform detected unauthorised access to its Spaces service, suspected some stored secrets were exposed, and revoked tokens - a reminder that AI tools hold your keys too.",
           "source": "Hugging Face"
         }
       ],
@@ -1522,7 +1522,7 @@
         "tabletop": {
           "inject": "You discover 300 staff connected an unvetted AI note-taker to their calendars and mail.",
           "questions": [
-            "Do we revoke today — and what breaks?",
+            "Do we revoke today - and what breaks?",
             "What data has it already accessed?"
           ]
         }
@@ -1548,7 +1548,7 @@
         }
       ],
       "explain": {
-        "simple": "If people can’t get approved AI tools, they’ll use whatever is free — and you won’t know where your data went.",
+        "simple": "If people can’t get approved AI tools, they’ll use whatever is free - and you won’t know where your data went.",
         "technical": "Discover AI usage via CASB/DNS logs, offer sanctioned tools with SSO and retention controls, and fix over-permissive sharing before enabling AI search.",
         "business": "Unmanaged AI added about US$670,000 to breach costs in IBM’s study. Enabling safe tools is cheaper than policing bans."
       },
@@ -1603,7 +1603,7 @@
       "icon": "prompt",
       "category": "ai",
       "do": "Treat web pages, files and emails a model reads as untrusted, and limit what they can trigger.",
-      "dont": "Rely on the system prompt as a security boundary — assume it leaks and can be overridden.",
+      "dont": "Rely on the system prompt as a security boundary - assume it leaks and can be overridden.",
       "cases": [
         {
           "kind": "Vulnerability",
@@ -1630,7 +1630,7 @@
           },
           {
             "when": "Technique",
-            "what": "Hidden instructions in an email make Copilot pull internal data into a link — no click needed."
+            "what": "Hidden instructions in an email make Copilot pull internal data into a link - no click needed."
           },
           {
             "when": "Jun 2025",
@@ -1740,7 +1740,7 @@
       "icon": "person",
       "category": "hr",
       "do": "Verify remote candidates with live on-camera checks, ID verification and references you call yourself.",
-      "dont": "Skip checks because the interview went well — fake IT-worker schemes target remote roles.",
+      "dont": "Skip checks because the interview went well - fake IT-worker schemes target remote roles.",
       "cases": [
         {
           "kind": "Attack",
@@ -1824,7 +1824,7 @@
       "quiz": {
         "question": "A remote candidate keeps the camera off and refuses an ID check. You…",
         "options": [
-          "Hire — skills matter most",
+          "Hire - skills matter most",
           "Let IT sort it out after onboarding",
           "Pause and require live identity verification"
         ],
@@ -1867,7 +1867,7 @@
       "icon": "search",
       "category": "ai",
       "do": "Check AI answers against a primary source before you publish, sign or decide.",
-      "dont": "Cite sources you haven’t opened — AI can invent quotes, cases and references.",
+      "dont": "Cite sources you haven’t opened - AI can invent quotes, cases and references.",
       "cases": [
         {
           "kind": "Incident",
@@ -1936,14 +1936,14 @@
         {
           "org": "NIST",
           "ref": "AI 600-1",
-          "text": "Lists ‘confabulation’ — confidently stated false content — as a generative AI risk.",
+          "text": "Lists ‘confabulation’ - confidently stated false content - as a generative AI risk.",
           "url": "https://doi.org/10.6028/NIST.AI.600-1"
         }
       ],
       "explain": {
         "simple": "AI can sound sure and still be wrong. Check important facts with the original source before you use them.",
         "technical": "LLMs generate plausible text, not verified facts (‘confabulation’). Use retrieval with citations, require source links, and review high-stakes outputs.",
-        "business": "Publishing AI errors costs money and trust — Deloitte refunded part of a government fee. Build a review step into every AI-assisted deliverable."
+        "business": "Publishing AI errors costs money and trust - Deloitte refunded part of a government fee. Build a review step into every AI-assisted deliverable."
       },
       "refs": "OWASP LLM09:2025 Misinformation",
       "owasp": [
@@ -1953,7 +1953,7 @@
         "question": "An AI tool gives you the perfect quote for your report. Before using it…",
         "options": [
           "Open the original source and confirm it",
-          "Paste it — it sounds right",
+          "Paste it - it sounds right",
           "Add “according to AI”"
         ],
         "answer": 0
@@ -1965,7 +1965,7 @@
         {
           "audience": "home",
           "type": "a",
-          "text": "Ask a chatbot something you know well — and spot its mistakes."
+          "text": "Ask a chatbot something you know well - and spot its mistakes."
         },
         {
           "audience": "work",
@@ -1996,7 +1996,7 @@
       "icon": "card",
       "category": "fraud",
       "do": "Pause and tell someone when a “tax office”, “tech support” or “boss” demands urgent payment.",
-      "dont": "Pay anyone in gift cards or crypto on request — the demand itself is the scam.",
+      "dont": "Pay anyone in gift cards or crypto on request - the demand itself is the scam.",
       "cases": [
         {
           "kind": "Report",
@@ -2062,9 +2062,9 @@
         }
       ],
       "explain": {
-        "simple": "Real organisations never ask you to pay in gift cards or crypto. If someone does, it’s a scam — stop and tell someone.",
+        "simple": "Real organisations never ask you to pay in gift cards or crypto. If someone does, it’s a scam - stop and tell someone.",
         "technical": "Gift cards and crypto are favoured because they are fast, irreversible and hard to trace; scammers script urgency and isolation.",
-        "business": "Finance teams see the business version: urgent ‘CEO’ payment requests. Same red flags, same fix — verify through a second channel."
+        "business": "Finance teams see the business version: urgent ‘CEO’ payment requests. Same red flags, same fix - verify through a second channel."
       },
       "refs": "FBI IC3 Internet Crime Report 2024",
       "owasp": [],
@@ -2114,7 +2114,7 @@
       "icon": "key",
       "category": "crypto",
       "do": "Keep keys in a secrets manager, scan every commit, and review AI-written code like any pull request.",
-      "dont": "Hard-code tokens or share over-permissive links — or paste keys into an AI assistant to “help debug”.",
+      "dont": "Hard-code tokens or share over-permissive links - or paste keys into an AI assistant to “help debug”.",
       "cases": [
         {
           "kind": "Leak",
@@ -2209,7 +2209,7 @@
       "quiz": {
         "question": "Your AI coding assistant suggests a hard-coded API key “for now”. You…",
         "options": [
-          "Accept — you’ll fix it later",
+          "Accept - you’ll fix it later",
           "Commit it to a private repo",
           "Move it to the secrets manager before committing"
         ],
@@ -2337,7 +2337,7 @@
       "explain": {
         "simple": "An AI agent can act on its own. Give it only the access it needs, and make a person approve anything that can’t be undone.",
         "technical": "Apply least privilege with scoped, short-lived credentials; sandbox tool execution; require human-in-the-loop for destructive or financial actions; log, rate-limit and cap spend.",
-        "business": "Agents multiply productivity — and mistakes. Approval gates and budgets keep one bad action from deleting production or the quarter’s budget."
+        "business": "Agents multiply productivity - and mistakes. Approval gates and budgets keep one bad action from deleting production or the quarter’s budget."
       },
       "refs": "OWASP LLM06:2025 · LLM10:2025 · A01 · A06:2025",
       "owasp": [
@@ -2385,7 +2385,7 @@
     },
     {
       "day": 16,
-      "title": "Defaults are a gift — to attackers",
+      "title": "Defaults are a gift - to attackers",
       "topic": "Exposed AI infrastructure",
       "track": "both",
       "for": [
@@ -2401,7 +2401,7 @@
           "when": "Jan 2025",
           "name": "DeepSeek",
           "location": "Global",
-          "text": "Researchers at Wiz found a publicly accessible DeepSeek database exposing chat history, API secrets and backend details — no authentication required.",
+          "text": "Researchers at Wiz found a publicly accessible DeepSeek database exposing chat history, API secrets and backend details - no authentication required.",
           "source": "Wiz Research"
         },
         {
@@ -2410,7 +2410,7 @@
           "name": "Danish energy sector",
           "location": "Copenhagen, Denmark",
           "pin": "copenhagen",
-          "text": "Attackers exploited firewall vulnerabilities to compromise 22 Danish energy companies — the country’s largest coordinated attack on critical infrastructure. SektorCERT helped contain it.",
+          "text": "Attackers exploited firewall vulnerabilities to compromise 22 Danish energy companies - the country’s largest coordinated attack on critical infrastructure. SektorCERT helped contain it.",
           "source": "SektorCERT, Nov 2023"
         }
       ],
@@ -2422,7 +2422,7 @@
           },
           {
             "when": "Exposure",
-            "what": "Chat history, API secrets and backend details — no authentication."
+            "what": "Chat history, API secrets and backend details - no authentication."
           },
           {
             "when": "Shortly after",
@@ -2529,7 +2529,7 @@
       ],
       "icon": "code",
       "category": "secdev",
-      "do": "Validate and encode model output before it reaches a browser, shell or database — and fail closed on errors.",
+      "do": "Validate and encode model output before it reaches a browser, shell or database - and fail closed on errors.",
       "dont": "Pipe LLM output into eval(), SQL or innerHTML, or skip a check when a service times out.",
       "cases": [
         {
@@ -2625,7 +2625,7 @@
         "question": "Your app runs chart code the model writes, and parsing sometimes fails. Best pattern?",
         "options": [
           "Sandbox and validate it; fail closed on errors",
-          "exec() it — the model is trusted",
+          "exec() it - the model is trusted",
           "Show users the full stack trace"
         ],
         "answer": 0
@@ -2669,7 +2669,7 @@
       "icon": "phone",
       "category": "identity",
       "do": "Verify callers through a fixed process before any password, MFA or account change.",
-      "dont": "Reset MFA because a caller sounds right — voices can be cloned and urgency can be faked.",
+      "dont": "Reset MFA because a caller sounds right - voices can be cloned and urgency can be faked.",
       "cases": [
         {
           "kind": "Attack",
@@ -2760,7 +2760,7 @@
         "question": "A “senior manager” calls, stressed, needing an MFA reset now. You…",
         "options": [
           "Follow the verification process, no exceptions",
-          "Reset it — they sound senior",
+          "Reset it - they sound senior",
           "Send the code by email instead"
         ],
         "answer": 0
@@ -2852,7 +2852,7 @@
           "inject": "An executive’s running app shows their home address and daily 6 am route.",
           "questions": [
             "Who advises executives on personal exposure?",
-            "Is this a security issue, a privacy issue — or both?"
+            "Is this a security issue, a privacy issue - or both?"
           ]
         }
       },
@@ -2923,7 +2923,7 @@
       "icon": "wave",
       "category": "fraud",
       "do": "Agree a family safe word for emergency calls and messages.",
-      "dont": "Send money on an urgent call from a “relative” or VIP — hang up and call back on a known number.",
+      "dont": "Send money on an urgent call from a “relative” or VIP - hang up and call back on a known number.",
       "cases": [
         {
           "kind": "Attack",
@@ -3005,9 +3005,9 @@
       "refs": "EU AI Act Art. 50 · ENISA Threat Landscape 2025",
       "owasp": [],
       "quiz": {
-        "question": "“Mum, I’m in trouble, send money now” — in your child’s voice. First move?",
+        "question": "“Mum, I’m in trouble, send money now” - in your child’s voice. First move?",
         "options": [
-          "Send it — it’s their voice",
+          "Send it - it’s their voice",
           "Ask them to text instead",
           "Ask for the family safe word, or call back"
         ],
@@ -3030,7 +3030,7 @@
         {
           "audience": "leaders",
           "type": "a",
-          "text": "Tell staff how you will — and won’t — ask for money."
+          "text": "Tell staff how you will - and won’t - ask for money."
         },
         {
           "audience": "tech",
@@ -3050,7 +3050,7 @@
       "icon": "tag",
       "category": "ai",
       "do": "Label AI-generated or manipulated images, audio and video, and keep a named human sign-off.",
-      "dont": "Publish synthetic media of real people without consent — or let fakes of your leaders go unanswered.",
+      "dont": "Publish synthetic media of real people without consent - or let fakes of your leaders go unanswered.",
       "cases": [
         {
           "kind": "Attack",
@@ -3079,7 +3079,7 @@
         ],
         "prevent": [
           "Label AI content and keep provenance records",
-          "Tell staff how executives will — and won’t — contact them"
+          "Tell staff how executives will - and won’t - contact them"
         ],
         "detect": [
           "Monitor for executive impersonation online"
@@ -3119,7 +3119,7 @@
       "explain": {
         "simple": "If AI made or changed an image, video or voice, say so. People deserve to know what’s real.",
         "technical": "Use C2PA content credentials or watermarks where available, keep provenance records, and run brand-impersonation monitoring for executive deepfakes.",
-        "business": "Labelling protects trust and helps meet EU AI Act transparency duties. Unlabelled fakes — or fakes of your CEO — become a brand crisis."
+        "business": "Labelling protects trust and helps meet EU AI Act transparency duties. Unlabelled fakes - or fakes of your CEO - become a brand crisis."
       },
       "refs": "EU AI Act Art. 50 (transparency obligations)",
       "owasp": [],
@@ -3127,7 +3127,7 @@
         "question": "Your campaign uses an AI-generated spokesperson. Good practice?",
         "options": [
           "Clearly label it as AI-generated",
-          "Say nothing — it looks real",
+          "Say nothing - it looks real",
           "Use a real person’s face for trust"
         ],
         "answer": 0
@@ -3170,7 +3170,7 @@
       "icon": "chain",
       "category": "supply",
       "do": "Pin dependencies and CI actions to full commit SHAs, keep an SBOM, and verify signatures.",
-      "dont": "Install a package an AI assistant suggests without checking it’s real — or load untrusted model files.",
+      "dont": "Install a package an AI assistant suggests without checking it’s real - or load untrusted model files.",
       "cases": [
         {
           "kind": "Attack",
@@ -3329,7 +3329,7 @@
           "when": "May 2023",
           "name": "MOVEit",
           "location": "Global",
-          "text": "A zero-day in a widely used file-transfer product let the Cl0p gang steal data from thousands of organisations — many hit through their suppliers.",
+          "text": "A zero-day in a widely used file-transfer product let the Cl0p gang steal data from thousands of organisations - many hit through their suppliers.",
           "source": "Progress Software; CISA"
         },
         {
@@ -3381,7 +3381,7 @@
         "tabletop": {
           "inject": "Your payroll provider says attackers stole files that include your employees’ bank details.",
           "questions": [
-            "Whose deadline is running — ours or theirs?",
+            "Whose deadline is running - ours or theirs?",
             "Who is our contact at the authority?"
           ]
         }
@@ -3419,7 +3419,7 @@
       "quiz": {
         "question": "A free AI tool’s terms let it train on your uploads. You…",
         "options": [
-          "Click accept — it’s free",
+          "Click accept - it’s free",
           "Use it only for confidential files",
           "Escalate for a security and privacy review"
         ],
@@ -3465,7 +3465,7 @@
       "icon": "bell",
       "category": "incident",
       "do": "Staff an on-call rota, route alerts to a human, and keep the incident plan and contacts offline.",
-      "dont": "Trust backups you’ve never restored — follow 3-2-1 and test a restore before the break.",
+      "dont": "Trust backups you’ve never restored - follow 3-2-1 and test a restore before the break.",
       "cases": [
         {
           "kind": "Attack",
@@ -3684,7 +3684,7 @@
       "explain": {
         "simple": "Chatbots can be wrong and aren’t friends. Help kids keep personal details private and check answers with you.",
         "technical": "Enable age-appropriate modes, turn off chat history or training where possible, and review app permissions for microphone, camera and location.",
-        "business": "For companies, children’s data brings some of the highest GDPR fines — €345 million for TikTok. Design for minors by default."
+        "business": "For companies, children’s data brings some of the highest GDPR fines - €345 million for TikTok. Design for minors by default."
       },
       "refs": "GDPR Art. 8 · EU AI Act Art. 5",
       "owasp": [],
@@ -3791,7 +3791,7 @@
         {
           "org": "CISA",
           "ref": "Secure Our World",
-          "text": "Update software — one of four simple everyday steps.",
+          "text": "Update software - one of four simple everyday steps.",
           "url": "https://www.cisa.gov/secure-our-world"
         },
         {
@@ -3855,7 +3855,7 @@
       "icon": "trend",
       "category": "fraud",
       "do": "Treat celebrity investment ads and “guaranteed returns” as scams, and check your financial regulator’s warning list.",
-      "dont": "Trust a video because the face is famous — deepfaked endorsements are a scam staple.",
+      "dont": "Trust a video because the face is famous - deepfaked endorsements are a scam staple.",
       "cases": [
         {
           "kind": "Attack",
@@ -3922,7 +3922,7 @@
         }
       ],
       "explain": {
-        "simple": "Ads with celebrities promising easy money are almost always fake — often made with AI. Check your financial regulator’s warning list.",
+        "simple": "Ads with celebrities promising easy money are almost always fake - often made with AI. Check your financial regulator’s warning list.",
         "technical": "Deepfake ad campaigns rotate creatives and landing domains to evade platform review; report to the platform and the national regulator.",
         "business": "Your executives’ faces can be used the same way. Monitor for impersonation and keep a takedown process ready."
       },
@@ -3975,7 +3975,7 @@
       "icon": "scales",
       "category": "ai",
       "do": "Inventory your AI tools and the personal data they touch, train staff (EU AI Act Art. 4), and run DPIAs where GDPR requires.",
-      "dont": "Let AI decide about customers or candidates with no human review — you own what your bot says.",
+      "dont": "Let AI decide about customers or candidates with no human review - you own what your bot says.",
       "cases": [
         {
           "kind": "Ruling",
@@ -4018,7 +4018,7 @@
           "Log AI decisions and complaints"
         ],
         "tune": [
-          "Alert when an AI decision is appealed or reversed — track rates by system",
+          "Alert when an AI decision is appealed or reversed - track rates by system",
           "Sample 1% of chatbot answers weekly for accuracy"
         ],
         "playbook": [
@@ -4066,7 +4066,7 @@
         "question": "Your support chatbot invented a refund policy. Who’s responsible?",
         "options": [
           "The AI vendor alone",
-          "Nobody — it’s just a bot",
+          "Nobody - it’s just a bot",
           "Your organisation"
         ],
         "answer": 2
@@ -4177,7 +4177,7 @@
         }
       ],
       "explain": {
-        "simple": "When someone leaves, their access should leave too — on their last day, not weeks later.",
+        "simple": "When someone leaves, their access should leave too - on their last day, not weeks later.",
         "technical": "Automate joiner-mover-leaver via the HR system and SSO/SCIM; revoke tokens, API keys and OAuth grants; rotate shared secrets; review dormant accounts.",
         "business": "Former staff with live access are a leading insider risk. Same-day offboarding is a cheap, auditable control."
       },
@@ -4232,7 +4232,7 @@
       ],
       "icon": "megaphone",
       "category": "incident",
-      "do": "Report a wrong click, a lost device or a regretted paste into a chatbot straight away — minutes matter.",
+      "do": "Report a wrong click, a lost device or a regretted paste into a chatbot straight away - minutes matter.",
       "dont": "Hide a mistake out of embarrassment. Under NIS2, significant incidents need an early warning within 24 hours.",
       "cases": [
         {
@@ -4321,7 +4321,7 @@
       "explain": {
         "simple": "Clicked something bad? Tell security right away. Fast reporting is what stops a small mistake becoming a disaster.",
         "technical": "Early reports let the SOC isolate hosts, revoke sessions and block indicators before lateral movement; dwell time drives impact.",
-        "business": "Regulators expect early warnings within hours — NIS2 24 hours, DORA 4 hours after classification. A blame-free culture makes that possible."
+        "business": "Regulators expect early warnings within hours - NIS2 24 hours, DORA 4 hours after classification. A blame-free culture makes that possible."
       },
       "refs": "NIS2 Art. 23 · DORA Art. 19 · OWASP A09:2025",
       "owasp": [
@@ -4351,7 +4351,7 @@
         {
           "audience": "work",
           "type": "c",
-          "text": "Report anything odd from this week — even small things."
+          "text": "Report anything odd from this week - even small things."
         },
         {
           "audience": "leaders",
@@ -4376,14 +4376,14 @@
       "icon": "star",
       "category": "governance",
       "do": "Carry three habits into 2027: passkeys on, verify before you pay, think before you paste.",
-      "dont": "Treat security as a season — book a January check-in and keep the habit going.",
+      "dont": "Treat security as a season - book a January check-in and keep the habit going.",
       "cases": [
         {
           "kind": "Recap",
           "when": "2023–2025",
           "name": "This calendar",
           "location": "Europe and beyond",
-          "text": "Change Healthcare, 23andMe, Arup, M&S: in each, the way in was a missing basic — MFA, a unique password, a call-back, a verification step.",
+          "text": "Change Healthcare, 23andMe, Arup, M&S: in each, the way in was a missing basic - MFA, a unique password, a call-back, a verification step.",
           "source": "Doors 1, 2, 7 and 18"
         }
       ],
@@ -4420,7 +4420,7 @@
           "Re-run this calendar next December"
         ],
         "tabletop": {
-          "inject": "Final exercise: combine Doors 7, 18 and 23 — a deepfaked CFO call, a help-desk reset and a supplier breach on the same day.",
+          "inject": "Final exercise: combine Doors 7, 18 and 23 - a deepfaked CFO call, a help-desk reset and a supplier breach on the same day.",
           "questions": [
             "Which decision would we get wrong today?",
             "What will we fix first in January?"
@@ -4437,7 +4437,7 @@
         {
           "org": "NIST",
           "ref": "CSF 2.0",
-          "text": "Govern, Identify, Protect, Detect, Respond, Recover — a frame for your 2027 plan.",
+          "text": "Govern, Identify, Protect, Detect, Respond, Recover - a frame for your 2027 plan.",
           "url": "https://www.nist.gov/cyberframework"
         },
         {

@@ -90,18 +90,16 @@ h1, h2, h3, h4, p { margin: 0; }
 h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(44px, 5vw, 72px); line-height: 1.02; letter-spacing: -.02em; text-wrap: balance; }
 h1 em { font-style: italic; color: var(--gold); }
 .lede { font-size: 19px; line-height: 1.55; color: var(--muted); max-width: 740px; text-wrap: pretty; }
-.byline { font-size: 14px; color: var(--faint); }
 /* Day counter: countdown before 1 December, "Day N of 24/31" during the season, one segment per door. */
 .daycount { display: flex; flex-direction: column; gap: 10px; width: fit-content; max-width: 100%; padding: 12px 16px 14px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
 .dc-line { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
 .dc-num { font: 600 28px/1.1 var(--serif); color: var(--gold); white-space: nowrap; }
 .dc-text { font-size: 15px; color: var(--muted); }
-.dc-bar { display: grid; gap: 3px; min-width: min(420px, 100%); }
-.dc-bar span { height: 6px; border-radius: 99px; background: var(--line); }
+.dc-bar { display: grid; align-items: center; min-width: min(420px, 100%); }
+.dc-bar span { justify-self: center; width: 6px; height: 6px; border-radius: 50%; background: var(--line); }
 .dc-bar span.on { background: var(--gold); opacity: .55; }
-.dc-bar span.now { opacity: 1; box-shadow: 0 0 0 2px var(--ground), 0 0 0 3px var(--gold); }
+.dc-bar span.now { opacity: 1; width: 8px; height: 8px; box-shadow: 0 0 0 2px var(--surface), 0 0 0 3px var(--gold); }
 .locked-msg .when { color: var(--gold); font-weight: 500; }
-.byline strong { color: var(--text); font-weight: 500; }
 
 /* HUD */
 .hud { display: flex; flex-direction: column; gap: 16px; padding: 20px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); }
@@ -119,6 +117,7 @@ h1 em { font-style: italic; color: var(--gold); }
 select { min-height: 44px; padding: 0 12px; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--line); color: var(--text); }
 .badges { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-top: 12px; border-top: 1px solid var(--line); }
 .badges ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.badges .reset { margin-left: auto; min-height: 36px; font-size: 13px; } /* next to the score and streak, at the end of the badges row */
 .badge { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; font-size: 13px; border: 1px solid var(--line); color: var(--faint); }
 .badge svg { width: 20px; height: 20px; fill: none; stroke: var(--faint); stroke-width: 1.8; stroke-linejoin: round; }
 .badge.got { background: var(--surface-2); border-color: var(--gold); color: var(--text); animation: pop .6s ease both; }
@@ -135,8 +134,6 @@ select { min-height: 44px; padding: 0 12px; border-radius: 12px; background: var
 /* Doors */
   background-image: radial-gradient(#ffffff14 1px, transparent 1.5px); background-size: 12px 12px; }
 .legend { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; font-size: 13px; color: var(--faint); }
-.ai-key { display: inline-flex; align-items: center; gap: 6px; }
-.ai-key svg { width: 10px; height: 10px; fill: var(--gold); }
 .ghost { margin-left: auto; min-height: 36px; padding: 0 12px; border-radius: 999px; background: transparent; border: 1px solid var(--line); color: var(--muted); font-size: 13px; }
 
 /* Map */

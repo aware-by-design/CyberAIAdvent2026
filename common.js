@@ -1,6 +1,6 @@
 /* Shared helpers for the calendar and the supplier toolkit.
    Security notes (see SECURITY.md):
-   - h() only ever sets text via textContent / text nodes — never innerHTML (OWASP A05:2025).
+   - h() only ever sets text via textContent / text nodes - never innerHTML (OWASP A05:2025).
    - safeUrl() lets through https: links only, so a malicious content change cannot inject
      javascript:, data: or http: links.
    - Everything here runs under a CSP with script-src/style-src 'self'; dynamic styling uses CSSOM. */
@@ -63,7 +63,7 @@
   }
 
   /* Re-rendering replaces buttons, so remember which control had focus (its data-k) and move focus to
-     its replacement — otherwise keyboard and screen-reader users are thrown back to the top of the page. */
+     its replacement - otherwise keyboard and screen-reader users are thrown back to the top of the page. */
   function focusKey() {
     const a = document.activeElement;
     return a && a.dataset && a.dataset.k ? a.dataset.k : null;
@@ -275,7 +275,7 @@
     ["circle", { cx: 76, cy: 21, r: 5, fill: "#F4EFE6" }],
     ["path", { d: "M20 37Q42 25 64 31", fill: "none", stroke: "#F4EFE6", "stroke-width": 8, "stroke-linecap": "round" }]
   ];
-  const QUIPS = ["Ho-ho-NO! Clinker grabbed that one.", "A lump of coal for that answer — but the explainer below is a proper gift.", "Clinker loves that answer. So do attackers.", "Soot happens. Read why, then try the next door.", "That one goes in Clinker’s stocking. Yours gets the lesson below."];
+  const QUIPS = ["Ho-ho-NO! Clinker grabbed that one.", "A lump of coal for that answer - but the explainer below is a proper gift.", "Clinker loves that answer. So do attackers.", "Soot happens. Read why, then try the next door.", "That one goes in Clinker’s stocking. Yours gets the lesson below."];
   function clinker(seed, line) {
     return h("div", { class: "clinker" }, art("0 0 86 92", COAL, "coal"),
       h("div", { class: "bubble" }, h("span", { class: "who", text: "CLINKER · THE GRUMPY LUMP OF COAL" }), QUIPS[Math.abs(seed) % QUIPS.length],
@@ -291,23 +291,27 @@
     const nice = [], naughty = [];
     data.days.filter((d) => d.day <= total).forEach((d) => {
       const n = d.day, full = all4(n);
-      if (right(n)) nice.push({ n, t: `Door ${n} · ${d.title} — right answer` });
-      else if (wrong(n)) { if (full) nice.push({ n, t: `Door ${n} · ${d.title} — redeemed` }); else naughty.push({ n, t: `Door ${n} · ${d.title} — wrong answer.` }); }
-      if (full && !wrong(n)) nice.push({ n, t: `Door ${n} · ${d.title} — all four activities` });
+      if (right(n)) nice.push({ n, t: `Door ${n} · ${d.title} - right answer` });
+      else if (wrong(n)) { if (full) nice.push({ n, t: `Door ${n} · ${d.title} - redeemed` }); else naughty.push({ n, t: `Door ${n} · ${d.title} - wrong answer.` }); }
+      if (full && !wrong(n)) nice.push({ n, t: `Door ${n} · ${d.title} - all four activities` });
     });
     const status = (n) => {
-      if (wrong(n) && all4(n)) return { line: `Redeemed — Door ${n} is back on the Nice list.`, note: { text: `Redeemed — Clinker has crossed Door ${n} off the Naughty list.`, good: true } };
+      if (wrong(n) && all4(n)) return { line: `Redeemed - Door ${n} is back on the Nice list.`, note: { text: `Redeemed - Clinker has crossed Door ${n} off the Naughty list.`, good: true } };
       if (wrong(n)) return { line: `Door ${n} is on the Naughty list. Tick off all four activities below to redeem it.`, note: { text: `Door ${n} is on the Naughty list. Tick off all four activities to get back on the Nice list.`, good: false } };
-      if (all4(n)) return { line: "", note: { text: "All four done — that’s a Nice-list deed.", good: true } };
+      if (all4(n)) return { line: "", note: { text: "All four done - that’s a Nice-list deed.", good: true } };
       return { line: "", note: null };
     };
-    const verdict = !nice.length && !naughty.length ? ["Santa hasn’t checked his list yet", ""] : !naughty.length ? ["You’re on the Nice list ✓", "nice"] : nice.length >= naughty.length * 2 ? ["Mostly nice — a door or two to redeem", "mostly"] : ["Naughty list — Clinker is delighted", "naughty"];
+    const verdict = !nice.length && !naughty.length ? ["Santa hasn’t checked his list yet", ""] : !naughty.length ? ["You’re on the Nice list ✓", "nice"] : nice.length >= naughty.length * 2 ? ["Mostly nice - a door or two to redeem", "mostly"] : ["Naughty list - Clinker is delighted", "naughty"];
     return { nice, naughty, status, verdict };
   }
 
 
 
   /* Ready-made summaries of a door for five channels. `link` is this site's own URL for the door. */
+  /* The AI disclosure every share text carries (Door 21 asks readers to label AI-assisted content too). */
+  const AI_LABEL = "AI-assisted · reviewed by aware-by-design · an initiative of ENISA’s ARCH AHWG";
+  const AI_SHORT = "AI-assisted · ENISA ARCH AHWG initiative";
+
   function shareKit(data, d, total, link) {
     const enc = encodeURIComponent;
     const firstSentence = (t) => { const m = String(t).match(/^.+?[.!?](?=\s|$)/); return m ? m[0] : String(t); };
@@ -320,14 +324,14 @@
     const q0 = qs[0];
     const li = `🎄 Door ${n} of ${total}: ${d.title}\n\n${dot(d.topic)}\n\n✅ DO: ${d.do}\n❌ DON’T: ${d.dont}\n\n📌 Lesson learnt: ${c0.name} (${c0.when}). ${firstSentence(c0.text)}\n\n` +
       (q0 ? `📜 ${shortRef(q0)}: “${cut(q0.text, 180)}”\n\n` : "") +
-      `Try today’s 20-second challenge and read the full briefing: ${link}\n\n${tags}\n\nAI-assisted · reviewed by aware-by-design · an independent initiative by an ENISA Ambassador`;
-    const wa = `*Door ${n}/${total} · ${d.title}*\n✅ ${d.do}\n❌ ${d.dont}\n🏠 Try today: ${acts[0] || ""}\n👉 ${link}`;
-    const subj = `Door ${n}: ${d.title} — a two-minute security habit`;
-    const body = `Hi all,\n\nToday’s habit: ${d.do}\nPlease avoid: ${d.dont}\n\nWhy it matters for us: ${d.explain.business}\n\nOne thing to do at work today: ${acts[1] || ""}\n\nThe full briefing, with the case study and what the rules say: ${link}\n\nThanks,`;
+      `Try today’s 20-second challenge and read the full briefing: ${link}\n\n${tags}\n\n${AI_LABEL}`;
+    const wa = `*Door ${n}/${total} · ${d.title}*\n✅ ${d.do}\n❌ ${d.dont}\n🏠 Try today: ${acts[0] || ""}\n👉 ${link}\n_${AI_SHORT}_`;
+    const subj = `Door ${n}: ${d.title} - a two-minute security habit`;
+    const body = `Hi all,\n\nToday’s habit: ${d.do}\nPlease avoid: ${d.dont}\n\nWhy it matters for us: ${d.explain.business}\n\nOne thing to do at work today: ${acts[1] || ""}\n\nThe full briefing, with the case study and what the rules say: ${link}\n\n(${AI_LABEL})\n\nThanks,`;
     const nl = `${d.title}\n\n${d.explain.simple}\n\nDo this: ${d.do}\nAvoid this: ${d.dont}\n\nWhat happened: ${c0.name} (${c0.when}, ${c0.location}). ${c0.text}\n\n` +
-      `What the rules say: ${qs.map(shortRef).join("; ")}.\n\nToday’s activities\n• At home — ${acts[0]}\n• At work — ${acts[1]}\n• Leaders — ${acts[2]}\n• Tech teams — ${acts[3]}\n\n` +
-      `Read more: ${d.readMore.map((m) => m.org + " — " + m.ref).join(" · ")}\nFull briefing: ${link}`;
-    const xHead = `Door ${n}: ${d.title}\n✅ `, xTail = `\n${link} #Cybersecurity${ai ? " #AI" : ""}`;
+      `What the rules say: ${qs.map(shortRef).join("; ")}.\n\nToday’s activities\n• At home - ${acts[0]}\n• At work - ${acts[1]}\n• Leaders - ${acts[2]}\n• Tech teams - ${acts[3]}\n\n` +
+      `Read more: ${d.readMore.map((m) => m.org + " - " + m.ref).join(" · ")}\nFull briefing: ${link}\n\n${AI_LABEL}`;
+    const xHead = `Door ${n}: ${d.title}\n✅ `, xTail = `\n${link} #Cybersecurity${ai ? " #AI" : ""}\n${AI_SHORT}`;
     const x = xHead + cut(d.do, 270 - xHead.length - xTail.length) + xTail;
     return [
       { id: "li", name: "LinkedIn", hint: "Long-form post · paste into a new post", text: li, links: [{ label: "Share the link on LinkedIn ↗", url: "https://www.linkedin.com/sharing/share-offsite/?url=" + enc(link) }] },

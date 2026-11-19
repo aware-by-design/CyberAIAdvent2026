@@ -1,4 +1,4 @@
-/* Supplier toolkit page — renders supply.json with text-only DOM building and https-only links. */
+/* Supplier toolkit page - renders supply.json with text-only DOM building and https-only links. */
 "use strict";
 (() => {
   const { svg, h, extLink, getJSON, festive, guardFraming } = window.Advent;

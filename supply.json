@@ -3,27 +3,27 @@
     {
       "name": "Plan & select",
       "qs": [
-        "Which of our data and systems will you access — and from which countries?",
+        "Which of our data and systems will you access - and from which countries?",
         "Do you hold ISO/IEC 27001, a SOC 2 Type II report or a national scheme such as BSI C5, SecNumCloud or ENS?",
-        "Will you use our data to train AI models — and can we opt out in the contract?",
+        "Will you use our data to train AI models - and can we opt out in the contract?",
         "Who are your sub-processors and fourth parties?",
-        "How do you build securely — SBOM, signed releases, a vulnerability disclosure policy?"
+        "How do you build securely - SBOM, signed releases, a vulnerability disclosure policy?"
       ]
     },
     {
       "name": "Contract",
       "qs": [
-        "Will you notify us of incidents within [X] hours — shorter than our own deadline (NIS2 24 h; DORA 4 h after classification)?",
+        "Will you notify us of incidents within [X] hours - shorter than our own deadline (NIS2 24 h; DORA 4 h after classification)?",
         "Will you give us audit rights and cooperate with our regulators?",
-        "Will you commit to where our data is stored — and to returning it and certifying its deletion at exit?",
+        "Will you commit to where our data is stored - and to returning it and certifying its deletion at exit?",
         "Will you agree security requirements, patch timelines and coordinated vulnerability disclosure?",
-        "Will you give notice — and seek our approval — before changing sub-processors?"
+        "Will you give notice - and seek our approval - before changing sub-processors?"
       ]
     },
     {
       "name": "Onboard",
       "qs": [
-        "Who are your 24/7 security and incident contacts — and can we test them?",
+        "Who are your 24/7 security and incident contacts - and can we test them?",
         "Will every account you use with us have MFA and only the access it needs?",
         "Will you connect only through managed, logged channels?",
         "Can you give us what we need for our asset, data-flow and register-of-information records?"
@@ -32,7 +32,7 @@
     {
       "name": "Operate & monitor",
       "qs": [
-        "Will you share fresh evidence every year — certificates, pen-test summaries, policies?",
+        "Will you share fresh evidence every year - certificates, pen-test summaries, policies?",
         "Can we review your accounts and access to our systems every quarter?",
         "How will you tell us about advisories, breaches and known-exploited vulnerabilities in your products?",
         "Will you run a joint exercise with us at least once a year?"
@@ -41,19 +41,19 @@
     {
       "name": "Incident",
       "qs": [
-        "What happened, when — and is it contained?",
-        "Is our data or service affected — and which indicators should we block?",
+        "What happened, when - and is it contained?",
+        "Is our data or service affected - and which indicators should we block?",
         "Which authorities have you notified, and when?",
-        "Who speaks to the press — and can we agree messages before anything is published?"
+        "Who speaks to the press - and can we agree messages before anything is published?"
       ]
     },
     {
       "name": "Exit",
       "qs": [
-        "How and when will you return our data — and certify its deletion?",
+        "How and when will you return our data - and certify its deletion?",
         "Will you revoke every account, key and connection on the last day?",
         "How will you support the transition to a new provider?",
-        "Will you keep the logs we need for investigations and audits — and for how long?"
+        "Will you keep the logs we need for investigations and audits - and for how long?"
       ]
     }
   ],
@@ -70,7 +70,7 @@
       "name": "DORA",
       "ref": "Regulation (EU) 2022/2554",
       "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
-      "who": "Financial entities — and EU oversight of critical ICT third-party providers.",
+      "who": "Financial entities - and EU oversight of critical ICT third-party providers.",
       "duty": "ICT third-party risk and a register of information (Art. 28); key contract provisions including incident help, audit and exit (Art. 30); resilience testing (Art. 24–26).",
       "clock": "Initial 4 h after classifying as major (≤ 24 h after detection) · intermediate 72 h · final 1 month"
     },
@@ -78,7 +78,7 @@
       "name": "GDPR",
       "ref": "Regulation (EU) 2016/679",
       "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
-      "who": "Anyone processing personal data — controllers and their processors.",
+      "who": "Anyone processing personal data - controllers and their processors.",
       "duty": "Processor contracts and approval of sub-processors (Art. 28).",
       "clock": "Processor → controller without undue delay (Art. 33(2)) · controller → authority within 72 h (Art. 33(1)) · tell people if high risk (Art. 34)"
     },
@@ -96,7 +96,7 @@
       "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
       "who": "Providers and deployers of AI systems, and providers of general-purpose AI models.",
       "duty": "Responsibilities along the AI value chain (Art. 25); GPAI providers give documentation to downstream providers (Art. 53); deployers monitor and inform providers (Art. 26).",
-      "clock": "Providers report serious incidents of high-risk AI (Art. 73) — within 15 days, faster in the most critical cases"
+      "clock": "Providers report serious incidents of high-risk AI (Art. 73) - within 15 days, faster in the most critical cases"
     }
   ],
   "clock": [
@@ -118,7 +118,7 @@
     {
       "t": "T + 24 h",
       "title": "NIS2 early warning",
-      "text": "Send it to your CSIRT or authority if the incident is significant for you — even with partial facts."
+      "text": "Send it to your CSIRT or authority if the incident is significant for you - even with partial facts."
     },
     {
       "t": "T + 72 h",
@@ -234,7 +234,7 @@
     },
     {
       "title": "Pre-fill the regulator templates",
-      "text": "NIS2 early warning, DORA initial notification and GDPR breach forms — ready before you need them."
+      "text": "NIS2 early warning, DORA initial notification and GDPR breach forms - ready before you need them."
     },
     {
       "title": "Follow DORA testing duties",
@@ -248,7 +248,7 @@
   "injects": [
     {
       "t": "T + 0",
-      "text": "Your payroll provider emails: ‘suspicious activity — investigating’."
+      "text": "Your payroll provider emails: ‘suspicious activity - investigating’."
     },
     {
       "t": "T + 2 h",
@@ -265,7 +265,7 @@
   ],
   "discuss": [
     "Do we report with partial facts? (The early warning is meant to be early.)",
-    "Is this a personal-data breach — and whose 72 hours are running?",
+    "Is this a personal-data breach - and whose 72 hours are running?",
     "Do we suspend the integration, and what stops working?",
     "Who briefs staff whose bank details may be exposed?"
   ]

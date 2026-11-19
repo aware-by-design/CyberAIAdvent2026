@@ -40,7 +40,7 @@
     channels.forEach((c, i) => tabs.append(h("button", { type: "button", role: "tab", onclick: () => show(i) }, c.name)));
     copy.addEventListener("click", async () => {
       if (await A.copyText(ta.value)) copy.textContent = "Copied ✓";
-      else { ta.focus(); ta.select(); copy.textContent = "Selected — press Ctrl+C or ⌘C"; }
+      else { ta.focus(); ta.select(); copy.textContent = "Selected - press Ctrl+C or ⌘C"; }
     });
     show(0);
     return h("section", { class: "kit", id: "share", "aria-label": "Share kit" },
@@ -57,12 +57,12 @@
       h("div", { class: "lsec two" },
         h("div", { class: "stack" }, h("span", { class: "lk", text: "HOW IT COULD HAVE BEEN PREVENTED" }), L.prevent.map((t) => h("span", { class: "li" }, svg(P.shield), t))),
         h("div", { class: "stack" }, h("span", { class: "lk", text: "HOW IT COULD HAVE BEEN DETECTED" }), L.detect.map((t) => h("span", { class: "li" }, svg(P.eye), t)))),
-      h("div", { class: "lsec" }, h("span", { class: "lk", text: "AFTER IT · TUNE DETECTION (ILLUSTRATIVE — ADAPT TO YOUR SIEM OR EDR)" }), L.tune.map((t) => h("code", { class: "rule", text: t }))),
+      h("div", { class: "lsec" }, h("span", { class: "lk", text: "AFTER IT · TUNE DETECTION (ILLUSTRATIVE - ADAPT TO YOUR SIEM OR EDR)" }), L.tune.map((t) => h("code", { class: "rule", text: t }))),
       h("div", { class: "lsec" }, h("span", { class: "lk", text: "RESPONSE PLAYBOOK" }), h("ol", { class: "steps" }, L.playbook.map((t) => h("li", { text: t })))),
       h("div", { class: "lsec" },
         h("div", { class: "inject" }, h("span", { class: "lk", text: "TABLETOP · 20-MINUTE INJECT" }), h("p", { text: L.tabletop.inject })),
         h("span", { class: "lk", text: "DISCUSS" }), L.tabletop.questions.map((q) => h("span", { class: "q-item" }, h("b", { "aria-hidden": "true", text: "?" }), q)),
-        h("span", { class: "roles", text: "Roles: incident lead · IT & security · legal & privacy · comms · business owner. Capture decisions, owners and gaps — then update the playbook." })),
+        h("span", { class: "roles", text: "Roles: incident lead · IT & security · legal & privacy · comms · business owner. Capture decisions, owners and gaps - then update the playbook." })),
       d.day === 22 || d.day === 23 ? h("a", { class: "cta", href: "supply.html" }, "Open the supplier toolkit →") : null);
   }
 
@@ -129,7 +129,7 @@
         const wd = new Date(data.year, data.month - 1, n).toLocaleDateString("en-GB", { weekday: "long" });
         r.append(h("div", { class: "locked-msg" }, svg(P.lock), h("h1", { text: `Door ${n} opens on ${wd} ${n} December` }),
           h("p", { class: "when", text: `That’s ${A.inDays(A.daysUntil(data, n))}.` }),
-          h("p", { text: "No peeking — the briefing unlocks on the day. To explore early, switch off “Follow December dates” on the calendar." })));
+          h("p", { text: "No peeking - the briefing unlocks on the day. To explore early, switch off “Follow December dates” on the calendar." })));
         return;
       }
       if (!state.opened[n]) { state.opened[n] = 1; persist(); } // write only when something changed
@@ -170,7 +170,7 @@
       r.append(h("div", { class: "refs" }, h("span", { class: "k", text: "GROUNDED IN" }), h("span", { class: "txt", text: d.refs }),
         d.owasp.length ? h("div", { class: "codes" }, d.owasp.map((c) => h("span", { class: "code", text: "OWASP " + c }))) : null));
       r.append(h("a", { class: "brief-cta", href: "index.html" + q(n) },
-        h("span", { class: "bt" }, h("strong", { text: "Take today’s 20-second challenge" }), h("span", { text: "+20 pts in the calendar — and Clinker is waiting for wrong answers" })),
+        h("span", { class: "bt" }, h("strong", { text: "Take today’s 20-second challenge" }), h("span", { text: "+20 pts in the calendar - and Clinker is waiting for wrong answers" })),
         h("span", { class: "arr", "aria-hidden": "true", text: "→" })));
       if (window.location.hash === "#share" && !focused) { const s = document.getElementById("share"); if (s) s.scrollIntoView(); }
       A.refocus(focused);

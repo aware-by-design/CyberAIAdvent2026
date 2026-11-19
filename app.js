@@ -1,4 +1,4 @@
-/* One door a day — festive cybersecurity & AI calendar (vanilla JS, no dependencies).
+/* One door a day - festive cybersecurity & AI calendar (vanilla JS, no dependencies).
    Security: no innerHTML; https-only links; strict validation of everything read from
    localStorage and the URL; progress is per-browser and never leaves the device. */
 "use strict";
@@ -131,7 +131,6 @@
       document.querySelectorAll("#mode button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === state.mode)));
       el("eyebrow").textContent = state.mode === "advent" ? `ADVENT CALENDAR · 1–24 DECEMBER ${data.year} · CYBERSECURITY & AI` : `31 DAYS · 1–31 DECEMBER ${data.year} · CYBERSECURITY & AI`;
       el("ics").setAttribute("href", state.mode === "advent" ? "advent-24.ics" : "days-31.ics");
-      el("aicount").textContent = `${s.days.filter((d) => d.track !== "cyber").length} of ${total()} doors carry an AI lesson`;
     }
 
     function renderHUD(s) {
@@ -211,7 +210,7 @@
         const pts = (open ? 10 : 0) + (correct(n) ? 20 : 0) + acts * 5, done = pts >= 50;
         const cls = ["card", "p-" + PAL[(n - 1) % PAL.length], open && "open", done && "done", n === state.selected && "sel", locked && "locked", state.filter !== "all" && !d.for.includes(state.filter) && "dim"].filter(Boolean).join(" ");
         grid.append(h("button", { type: "button", class: cls, disabled: locked, "aria-pressed": String(n === state.selected), "data-k": "door-" + n,
-          "aria-label": `Door ${n}: ${d.title}${locked ? ", locked until " + n + " December" : ""}${open ? ", opened" : ""}${d.track !== "cyber" ? ", AI label" : ""}`, onclick: () => select(n, true) },
+          "aria-label": `Door ${n}: ${d.title}${locked ? ", locked until " + n + " December" : ""}${open ? ", opened" : ""}${d.track !== "cyber" ? ", includes an AI lesson" : ""}`, onclick: () => select(n, true) },
           h("span", { class: "inside", "aria-hidden": "true" },
             done ? h("span", { class: "tick", text: "✓" }) : null, wrong(n) ? h("span", { class: "ntag", text: "NAUGHTY" }) : null,
             h("span", { class: "sp", text: "✦" }), h("span", { class: "it", text: d.title }),
@@ -226,8 +225,8 @@
       f.setAttribute("aria-checked", String(state.follow));
       el("locknote").textContent = state.follow
         ? (today < 1 ? "Doors open one a day from 1 December. Switch off to explore early."
-          : today > total() ? `All ${total()} doors are open — catch up on any you missed.` : `Following December dates · today is door ${today}.`)
-        : (today < 1 ? "A little early? Explore freely — every door is open." : "Exploring freely — every door is open.");
+          : today > total() ? `All ${total()} doors are open - catch up on any you missed.` : `Following December dates · today is door ${today}.`)
+        : (today < 1 ? "A little early? Explore freely - every door is open." : "Exploring freely - every door is open.");
     }
 
     /* The Naughty list Clinker keeps in the attic: doors answered wrongly and not yet redeemed. */
@@ -288,11 +287,11 @@
         const bonus = ok && state.team && d.for.includes(state.team);
         box.append(h("div", { class: "explain" },
           ok ? null : A.clinker(n + chosen, A.santaState(data, total(), state.answers, state.acts).status(n).line),
-          h("p", { class: "res" + (ok ? " ok" : ""), tabindex: "-1", "data-k": "res", text: ok ? `Correct · +20 pts${bonus ? " · +10 team bonus" : ""}` : "Not quite — the safe move is marked. Here’s why, in the words that suit you." }),
+          h("p", { class: "res" + (ok ? " ok" : ""), tabindex: "-1", "data-k": "res", text: ok ? `Correct · +20 pts${bonus ? " · +10 team bonus" : ""}` : "Not quite - the safe move is marked. Here’s why, in the words that suit you." }),
           h("div", { class: "bar2" }, h("span", { class: "k", text: ok ? "WHY IT MATTERS" : "HERE’S WHY" }),
             h("div", { class: "aud", role: "group", "aria-label": "Explain it for" }, AUD.map(([id, name]) => h("button", { type: "button", "aria-pressed": String(state.aud === id), "data-k": "aud-" + id, onclick: () => { state.aud = id; state.celebrate = false; persist(); render(); } }, name)))),
           h("p", { class: "txt", text: d.explain[state.aud] || d.explain.simple }),
-          h("div", { class: "further" }, h("span", { class: "k", text: "FURTHER READING" }), d.readMore.slice(0, 2).map((m) => A.extLink(m.url, null, `${m.org} — ${m.ref} ↗`)))));
+          h("div", { class: "further" }, h("span", { class: "k", text: "FURTHER READING" }), d.readMore.slice(0, 2).map((m) => A.extLink(m.url, null, `${m.org} - ${m.ref} ↗`)))));
       }
       return box;
     }
@@ -304,7 +303,7 @@
         const wd = WD[new Date(data.year, data.month - 1, n).getDay()];
         p.append(h("div", { class: "locked-msg" }, svg(P.lock), h("h2", { text: `Door ${n} opens on ${wd} ${n} December` }),
           h("p", { class: "when", text: `That’s ${A.inDays(A.daysUntil(data, n))}.` }),
-          h("p", { text: "No peeking. Come back on the day — or add the calendar reminders (the link just below the house) and each door will tell you when it opens." })));
+          h("p", { text: "No peeking. Come back on the day - or add the calendar reminders (the link just below the house) and each door will tell you when it opens." })));
         return;
       }
       const dt = new Date(data.year, data.month - 1, n), occ = data.occasions[n], isAI = d.track !== "cyber";
