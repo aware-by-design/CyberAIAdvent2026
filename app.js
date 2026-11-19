@@ -11,7 +11,8 @@
     lock: "M7 11h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2zM8 11V8a4 4 0 0 1 8 0v3",
     badge: "M12 2.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.1l-5.4 2.9 1.2-6-4.5-4.2 6.1-.7z",
     left: "M15 6l-6 6 6 6", right: "M9 6l6 6-6 6",
-    pin: "M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12zM12 11.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
+    pin: "M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12zM12 11.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z",
+    gift: "M4 11h16v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zM3 7h18v4H3zM12 7v14M12 7c-1.5-3-5-4-5.5-1.5S9.5 7 12 7zM12 7c1.5-3 5-4 5.5-1.5S14.5 7 12 7z"
   };
   const WD = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const TRACK = { ai: "AI", cyber: "CYBER", both: "AI + CYBER" };
@@ -35,12 +36,14 @@
       if (!looksValid(data)) throw new Error("bad data");
       if (!settings || typeof settings !== "object") settings = {};
     } catch (err) {
-      el("panel").append(h("p", { text: "The calendar could not load. Please refresh the page." }));
+      el("house").after(h("p", { class: "load-error", text: "The calendar could not load. Please refresh the page." }));
       return;
     }
     const DAYS = data.days, STK = data.stakeholders;
     const params = new URLSearchParams(window.location.search);
-    const preview = params.get("preview") === "all";
+    /* Test mode (temporary): a date simulator; ?preview=all opens every door only while it is on. */
+    const testMode = A.applyTestMode(settings);
+    const preview = testMode && params.get("preview") === "all";
     const KEY = "cyber-advent:" + data.year;
     const saved = sanitize(store.get(KEY), data);
     const qMode = params.get("mode");
@@ -52,47 +55,88 @@
       mode: qMode === "advent" || qMode === "full" ? qMode : needsFull ? "full" : (saved.mode || (settings.defaultMode === "advent" ? "advent" : "full")),
       opened: saved.opened, answers: saved.answers, acts: saved.acts, team: saved.team, aud: saved.aud,
       country: saved.country || (data.countries.some((c) => c.id === settings.defaultCountry) ? settings.defaultCountry : "eu"),
-      filter: "all", selected: 1, celebrate: false,
-      follow: saved.follow === null ? settings.lockFuture !== false : saved.follow
+      filter: "all", selected: 1, celebrate: false
     };
     const gamified = settings.gamified !== false;
     el("hud").hidden = !gamified;
 
     let today = A.todayFor(data); // refreshed at midnight by A.onNewDay below
     const total = () => data.modes[state.mode].doors;
-    /* "Follow December dates" keeps future doors shut; switching it off opens every door for exploring.
-       This is a convenience, not access control: all content is public in days.json (SECURITY.md). */
-    const isLocked = (n) => state.follow && !preview && n > today;
+    /* Doors follow the dates for everyone: today's door and the days before it are open, later doors stay shut
+       and show a note from the NESTOR family instead. This is a convenience, not access control: all content is
+       public in days.json (SECURITY.md). */
+    const isLocked = (n) => !preview && n > today;
     const correct = (n) => state.answers[n] !== undefined && state.answers[n] === DAYS[n - 1].quiz.answer;
     const wrong = (n) => state.answers[n] !== undefined && !correct(n);
-    const persist = () => store.set(KEY, { mode: state.mode, opened: state.opened, answers: state.answers, acts: state.acts, team: state.team, aud: state.aud, country: state.country, follow: state.follow });
+    const persist = () => store.set(KEY, { mode: state.mode, opened: state.opened, answers: state.answers, acts: state.acts, team: state.team, aud: state.aud, country: state.country });
     /* Same-origin link to a door's full briefing; n is always a validated integer. */
     const briefHref = (n) => `door.html?day=${n}${state.mode === "advent" ? "&mode=advent" : ""}${preview ? "&preview=all" : ""}`;
 
     const asked = Number.parseInt(params.get("day") || "", 10);
-    if (Number.isInteger(asked) && asked >= 1 && asked <= total() && !isLocked(asked)) state.selected = asked;
-    else if (today >= 1) state.selected = Math.min(today, total()); // after Advent / after December: the last door
-    if (!isLocked(state.selected)) state.opened[state.selected] = 1;
+    let openOnLoad = 0, lockedOnLoad = 0;
+    if (Number.isInteger(asked) && asked >= 1 && asked <= total()) { if (isLocked(asked)) lockedOnLoad = asked; else openOnLoad = asked; }
+    if (today >= 1) state.selected = Math.min(today, total()); // after Advent / after December: the last door
+    if (openOnLoad) state.selected = openOnLoad;
 
-    function select(n, scroll) {
-      if (!Number.isInteger(n) || n < 1 || n > total() || isLocked(n)) return;
-      state.selected = n; state.opened[n] = 1; state.celebrate = false;
-      persist();
+    const dlg = el("daydlg"), dbody = el("daybody"), down = el("daydown"), ndlg = el("nestordlg");
+    const setUrl = (n) => {
       const url = new URL(window.location.href);
-      url.searchParams.set("day", String(n));
+      if (n) url.searchParams.set("day", String(n)); else url.searchParams.delete("day");
       if (state.mode === "advent") url.searchParams.set("mode", "advent"); else url.searchParams.delete("mode");
       url.searchParams.delete("preview");
       if (preview) url.searchParams.set("preview", "all");
       window.history.replaceState(null, "", url);
-      render();
-      /* Let the doors swing open, then bring the door’s details into view below the house. */
-      if (scroll) window.setTimeout(() => {
-        el("panel").scrollIntoView({ behavior: A.reducedMotion() ? "auto" : "smooth", block: "start" });
-        /* Move focus with the view, so keyboard and screen-reader users land on the door they opened. */
-        const head = el("panel").querySelector("h2");
-        if (head) { head.setAttribute("tabindex", "-1"); head.focus({ preventScroll: true }); }
-      }, A.reducedMotion() ? 0 : 650);
+    };
+    /* Opening a door: it swings open on the house, then the whole day appears in a popup. A door that isn't
+       open yet shows a note from the NESTOR family instead. In the popup, Previous / Next move between doors. */
+    function select(n, open) {
+      if (!Number.isInteger(n) || n < 1 || n > total()) return;
+      if (isLocked(n)) { showNestor(n); return; }
+      state.selected = n; state.opened[n] = 1; state.celebrate = false;
+      persist(); setUrl(n); render();
+      if (dlg.open) { dbody.scrollTop = 0; focusTitle(); updateDown(); }
+      else if (open) window.setTimeout(openDay, open === "now" || A.reducedMotion() ? 0 : 650);
     }
+    function focusTitle() { const t = el("daytitle"); if (t) t.focus({ preventScroll: true }); }
+    function openDay() {
+      if (!dlg.open) dlg.showModal();
+      dbody.scrollTop = 0; focusTitle(); updateDown();
+    }
+    const atEnd = () => dbody.scrollTop + dbody.clientHeight >= dbody.scrollHeight - 8;
+    function updateDown() {
+      const end = atEnd();
+      down.textContent = end ? "Back to top ↑" : "Scroll down ↓";
+      down.setAttribute("aria-label", end ? "Back to the top of this door" : "Scroll down to the next part of this door");
+    }
+    /* Scroll down: jump to the next part of the day (challenge, activities, lesson, briefing...); at the end, back to the top. */
+    down.addEventListener("click", () => {
+      const behavior = A.reducedMotion() ? "auto" : "smooth";
+      if (atEnd()) { dbody.scrollTo({ top: 0, behavior }); return; }
+      const base = dbody.getBoundingClientRect().top - dbody.scrollTop;
+      const tops = [...el("panel").children].map((c) => c.getBoundingClientRect().top - base);
+      const next = tops.find((t) => t > dbody.scrollTop + 24);
+      dbody.scrollTo({ top: next === undefined ? dbody.scrollHeight : next - 8, behavior });
+    });
+    dbody.addEventListener("scroll", updateDown, { passive: true });
+    window.addEventListener("resize", () => { if (dlg.open) updateDown(); });
+    el("dayclose").addEventListener("click", () => dlg.close());
+    dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener("close", () => {
+      setUrl(0);
+      const card = document.querySelector(`#doors [data-k="door-${state.selected}"]`);
+      if (card) card.focus();
+    });
+    function showNestor(n) {
+      el("nestorbody").replaceChildren(...A.nestorNote(data, n, today, "h2", { head: "nestorttl", text: "nestortext" }));
+      const t = today >= 1 ? Math.min(today, total()) : 0, go = el("nestortoday");
+      go.hidden = !t || t === n || (dlg.open && state.selected === t);
+      go.textContent = `Open today’s door (${t})`;
+      ndlg.showModal(); A.startTicker();
+      (go.hidden ? el("nestorclose") : go).focus();
+    }
+    el("nestortoday").addEventListener("click", () => { ndlg.close(); const t = Math.min(today, total()); if (t >= 1) select(t, "now"); });
+    el("nestorclose").addEventListener("click", () => ndlg.close());
+    ndlg.addEventListener("click", (e) => { if (e.target === ndlg) ndlg.close(); });
 
     function stats() {
       const days = DAYS.filter((d) => d.day <= total());
@@ -116,18 +160,22 @@
       const n = total(), dc = el("daycount");
       if (!dc) return;
       let num, text, filled;
-      if (preview) { num = `All ${n} doors open`; text = "Preview link: every door is unlocked"; filled = n; }
-      else if (!state.follow) { num = `All ${n} doors open`; text = "Exploring freely: Follow December dates is off"; filled = n; }
+      let next = 0; // the door the live countdown counts down to
+      if (preview) { num = `All ${n} doors open`; text = "Test mode preview: every door is unlocked"; filled = n; }
       else if (today < 1) {
         const left = A.daysUntil(data, 1);
-        num = left <= 0 ? "Opens tonight" : `${left} ${left === 1 ? "day" : "days"} to go`; text = `Door 1 opens on ${A.opensLabel(data, 1)}`; filled = 0;
-      } else if (today <= n) { num = `Day ${today} of ${n}`; text = today === n ? "The last door is open" : A.nextOpensText(data, today + 1); filled = today; }
+        num = left <= 0 ? "Opens tonight" : `${left} ${left === 1 ? "day" : "days"} to go`; text = `Door 1 opens on ${A.opensLabel(data, 1)}`; filled = 0; next = 1;
+      } else if (today <= n) { num = `Day ${today} of ${n}`; text = today === n ? "The last door is open" : A.nextOpensText(data, today + 1); filled = today; next = today < n ? today + 1 : 0; }
       else { num = `All ${n} doors open`; text = "Catch up on any you missed"; filled = n; }
       el("dcnum").textContent = num;
       el("dctext").textContent = text;
+      const tk = el("dctick");
+      tk.replaceChildren(...(next ? [svg("M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"), next === 1 && today < 1 ? "Door 1 opens in " : `Door ${next} opens in `,
+        h("strong", { "data-cd": String(A.opensAt(data, next).getTime()), text: A.fmtLeft(A.opensAt(data, next) - A.now()) })] : []));
+      tk.hidden = !next;
       const bar = el("dcbar"); bar.replaceChildren();
       bar.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
-      for (let i = 1; i <= n; i++) bar.append(h("span", { class: i <= filled ? (i === filled && state.follow && !preview && today >= 1 && today <= n ? "on now" : "on") : "" }));
+      for (let i = 1; i <= n; i++) bar.append(h("span", { class: i <= filled ? (i === filled && !preview && today >= 1 && today <= n ? "on now" : "on") : "" }));
     }
 
     function renderTop(s) {
@@ -208,12 +256,15 @@
     function bow() {
       return A.art("0 0 40 24", [["path", { d: "M20 12L4 3Q0 2 1 7L3 18Q4 21 8 19Z M20 12L36 3Q40 2 39 7L37 18Q36 21 32 19Z", fill: "#B3202F" }], ["circle", { cx: 20, cy: 12, r: 4.5, fill: "#8E1622" }], ["path", { d: "M18 15L13 24M22 15L27 24", stroke: "#B3202F", "stroke-width": 3, "stroke-linecap": "round" }]], "bw");
     }
-    function face(n, d, locked, big) {
+    /* A closed door shows only its number and a status icon: a lock until its day, a gift once it can be opened.
+       The title and topic appear only after opening (on the card behind the leaves and in the popup). */
+    function face(n, locked, big) {
       return h("span", { class: "face" },
         h("span", { class: "pl" }), h("span", { class: "pr" }), h("span", { class: "seam" }), h("span", { class: "kn" }), h("span", { class: "stt", text: "✦" }),
-        locked ? svg(LOCK, "lk") : null, big ? bow() : null,
+        big ? bow() : null,
         h("span", { class: "mo", text: "DECEMBER" }), h("span", { class: "nu", text: pad(n) }),
-        svg(data.icons[d.icon] || P.star, "ic"), h("span", { class: "tt", text: d.title }), h("span", { class: "ca", text: d.topic }));
+        locked ? svg(LOCK, "ic st-lock") : svg(P.gift, "ic st-gift"),
+        h("span", { class: "fs", text: locked ? "LOCKED" : "OPEN ME" }));
     }
     function renderDoors() {
       const grid = el("doors"); grid.replaceChildren();
@@ -223,25 +274,24 @@
         const n = d.day, open = !!state.opened[n], locked = isLocked(n), isBig = big.includes(n);
         const acts = [0, 1, 2, 3].filter((i) => state.acts[n + "-" + i]).length;
         const pts = (open ? 10 : 0) + (correct(n) ? 20 : 0) + acts * 5, done = pts >= 50;
-        const cls = ["card", "p-" + PAL[(n - 1) % PAL.length], open && "open", done && "done", n === state.selected && "sel", locked && "locked", state.filter !== "all" && !d.for.includes(state.filter) && "dim"].filter(Boolean).join(" ");
-        grid.append(h("button", { type: "button", class: cls, disabled: locked, "aria-pressed": String(n === state.selected), "data-k": "door-" + n,
-          "aria-label": `Door ${n}: ${d.title}${locked ? ", locked until " + n + " December" : ""}${open ? ", opened" : ""}${d.track !== "cyber" ? ", includes an AI lesson" : ""}`, onclick: () => select(n, true) },
+        const isToday = !locked && !preview && n === Math.min(today, total()) && today <= total();
+        const cls = ["card", "p-" + PAL[(n - 1) % PAL.length], open && "open", done && "done", n === state.selected && "sel", locked && "locked", isToday && !open && "today", state.filter !== "all" && !d.for.includes(state.filter) && "dim"].filter(Boolean).join(" ");
+        const name = locked ? `Door ${n}, locked until ${A.opensLabel(data, n)}` : open ? `Door ${n}: ${d.title}, opened${d.track !== "cyber" ? ", includes an AI lesson" : ""}` : `Door ${n}${isToday ? ", today’s door" : ""}, not opened yet`;
+        grid.append(h("button", { type: "button", class: cls, "aria-pressed": String(n === state.selected), "data-k": "door-" + n,
+          "aria-label": name, "aria-haspopup": "dialog", onclick: () => select(n, true) },
           h("span", { class: "inside", "aria-hidden": "true" },
             done ? h("span", { class: "tick", text: "✓" }) : null, wrong(n) ? h("span", { class: "ntag", text: "NAUGHTY" }) : null,
             h("span", { class: "sp", text: "✦" }), h("span", { class: "it", text: d.title }),
             h("span", { class: "if", text: d.for.slice(0, 2).map((id) => STK[id]).join(" · ") }),
             h("span", { class: "is", text: done ? "50 pts · fully explored ✓" : `${pts} of 50 pts · Play the day →` })),
-          h("span", { class: "leaf l", "aria-hidden": "true" }, face(n, d, locked, isBig)),
-          h("span", { class: "leaf r", "aria-hidden": "true" }, face(n, d, locked, isBig))));
+          h("span", { class: "leaf l", "aria-hidden": "true" }, face(n, locked, isBig)),
+          h("span", { class: "leaf r", "aria-hidden": "true" }, face(n, locked, isBig))));
       });
       if (total() === 31) grid.append(h("div", { class: "spare", "aria-hidden": "true" }, h("span", { class: "a", text: "✦" }), h("span", { class: "b", text: "Merry, safe & secure" }), h("span", { class: "c", text: "2027 AWAITS" })));
       el("boardsub").textContent = `Cyber & AI · ${total()} days of cyber, AI & privacy hygiene`;
-      const f = el("follow");
-      f.setAttribute("aria-checked", String(state.follow));
-      el("locknote").textContent = state.follow
-        ? (today < 1 ? "Doors open one a day from 1 December. Switch off to explore early."
-          : today > total() ? `All ${total()} doors are open - catch up on any you missed.` : `Following December dates · today is door ${today}.`)
-        : (today < 1 ? "A little early? Explore freely - every door is open." : "Exploring freely - every door is open.");
+      el("locknote").textContent = preview ? "Test mode preview: every door is open."
+        : today < 1 ? "Doors open one a day from 1 December. Each locked door tells you when."
+          : today > total() ? `All ${total()} doors are open - catch up on any you missed.` : `Today is door ${today}. Tap it to open; later doors stay locked until their day.`;
     }
 
     /* The Naughty list Clinker keeps in the attic: doors answered wrongly and not yet redeemed. */
@@ -315,9 +365,7 @@
       const p = el("panel"); p.replaceChildren();
       const n = state.selected, d = DAYS[n - 1];
       if (isLocked(n)) {
-        p.append(h("div", { class: "locked-msg" }, svg(P.lock), h("h2", { text: `Door ${n} opens on ${A.opensLabel(data, n)}` }),
-          h("p", { class: "when", text: `That’s ${A.inDays(A.daysUntil(data, n))}.` }),
-          h("p", { text: "No peeking. Come back on the day - or add the calendar reminders (the link just below the house) and each door will tell you when it opens." })));
+        p.append(h("div", { class: "locked-msg nestor-inline" }, ...A.nestorNote(data, n, today, "h2", { head: "daytitle", text: null })));
         return;
       }
       const dt = new Date(data.year, data.month - 1, n), occ = data.occasions[n], isAI = d.track !== "cyber";
@@ -326,8 +374,8 @@
         h("div", { class: "head" },
           h("div", { class: "ornament o" + (n % 4), "aria-hidden": "true" }, h("span", { class: "string" }), h("span", { class: "cap" }), h("span", { class: "ball" }, svg(data.icons[d.icon] || P.star)), h("span", { class: "shine" })),
           h("div", { class: "stack" },
-            h("div", { class: "meta" }, h("span", { text: `DOOR ${pad(n)} OF ${total()}` }), h("span", { "aria-hidden": "true", text: "·" }), h("span", { text: `${WD[dt.getDay()].toUpperCase()} ${n} DECEMBER${occ ? " · " + occ.toUpperCase() : ""}` })),
-            h("h2", { text: d.title }),
+            h("div", { class: "meta" }, h("span", { text: `${WD[dt.getDay()].toUpperCase()} ${n} DECEMBER${occ ? " · " + occ.toUpperCase() : ""}` })),
+            h("h2", { id: "daytitle", tabindex: "-1", text: d.title }),
             h("div", { class: "labels" }, h("span", { class: "track" + (isAI ? " ai" : "") }, isAI ? svg(P.star) : null, TRACK[d.track]), h("span", { class: "topic", text: d.topic })),
             h("div", { class: "for" }, h("span", { class: "k", text: "FOR" }), d.for.map((id) => h("span", { class: "who" + (id === state.team ? " me" : ""), text: STK[id] }))))),
         h("div", { class: "stack" },
@@ -349,15 +397,12 @@
           h("span", { class: "arr", "aria-hidden": "true", text: "→" })),
         h("div", { class: "nav" },
           h("button", { type: "button", class: "sq", "aria-label": "Previous door", "data-k": "prev", disabled: n <= 1, onclick: () => select(n - 1) }, svg(P.left)),
-          h("button", { type: "button", class: "sq", "aria-label": "Next door", "data-k": "next", disabled: n >= total() || isLocked(n + 1), onclick: () => select(n + 1) }, svg(P.right)),
+          h("button", { type: "button", class: "sq", "aria-label": isLocked(n + 1) ? `Next door (opens ${A.inDays(A.daysUntil(data, n + 1))})` : "Next door", "data-k": "next", disabled: n >= total(), onclick: () => select(n + 1) }, svg(P.right)),
           h("span", { class: "grow" }),
           h("a", { class: "share", href: `invites/door-${pad(n)}.ics`, type: "text/calendar", "aria-label": `Add door ${n} to your calendar (.ics file)`, text: "Add to calendar" }),
           h("a", { class: "share", href: briefHref(n) + "#share", text: "Share kit for 5 channels" }),
-          h("button", { type: "button", class: "back-up", onclick: () => {
-            el("house").scrollIntoView({ behavior: A.reducedMotion() ? "auto" : "smooth", block: "start" });
-            const card = document.querySelector("#doors .card.sel");
-            if (card) card.focus({ preventScroll: true });
-          } }, "↑ Back to the house")));
+          h("button", { type: "button", class: "back-up", onclick: () => dlg.close() }, "Close")));
+      el("daylabel").textContent = `DOOR ${pad(n)} OF ${total()}`;
     }
 
     /* After an answer the options are disabled, so focus moves to the result; at either end of the
@@ -384,7 +429,6 @@
       const fresh = sanitize(store.get(KEY), data);
       Object.assign(state, { opened: fresh.opened, answers: fresh.answers, acts: fresh.acts, team: fresh.team, aud: fresh.aud, celebrate: false });
       if (fresh.country) state.country = fresh.country;
-      if (fresh.follow !== null) state.follow = fresh.follow;
       render();
     });
 
@@ -392,31 +436,32 @@
       if (b.dataset.mode !== "advent" && b.dataset.mode !== "full") return;
       state.mode = b.dataset.mode; state.celebrate = false; persist(); render();
     }));
-    el("follow").addEventListener("click", () => { state.follow = !state.follow; state.celebrate = false; persist(); render(); });
     /* Resetting erases points, answers and Santa's list, so it asks first. "Keep my progress" has the focus,
        Escape or a click outside keeps everything, and only "Yes, reset" erases. */
-    const reset = el("reset"), dlg = el("resetdlg");
+    const reset = el("reset"), rdlg = el("resetdlg");
     const doReset = () => {
       state.opened = {}; state.answers = {}; state.acts = {}; state.celebrate = false;
       state.selected = Math.min(Math.max(today, 1), total());
       persist(); render();
     };
     reset.addEventListener("click", () => {
-      if (typeof dlg.showModal === "function") { dlg.showModal(); el("resetno").focus(); return; }
+      if (typeof rdlg.showModal === "function") { rdlg.showModal(); el("resetno").focus(); return; }
       if (window.confirm("Reset your progress? This erases your points, answers, activities and Santa’s list on this device.")) doReset();
     });
-    el("resetno").addEventListener("click", () => dlg.close("keep"));
-    el("resetyes").addEventListener("click", () => { dlg.close("reset"); doReset(); reset.focus(); });
-    dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close("keep"); });
-    dlg.addEventListener("close", () => { if (dlg.returnValue !== "reset") reset.focus(); });
+    el("resetno").addEventListener("click", () => rdlg.close("keep"));
+    el("resetyes").addEventListener("click", () => { rdlg.close("reset"); doReset(); reset.focus(); });
+    rdlg.addEventListener("click", (e) => { if (e.target === rdlg) rdlg.close("keep"); });
+    rdlg.addEventListener("close", () => { if (rdlg.returnValue !== "reset") reset.focus(); });
     /* A page left open moves on at midnight: the new door unlocks and the counter changes, without a reload.
        The selected door stays as it is, unless it was the locked one now opening. */
-    A.onNewDay(() => {
-      today = A.todayFor(data);
-      if (!isLocked(state.selected) && !state.opened[state.selected]) { state.opened[state.selected] = 1; persist(); }
-      render();
-    }, data);
+    A.onNewDay(() => { today = A.todayFor(data); render(); }, data);
+    const tb = A.testBar(data, settings);
+    if (tb) document.body.append(tb);
     render();
+    A.startTicker();
+    /* A link to a door (reminders, invites, shared links) opens it straight away, or the Nestor note if it isn't open yet. */
+    if (openOnLoad) select(openOnLoad, "now");
+    else if (lockedOnLoad) showNestor(lockedOnLoad);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", main); else main();

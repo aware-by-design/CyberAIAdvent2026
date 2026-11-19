@@ -36,7 +36,7 @@
   <div class="hero-text">
     <p class="eyebrow" id="eyebrow">31 DAYS · CYBERSECURITY &amp; AI</p>
     <h1>Winterwatch <em>Cyber &amp; AI</em></h1>
-    <div class="daycount" id="daycount"><p class="dc-line"><strong class="dc-num" id="dcnum"></strong> <span class="dc-text" id="dctext"></span></p><span class="dc-bar" id="dcbar" aria-hidden="true"></span></div>
+    <div class="daycount" id="daycount"><p class="dc-line"><strong class="dc-num" id="dcnum"></strong> <span class="dc-text" id="dctext"></span></p><p class="dc-tick" id="dctick" aria-hidden="true"></p><span class="dc-bar" id="dcbar" aria-hidden="true"></span></div>
     <p class="lede">One door a day, one do, one don’t. Bite-sized cybersecurity, AI and privacy habits, real case studies from Europe and beyond, activities for every audience, an incident lab with timelines and playbooks, and a 20-second challenge behind every door - from the boardroom to the kitchen table.</p>
   </div>
 </section>
@@ -51,7 +51,7 @@
   </div>
   <div class="badges"><span class="k">BADGES <span id="badgecount">0</span>/8</span><ul id="badges"></ul><button type="button" class="ghost reset" id="reset">Reset my progress</button></div>
   <section class="santa" id="santa" aria-label="Santa’s list"></section>
-  <p class="rules">+10 for opening a door · +20 for a correct answer · +5 for each activity you tick off · +10 more when the door is tagged for your team. Scores stay in this browser.</p>
+  <p class="rules">+10 for opening a door · +20 for a correct answer · +5 for each activity you tick off · +10 more when the door is tagged for your role. Scores stay in this browser.</p>
 </section>
 
 <div class="main">
@@ -112,7 +112,7 @@
           <h2 class="sign-t">WINTERWATCH</h2>
           <p class="sign-s" id="boardsub">Cyber &amp; AI · 31 days of cyber, AI &amp; privacy hygiene</p>
         </div>
-        <div class="follow"><span class="note" id="locknote"></span><button type="button" role="switch" id="follow" aria-checked="true"><span class="track" aria-hidden="true"><span class="knob"></span></span>Follow December dates</button></div>
+        <div class="follow"><span class="note" id="locknote"></span></div>
         <div id="doors" class="cards"></div>
         <div class="plaque2"><span class="p"><i aria-hidden="true">❦</i>Small habits. Safer holidays.<i aria-hidden="true">❦</i></span></div>
         <div class="wainscot" aria-hidden="true"></div>
@@ -228,7 +228,6 @@
       <a id="ics" href="days-31.ics">Add reminders to your calendar (.ics)</a>
     </div>
   </section>
-  <aside class="panel" id="panel" aria-label="Selected door"></aside>
   <section class="europe" aria-label="Around Europe">
       <div class="europe-head"><h2>Around Europe</h2><span class="note">Where this calendar’s case studies happened · pins glow for the open door</span></div>
       <div class="map" id="map"><img src="europe-map.svg" alt="Map of Europe. EU member states are shown in a lighter green." width="800" height="632"></div>
@@ -246,6 +245,17 @@
   <p class="fine mono brandline"><img class="foot-mark" src="aware-by-design-mark.png" srcset="aware-by-design-mark.png 1x, aware-by-design-mark@2x.png 2x" width="22" height="22" alt=""><span class="foot-org">aware-by-design</span><span class="foot-meta">aware-by-design.github.io/CyberAIAdvent2026 · Fonts: Fraunces and IBM Plex (SIL OFL 1.1), self-hosted - no third-party requests.</span></p>
 </footer>
 </div>
+<!-- Each door opens in this popup: the whole day, a Scroll down button that steps through it, and Close. -->
+<dialog class="daydlg" id="daydlg" aria-labelledby="daytitle">
+  <div class="dlg-bar"><span class="dlg-door" id="daylabel"></span><button type="button" class="dlg-x" id="dayclose" aria-label="Close this door">Close ✕</button></div>
+  <div class="dlg-body" id="daybody"><div class="panel" id="panel"></div></div>
+  <button type="button" class="dlg-down" id="daydown">Scroll down ↓</button>
+</dialog>
+<!-- A door that isn't open yet: a note from the NESTOR family with a live countdown. -->
+<dialog class="nestor" id="nestordlg" aria-labelledby="nestorttl" aria-describedby="nestortext">
+  <div id="nestorbody"></div>
+  <div class="row"><button type="button" class="keep" id="nestortoday"></button><button type="button" class="quiet" id="nestorclose">Close</button></div>
+</dialog>
 <dialog class="confirm" id="resetdlg" aria-labelledby="resetttl" aria-describedby="resetdesc">
   <h2 id="resetttl">Reset your progress?</h2>
   <p id="resetdesc">This erases your points, quiz answers, ticked activities and Santa’s list on this device. Your role and settings stay. It can’t be undone.</p>

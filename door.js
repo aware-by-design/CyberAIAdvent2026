@@ -92,7 +92,9 @@
       return;
     }
     const params = new URLSearchParams(window.location.search);
-    const preview = params.get("preview") === "all";
+    /* Test mode (temporary): a date simulator; ?preview=all opens every door only while it is on. */
+    const testMode = A.applyTestMode(settings);
+    const preview = testMode && params.get("preview") === "all";
     const KEY = "cyber-advent:" + data.year;
     const saved = sanitize(store.get(KEY), data);
     const qMode = params.get("mode");
@@ -102,14 +104,14 @@
     const mode = qMode === "advent" || qMode === "full" ? qMode : needsFull ? "full" : (saved.mode || (settings.defaultMode === "advent" ? "advent" : "full"));
     const total = data.modes[mode].doors;
     let today = A.todayFor(data); // refreshed at midnight by A.onNewDay below
-    let follow = saved.follow === null ? settings.lockFuture !== false : saved.follow;
-    const isLocked = (n) => follow && !preview && n > today;
+    // Doors follow the dates for everyone (same rule as the calendar page).
+    const isLocked = (n) => !preview && n > today;
     const state = { ...saved, country: saved.country || (data.countries.some((c) => c.id === settings.defaultCountry) ? settings.defaultCountry : "eu") };
     /* Mode and the Follow switch belong to the calendar page: re-read them at save time so a stale copy
        from when this page loaded never overwrites a newer choice made in another tab. */
     const persist = () => {
       const cur = sanitize(store.get(KEY), data);
-      store.set(KEY, { mode: cur.mode, opened: state.opened, answers: state.answers, acts: state.acts, team: state.team, aud: state.aud, country: state.country, follow: cur.follow });
+      store.set(KEY, { mode: cur.mode, opened: state.opened, answers: state.answers, acts: state.acts, team: state.team, aud: state.aud, country: state.country });
     };
     const q = (n) => `?day=${n}${mode === "advent" ? "&mode=advent" : ""}${preview ? "&preview=all" : ""}`;
 
@@ -127,13 +129,14 @@
         n > 1 ? h("a", { class: "sq", href: "door.html" + q(n - 1), "aria-label": "Previous door" }, "←") : null,
         n < total && !isLocked(n + 1) ? h("a", { class: "sq", href: "door.html" + q(n + 1), "aria-label": "Next door" }, "→") : null,
         h("a", { class: "ghost cal", href: `invites/door-${pad(n)}.ics`, type: "text/calendar", "aria-label": `Add door ${n} to your calendar (.ics file)` }, "Add to calendar"),
-        h("a", { class: "ghost cal", href: `invites/door-${pad(n)}.html` }, "Invite preview"),
-        h("button", { type: "button", class: "ghost", onclick: () => window.print() }, "Print or save as PDF"));
+        isLocked(n) ? null : h("a", { class: "ghost cal", href: `invites/door-${pad(n)}.html` }, "Invite preview"),
+        isLocked(n) ? null : h("button", { type: "button", class: "ghost", onclick: () => window.print() }, "Print or save as PDF"));
       r.append(bar);
       if (isLocked(n)) {
-        r.append(h("div", { class: "locked-msg" }, svg(P.lock), h("h1", { text: `Door ${n} opens on ${A.opensLabel(data, n)}` }),
-          h("p", { class: "when", text: `That’s ${A.inDays(A.daysUntil(data, n))}.` }),
-          h("p", { text: "No peeking - the briefing unlocks on the day. To explore early, switch off “Follow December dates” on the calendar." })));
+        r.append(h("div", { class: "locked-msg nestor-inline" }, ...A.nestorNote(data, n, today, "h1"),
+          h("p", { class: "nestor-links" }, h("a", { href: "index.html" + (mode === "advent" ? "?mode=advent" : ""), text: "Back to the calendar" }), " · ",
+            h("a", { href: `invites/door-${pad(n)}.ics`, type: "text/calendar", text: `Add door ${n} to your calendar` }))));
+        A.startTicker();
         return;
       }
       if (!state.opened[n]) { state.opened[n] = 1; persist(); } // write only when something changed
@@ -188,12 +191,14 @@
       if (e.key !== null && e.key !== KEY) return;
       const fresh = sanitize(store.get(KEY), data);
       Object.assign(state, { opened: fresh.opened, answers: fresh.answers, acts: fresh.acts, team: fresh.team, aud: fresh.aud, country: fresh.country || state.country });
-      follow = fresh.follow === null ? settings.lockFuture !== false : fresh.follow;
       render();
     });
     /* Left open overnight, a locked briefing unlocks at midnight without a reload. */
     A.onNewDay(() => { today = A.todayFor(data); render(); }, data);
+    const tb = A.testBar(data, settings);
+    if (tb) document.body.append(tb);
     render();
+    A.startTicker();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", main); else main();

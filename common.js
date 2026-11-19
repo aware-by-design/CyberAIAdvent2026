@@ -189,6 +189,61 @@
     return out;
   }
 
+  /* TEST MODE (temporary; settings.json "testMode": true). A date simulator for checking the countdown, the door
+     locks and the Nestor messages before December. With testMode off, a stored test date and ?preview=all links
+     have no effect at all. Switch it off before launch (validate.py warns while it is on), then delete this block,
+     testBar() and the .testbar styles. */
+  let testOffset = 0;
+  const TEST_KEY = "cyber-advent:test-date";
+  function now() { return new Date(Date.now() + testOffset); }
+  function applyTestMode(settings) {
+    testOffset = 0;
+    if (!settings || settings.testMode !== true) return false;
+    let v = null;
+    try { v = window.localStorage.getItem(TEST_KEY); } catch (e) { v = null; }
+    if (v && /^\d{4}-\d\d-\d\dT\d\d:\d\d(:\d\d)?$/.test(v)) { const t = new Date(v); if (!Number.isNaN(t.getTime())) testOffset = t.getTime() - Date.now(); }
+    return true;
+  }
+  function testBar(data, settings) {
+    if (!settings || settings.testMode !== true) return null;
+    let cur = "";
+    try { cur = window.localStorage.getItem(TEST_KEY) || ""; } catch (e) { cur = ""; }
+    const y = data.year, two = (v) => String(v).padStart(2, "0");
+    const opts = [["", "Real date and time"], [`${y}-11-25T10:00`, "25 Nov · countdown"], [`${y}-11-30T23:59:45`, "30 Nov 23:59:45 · watch Door 1 open"]];
+    for (let d = 1; d <= 31; d++) opts.push([`${y}-12-${two(d)}T10:00`, `${d} Dec`]);
+    opts.push([`${y}-12-05T23:59:45`, "5 Dec 23:59:45 · watch Door 6 open"], [`${y + 1}-01-02T10:00`, `2 Jan ${y + 1} · after December`]);
+    const sel = h("select", { id: "testdate" }, opts.map(([v, t]) => h("option", { value: v, text: t })));
+    sel.value = opts.some(([v]) => v === cur) ? cur : "";
+    sel.addEventListener("change", () => {
+      try { if (sel.value) window.localStorage.setItem(TEST_KEY, sel.value); else window.localStorage.removeItem(TEST_KEY); } catch (e) { /* storage blocked */ }
+      window.location.reload();
+    });
+    const u = new URL(window.location.href), pv = u.searchParams.get("preview") === "all";
+    if (pv) u.searchParams.delete("preview"); else u.searchParams.set("preview", "all");
+    return h("details", { class: "testbar" },
+      h("summary", {}, h("strong", { text: "TEST MODE" }), " ", h("span", { class: "tb-now", "data-clock": "1" })),
+      h("div", { class: "tb-body" },
+        h("label", { for: "testdate", text: "Pretend it is" }), sel,
+        h("a", { href: u.pathname + u.search, text: pv ? "Lock the doors again" : "Open every door" }),
+        h("span", { class: "tb-note", text: "Temporary · turn off testMode in settings.json before 1 December" })));
+  }
+
+  /* Live countdowns: an element with data-cd="<timestamp>" shows the time left, data-clock the current time;
+     one timer refreshes them all every second. */
+  function fmtLeft(ms) {
+    if (!(ms > 0)) return "00:00:00";
+    const t = Math.floor(ms / 1000), d = Math.floor(t / 86400);
+    const clock = [Math.floor((t % 86400) / 3600), Math.floor((t % 3600) / 60), t % 60].map((v) => String(v).padStart(2, "0")).join(":");
+    return d ? `${d} ${d === 1 ? "day" : "days"} ${clock}` : clock;
+  }
+  function tick() {
+    const t = now();
+    document.querySelectorAll("[data-cd]").forEach((e) => { const v = Number(e.dataset.cd); if (Number.isFinite(v)) e.textContent = fmtLeft(v - t.getTime()); });
+    document.querySelectorAll("[data-clock]").forEach((e) => { e.textContent = t.toLocaleString("en-GB", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", second: "2-digit" }); });
+  }
+  let ticker = 0;
+  function startTicker() { if (!ticker) ticker = window.setInterval(tick, 1000); tick(); }
+
   /* When a door opens. Door n opens at local midnight on n December, or when its calendar reminder fires
      (data.reminder, e.g. 08:30, in data.timezone, e.g. Europe/Rome), whichever comes first. In Europe and
      Asia midnight always comes first, so nothing changes there. On the Americas' west coast and further west
@@ -229,18 +284,18 @@
 
   /* The highest door that is open now (0 before the first one, 99 after the calendar year). */
   function todayFor(data) {
-    const now = new Date();
-    if (now.getFullYear() > data.year) return 99;
-    let n = now.getFullYear() === data.year && now.getMonth() === data.month - 1 ? now.getDate() : 0;
-    while (n < 31 && opensAt(data, n + 1) <= now) n++; // a reminder that already fired has opened its door
+    const t = now();
+    if (t.getFullYear() > data.year) return 99;
+    let n = t.getFullYear() === data.year && t.getMonth() === data.month - 1 ? t.getDate() : 0;
+    while (n < 31 && opensAt(data, n + 1) <= t) n++; // a reminder that already fired has opened its door
     return n;
   }
 
   /* Whole calendar days from today to the day door n opens, in the visitor's own time zone. Both dates are
      local midnights; rounding absorbs the one-hour difference when clocks change in between. */
   function daysUntil(data, n) {
-    const now = new Date(), o = opensAt(data, n);
-    const t0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const t = now(), o = opensAt(data, n);
+    const t0 = new Date(t.getFullYear(), t.getMonth(), t.getDate());
     return Math.round((new Date(o.getFullYear(), o.getMonth(), o.getDate()) - t0) / 86400000);
   }
 
@@ -248,22 +303,40 @@
      next midnight or door opening, whichever is sooner, plus a check whenever the tab comes back into view
      (timers sleep with the device). */
   function onNewDay(cb, data) {
-    const key = () => new Date().toDateString() + (data ? "|" + todayFor(data) : "");
+    const key = () => now().toDateString() + (data ? "|" + todayFor(data) : "");
     let last = key(), timer = 0;
     const check = () => { const k = key(); if (k !== last) { last = k; cb(); } };
     const arm = () => {
       window.clearTimeout(timer);
-      const now = new Date();
-      let next = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 2);
+      const t0 = now();
+      let next = new Date(t0.getFullYear(), t0.getMonth(), t0.getDate() + 1, 0, 0, 2);
       if (data) {
         const t = todayFor(data);
-        if (t < 31) { const o = new Date(opensAt(data, t + 1).getTime() + 2000); if (o > now && o < next) next = o; }
+        if (t < 31) { const o = new Date(opensAt(data, t + 1).getTime() + 2000); if (o > t0 && o < next) next = o; }
       }
-      timer = window.setTimeout(() => { check(); arm(); }, Math.min(next - now, 2147483647));
+      timer = window.setTimeout(() => { check(); arm(); }, Math.min(next - t0, 2147483647));
     };
     document.addEventListener("visibilitychange", () => { if (!document.hidden) { check(); arm(); } });
     window.addEventListener("focus", check);
     arm();
+  }
+
+  /* A note from the NESTOR family for a door that isn't open yet: when it opens, and a live countdown.
+     Used by the calendar's "Come back tomorrow" popup and by the briefing page of a locked door. */
+  function nestorNote(data, n, today, headTag, ids) {
+    const k = daysUntil(data, n), label = opensLabel(data, n);
+    const head = k <= 0 ? "Come back tonight!" : k === 1 ? "Come back tomorrow!" : `Come back in ${k} days!`;
+    const when = k <= 0 ? `Door ${n} opens tonight, ${label}.` : k === 1 ? `Door ${n} opens tomorrow, ${label}.` : `Door ${n} opens on ${label}.`;
+    const why = today >= 1 ? `Today’s door is ${today}. One door a day keeps the surprise - see you then.`
+      : n === 1 ? "Add the reminders to your calendar and we’ll tell you when it opens."
+        : `The calendar starts with Door 1 on ${opensLabel(data, 1)}.`;
+    return [
+      h("img", { class: "nestor-img", src: "img/nestor-family.webp", width: "760", height: "714", alt: "" }),
+      h("p", { class: "nestor-eyebrow", text: "A NOTE FROM THE NESTOR FAMILY" }),
+      h(headTag || "h2", { id: ids ? ids.head : null, class: "nestor-h", text: head }),
+      h("p", { id: ids ? ids.text : null, class: "nestor-t" }, when, " ", why),
+      h("p", { class: "nestor-cd" }, "Opens in ", h("strong", { "data-cd": String(opensAt(data, n).getTime()), text: fmtLeft(opensAt(data, n) - now()) }))
+    ];
   }
 
   /* "in 12 days" / "tomorrow" / "tonight", for locked doors and the countdown. A locked door opening on the
@@ -397,5 +470,5 @@
     try { await navigator.clipboard.writeText(text); return true; } catch (e) { return false; }
   }
 
-  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, todayFor, daysUntil, onNewDay, inDays, reminderAt, opensAt, opensLabel, nextOpensText, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
+  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, todayFor, daysUntil, onNewDay, inDays, reminderAt, opensAt, opensLabel, nextOpensText, now, applyTestMode, testBar, fmtLeft, startTicker, nestorNote, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
 })();
