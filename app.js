@@ -52,7 +52,8 @@
       mode: A.startMode(data, settings, params, saved.pick), pick: saved.pick,
       opened: saved.opened, answers: saved.answers, acts: saved.acts, team: saved.team, aud: saved.aud,
       country: saved.country || (data.countries.some((c) => c.id === settings.defaultCountry) ? settings.defaultCountry : "eu"),
-      filter: "all", selected: 1, celebrate: false
+      filter: "all", selected: 1, celebrate: false,
+      full: false // the popup shows the full briefing (until it closes)
     };
     const gamified = settings.gamified !== false;
     el("hud").hidden = !gamified;
@@ -60,7 +61,7 @@
     let today = A.todayFor(data); // refreshed at midnight by A.onNewDay below
     const total = () => data.modes[state.mode].doors;
     /* Doors follow the dates for everyone: today's door and the days before it are open, later doors stay shut
-       and show a note from the NESTOR family instead. This is a convenience, not access control: all content is
+       and show a note from NESTOR instead. This is a convenience, not access control: all content is
        public in days.json (SECURITY.md). */
     const isLocked = (n) => !preview && n > today;
     const correct = (n) => state.answers[n] !== undefined && state.answers[n] === DAYS[n - 1].quiz.answer;
@@ -92,7 +93,7 @@
       window.history.replaceState(null, "", url);
     };
     /* Opening a door: it swings open on the house, then the whole day appears in a popup. A door that isn't
-       open yet shows a note from the NESTOR family instead. In the popup, Previous / Next move between doors. */
+       open yet shows a note from NESTOR instead. In the popup, Previous / Next move between doors. */
     function select(n, open) {
       if (!Number.isInteger(n) || n < 1 || n > total()) return;
       if (isLocked(n)) { showNestor(n); return; }
@@ -127,10 +128,25 @@
     el("dayclose").addEventListener("click", () => dlg.close());
     onBackdrop(dlg, () => dlg.close());
     dlg.addEventListener("close", () => {
+      state.full = false;
       setUrl(0);
       const card = document.querySelector(`#doors [data-k="door-${state.selected}"]`);
       if (card) card.focus();
     });
+    /* "Open the full briefing" and "Share kit" open the briefing inside the popup, so a door never leaves the
+       calendar; it stays open as the visitor moves to the next or previous door. A middle-click or a
+       Ctrl/⌘/Shift-click still opens the briefing page in a new tab. */
+    function openFull(e, target) {
+      if (e && (e.button > 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey)) return;
+      if (e) e.preventDefault();
+      state.full = true; render();
+      const t = el(target) || el("fullbrief");
+      if (!t) return;
+      t.scrollIntoView({ block: "start", behavior: A.reducedMotion() ? "auto" : "smooth" });
+      const f = target === "share" ? t.querySelector("[role=tab]") : t;
+      if (f) f.focus({ preventScroll: true });
+      updateDown();
+    }
     /* The note's button opens today's door; once the countdown runs out with the note still open, the note says
        "Door n is open!" and the button opens that door instead. */
     let nestorDoor = 0, nestorOpen = false, goDoor = 0;
@@ -416,23 +432,34 @@
           h("div", { class: "dd dont" }, h("span", { class: "dot", "aria-hidden": "true" }, svg(P.x)), h("div", {}, h("span", { class: "lbl", text: "NAUGHTY LIST · DON’T" }), h("p", { text: d.dont }))))
       );
       const rn = roleNote(d);
-      if (rn) p.append(rn);
+      if (rn && !state.full) p.append(rn); // the full briefing lists every role's line
       if (gamified) p.append(quiz(n, d));
       p.append(A.activitiesBlock({ data, n, d, acts: state.acts, gamified, P, note: gamified ? A.santaState(data, total(), state.answers, state.acts).status(n).note : null,
         onToggle: (i, on) => { const k = n + "-" + i; if (on) state.acts[k] = 1; else delete state.acts[k]; state.opened[n] = 1; state.celebrate = false; persist(); render(); } }));
+      if (state.full) {
+        /* The whole briefing, inside the popup: the same sections as the briefing page (A.briefingSections). */
+        const link = new URL(`index.html?day=${n}${mq()}`, window.location.href).toString();
+        p.append(h("div", { class: "full-head", id: "fullbrief", tabindex: "-1" },
+          h("span", { class: "lbl", text: "FULL BRIEFING" }),
+          h("span", { class: "fh-t", text: `${plural(qs.length, "rule excerpt", "rule excerpts")} · ${plural(d.cases.length, "case study", "case studies")} · incident lab · share kit` }),
+          h("a", { class: "fh-page", href: briefHref(n), text: "Open as a page" })),
+        ...A.briefingSections({ data, n, d, state, persist, rerender: render, total: total(), link, level: 3 }));
+      } else {
+        p.append(
+          h("article", { class: "case headline" },
+            h("div", { class: "cmeta" }, h("span", { class: "kind " + String(c0.kind).replace(/[^A-Za-z]/g, ""), text: "LESSON LEARNT" }), h("span", { text: c0.when }), h("span", { class: "loc" }, svg(P.pin), c0.location)),
+            h("h4", { text: c0.name }), h("p", { class: "clamp", text: c0.text })),
+          h("a", { class: "brief-cta", href: briefHref(n), "data-k": "fullcta", onclick: (e) => openFull(e, "fullbrief") },
+            h("span", { class: "bt" }, h("strong", { text: "Open the full briefing" }),
+              h("span", { text: `${plural(qs.length, "rule excerpt", "rule excerpts")} · ${plural(d.cases.length, "case study", "case studies")} · incident lab · share kit` })),
+            h("span", { class: "arr", "aria-hidden": "true", text: "↓" })));
+      }
       p.append(
-        h("article", { class: "case headline" },
-          h("div", { class: "cmeta" }, h("span", { class: "kind " + String(c0.kind).replace(/[^A-Za-z]/g, ""), text: "LESSON LEARNT" }), h("span", { text: c0.when }), h("span", { class: "loc" }, svg(P.pin), c0.location)),
-          h("h4", { text: c0.name }), h("p", { class: "clamp", text: c0.text })),
-        h("a", { class: "brief-cta", href: briefHref(n) },
-          h("span", { class: "bt" }, h("strong", { text: "Open the full briefing" }),
-            h("span", { text: `${plural(qs.length, "rule excerpt", "rule excerpts")} · ${plural(d.cases.length, "case study", "case studies")} · incident lab · share kit` })),
-          h("span", { class: "arr", "aria-hidden": "true", text: "→" })),
         h("div", { class: "nav" },
           h("button", { type: "button", class: "sq", "aria-label": "Previous door", "data-k": "prev", disabled: n <= 1, onclick: () => select(n - 1) }, svg(P.left)),
           h("button", { type: "button", class: "sq", "aria-label": isLocked(n + 1) ? `Next door (opens ${A.inDays(A.daysUntil(data, n + 1))})` : "Next door", "data-k": "next", disabled: n >= total(), onclick: () => select(n + 1) }, svg(P.right)),
           h("span", { class: "grow" }),
-          h("a", { class: "share", href: briefHref(n) + "#share", text: "Share kit for 5 channels" }),
+          h("a", { class: "share", href: briefHref(n) + "#share", "data-k": "sharekit", onclick: (e) => openFull(e, "share"), text: "Share kit for 5 channels" }),
           h("button", { type: "button", class: "back-up", onclick: () => dlg.close() }, "Close")));
       el("daylabel").textContent = `DOOR ${pad(n)} OF ${total()}`;
     }
@@ -485,7 +512,7 @@
     el("resetyes").addEventListener("click", () => { rdlg.close("reset"); doReset(); reset.focus(); });
     onBackdrop(rdlg, () => rdlg.close("keep"));
     rdlg.addEventListener("close", () => { if (rdlg.returnValue !== "reset") reset.focus(); });
-    /* 24-26 December: a once-a-year note from the NESTOR family (copy in days.json "holiday"), shown once per
+    /* 24-26 December: a once-a-year note from NESTOR (copy in days.json "holiday"), shown once per
        browser. In test mode it shows every time, so the date simulator can bring it up again. */
     const xdlg = el("xmasdlg"), HOLIDAY_KEY = "cyber-advent:holiday-" + data.year;
     let xmasDoor = 0;

@@ -346,17 +346,17 @@
     arm();
   }
 
-  /* A note from the NESTOR family for a door that isn't open yet: when it opens, and a live countdown.
+  /* A note from NESTOR for a door that isn't open yet: when it opens, and a live countdown.
      Used by the calendar's "Come back tomorrow" popup and by the briefing page of a locked door ({ page: true },
      which says the briefing appears there). In test mode it also points testers to the test bar and a preview link. */
   function nestorNote(data, n, today, headTag, ids, opts) {
     const img = h("img", { class: "nestor-img", src: "img/nestor-family.webp", width: "760", height: "714", alt: "" });
-    const eyebrow = h("p", { class: "nestor-eyebrow", text: "A NOTE FROM THE NESTOR FAMILY" });
+    const eyebrow = h("p", { class: "nestor-eyebrow", text: "A NOTE FROM NESTOR" });
     /* The countdown has run out while the note was open: say so, and the page offers an "Open door n" button. */
     if (opensAt(data, n) <= now()) {
       return [img, eyebrow,
         h(headTag || "h2", { id: ids ? ids.head : null, class: "nestor-h", text: `Door ${n} is open!` }),
-        h("p", { id: ids ? ids.text : null, class: "nestor-t", text: "The wait is over. Go on, open it: the Nestor family wants to see what’s inside too." })];
+        h("p", { id: ids ? ids.text : null, class: "nestor-t", text: "The wait is over. Go on, open it: NESTOR wants to see what’s inside too." })];
     }
     const k = daysUntil(data, n), label = opensLabel(data, n);
     const head = k <= 0 ? "Come back tonight!" : k === 1 ? "Come back tomorrow!" : `Come back in ${k} days!`;
@@ -373,6 +373,101 @@
         h("a", { href: previewHref(n), text: "preview this door" }), " (test mode only).") : null
     ];
   }
+  /* THE FULL BRIEFING. Its sections are built here once and used by the briefing page (door.js) and by the door
+     popup on the calendar page (app.js), so both always show the same thing. level is the heading level of the
+     section titles: 2 on the briefing page, 3 inside the popup (whose door title is an h2). */
+  const BP = {
+    pin: "M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12zM12 11.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z",
+    shield: "M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z",
+    eye: "M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+  };
+  const WHY = [["simple", "SIMPLE · FOR EVERYONE"], ["technical", "TECHNICAL · FOR IT AND SECURITY"], ["business", "BUSINESS · FOR LEADERS"]];
+  function shareKitBlock(channels, lv) {
+    const tabs = h("div", { class: "tabs", role: "tablist", "aria-label": "Channel" });
+    const hint = h("span", {}), count = h("span", { class: "count" });
+    const ta = h("textarea", { class: "kit-text", readonly: true, rows: "12", "aria-label": "Summary to share" });
+    const copy = h("button", { type: "button", class: "copy", text: "Copy text" });
+    const links = h("div", { class: "kit-links" });
+    function show(i) {
+      const c = channels[i];
+      tabs.querySelectorAll("button").forEach((b, j) => b.setAttribute("aria-selected", String(j === i)));
+      hint.textContent = c.hint;
+      count.textContent = c.id === "x" ? `${c.text.length}/280 characters` : `${c.text.length} characters`;
+      ta.value = c.text;
+      copy.textContent = "Copy text";
+      links.replaceChildren(...c.links.map((l) => (l.mailto ? h("a", { class: "share", href: l.mailto, text: l.label }) : extLink(l.url, "share", l.label))));
+    }
+    channels.forEach((c, i) => tabs.append(h("button", { type: "button", role: "tab", onclick: () => show(i) }, c.name)));
+    copy.addEventListener("click", async () => {
+      if (await copyText(ta.value)) copy.textContent = "Copied ✓";
+      else { ta.focus(); ta.select(); copy.textContent = "Selected - press Ctrl+C or ⌘C"; }
+    });
+    show(0);
+    return h("section", { class: "kit", id: "share", "aria-label": "Share kit" },
+      h("div", { class: "shead" }, h("h" + lv, { class: "h3", text: "SHARE KIT · A SUMMARY FOR EVERY CHANNEL" }), h("span", { class: "note", text: "Check the text and add your name before posting" })),
+      tabs, h("div", { class: "meta2" }, hint, count), ta, h("div", { class: "kit-links" }, copy, links));
+  }
+  function labFull(d, lv) {
+    const L = d.lab, c0 = d.cases[0];
+    return h("section", { class: "lab full", "aria-label": "Incident lab" },
+      h("div", { class: "lhead" }, h("h" + lv, { class: "h3", text: "INCIDENT LAB" }), h("span", { class: "basis", text: `Based on: ${c0.name} (${c0.when})` })),
+      h("div", { class: "lsec" }, h("span", { class: "lk", text: "TIMELINE · WHAT HAPPENED" }),
+        h("ol", { class: "timeline" }, L.timeline.map((e) => h("li", {}, h("span", { class: "when", text: e.when }), h("span", { class: "what", text: e.what }))))),
+      h("div", { class: "lsec two" },
+        h("div", { class: "stack" }, h("span", { class: "lk", text: "HOW IT COULD HAVE BEEN PREVENTED" }), L.prevent.map((t) => h("span", { class: "li" }, svg(BP.shield), t))),
+        h("div", { class: "stack" }, h("span", { class: "lk", text: "HOW IT COULD HAVE BEEN DETECTED" }), L.detect.map((t) => h("span", { class: "li" }, svg(BP.eye), t)))),
+      h("div", { class: "lsec" }, h("span", { class: "lk", text: "AFTER IT · TUNE DETECTION (ILLUSTRATIVE - ADAPT TO YOUR SIEM OR EDR)" }), L.tune.map((t) => h("code", { class: "rule", text: t }))),
+      h("div", { class: "lsec" }, h("span", { class: "lk", text: "RESPONSE PLAYBOOK" }), h("ol", { class: "steps" }, L.playbook.map((t) => h("li", { text: t })))),
+      h("div", { class: "lsec" },
+        h("div", { class: "inject" }, h("span", { class: "lk", text: "TABLETOP · 20-MINUTE INJECT" }), h("p", { text: L.tabletop.inject })),
+        h("span", { class: "lk", text: "DISCUSS" }), L.tabletop.questions.map((q) => h("span", { class: "q-item" }, h("b", { "aria-hidden": "true", text: "?" }), q)),
+        h("span", { class: "roles", text: "Roles: incident lead · IT & security · legal & privacy · comms · business owner. Capture decisions, owners and gaps - then update the playbook." })));
+  }
+  function countryLens(data, d, state, persist, rerender) {
+    const box = h("section", { class: "lens", "aria-label": "Country lens" });
+    const sel = h("select", { id: "country", "data-k": "country" });
+    data.countries.forEach((c) => sel.append(h("option", { value: c.id, text: c.name })));
+    sel.value = state.country;
+    sel.addEventListener("change", () => { if (data.countries.some((c) => c.id === sel.value)) { state.country = sel.value; persist(); rerender(); } });
+    box.append(h("div", { class: "lhead" }, h("label", { class: "h3", for: "country", text: "COUNTRY LENS" }), sel));
+    const nat = data.national[state.country];
+    if (state.country === "eu" || !nat) box.append(h("span", { class: "title", text: "EU baseline" }), h("span", { class: "t", text: "NIS2, DORA, GDPR, the Cyber Resilience Act and the EU AI Act set the common floor. Pick a country to see national standards and authorities." }));
+    else box.append(h("span", { class: "title", text: nat.auth }), h("span", { class: "t", text: nat[d.category] || nat.general }), extLink(nat.url, null, String(nat.url).replace("https://", "") + " ↗"));
+    return box;
+  }
+  function briefingSections(o) {
+    const { data, n, d, state, persist, rerender, total, link } = o, lv = o.level === 3 ? 3 : 2;
+    const sec = (title, note, ...kids) => h("section", { class: "bf-sec", "aria-label": title },
+      h("div", { class: "shead" }, h("h" + lv, { class: "h3", text: title }), note ? h("span", { class: "note", text: note }) : null), ...kids);
+    const out = [];
+    // Role lines ("Make it relevant"): every role this door has a line for, the visitor's own role first.
+    const notes = Object.entries(d.roleNotes || {}).sort(([a], [b]) => (b === state.team) - (a === state.team));
+    if (notes.length) out.push(sec("FOR SPECIFIC ROLES", "Choose your role on the calendar to see your line first",
+      h("ul", { class: "role-notes" }, notes.map(([id, text]) => h("li", { class: id === state.team ? "me" : null }, h("strong", { text: data.stakeholders[id] }), h("span", { text: " " + text }))))));
+    out.push(sec("WHY IT MATTERS · THREE WAYS TO EXPLAIN IT", null,
+      h("div", { class: "why" }, WHY.map(([k, label]) => h("div", {}, h("span", { class: "lk", text: label }), h("p", { text: d.explain[k] }))))));
+    out.push(sec("WHAT THE RULES AND STANDARDS SAY", "Verbatim excerpts · […] marks a cut · not legal advice",
+      quotesFor(data, d).map((qt) => h("figure", { class: "quote " + String(qt.src).replace(/[^A-Za-z0-9]/g, "") },
+        h("div", { class: "qmeta" }, h("span", { class: "src", text: qt.src }), h("span", { class: "qref", text: qt.ref })),
+        h("blockquote", { text: `“${qt.text}”` }),
+        qt.note ? h("p", { class: "qnote", text: qt.note }) : null,
+        extLink(qt.url, null, "Read the official text ↗")))));
+    if (o.activities) out.push(o.activities);
+    out.push(sec("CASE STUDIES · LESSONS LEARNT", null,
+      h("div", { class: "cases-grid" }, d.cases.map((c) => h("article", { class: "case" },
+        h("div", { class: "cmeta" }, h("span", { class: "kind " + String(c.kind).replace(/[^A-Za-z]/g, ""), text: String(c.kind).toUpperCase() }), h("span", { text: c.when }), h("span", { class: "loc" }, svg(BP.pin), c.location)),
+        h("h" + (lv + 1), { class: "h4", text: c.name }), h("p", { text: c.text }), h("span", { class: "src", text: "Source: " + c.source }))))));
+    out.push(labFull(d, lv));
+    out.push(shareKitBlock(shareKit(data, d, total, link), lv));
+    out.push(sec("READ MORE AT THE SOURCE", null,
+      d.readMore.map((m) => extLink(m.url, "rm", h("span", { class: "top2" }, h("span", { class: "org", text: m.org }), h("span", { class: "ref", text: m.ref })), h("span", { class: "t", text: m.text }), h("span", { class: "go", text: "Read at source ↗" }))),
+      toolkitReading(n)));
+    out.push(countryLens(data, d, state, persist, rerender));
+    out.push(h("div", { class: "refs" }, h("span", { class: "k", text: "GROUNDED IN" }), h("span", { class: "txt", text: d.refs }),
+      d.owasp.length ? h("div", { class: "codes" }, d.owasp.map((c) => h("span", { class: "code", text: "OWASP " + c }))) : null));
+    return out;
+  }
+
   /* Doors 22 and 23 cover the supply chain: their briefings list the supplier toolkit as further reading. */
   function toolkitReading(n) {
     if (n !== 22 && n !== 23) return null;
@@ -519,5 +614,5 @@
     try { await navigator.clipboard.writeText(text); return true; } catch (e) { return false; }
   }
 
-  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, defaultMode, startMode, modeParam, todayFor, daysUntil, onNewDay, inDays, reminderAt, opensAt, opensLabel, nextOpensText, now, applyTestMode, testBar, fmtLeft, startTicker, nestorNote, toolkitReading, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
+  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, defaultMode, startMode, modeParam, todayFor, daysUntil, onNewDay, inDays, reminderAt, opensAt, opensLabel, nextOpensText, now, applyTestMode, testBar, fmtLeft, startTicker, nestorNote, toolkitReading, briefingSections, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
 })();

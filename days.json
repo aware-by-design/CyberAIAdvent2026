@@ -3,9 +3,9 @@
   "timezone": "Europe/Rome",
   "reminder": "08:30",
   "holiday": {
-    "eyebrow": "A NOTE FROM THE NESTOR FAMILY",
+    "eyebrow": "A NOTE FROM NESTOR",
     "title": "Merry Christmas and happy holidays!",
-    "intro": "You made it through Advent with your passwords intact. Probably. Before the mince pies take over, three last tips from the family:",
+    "intro": "You made it through Advent with your passwords intact. Probably. Before the mince pies take over, three last tips from all of me:",
     "tips": [
       {
         "icon": "robot",
@@ -26,7 +26,7 @@
     "outroLast": "That was the last door of the Advent calendar, and every door you skipped is still open. Hedgehogs hibernate in winter; your updates shouldn’t.",
     "outroMore": "{left} to go before the year is out. Hedgehogs hibernate in winter; your updates shouldn’t.",
     "sign": "Stay merry, stay patched.",
-    "from": "Love, the Nestor family",
+    "from": "Love, NESTOR (all four of me)",
     "ps": "P.S. ‘Password123!’ is not a festive tradition."
   },
   "month": 12,

@@ -559,6 +559,13 @@ a.ghost.cal:hover { color: var(--text); border-color: var(--muted); }
 .clamp { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
 .brief-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 60px; padding: 12px 18px; border-radius: 14px; background: var(--gold); color: var(--on); text-decoration: none; box-shadow: 0 8px 24px #F5C45133; }
 .brief-cta:hover { color: var(--on); filter: brightness(1.05); }
+/* The full briefing inside the door popup starts here */
+.full-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-top: 6px; padding-top: 16px; border-top: 2px solid var(--gold); scroll-margin-top: 8px; }
+.full-head:focus { outline: none; }
+.full-head .lbl { font: 600 13px var(--mono); letter-spacing: .14em; color: var(--gold); }
+.full-head .fh-t { flex: 1 1 240px; font-size: 14px; color: var(--muted); }
+.full-head .fh-page { font-size: 13px; color: var(--gold); }
+.panel .kit, .panel .lens { scroll-margin-top: 8px; }
 .brief-cta .bt { display: flex; flex-direction: column; gap: 2px; } .brief-cta strong { font-size: 16px; font-weight: 600; } .brief-cta .bt span { font-size: 13px; } .brief-cta .arr { font-size: 22px; }
 
 /* ---------- Full briefing page (door.html) ---------- */

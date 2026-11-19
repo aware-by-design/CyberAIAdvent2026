@@ -12,9 +12,9 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css">
-<script src="common.js" defer></script>
-<script src="app.js" defer></script>
+<link rel="stylesheet" href="styles.css?v=f8b7f67188">
+<script src="common.js?v=6c4e469e96" defer></script>
+<script src="app.js?v=36ac4f9b7b" defer></script>
 </head>
 <body>
 <a class="skip" href="#doors">Skip to the doors</a>
@@ -35,10 +35,10 @@
 <!-- The welcome banner: NESTOR introduces the calendar, the one calendar invite (all the daily reminders) and the day counter. -->
 <section class="hero banner" aria-labelledby="welcome">
   <div class="bn-main">
-    <p class="eyebrow bn-eyebrow">A DAILY HELLO FROM THE NESTOR FAMILY</p>
+    <p class="eyebrow bn-eyebrow">A DAILY HELLO FROM NESTOR</p>
     <h1 id="welcome">Welcome to the Winterwatch <em>Cyber &amp; AI Advent Calendar</em></h1>
     <p class="bn-hello">I’m <span class="acro"><b>N</b>ext-gen <b>E</b>thical <b>S</b>afeguards <b>T</b>raining for <b>O</b>rganizational <b>R</b>esilience in Artificial Intelligence</span>, but you can call me <strong>NESTOR</strong>&nbsp;😉</p>
-    <p class="lede">My family and I open one door a day: one do, one don’t and a 20-second challenge. Bite-sized cybersecurity, AI and privacy habits, real case studies from Europe and beyond, activities for every audience and an incident lab, from the boardroom to the kitchen table. Learn something, share something and, most of all, have fun.</p>
+    <p class="lede">Grown-up or hoglet, mum, dad, daughter or son: every hedgehog in the picture is me. One NESTOR, many forms. Every day I open one door: one do, one don’t and a 20-second challenge. Bite-sized cybersecurity, AI and privacy habits, real case studies from Europe and beyond, activities for every audience and an incident lab, from the boardroom to the kitchen table. Learn something, share something and, most of all, have fun.</p>
     <p class="bn-meta" id="eyebrow">1–24 DECEMBER 2026 · REMINDERS AT 08:30 CET</p>
     <div class="bn-actions">
       <a class="bn-cta" id="ics" href="advent-24.ics" type="text/calendar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4M12 13v5M9.5 15.5 12 18l2.5-2.5"/></svg><span id="icstext">Download calendar invite</span></a>
@@ -47,8 +47,8 @@
     <p class="bn-note" id="icsnote">One file with a reminder for every door. No sign-up, no personal data.</p>
   </div>
   <figure class="bn-family">
-    <img src="img/nestor-family.webp" width="760" height="714" alt="The NESTOR family: four hedgehogs in Christmas jumpers and Santa hats, holding a little calendar that reads 1 to 24 December 2026.">
-    <figcaption><span>THE NESTOR FAMILY</span><strong id="bndates">1–24 December 2026</strong></figcaption>
+    <img src="img/nestor-family.webp" width="760" height="714" alt="NESTOR in four forms: hedgehogs in Santa hats and Christmas jumpers, two grown-ups and two children, holding a little calendar that reads 1 to 24 December 2026.">
+    <figcaption><span>ONE NESTOR, MANY FORMS</span><strong id="bndates">1–24 December 2026</strong></figcaption>
   </figure>
   <div class="daycount" id="daycount">
     <div class="dc-cell"><span class="dc-k">CALENDAR DAY</span><p class="dc-line"><strong class="dc-num" id="dcnum"></strong> <span class="dc-text" id="dctext"></span></p></div>
@@ -264,14 +264,14 @@
   <div class="dlg-body" id="daybody"><div class="panel" id="panel"></div></div>
   <button type="button" class="dlg-down" id="daydown">Scroll down ↓</button>
 </dialog>
-<!-- A door that isn't open yet: a note from the NESTOR family with a live countdown. When it reaches zero the
+<!-- A door that isn't open yet: a note from NESTOR with a live countdown. When it reaches zero the
      note says "Door n is open!" and the button opens it. -->
 <dialog class="nestor" id="nestordlg" aria-labelledby="nestorttl" aria-describedby="nestortext">
   <div id="nestorbody"></div>
   <p class="sr" id="nestorlive" aria-live="polite"></p>
   <div class="row"><button type="button" class="keep" id="nestortoday"></button><button type="button" class="quiet" id="nestorclose">Close</button></div>
 </dialog>
-<!-- 24-26 December: Merry Christmas and happy holidays from the NESTOR family, once per browser (days.json "holiday"). -->
+<!-- 24-26 December: Merry Christmas and happy holidays from NESTOR, once per browser (days.json "holiday"). -->
 <dialog class="nestor xmas" id="xmasdlg" aria-labelledby="xmasttl" aria-describedby="xmasintro">
   <div id="xmasbody"></div>
   <div class="row"><button type="button" class="keep" id="xmasgo"></button><button type="button" class="quiet" id="xmasclose">Close</button></div>
