@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Accessibility · Winterwatch</title>
+<meta name="description" content="How the Winterwatch Cyber &amp; AI Advent Calendar supports accessibility, what is known not to work yet, and how to tell us about a problem.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css?v=c4cfd4aa7c">
+<script src="prefs.js?v=f26f4744dd"></script>
+<script src="common.js?v=a59e5dc347" defer></script>
+</head>
+<body>
+<a class="skip" href="#statement">Skip to the statement</a>
+<div class="ac-wrap">
+  <div class="a11y-row"><a class="back" href="./">← Back to the calendar</a><span class="a11y-slot" data-a11y></span></div>
+  <main id="statement" class="ac-main">
+    <p class="eyebrow">ACCESSIBILITY STATEMENT</p>
+    <h1>Accessibility</h1>
+    <p class="lede">We want everyone to be able to use the Winterwatch Cyber &amp; AI Advent Calendar: on a phone or a computer, with a keyboard, a screen reader, larger text or no animations.</p>
+
+    <section aria-labelledby="ac-target">
+      <h2 id="ac-target">The standard we aim for</h2>
+      <p>We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1 at level AA, the level used by the European standard EN 301 549. The calendar is <strong>partially conformant</strong>: most of it meets the guidelines, and the exceptions we know about are listed below.</p>
+    </section>
+
+    <section aria-labelledby="ac-features">
+      <h2 id="ac-features">What you can change</h2>
+      <p>Use the <strong>Accessibility</strong> button at the top of every page:</p>
+      <ul>
+        <li><strong>Text size:</strong> normal, larger or largest. The page and the door popups grow and reflow.</li>
+        <li><strong>Pause animations:</strong> stops the snow, twinkling lights, glowing and swinging doors. It is already on if your device asks for reduced motion.</li>
+        <li><strong>High contrast:</strong> black background, white text and bright outlines.</li>
+        <li><strong>Easier reading:</strong> more space between lines, words and letters, and no long italic text.</li>
+      </ul>
+      <p>Every door also has a <strong>Listen</strong> button that reads it aloud with your browser’s own voice. When an English voice is installed on your device, the text stays on your device. Your choices are saved in your browser only; nothing is sent to us.</p>
+      <p>Your browser’s own zoom works too, up to 200%, without content being cut off.</p>
+    </section>
+
+    <section aria-labelledby="ac-built">
+      <h2 id="ac-built">How the calendar is built for accessibility</h2>
+      <ul>
+        <li>Every door, button and popup works with the keyboard alone, and focus moves to the right place when a popup opens or closes.</li>
+        <li>Doors have names that screen readers announce, including whether they are locked, not yet opened or opened.</li>
+        <li>When a door opens, or you move to the next or previous door, a screen reader hears it, without being interrupted. The live countdowns stay silent so they don’t keep talking.</li>
+        <li>Text meets the WCAG contrast ratios on the page and on every door colour.</li>
+        <li>No information is given by colour alone: locked doors show a padlock and the word LOCKED.</li>
+        <li>Pages work at 360 pixels wide without scrolling sideways, and they print cleanly.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="ac-gaps">
+      <h2 id="ac-gaps">What does not work fully yet</h2>
+      <ul>
+        <li>The winter house and its decorations are pictures without a text description of every detail. They are decoration: everything you need is also in text.</li>
+        <li>The map of Europe is an image. The places it shows are listed in text underneath.</li>
+        <li>Links to official texts (EUR-Lex, ENISA, OWASP, NIST and others) open other websites, whose accessibility we do not control.</li>
+        <li>Listen depends on the voices your browser and device provide. Some browsers have no voices, and then the button is not shown.</li>
+        <li>The calendar has been checked with automated tests, including keyboard use, contrast, headings, names and phone widths. It has not yet been tested by people who use screen readers or other assistive technology every day.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="ac-report">
+      <h2 id="ac-report">Tell us about a problem</h2>
+      <p>If something is hard to use, or you need the content in another format, please tell us by opening an issue in the calendar’s public repository: <a href="https://github.com/pollygitau/CyberAIAdvent/issues" target="_blank" rel="noopener noreferrer">github.com/pollygitau/CyberAIAdvent/issues ↗</a> (a free GitHub account is needed). Please don’t include personal information.</p>
+    </section>
+
+    <p class="fine">This statement was prepared on 19 November 2026 and reviewed against the calendar as published on that date.</p>
+  </main>
+  <footer class="foot">
+    <p class="fine">An initiative of ENISA’s Awareness Raising and Cyber-Hygiene Ad-Hoc Working Group (ARCH AHWG). <a href="https://www.enisa.europa.eu/topics/awareness-and-cyber-hygiene/ar-in-a-box" target="_blank" rel="noopener noreferrer">Learn more about AR-in-a-Box ↗</a>. Not legal advice.</p>
+  </footer>
+</div>
+</body>
+</html>

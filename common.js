@@ -75,9 +75,12 @@
     if (t && t !== document.activeElement) t.focus({ preventScroll: true });
   }
 
+  /* Fewer moving things: the visitor's device asks for it, or "Pause animations" is on (Accessibility panel). */
   function reducedMotion() {
-    return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (document.documentElement.classList.contains("a11y-still")) return true;
+    return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   }
+
 
   function festive(snowId, lightsId, count) {
     const snow = document.getElementById(snowId);
@@ -203,46 +206,8 @@
   }
   function modeParam(mode, settings) { return mode === defaultMode(settings) ? "" : "mode=" + mode; }
 
-  /* TEST MODE (temporary; settings.json "testMode": true). A date simulator for checking the countdown, the door
-     locks and the Nestor messages before December. With testMode off, a stored test date and ?preview=all links
-     have no effect at all. Switch it off before launch (validate.py warns while it is on), then delete this block,
-     testBar() and the .testbar styles. */
-  let testOffset = 0;
-  const TEST_KEY = "cyber-advent:test-date";
-  function now() { return new Date(Date.now() + testOffset); }
-  let testOn = false;
-  function applyTestMode(settings) {
-    testOffset = 0; testOn = false;
-    if (!settings || settings.testMode !== true) return false;
-    testOn = true;
-    let v = null;
-    try { v = window.localStorage.getItem(TEST_KEY); } catch (e) { v = null; }
-    if (v && /^\d{4}-\d\d-\d\dT\d\d:\d\d(:\d\d)?$/.test(v)) { const t = new Date(v); if (!Number.isNaN(t.getTime())) testOffset = t.getTime() - Date.now(); }
-    return true;
-  }
-  function testBar(data, settings) {
-    if (!settings || settings.testMode !== true) return null;
-    let cur = "";
-    try { cur = window.localStorage.getItem(TEST_KEY) || ""; } catch (e) { cur = ""; }
-    const y = data.year, two = (v) => String(v).padStart(2, "0");
-    const opts = [["", "Real date and time"], [`${y}-11-25T10:00`, "25 Nov · countdown"], [`${y}-12-01T08:28:45`, "1 Dec 08:28:45 · watch Door 1 open"]];
-    for (let d = 1; d <= 31; d++) opts.push([`${y}-12-${two(d)}T10:00`, `${d} Dec`]);
-    opts.push([`${y}-12-06T08:28:45`, "6 Dec 08:28:45 · watch Door 6 open"], [`${y}-12-24T08:28:45`, "24 Dec 08:28:45 · Door 24 + Christmas note"], [`${y + 1}-01-02T10:00`, `2 Jan ${y + 1} · after December`]);
-    const sel = h("select", { id: "testdate" }, opts.map(([v, t]) => h("option", { value: v, text: t })));
-    sel.value = opts.some(([v]) => v === cur) ? cur : "";
-    sel.addEventListener("change", () => {
-      try { if (sel.value) window.localStorage.setItem(TEST_KEY, sel.value); else window.localStorage.removeItem(TEST_KEY); } catch (e) { /* storage blocked */ }
-      window.location.reload();
-    });
-    const u = new URL(window.location.href), pv = u.searchParams.get("preview") === "all";
-    if (pv) u.searchParams.delete("preview"); else u.searchParams.set("preview", "all");
-    return h("details", { class: "testbar" },
-      h("summary", {}, h("strong", { text: "TEST MODE" }), " ", h("span", { class: "tb-now", "data-clock": "1" })),
-      h("div", { class: "tb-body" },
-        h("label", { for: "testdate", text: "Pretend it is" }), sel,
-        h("a", { href: u.pathname + u.search, text: pv ? "Lock the doors again" : "Open every door" }),
-        h("span", { class: "tb-note", text: "Temporary · turn off testMode in settings.json before 1 December" })));
-  }
+  /* The current time. One function, so every date check on the site agrees. */
+  function now() { return new Date(); }
 
   /* Live countdowns: an element with data-cd="<timestamp>" shows the time left, data-clock the current time;
      one timer refreshes them all every second. */
@@ -344,7 +309,7 @@
 
   /* A note from NESTOR for a door that isn't open yet: when it opens, and a live countdown.
      Used by the calendar's "Come back tomorrow" popup and by the briefing page of a locked door ({ page: true },
-     which says the briefing appears there). In test mode it also points testers to the test bar and a preview link. */
+     which says the briefing appears there). */
   function nestorNote(data, n, today, headTag, ids, opts) {
     const img = h("img", { class: "nestor-img", src: "img/nestor-family.webp", width: "760", height: "714", alt: "" });
     const eyebrow = h("p", { class: "nestor-eyebrow", text: "A NOTE FROM NESTOR" });
@@ -364,9 +329,7 @@
     return [img, eyebrow,
       h(headTag || "h2", { id: ids ? ids.head : null, class: "nestor-h", text: head }),
       h("p", { id: ids ? ids.text : null, class: "nestor-t" }, when, " ", why),
-      h("p", { class: "nestor-cd" }, "Opens in ", h("strong", { "data-cd": String(opensAt(data, n).getTime()), text: fmtLeft(opensAt(data, n) - now()) })),
-      testOn ? h("p", { class: "nestor-test" }, h("strong", { text: "Testing?" }), " Pick a December date in the test bar, or ",
-        h("a", { href: previewHref(n), text: "preview this door" }), " (test mode only).") : null
+      h("p", { class: "nestor-cd" }, "Opens in ", h("strong", { "data-cd": String(opensAt(data, n).getTime()), text: fmtLeft(opensAt(data, n) - now()) }))
     ];
   }
   /* THE FULL BRIEFING. Its sections are built here once and used by the briefing page (door.js) and by the door
@@ -472,12 +435,7 @@
       h("span", { class: "t", text: "What to ask suppliers at every stage, what EU law expects when a supplier’s incident hits you, and a joint tabletop exercise." }),
       h("span", { class: "go", text: "Open the toolkit →" }));
   }
-  /* This page, showing door n with every door open (only honoured while test mode is on). */
-  function previewHref(n) {
-    const u = new URL(window.location.href);
-    u.searchParams.set("day", String(n)); u.searchParams.set("preview", "all"); u.hash = "";
-    return u.pathname + u.search;
-  }
+
 
   /* "in 12 days" / "tomorrow" / "later today", for locked doors (a door opens at 08:29 CET, see opensAt). */
   function inDays(k) { return k <= 0 ? "later today" : k === 1 ? "tomorrow" : `in ${k} days`; }
@@ -609,5 +567,129 @@
     try { await navigator.clipboard.writeText(text); return true; } catch (e) { return false; }
   }
 
-  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, defaultMode, startMode, modeParam, todayFor, daysUntil, opensClock, onNewDay, inDays, reminderAt, opensAt, opensLabel, nextOpensText, now, applyTestMode, testBar, fmtLeft, startTicker, nestorNote, toolkitReading, briefingSections, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
+  /* ACCESSIBILITY. The panel (button in the header, or at the top of the other pages) sets text size, paused
+     animations, high contrast and easier reading; prefs.js applies them before the page is drawn. Choices
+     are saved in this browser only. */
+  const A11Y_KEY = "cyber-advent:a11y";
+  const ICON_A11Y = "M12 3.5a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2zM5 8.5l7 1.5 7-1.5M12 10v4.5M12 14.5l-3.2 6M12 14.5l3.2 6";
+  const ICON_SPEAK = "M4 9.5h3.5L12 6v12l-4.5-3.5H4zM15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11";
+  function a11yPrefs() {
+    let p = {};
+    try { p = JSON.parse(window.localStorage.getItem(A11Y_KEY) || "{}") || {}; } catch (e) { p = {}; }
+    return { size: p.size === 1 || p.size === 2 ? p.size : 0, still: p.still === true, contrast: p.contrast === true, readable: p.readable === true };
+  }
+  function applyA11y(p) {
+    const c = document.documentElement.classList;
+    c.toggle("a11y-size-1", p.size === 1); c.toggle("a11y-size-2", p.size === 2);
+    c.toggle("a11y-still", p.still); c.toggle("a11y-contrast", p.contrast); c.toggle("a11y-readable", p.readable);
+    try { window.localStorage.setItem(A11Y_KEY, JSON.stringify(p)); } catch (e) { /* storage blocked: this visit only */ }
+  }
+  let a11yDlg = null;
+  function a11yDialog() {
+    if (a11yDlg) return a11yDlg;
+    const p = a11yPrefs(), osStill = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const sizes = [["Normal", 0], ["Larger", 1], ["Largest", 2]];
+    const sizeBtns = sizes.map(([label, v]) => h("button", { type: "button", "data-size": String(v), "aria-pressed": String(p.size === v), text: label }));
+    const sw = (id, label, note, on, disabled) => h("label", { class: "a11y-sw", for: id },
+      h("input", { type: "checkbox", id, checked: on, disabled: !!disabled }),
+      h("span", { class: "a11y-sw-t" }, h("strong", { text: label }), h("span", { text: note })));
+    const d = h("dialog", { class: "a11ydlg", id: "a11ydlg", "aria-labelledby": "a11yttl" },
+      h("h2", { id: "a11yttl", text: "Accessibility" }),
+      h("p", { class: "a11y-intro", text: "Make the calendar easier to see, read and use. Your choices are saved in this browser only." }),
+      h("div", { class: "a11y-group", role: "group", "aria-labelledby": "a11ysize" }, h("span", { class: "a11y-k", id: "a11ysize", text: "Text size" }), h("div", { class: "seg a11y-seg" }, sizeBtns)),
+      sw("a11y-still", "Pause animations", osStill ? "Already on: your device asks for reduced motion" : "Snow, twinkling lights, glowing and swinging doors", p.still || osStill, osStill),
+      sw("a11y-contrast", "High contrast", "Black background, white text, bright outlines", p.contrast),
+      sw("a11y-readable", "Easier reading", "More space between lines, words and letters; no long italic text", p.readable),
+      h("p", { class: "a11y-note" }, "Every door also has a ", h("strong", { text: "Listen" }), " button that reads it aloud."),
+      h("div", { class: "row" },
+        h("a", { href: "accessibility.html", text: "Accessibility statement" }),
+        h("span", { class: "grow" }),
+        h("button", { type: "button", class: "quiet", id: "a11yreset", text: "Reset" }),
+        h("button", { type: "button", class: "keep", id: "a11ydone", text: "Done" })));
+    const save = () => {
+      const cur = a11yPrefs();
+      cur.still = d.querySelector("#a11y-still").checked && !osStill;
+      cur.contrast = d.querySelector("#a11y-contrast").checked;
+      cur.readable = d.querySelector("#a11y-readable").checked;
+      applyA11y(cur);
+    };
+    sizeBtns.forEach((b) => b.addEventListener("click", () => {
+      const cur = a11yPrefs(); cur.size = Number(b.dataset.size); applyA11y(cur);
+      sizeBtns.forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    }));
+    d.querySelectorAll("input").forEach((i) => i.addEventListener("change", save));
+    d.querySelector("#a11yreset").addEventListener("click", () => {
+      applyA11y({ size: 0, still: false, contrast: false, readable: false });
+      sizeBtns.forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.size === "0")));
+      d.querySelector("#a11y-still").checked = osStill; d.querySelector("#a11y-contrast").checked = false; d.querySelector("#a11y-readable").checked = false;
+    });
+    d.querySelector("#a11ydone").addEventListener("click", () => d.close());
+    d.addEventListener("click", (e) => {
+      if (e.target !== d) return;
+      const r = d.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) d.close();
+    });
+    document.body.append(d);
+    a11yDlg = d;
+    return d;
+  }
+  function a11yButton() {
+    const b = h("button", { type: "button", class: "a11y-btn", "aria-haspopup": "dialog", "data-k": "a11y" }, svg(ICON_A11Y), h("span", { text: "Accessibility" }));
+    b.addEventListener("click", () => { const d = a11yDialog(); d.showModal(); const on = d.querySelector('[aria-pressed="true"]'); (on || d.querySelector("button")).focus(); });
+    return b;
+  }
+  function initA11y() { document.querySelectorAll("[data-a11y]").forEach((slot) => { if (!slot.childElementCount) slot.append(a11yButton()); }); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initA11y); else initA11y();
+
+  /* LISTEN: reads a door aloud with the browser's own speech (no extra service). An English voice installed on
+     the device is preferred, so the text normally stays on the device. Long text is spoken in short pieces
+     (some browsers stop long utterances). */
+  const canSpeak = () => !!window.speechSynthesis && typeof window.SpeechSynthesisUtterance === "function";
+  let speakingBtn = null;
+  function pickVoice() {
+    const en = window.speechSynthesis.getVoices().filter((v) => /^en([-_]|$)/i.test(v.lang));
+    return en.find((v) => v.localService && /GB/i.test(v.lang)) || en.find((v) => v.localService) || en.find((v) => /GB/i.test(v.lang)) || en[0] || null;
+  }
+  function stopSpeech() {
+    if (!canSpeak()) return;
+    window.speechSynthesis.cancel();
+    if (speakingBtn) { speakingBtn.setAttribute("aria-pressed", "false"); speakingBtn.lastChild.textContent = "Listen"; speakingBtn = null; }
+  }
+  function speakPieces(text) {
+    const parts = String(text).replace(/\s+/g, " ").split(/(?<=[.!?:])\s+/);
+    const pieces = [];
+    parts.forEach((t) => { if (pieces.length && (pieces[pieces.length - 1] + " " + t).length < 220) pieces[pieces.length - 1] += " " + t; else pieces.push(t); });
+    return pieces.filter(Boolean);
+  }
+  function listenButton(getText) {
+    if (!canSpeak()) return null;
+    const b = h("button", { type: "button", class: "listen", "aria-pressed": "false", "data-k": "listen" }, svg(ICON_SPEAK), h("span", { text: "Listen" }));
+    b.addEventListener("click", () => {
+      if (speakingBtn === b) { stopSpeech(); return; }
+      stopSpeech();
+      const voice = pickVoice(), pieces = speakPieces(getText());
+      pieces.forEach((t, i) => {
+        const u = new window.SpeechSynthesisUtterance(t);
+        if (voice) u.voice = voice;
+        u.lang = voice ? voice.lang : "en-GB"; u.rate = 0.95;
+        if (i === pieces.length - 1) u.onend = () => { if (speakingBtn === b) stopSpeech(); };
+        u.onerror = () => { if (speakingBtn === b) stopSpeech(); };
+        window.speechSynthesis.speak(u);
+      });
+      speakingBtn = b; b.setAttribute("aria-pressed", "true"); b.lastChild.textContent = "Stop";
+    });
+    return b;
+  }
+  /* What Listen reads for a door: title, do and don't, the plain explanation, the challenge and the lesson
+     learnt; full adds the other two explanations and every case study (the briefing). */
+  function doorScript(data, d, full) {
+    const say = [`Door ${d.day}. ${d.title}.`, `Do: ${d.do}`, `Don't: ${d.dont}`, `Why it matters: ${d.explain.simple}`];
+    if (full) say.push(`For IT and security: ${d.explain.technical}`, `For leaders: ${d.explain.business}`);
+    const cases = full ? d.cases : d.cases.slice(0, 1);
+    cases.forEach((c) => say.push(`Lesson learnt: ${c.name}, ${c.when}. ${c.text}`));
+    if (d.quiz && Array.isArray(d.quiz.options)) say.push(`Today's challenge: ${d.quiz.question}`, ...d.quiz.options.map((o, i) => `Option ${i + 1}: ${o}.`));
+    return say.join(" ");
+  }
+
+  window.Advent = { a11yButton, listenButton, stopSpeech, doorScript, svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, defaultMode, startMode, modeParam, todayFor, daysUntil, opensClock, onNewDay, inDays, reminderAt, opensAt, opensLabel, nextOpensText, now, fmtLeft, startTicker, nestorNote, toolkitReading, briefingSections, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
 })();

@@ -12,9 +12,10 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=8175db8514">
-<script src="common.js?v=05e403cc46" defer></script>
-<script src="app.js?v=5a1cdc51bd" defer></script>
+<link rel="stylesheet" href="styles.css?v=c4cfd4aa7c">
+<script src="prefs.js?v=f26f4744dd"></script>
+<script src="common.js?v=a59e5dc347" defer></script>
+<script src="app.js?v=1e9042f5f5" defer></script>
 </head>
 <body>
 <a class="skip" href="#doors">Skip to the doors</a>
@@ -25,7 +26,8 @@
 
 <div class="wrap">
 <header class="top">
-  <div class="brand"><img class="brand-mark" src="aware-by-design-mark.png" srcset="aware-by-design-mark.png 1x, aware-by-design-mark@2x.png 2x" width="40" height="40" alt=""><span class="brand-text"><span class="brand-org">aware-by-design</span><span class="brand-name">WINTERWATCH · CYBER &amp; AI</span></span></div>
+  <div class="brand"><span class="brand-name">WINTERWATCH · CYBER &amp; AI</span></div>
+  <span class="a11y-slot" data-a11y></span>
   <div class="seg" id="mode" role="group" aria-label="Calendar length">
     <button type="button" data-mode="advent" aria-pressed="false">Advent · 24 doors</button>
     <button type="button" data-mode="full" aria-pressed="true">31 days</button>
@@ -255,7 +257,7 @@
     <span class="ai-pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>AI-ASSISTED</span>
     <p>Drafted with AI and fact-checked against the cited sources. We label AI-assisted content because we ask you to do the same (Door 21).</p>
   </div>
-  <p class="fine">Mapped to OWASP Top 10:2025 and the OWASP Top 10 for LLM Applications 2025 - every category appears within the first 24 doors. Read-more summaries paraphrase ENISA, OWASP, NIST, the EU AI Act, NIS2, DORA, GDPR and national authorities; follow the links for the authoritative text. Detection rules are illustrative starting points. An initiative of ENISA’s Awareness Raising and Cyber-Hygiene Ad-Hoc Working Group (ARCH AHWG). <a href="https://www.enisa.europa.eu/topics/awareness-and-cyber-hygiene/ar-in-a-box" target="_blank" rel="noopener noreferrer">Learn more about AR-in-a-Box ↗</a>. Not legal advice.</p>
+  <p class="fine">Mapped to OWASP Top 10:2025 and the OWASP Top 10 for LLM Applications 2025 - every category appears within the first 24 doors. Read-more summaries paraphrase ENISA, OWASP, NIST, the EU AI Act, NIS2, DORA, GDPR and national authorities; follow the links for the authoritative text. Detection rules are illustrative starting points. An initiative of ENISA’s Awareness Raising and Cyber-Hygiene Ad-Hoc Working Group (ARCH AHWG). <a href="https://www.enisa.europa.eu/topics/awareness-and-cyber-hygiene/ar-in-a-box" target="_blank" rel="noopener noreferrer">Learn more about AR-in-a-Box ↗</a>. Not legal advice. <a href="accessibility.html">Accessibility</a>.</p>
 </footer>
 </div>
 <!-- Each door opens in this popup: the whole day, a Scroll down button that steps through it, and Close. -->

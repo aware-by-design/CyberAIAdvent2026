@@ -1,6 +1,5 @@
 {
   "defaultMode": "advent",
   "defaultCountry": "eu",
-  "gamified": true,
-  "testMode": true
+  "gamified": true
 }

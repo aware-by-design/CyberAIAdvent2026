@@ -41,9 +41,6 @@
     }
     const DAYS = data.days, STK = data.stakeholders;
     const params = new URLSearchParams(window.location.search);
-    /* Test mode (temporary): a date simulator; ?preview=all opens every door only while it is on. */
-    const testMode = A.applyTestMode(settings);
-    const preview = testMode && params.get("preview") === "all";
     const KEY = "cyber-advent:" + data.year;
     const saved = sanitize(store.get(KEY), data);
     /* Advent (24 doors) unless settings.json or the visitor's own pick says 31 days; a link to door 25-31
@@ -63,16 +60,16 @@
     /* Doors follow the dates for everyone: today's door and the days before it are open, later doors stay shut
        and show a note from NESTOR instead. This is a convenience, not access control: all content is
        public in days.json (SECURITY.md). */
-    const isLocked = (n) => !preview && n > today;
+    const isLocked = (n) => n > today;
     /* The highest door that is open now. Progress saved for a later door (for example while testing with a
        December date) waits behind its cover: it doesn't show, score or reach Santa's list before that day. */
-    const reach = () => (preview ? total() : Math.min(total(), Math.max(today, 0)));
+    const reach = () => Math.min(total(), Math.max(today, 0));
     const correct = (n) => state.answers[n] !== undefined && state.answers[n] === DAYS[n - 1].quiz.answer;
     const wrong = (n) => state.answers[n] !== undefined && !correct(n);
     const persist = () => store.set(KEY, { pick: state.pick, opened: state.opened, answers: state.answers, acts: state.acts, team: state.team, aud: state.aud, country: state.country });
     /* Same-origin link to a door's full briefing; n is always a validated integer. */
     const mq = () => { const m = A.modeParam(state.mode, settings); return m ? "&" + m : ""; };
-    const briefHref = (n) => `door.html?day=${n}${mq()}${preview ? "&preview=all" : ""}`;
+    const briefHref = (n) => `door.html?day=${n}${mq()}`;
 
     const asked = Number.parseInt(params.get("day") || "", 10);
     let openOnLoad = 0, lockedOnLoad = 0;
@@ -91,8 +88,7 @@
       const url = new URL(window.location.href);
       if (n) url.searchParams.set("day", String(n)); else url.searchParams.delete("day");
       if (A.modeParam(state.mode, settings)) url.searchParams.set("mode", state.mode); else url.searchParams.delete("mode");
-      url.searchParams.delete("preview");
-      if (preview) url.searchParams.set("preview", "all");
+      url.searchParams.delete("preview"); // old test-mode links
       window.history.replaceState(null, "", url);
     };
     /* Opening a door: it swings open on the house, then the whole day appears in a popup. A door that isn't
@@ -103,6 +99,7 @@
       // From the top bar's arrows, focus stays on the arrow (render() hands it to the other one at either end)
       // and a screen reader hears the new door; otherwise focus goes to the door's title.
       const arrow = !!(document.activeElement && document.activeElement.closest && document.activeElement.closest(".dlg-nav"));
+      A.stopSpeech();
       if (!state.opened[n]) swingDoor = n;
       state.selected = n; state.opened[n] = 1; state.celebrate = false;
       persist(); setUrl(n); render();
@@ -140,6 +137,7 @@
     el("daynext").addEventListener("click", () => select(state.selected + 1));
     onBackdrop(dlg, () => dlg.close());
     dlg.addEventListener("close", () => {
+      A.stopSpeech();
       state.full = false;
       setUrl(0);
       const card = document.querySelector(`#doors [data-k="door-${state.selected}"]`);
@@ -212,8 +210,7 @@
       if (!dc) return;
       let num, text, filled;
       let next = 0; // the door the live countdown counts down to
-      if (preview) { num = `All ${n} doors open`; text = "Test mode preview: every door is unlocked"; filled = n; }
-      else if (today < 1) {
+      if (today < 1) {
         const left = A.daysUntil(data, 1);
         // Before 1 December the counter cell says when it starts; the live countdown beside it has the exact time.
         num = left <= 0 ? "Starts today" : `Starts 1 December`; text = left <= 0 ? `Door 1 opens today at ${A.opensClock(data, 1)}` : `One door a day until ${n} December`; filled = 0; next = 1;
@@ -229,7 +226,7 @@
       el("dcof").textContent = `of ${n}`;
       const bar = el("dcbar"); bar.replaceChildren();
       bar.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
-      for (let i = 1; i <= n; i++) bar.append(h("span", { class: i <= filled ? (i === filled && !preview && today >= 1 && today <= n ? "on now" : "on") : "" }));
+      for (let i = 1; i <= n; i++) bar.append(h("span", { class: i <= filled ? (i === filled && today >= 1 && today <= n ? "on now" : "on") : "" }));
     }
 
     function renderTop(s) {
@@ -243,7 +240,7 @@
       el("ics").setAttribute("href", state.mode === "advent" ? "advent-24.ics" : "days-31.ics");
       el("ics").setAttribute("aria-label", `Download calendar invite: ${n} daily reminders (.ics file)`);
       el("icsnote").textContent = `One file with ${n} reminders at ${data.reminder} CET, one for each door. No sign-up, no personal data.`;
-      const t = !preview && today >= 1 && today <= n ? today : 0, go = el("bntoday");
+      const t = today >= 1 && today <= n ? today : 0, go = el("bntoday");
       go.hidden = !t; go.textContent = `Open today’s door (${t})`;
     }
 
@@ -341,7 +338,7 @@
         const n = d.day, locked = isLocked(n), open = !locked && !!state.opened[n], isBig = big.includes(n);
         const acts = locked ? 0 : [0, 1, 2, 3].filter((i) => state.acts[n + "-" + i]).length;
         const pts = locked ? 0 : (open ? 10 : 0) + (correct(n) ? 20 : 0) + acts * 5, done = pts >= 50;
-        const isToday = !locked && !preview && n === Math.min(today, total()) && today <= total();
+        const isToday = !locked && n === Math.min(today, total()) && today <= total();
         const cls = ["card", "p-" + PAL[(n - 1) % PAL.length], open && "open", open && n === swingDoor && "swing", done && "done", n === state.selected && "sel", locked && "locked", isToday && !open && "today", state.filter !== "all" && !d.for.includes(state.filter) && "dim"].filter(Boolean).join(" ");
         const kind = locked ? "locked" : open ? "open" : "closed";
         const naughty = open && wrong(n);
@@ -360,8 +357,7 @@
       swingDoor = 0;
       if (total() === 31) grid.append(h("div", { class: "spare", "aria-hidden": "true" }, h("span", { class: "a", text: "✦" }), h("span", { class: "b", text: "Merry, safe & secure" }), h("span", { class: "c", text: "2027 AWAITS" })));
       el("boardsub").textContent = `Cyber & AI · ${total()} days of cyber, AI & privacy hygiene`;
-      el("locknote").textContent = preview ? "Test mode preview: every door is open."
-        : today < 1 ? "Doors open one a day from 1 December. Each locked door tells you when."
+      el("locknote").textContent = today < 1 ? "Doors open one a day from 1 December. Each locked door tells you when."
           : today > total() ? `All ${total()} doors are open - catch up on any you missed.` : `Today is door ${today}. Tap it to open; later doors stay locked until their day.`;
     }
 
@@ -453,7 +449,8 @@
             h("div", { class: "meta" }, h("span", { text: `${WD[dt.getDay()].toUpperCase()} ${n} DECEMBER${occ ? " · " + occ.toUpperCase() : ""}` })),
             h("h2", { id: "daytitle", tabindex: "-1", text: d.title }),
             h("div", { class: "labels" }, h("span", { class: "track" + (isAI ? " ai" : "") }, isAI ? svg(P.star) : null, TRACK[d.track]), h("span", { class: "topic", text: d.topic })),
-            h("div", { class: "for" }, h("span", { class: "k", text: "FOR" }), d.for.map((id) => h("span", { class: "who" + (id === state.team ? " me" : ""), text: STK[id] }))))),
+            h("div", { class: "for" }, h("span", { class: "k", text: "FOR" }), d.for.map((id) => h("span", { class: "who" + (id === state.team ? " me" : ""), text: STK[id] }))),
+            A.listenButton(() => A.doorScript(data, d, state.full)))),
         h("div", { class: "stack" },
           h("div", { class: "dd" }, h("span", { class: "dot", "aria-hidden": "true" }, svg(P.check)), h("div", {}, h("span", { class: "lbl", text: "NICE LIST · DO" }), h("p", { text: d.do }))),
           h("div", { class: "dd dont" }, h("span", { class: "dot", "aria-hidden": "true" }, svg(P.x)), h("div", {}, h("span", { class: "lbl", text: "NAUGHTY LIST · DON’T" }), h("p", { text: d.dont }))))
@@ -545,7 +542,7 @@
       // From the moment door 24 opens (24 December, 08:29 CET) until door 27 opens.
       if (!hd || !Array.isArray(hd.tips) || today < 24 || today > 26) return;
       if (dlg.open || ndlg.open || rdlg.open || xdlg.open) return;
-      if (!testMode && store.get(HOLIDAY_KEY) === 1) return;
+      if (store.get(HOLIDAY_KEY) === 1) return;
       store.set(HOLIDAY_KEY, 1);
       const left = total() - Math.min(today, total());
       const outro = left > 0 ? String(hd.outroMore).replace("{left}", `${left} more ${left === 1 ? "door" : "doors"}`) : hd.outroLast;
@@ -581,8 +578,6 @@
     }
     A.onNewDay(() => moveOn(true), data);
     document.addEventListener("advent:countdown-end", () => moveOn(false));
-    const tb = A.testBar(data, settings);
-    if (tb) document.body.append(tb);
     render();
     A.startTicker();
     /* A link to a door (reminders, invites, shared links) opens it straight away, or the Nestor note if it isn't open yet. */

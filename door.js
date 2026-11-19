@@ -31,9 +31,6 @@
       return;
     }
     const params = new URLSearchParams(window.location.search);
-    /* Test mode (temporary): a date simulator; ?preview=all opens every door only while it is on. */
-    const testMode = A.applyTestMode(settings);
-    const preview = testMode && params.get("preview") === "all";
     const KEY = "cyber-advent:" + data.year;
     const saved = sanitize(store.get(KEY), data);
     // Same rule as the calendar page: a briefing for door 25-31 only exists in the 31-day mode.
@@ -42,7 +39,7 @@
     const total = data.modes[mode].doors;
     let today = A.todayFor(data); // refreshed when a door opens (08:29 CET) by A.onNewDay below
     // Doors follow the dates for everyone (same rule as the calendar page).
-    const isLocked = (n) => !preview && n > today;
+    const isLocked = (n) => n > today;
     const state = { ...saved, country: saved.country || (data.countries.some((c) => c.id === settings.defaultCountry) ? settings.defaultCountry : "eu") };
     /* The visitor's calendar-length pick belongs to the calendar page: re-read it at save time so a stale copy
        from when this page loaded never overwrites a newer choice made in another tab. */
@@ -50,7 +47,7 @@
       const cur = sanitize(store.get(KEY), data);
       store.set(KEY, { pick: cur.pick, opened: state.opened, answers: state.answers, acts: state.acts, team: state.team, aud: state.aud, country: state.country });
     };
-    const q = (n) => `?day=${n}${mq ? "&" + mq : ""}${preview ? "&preview=all" : ""}`;
+    const q = (n) => `?day=${n}${mq ? "&" + mq : ""}`;
 
     let n = Number.parseInt(params.get("day") || "", 10);
     if (!Number.isInteger(n) || n < 1 || n > total) n = today >= 1 ? Math.min(today, total) : 1;
@@ -82,13 +79,12 @@
           h("div", { class: "meta" }, h("span", { text: `DOOR ${pad(n)} OF ${total}` }), h("span", { "aria-hidden": "true", text: "·" }), h("span", { text: `${WD[dt.getDay()].toUpperCase()} ${n} DECEMBER ${data.year}${occ ? " · " + occ.toUpperCase() : ""}` })),
           h("h1", { tabindex: "-1", text: d.title }),
           h("div", { class: "labels" }, h("span", { class: "track" + (isAI ? " ai" : "") }, isAI ? svg(P.star) : null, TRACK[d.track]), h("span", { class: "topic", text: d.topic })),
-          h("div", { class: "for" }, h("span", { class: "k", text: "FOR" }), d.for.map((id) => h("span", { class: "who" + (id === state.team ? " me" : ""), text: data.stakeholders[id] }))))));
+          h("div", { class: "for" }, h("span", { class: "k", text: "FOR" }), d.for.map((id) => h("span", { class: "who" + (id === state.team ? " me" : ""), text: data.stakeholders[id] }))),
+          A.listenButton(() => A.doorScript(data, d, true)))));
       r.append(h("div", { class: "two" },
         h("div", { class: "dd" }, h("span", { class: "dot", "aria-hidden": "true" }, svg(P.check)), h("div", {}, h("span", { class: "lbl", text: "NICE LIST · DO" }), h("p", { text: d.do }))),
         h("div", { class: "dd dont" }, h("span", { class: "dot", "aria-hidden": "true" }, svg(P.x)), h("div", {}, h("span", { class: "lbl", text: "NAUGHTY LIST · DON’T" }), h("p", { text: d.dont })))));
-      /* The sections are shared with the door popup on the calendar page (A.briefingSections). The public link
-         never carries ?preview=all: an organiser previewing in November must not hand everyone who clicks a
-         shared post a way round the one-door-a-day lock. */
+      /* The sections are shared with the door popup on the calendar page (A.briefingSections). */
       const link = new URL(`index.html?day=${n}${mq ? "&" + mq : ""}`, window.location.href).toString();
       r.append(...A.briefingSections({ data, n, d, state, persist, rerender: render, total, link, level: 2,
         activities: A.activitiesBlock({ data, n, d, acts: state.acts, gamified: settings.gamified !== false, P, note: A.santaState(data, total, state.answers, state.acts).status(n).note,
@@ -116,8 +112,6 @@
     };
     A.onNewDay(() => moveOn(true), data);
     document.addEventListener("advent:countdown-end", () => moveOn(false));
-    const tb = A.testBar(data, settings);
-    if (tb) document.body.append(tb);
     render();
     A.startTicker();
   }
