@@ -643,6 +643,27 @@ dialog.nestor button:focus-visible { outline: 2px solid var(--text); outline-off
 .locked-msg.nestor-inline { align-items: center; text-align: center; max-width: 520px; margin: 0 auto; }
 .locked-msg.nestor-inline .nestor-h { font-size: 34px; }
 .nestor-links a { color: var(--gold); }
+.bf-hero h1:focus { outline: none; }
+.bf-hero h1:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+/* ---- 24-26 December: Merry Christmas and happy holidays from the NESTOR family ---- */
+dialog.xmas { width: min(600px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow-y: auto; overscroll-behavior: contain; padding: 30px 28px 24px;
+  background: linear-gradient(90deg, #B3202F 0 33%, var(--gold) 33% 67%, #2E7D5B 67%) top / 100% 6px no-repeat, var(--surface); }
+dialog.xmas .nestor-img { width: min(100%, 220px); }
+.xmas .nestor-h:focus { outline: none; } /* focused only so a screen reader starts reading at the title */
+.xmas .nestor-eyebrow { text-wrap: balance; }
+.xmas-tips { list-style: none; margin: 18px 0 16px; padding: 0; display: grid; gap: 10px; text-align: left; }
+.xmas-tips li { display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; padding: 14px 16px; border: 1px solid var(--line); border-radius: 16px; background: #102A1F; }
+.xmas-tips .ic { width: 40px; height: 40px; padding: 8px; border-radius: 50%; background: #F5C4511F; fill: none; stroke: var(--gold); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.xmas-tips .lbl { display: block; margin-bottom: 4px; font: 600 12px var(--mono); letter-spacing: .14em; color: var(--gold); }
+.xmas-tips p { margin: 0; font-size: 15px; line-height: 1.55; }
+.xmas-outro { margin: 0 auto 12px; max-width: 46ch; line-height: 1.5; }
+.xmas-sign { margin: 0 0 6px; font: italic 500 20px/1.3 var(--serif); color: var(--gold); }
+.xmas-from { display: block; font: 500 15px/1.4 var(--sans); color: var(--text); }
+.xmas-ps { margin: 0 0 18px; color: var(--muted); font-size: 14px; }
+/* The buttons stay in view while the note scrolls on a small screen */
+dialog.xmas .row { position: sticky; bottom: -24px; margin: 0 -28px -24px; padding: 14px 28px 24px; background: linear-gradient(#14302400, var(--surface) 22px); }
+@media (max-width: 520px) { dialog.xmas { padding: 26px 18px 24px; } dialog.xmas .nestor-img { width: min(100%, 170px); } dialog.xmas .row { margin: 0 -18px -24px; padding: 14px 18px 24px; } .xmas-tips li { grid-template-columns: 34px 1fr; gap: 12px; padding: 12px 14px; } .xmas-tips .ic { width: 34px; height: 34px; padding: 6px; } }
 
 /* ---- TEST MODE bar (temporary: delete with testMode) ---- */
 .testbar { position: fixed; left: 12px; bottom: 12px; z-index: 60; max-width: calc(100vw - 24px); padding: 8px 14px; border-radius: 14px; border: 2px dashed var(--gold); background: #0D2118F2; color: var(--text); font-size: 13px; box-shadow: 0 10px 30px #000000AA; }

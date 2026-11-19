@@ -46,13 +46,10 @@
     const preview = testMode && params.get("preview") === "all";
     const KEY = "cyber-advent:" + data.year;
     const saved = sanitize(store.get(KEY), data);
-    const qMode = params.get("mode");
-    /* A link to door 25-31 (31-day calendar, single invites, shared links) only makes sense in the 31-day mode,
-       so it opens that mode even for a visitor who last used the 24-door Advent calendar. */
-    const qDay = Number.parseInt(params.get("day") || "", 10);
-    const needsFull = Number.isInteger(qDay) && qDay > data.modes.advent.doors && qDay <= data.modes.full.doors;
+    /* Advent (24 doors) unless settings.json or the visitor's own pick says 31 days; a link to door 25-31
+       opens the 31-day calendar (A.startMode). Only a click on the switch is remembered as the visitor's pick. */
     const state = {
-      mode: qMode === "advent" || qMode === "full" ? qMode : needsFull ? "full" : (saved.mode || (settings.defaultMode === "advent" ? "advent" : "full")),
+      mode: A.startMode(data, settings, params, saved.pick), pick: saved.pick,
       opened: saved.opened, answers: saved.answers, acts: saved.acts, team: saved.team, aud: saved.aud,
       country: saved.country || (data.countries.some((c) => c.id === settings.defaultCountry) ? settings.defaultCountry : "eu"),
       filter: "all", selected: 1, celebrate: false
@@ -68,9 +65,10 @@
     const isLocked = (n) => !preview && n > today;
     const correct = (n) => state.answers[n] !== undefined && state.answers[n] === DAYS[n - 1].quiz.answer;
     const wrong = (n) => state.answers[n] !== undefined && !correct(n);
-    const persist = () => store.set(KEY, { mode: state.mode, opened: state.opened, answers: state.answers, acts: state.acts, team: state.team, aud: state.aud, country: state.country });
+    const persist = () => store.set(KEY, { pick: state.pick, opened: state.opened, answers: state.answers, acts: state.acts, team: state.team, aud: state.aud, country: state.country });
     /* Same-origin link to a door's full briefing; n is always a validated integer. */
-    const briefHref = (n) => `door.html?day=${n}${state.mode === "advent" ? "&mode=advent" : ""}${preview ? "&preview=all" : ""}`;
+    const mq = () => { const m = A.modeParam(state.mode, settings); return m ? "&" + m : ""; };
+    const briefHref = (n) => `door.html?day=${n}${mq()}${preview ? "&preview=all" : ""}`;
 
     const asked = Number.parseInt(params.get("day") || "", 10);
     let openOnLoad = 0, lockedOnLoad = 0;
@@ -79,10 +77,16 @@
     if (openOnLoad) state.selected = openOnLoad;
 
     const dlg = el("daydlg"), dbody = el("daybody"), down = el("daydown"), ndlg = el("nestordlg");
+    /* A click on the backdrop closes a popup; a click on its own padding or scrollbar does not. */
+    const onBackdrop = (d, close) => d.addEventListener("click", (e) => {
+      if (e.target !== d) return;
+      const r = d.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) close();
+    });
     const setUrl = (n) => {
       const url = new URL(window.location.href);
       if (n) url.searchParams.set("day", String(n)); else url.searchParams.delete("day");
-      if (state.mode === "advent") url.searchParams.set("mode", "advent"); else url.searchParams.delete("mode");
+      if (A.modeParam(state.mode, settings)) url.searchParams.set("mode", state.mode); else url.searchParams.delete("mode");
       url.searchParams.delete("preview");
       if (preview) url.searchParams.set("preview", "all");
       window.history.replaceState(null, "", url);
@@ -121,23 +125,40 @@
     dbody.addEventListener("scroll", updateDown, { passive: true });
     window.addEventListener("resize", () => { if (dlg.open) updateDown(); });
     el("dayclose").addEventListener("click", () => dlg.close());
-    dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+    onBackdrop(dlg, () => dlg.close());
     dlg.addEventListener("close", () => {
       setUrl(0);
       const card = document.querySelector(`#doors [data-k="door-${state.selected}"]`);
       if (card) card.focus();
     });
-    function showNestor(n) {
+    /* The note's button opens today's door; once the countdown runs out with the note still open, the note says
+       "Door n is open!" and the button opens that door instead. */
+    let nestorDoor = 0, nestorOpen = false, goDoor = 0;
+    function fillNestor(n) {
+      nestorOpen = !isLocked(n);
       el("nestorbody").replaceChildren(...A.nestorNote(data, n, today, "h2", { head: "nestorttl", text: "nestortext" }));
       const t = today >= 1 ? Math.min(today, total()) : 0, go = el("nestortoday");
-      go.hidden = !t || t === n || (dlg.open && state.selected === t);
-      go.textContent = `Open today’s door (${t})`;
-      ndlg.showModal(); A.startTicker();
-      (go.hidden ? el("nestorclose") : go).focus();
+      goDoor = nestorOpen ? n : t;
+      go.hidden = !goDoor || (!nestorOpen && dlg.open && state.selected === t);
+      go.textContent = nestorOpen ? `Open door ${n}` : `Open today’s door (${t})`;
     }
-    el("nestortoday").addEventListener("click", () => { ndlg.close(); const t = Math.min(today, total()); if (t >= 1) select(t, "now"); });
+    function showNestor(n) {
+      nestorDoor = n; el("nestorlive").textContent = "";
+      fillNestor(n);
+      ndlg.showModal(); A.startTicker();
+      (el("nestortoday").hidden ? el("nestorclose") : el("nestortoday")).focus();
+    }
+    function refreshNestor() {
+      const was = nestorOpen;
+      fillNestor(nestorDoor);
+      const go = el("nestortoday");
+      if (nestorOpen && !was) { el("nestorlive").textContent = `Door ${nestorDoor} is open.`; go.focus(); }
+      else if (!ndlg.contains(document.activeElement) || document.activeElement.hidden) (go.hidden ? el("nestorclose") : go).focus();
+    }
+    el("nestortoday").addEventListener("click", () => { ndlg.close(); if (goDoor >= 1) select(goDoor, "now"); });
     el("nestorclose").addEventListener("click", () => ndlg.close());
-    ndlg.addEventListener("click", (e) => { if (e.target === ndlg) ndlg.close(); });
+    ndlg.addEventListener("close", () => { nestorDoor = 0; });
+    onBackdrop(ndlg, () => ndlg.close());
 
     function stats() {
       const days = DAYS.filter((d) => d.day <= total());
@@ -435,7 +456,7 @@
 
     document.querySelectorAll("#mode button").forEach((b) => b.addEventListener("click", () => {
       if (b.dataset.mode !== "advent" && b.dataset.mode !== "full") return;
-      state.mode = b.dataset.mode; state.celebrate = false; persist(); render();
+      state.mode = state.pick = b.dataset.mode; state.celebrate = false; persist(); setUrl(0); render();
     }));
     /* Resetting erases points, answers and Santa's list, so it asks first. "Keep my progress" has the focus,
        Escape or a click outside keeps everything, and only "Yes, reset" erases. */
@@ -451,11 +472,52 @@
     });
     el("resetno").addEventListener("click", () => rdlg.close("keep"));
     el("resetyes").addEventListener("click", () => { rdlg.close("reset"); doReset(); reset.focus(); });
-    rdlg.addEventListener("click", (e) => { if (e.target === rdlg) rdlg.close("keep"); });
+    onBackdrop(rdlg, () => rdlg.close("keep"));
     rdlg.addEventListener("close", () => { if (rdlg.returnValue !== "reset") reset.focus(); });
-    /* A page left open moves on at midnight: the new door unlocks and the counter changes, without a reload.
-       The selected door stays as it is, unless it was the locked one now opening. */
-    A.onNewDay(() => { today = A.todayFor(data); render(); }, data);
+    /* 24-26 December: a once-a-year note from the NESTOR family (copy in days.json "holiday"), shown once per
+       browser. In test mode it shows every time, so the date simulator can bring it up again. */
+    const xdlg = el("xmasdlg"), HOLIDAY_KEY = "cyber-advent:holiday-" + data.year;
+    let xmasDoor = 0;
+    function maybeHoliday() {
+      const t = A.now(), hd = data.holiday;
+      if (!hd || !Array.isArray(hd.tips) || t.getFullYear() !== data.year || t.getMonth() !== data.month - 1 || t.getDate() < 24 || t.getDate() > 26) return;
+      if (dlg.open || ndlg.open || rdlg.open || xdlg.open) return;
+      if (!testMode && store.get(HOLIDAY_KEY) === 1) return;
+      store.set(HOLIDAY_KEY, 1);
+      const left = total() - Math.min(today, total());
+      const outro = left > 0 ? String(hd.outroMore).replace("{left}", `${left} more ${left === 1 ? "door" : "doors"}`) : hd.outroLast;
+      el("xmasbody").replaceChildren(
+        h("img", { class: "nestor-img", src: "img/nestor-family.webp", width: "760", height: "714", alt: "" }),
+        h("p", { class: "nestor-eyebrow", text: `${t.getDate()} DECEMBER · ${hd.eyebrow}` }),
+        h("h2", { id: "xmasttl", class: "nestor-h", tabindex: "-1", text: hd.title }),
+        h("p", { id: "xmasintro", class: "nestor-t", text: hd.intro }),
+        h("ul", { class: "xmas-tips" }, hd.tips.map((tp) => h("li", {}, svg(data.icons[tp.icon] || P.star, "ic"),
+          h("div", {}, h("span", { class: "lbl", text: tp.label }), h("p", { text: tp.text }))))),
+        h("p", { class: "xmas-outro", text: outro }),
+        h("p", { class: "xmas-sign" }, hd.sign, h("span", { class: "xmas-from", text: hd.from })),
+        h("p", { class: "xmas-ps", text: hd.ps }));
+      xmasDoor = today >= 1 ? Math.min(today, total()) : 0;
+      const go = el("xmasgo");
+      go.hidden = !xmasDoor; go.textContent = `Open door ${xmasDoor}`;
+      xdlg.showModal(); xdlg.scrollTop = 0;
+      el("xmasttl").focus({ preventScroll: true });
+    }
+    el("xmasgo").addEventListener("click", () => { xdlg.close(); if (xmasDoor) select(xmasDoor, "now"); });
+    el("xmasclose").addEventListener("click", () => xdlg.close());
+    onBackdrop(xdlg, () => xdlg.close());
+
+    /* A page left open moves on by itself: when a countdown reaches zero or the date changes, the new door
+       unlocks, the counter moves on and an open Nestor note turns into "Door n is open!", without a reload.
+       The selected door stays as it is. */
+    function moveOn(newDay) {
+      const t = A.todayFor(data), changed = t !== today;
+      today = t;
+      if (changed || newDay) render();
+      if (ndlg.open && nestorDoor) refreshNestor();
+      if (newDay) maybeHoliday();
+    }
+    A.onNewDay(() => moveOn(true), data);
+    document.addEventListener("advent:countdown-end", () => moveOn(false));
     const tb = A.testBar(data, settings);
     if (tb) document.body.append(tb);
     render();
@@ -463,6 +525,7 @@
     /* A link to a door (reminders, invites, shared links) opens it straight away, or the Nestor note if it isn't open yet. */
     if (openOnLoad) select(openOnLoad, "now");
     else if (lockedOnLoad) showNestor(lockedOnLoad);
+    else maybeHoliday();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", main); else main();

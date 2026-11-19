@@ -2,6 +2,33 @@
   "year": 2026,
   "timezone": "Europe/Rome",
   "reminder": "08:30",
+  "holiday": {
+    "eyebrow": "A NOTE FROM THE NESTOR FAMILY",
+    "title": "Merry Christmas and happy holidays!",
+    "intro": "You made it through Advent with your passwords intact. Probably. Before the mince pies take over, three last tips from the family:",
+    "tips": [
+      {
+        "icon": "robot",
+        "label": "SAFE AI",
+        "text": "Ask the chatbot for a Christmas poem, not to look after your secrets. What you type into a prompt may be stored, so leave out names, health details and the work slides. And if ‘your boss’ leaves a jolly voice note asking for gift cards, hang up and call back on a number you know. Even Santa checks his list twice."
+      },
+      {
+        "icon": "eye",
+        "label": "PRIVACY",
+        "text": "Post the tree, not the boarding pass. ‘Away until the 3rd!’ is a lovely update, mostly for burglars. Share the holiday photos once you’re home, with people you actually know."
+      },
+      {
+        "icon": "shield",
+        "label": "CYBER HYGIENE",
+        "text": "New gadget under the tree? If it came with a default password, change it before someone else unwraps it too. Then update everything, switch on two-step sign-in and back up the photos, before a relative asks you to ‘just have a quick look’ at their laptop."
+      }
+    ],
+    "outroLast": "That was the last door of the Advent calendar, and every door you skipped is still open. Hedgehogs hibernate in winter; your updates shouldn’t.",
+    "outroMore": "{left} to go before the year is out. Hedgehogs hibernate in winter; your updates shouldn’t.",
+    "sign": "Stay merry, stay patched.",
+    "from": "Love, the Nestor family",
+    "ps": "P.S. ‘Password123!’ is not a festive tradition."
+  },
   "month": 12,
   "modes": {
     "advent": {

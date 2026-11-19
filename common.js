@@ -169,7 +169,7 @@
   };
   const AUDS = ["simple", "technical", "business"];
   function sanitize(saved, data) {
-    const out = { opened: {}, answers: {}, acts: {}, team: "", mode: null, aud: "simple", country: null, follow: null };
+    const out = { opened: {}, answers: {}, acts: {}, team: "", pick: null, aud: "simple", country: null };
     if (!saved || typeof saved !== "object") return out;
     const days = data.days.length;
     const day = (k) => { const n = Number(k); return Number.isInteger(n) && n >= 1 && n <= days ? n : 0; };
@@ -182,12 +182,26 @@
       }
     }
     if (typeof saved.team === "string" && Object.prototype.hasOwnProperty.call(data.stakeholders, saved.team)) out.team = saved.team;
-    if (saved.mode === "advent" || saved.mode === "full") out.mode = saved.mode;
+    // "pick" is the calendar length the visitor chose with the switch. The older "mode" field was saved on every
+    // visit, chosen or not, so it is ignored: otherwise everyone who looked before launch would keep the old default.
+    if (saved.pick === "advent" || saved.pick === "full") out.pick = saved.pick;
     if (AUDS.includes(saved.aud)) out.aud = saved.aud;
-    if (saved.follow === true || saved.follow === false) out.follow = saved.follow;
     if (Array.isArray(data.countries) && data.countries.some((c) => c.id === saved.country)) out.country = saved.country;
     return out;
   }
+
+  /* Calendar length. Advent (1-24 December) unless settings.json says "defaultMode": "full". A page starts in:
+     the mode its link names (?mode=), else 31 days for a link to door 25-31 (those doors only exist there),
+     else the visitor's own pick from the switch, else the default. Links only carry ?mode= when it isn't the default. */
+  function defaultMode(settings) { return settings && settings.defaultMode === "full" ? "full" : "advent"; }
+  function startMode(data, settings, params, pick) {
+    const q = params.get("mode");
+    if (q === "advent" || q === "full") return q;
+    const day = Number.parseInt(params.get("day") || "", 10);
+    if (Number.isInteger(day) && day > data.modes.advent.doors && day <= data.modes.full.doors) return "full";
+    return pick || defaultMode(settings);
+  }
+  function modeParam(mode, settings) { return mode === defaultMode(settings) ? "" : "mode=" + mode; }
 
   /* TEST MODE (temporary; settings.json "testMode": true). A date simulator for checking the countdown, the door
      locks and the Nestor messages before December. With testMode off, a stored test date and ?preview=all links
@@ -211,7 +225,7 @@
     const y = data.year, two = (v) => String(v).padStart(2, "0");
     const opts = [["", "Real date and time"], [`${y}-11-25T10:00`, "25 Nov · countdown"], [`${y}-11-30T23:59:45`, "30 Nov 23:59:45 · watch Door 1 open"]];
     for (let d = 1; d <= 31; d++) opts.push([`${y}-12-${two(d)}T10:00`, `${d} Dec`]);
-    opts.push([`${y}-12-05T23:59:45`, "5 Dec 23:59:45 · watch Door 6 open"], [`${y + 1}-01-02T10:00`, `2 Jan ${y + 1} · after December`]);
+    opts.push([`${y}-12-05T23:59:45`, "5 Dec 23:59:45 · watch Door 6 open"], [`${y}-12-23T23:59:45`, "23 Dec 23:59:45 · watch the Christmas note"], [`${y + 1}-01-02T10:00`, `2 Jan ${y + 1} · after December`]);
     const sel = h("select", { id: "testdate" }, opts.map(([v, t]) => h("option", { value: v, text: t })));
     sel.value = opts.some(([v]) => v === cur) ? cur : "";
     sel.addEventListener("change", () => {
@@ -236,10 +250,19 @@
     const clock = [Math.floor((t % 86400) / 3600), Math.floor((t % 3600) / 60), t % 60].map((v) => String(v).padStart(2, "0")).join(":");
     return d ? `${d} ${d === 1 ? "day" : "days"} ${clock}` : clock;
   }
+  /* When a countdown reaches zero, the page hears "advent:countdown-end" once for it, so the door can open
+     there and then instead of the clock sitting at 00:00:00. */
   function tick() {
-    const t = now();
-    document.querySelectorAll("[data-cd]").forEach((e) => { const v = Number(e.dataset.cd); if (Number.isFinite(v)) e.textContent = fmtLeft(v - t.getTime()); });
+    const t = now(), ms = t.getTime();
+    let ended = false;
+    document.querySelectorAll("[data-cd]").forEach((e) => {
+      const v = Number(e.dataset.cd);
+      if (!Number.isFinite(v)) return;
+      e.textContent = fmtLeft(v - ms);
+      if (v <= ms && !e.dataset.cdEnd) { e.dataset.cdEnd = "1"; ended = true; }
+    });
     document.querySelectorAll("[data-clock]").forEach((e) => { e.textContent = t.toLocaleString("en-GB", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", second: "2-digit" }); });
+    if (ended) document.dispatchEvent(new CustomEvent("advent:countdown-end"));
   }
   let ticker = 0;
   function startTicker() { if (!ticker) ticker = window.setInterval(tick, 1000); tick(); }
@@ -324,15 +347,21 @@
   /* A note from the NESTOR family for a door that isn't open yet: when it opens, and a live countdown.
      Used by the calendar's "Come back tomorrow" popup and by the briefing page of a locked door. */
   function nestorNote(data, n, today, headTag, ids) {
+    const img = h("img", { class: "nestor-img", src: "img/nestor-family.webp", width: "760", height: "714", alt: "" });
+    const eyebrow = h("p", { class: "nestor-eyebrow", text: "A NOTE FROM THE NESTOR FAMILY" });
+    /* The countdown has run out while the note was open: say so, and the page offers an "Open door n" button. */
+    if (opensAt(data, n) <= now()) {
+      return [img, eyebrow,
+        h(headTag || "h2", { id: ids ? ids.head : null, class: "nestor-h", text: `Door ${n} is open!` }),
+        h("p", { id: ids ? ids.text : null, class: "nestor-t", text: "The wait is over. Go on, open it: the Nestor family wants to see what’s inside too." })];
+    }
     const k = daysUntil(data, n), label = opensLabel(data, n);
     const head = k <= 0 ? "Come back tonight!" : k === 1 ? "Come back tomorrow!" : `Come back in ${k} days!`;
     const when = k <= 0 ? `Door ${n} opens tonight, ${label}.` : k === 1 ? `Door ${n} opens tomorrow, ${label}.` : `Door ${n} opens on ${label}.`;
     const why = today >= 1 ? `Today’s door is ${today}. One door a day keeps the surprise - see you then.`
       : n === 1 ? "Add the reminders to your calendar and we’ll tell you when it opens."
         : `The calendar starts with Door 1 on ${opensLabel(data, 1)}.`;
-    return [
-      h("img", { class: "nestor-img", src: "img/nestor-family.webp", width: "760", height: "714", alt: "" }),
-      h("p", { class: "nestor-eyebrow", text: "A NOTE FROM THE NESTOR FAMILY" }),
+    return [img, eyebrow,
       h(headTag || "h2", { id: ids ? ids.head : null, class: "nestor-h", text: head }),
       h("p", { id: ids ? ids.text : null, class: "nestor-t" }, when, " ", why),
       h("p", { class: "nestor-cd" }, "Opens in ", h("strong", { "data-cd": String(opensAt(data, n).getTime()), text: fmtLeft(opensAt(data, n) - now()) }))
@@ -470,5 +499,5 @@
     try { await navigator.clipboard.writeText(text); return true; } catch (e) { return false; }
   }
 
-  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, todayFor, daysUntil, onNewDay, inDays, reminderAt, opensAt, opensLabel, nextOpensText, now, applyTestMode, testBar, fmtLeft, startTicker, nestorNote, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
+  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, defaultMode, startMode, modeParam, todayFor, daysUntil, onNewDay, inDays, reminderAt, opensAt, opensLabel, nextOpensText, now, applyTestMode, testBar, fmtLeft, startTicker, nestorNote, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
 })();

@@ -97,23 +97,21 @@
     const preview = testMode && params.get("preview") === "all";
     const KEY = "cyber-advent:" + data.year;
     const saved = sanitize(store.get(KEY), data);
-    const qMode = params.get("mode");
-    // A briefing for door 25-31 only exists in the 31-day mode (same rule as the calendar page).
-    const qDay = Number.parseInt(params.get("day") || "", 10);
-    const needsFull = Number.isInteger(qDay) && qDay > data.modes.advent.doors && qDay <= data.modes.full.doors;
-    const mode = qMode === "advent" || qMode === "full" ? qMode : needsFull ? "full" : (saved.mode || (settings.defaultMode === "advent" ? "advent" : "full"));
+    // Same rule as the calendar page: a briefing for door 25-31 only exists in the 31-day mode.
+    const mode = A.startMode(data, settings, params, saved.pick);
+    const mq = A.modeParam(mode, settings);
     const total = data.modes[mode].doors;
     let today = A.todayFor(data); // refreshed at midnight by A.onNewDay below
     // Doors follow the dates for everyone (same rule as the calendar page).
     const isLocked = (n) => !preview && n > today;
     const state = { ...saved, country: saved.country || (data.countries.some((c) => c.id === settings.defaultCountry) ? settings.defaultCountry : "eu") };
-    /* Mode and the Follow switch belong to the calendar page: re-read them at save time so a stale copy
+    /* The visitor's calendar-length pick belongs to the calendar page: re-read it at save time so a stale copy
        from when this page loaded never overwrites a newer choice made in another tab. */
     const persist = () => {
       const cur = sanitize(store.get(KEY), data);
-      store.set(KEY, { mode: cur.mode, opened: state.opened, answers: state.answers, acts: state.acts, team: state.team, aud: state.aud, country: state.country });
+      store.set(KEY, { pick: cur.pick, opened: state.opened, answers: state.answers, acts: state.acts, team: state.team, aud: state.aud, country: state.country });
     };
-    const q = (n) => `?day=${n}${mode === "advent" ? "&mode=advent" : ""}${preview ? "&preview=all" : ""}`;
+    const q = (n) => `?day=${n}${mq ? "&" + mq : ""}${preview ? "&preview=all" : ""}`;
 
     let n = Number.parseInt(params.get("day") || "", 10);
     if (!Number.isInteger(n) || n < 1 || n > total) n = today >= 1 ? Math.min(today, total) : 1;
@@ -134,7 +132,7 @@
       r.append(bar);
       if (isLocked(n)) {
         r.append(h("div", { class: "locked-msg nestor-inline" }, ...A.nestorNote(data, n, today, "h1"),
-          h("p", { class: "nestor-links" }, h("a", { href: "index.html" + (mode === "advent" ? "?mode=advent" : ""), text: "Back to the calendar" }), " · ",
+          h("p", { class: "nestor-links" }, h("a", { href: "index.html" + (mq ? "?" + mq : ""), text: "Back to the calendar" }), " · ",
             h("a", { href: `invites/door-${pad(n)}.ics`, type: "text/calendar", text: `Add door ${n} to your calendar` }))));
         A.startTicker();
         return;
@@ -146,7 +144,7 @@
         h("div", { class: "ornament o" + (n % 4), "aria-hidden": "true" }, h("span", { class: "string" }), h("span", { class: "cap" }), h("span", { class: "ball" }, svg(data.icons[d.icon] || P.star)), h("span", { class: "shine" })),
         h("div", { class: "stack" },
           h("div", { class: "meta" }, h("span", { text: `DOOR ${pad(n)} OF ${total}` }), h("span", { "aria-hidden": "true", text: "·" }), h("span", { text: `${WD[dt.getDay()].toUpperCase()} ${n} DECEMBER ${data.year}${occ ? " · " + occ.toUpperCase() : ""}` })),
-          h("h1", { text: d.title }),
+          h("h1", { tabindex: "-1", text: d.title }),
           h("div", { class: "labels" }, h("span", { class: "track" + (isAI ? " ai" : "") }, isAI ? svg(P.star) : null, TRACK[d.track]), h("span", { class: "topic", text: d.topic })),
           h("div", { class: "for" }, h("span", { class: "k", text: "FOR" }), d.for.map((id) => h("span", { class: "who" + (id === state.team ? " me" : ""), text: data.stakeholders[id] }))))));
       r.append(h("div", { class: "two" },
@@ -173,7 +171,7 @@
       r.append(labFull(d));
       /* The public link never carries ?preview=all: an organiser previewing in November must not hand
          everyone who clicks a shared post a way round the one-door-a-day lock. */
-      const link = new URL(`index.html?day=${n}${mode === "advent" ? "&mode=advent" : ""}`, window.location.href).toString();
+      const link = new URL(`index.html?day=${n}${mq ? "&" + mq : ""}`, window.location.href).toString();
       r.append(shareKitBlock(A.shareKit(data, d, total, link)));
       r.append(sec("READ MORE AT THE SOURCE", null,
         d.readMore.map((m) => extLink(m.url, "rm", h("span", { class: "top2" }, h("span", { class: "org", text: m.org }), h("span", { class: "ref", text: m.ref })), h("span", { class: "t", text: m.text }), h("span", { class: "go", text: "Read at source ↗" })))));
@@ -193,8 +191,16 @@
       Object.assign(state, { opened: fresh.opened, answers: fresh.answers, acts: fresh.acts, team: fresh.team, aud: fresh.aud, country: fresh.country || state.country });
       render();
     });
-    /* Left open overnight, a locked briefing unlocks at midnight without a reload. */
-    A.onNewDay(() => { today = A.todayFor(data); render(); }, data);
+    /* Left open, a locked briefing opens by itself when its countdown reaches zero (or at midnight), without a
+       reload; focus goes to the briefing's title so a screen reader announces it. */
+    const moveOn = (newDay) => {
+      const was = isLocked(n), t = A.todayFor(data);
+      if (t === today && !newDay) return;
+      today = t; render();
+      if (was && !isLocked(n)) { const h1 = document.querySelector(".bf-hero h1"); if (h1) h1.focus({ preventScroll: true }); }
+    };
+    A.onNewDay(() => moveOn(true), data);
+    document.addEventListener("advent:countdown-end", () => moveOn(false));
     const tb = A.testBar(data, settings);
     if (tb) document.body.append(tb);
     render();

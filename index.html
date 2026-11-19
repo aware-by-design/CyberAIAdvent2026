@@ -251,10 +251,17 @@
   <div class="dlg-body" id="daybody"><div class="panel" id="panel"></div></div>
   <button type="button" class="dlg-down" id="daydown">Scroll down ↓</button>
 </dialog>
-<!-- A door that isn't open yet: a note from the NESTOR family with a live countdown. -->
+<!-- A door that isn't open yet: a note from the NESTOR family with a live countdown. When it reaches zero the
+     note says "Door n is open!" and the button opens it. -->
 <dialog class="nestor" id="nestordlg" aria-labelledby="nestorttl" aria-describedby="nestortext">
   <div id="nestorbody"></div>
+  <p class="sr" id="nestorlive" aria-live="polite"></p>
   <div class="row"><button type="button" class="keep" id="nestortoday"></button><button type="button" class="quiet" id="nestorclose">Close</button></div>
+</dialog>
+<!-- 24-26 December: Merry Christmas and happy holidays from the NESTOR family, once per browser (days.json "holiday"). -->
+<dialog class="nestor xmas" id="xmasdlg" aria-labelledby="xmasttl" aria-describedby="xmasintro">
+  <div id="xmasbody"></div>
+  <div class="row"><button type="button" class="keep" id="xmasgo"></button><button type="button" class="quiet" id="xmasclose">Close</button></div>
 </dialog>
 <dialog class="confirm" id="resetdlg" aria-labelledby="resetttl" aria-describedby="resetdesc">
   <h2 id="resetttl">Reset your progress?</h2>
