@@ -40,7 +40,7 @@
     const mode = A.startMode(data, settings, params, saved.pick);
     const mq = A.modeParam(mode, settings);
     const total = data.modes[mode].doors;
-    let today = A.todayFor(data); // refreshed at midnight by A.onNewDay below
+    let today = A.todayFor(data); // refreshed when a door opens (08:29 CET) by A.onNewDay below
     // Doors follow the dates for everyone (same rule as the calendar page).
     const isLocked = (n) => !preview && n > today;
     const state = { ...saved, country: saved.country || (data.countries.some((c) => c.id === settings.defaultCountry) ? settings.defaultCountry : "eu") };
@@ -106,7 +106,7 @@
       Object.assign(state, { opened: fresh.opened, answers: fresh.answers, acts: fresh.acts, team: fresh.team, aud: fresh.aud, country: fresh.country || state.country });
       render();
     });
-    /* Left open, a locked briefing opens by itself when its countdown reaches zero (or at midnight), without a
+    /* Left open, a locked briefing opens by itself when its countdown reaches zero, without a
        reload; focus goes to the briefing's title so a screen reader announces it. */
     const moveOn = (newDay) => {
       const was = isLocked(n), t = A.todayFor(data);

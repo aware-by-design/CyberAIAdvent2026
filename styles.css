@@ -660,8 +660,16 @@ html:has(dialog[open]) { overflow: hidden; }
 dialog.daydlg { width: min(980px, calc(100vw - 24px)); height: min(92vh, 1200px); max-height: calc(100dvh - 24px); padding: 0; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); color: var(--text); box-shadow: 0 40px 80px #000000AA; overflow: hidden; }
 dialog.daydlg[open] { display: flex; flex-direction: column; }
 dialog.daydlg::backdrop, dialog.nestor::backdrop { background: #06120DD9; }
-.dlg-bar { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px 10px 22px; border-bottom: 1px solid var(--line); background: #102A1F; }
-.dlg-door { font: 600 12px var(--mono); letter-spacing: .14em; color: var(--gold); }
+.dlg-bar { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px 10px 18px; border-bottom: 1px solid var(--line); background: #102A1F; }
+.dlg-door { white-space: nowrap; color: var(--gold); }
+.dlg-door strong { font: 700 19px/1 var(--serif); letter-spacing: 0; }
+.dlg-door span { font: 500 14px var(--sans); color: var(--muted); }
+/* Previous / Next sit in the popup's top bar, either side of "DOOR 09 OF 24" */
+.dlg-nav { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.dlg-nav .sq { width: 40px; height: 40px; flex: none; color: var(--text); }
+.dlg-nav .sq:hover:not(:disabled) { border-color: var(--gold); color: var(--gold); }
+.dlg-nav .sq:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+@media (max-width: 400px) { .dlg-nav { gap: 8px; } .dlg-door strong { font-size: 17px; } .dlg-bar { padding-left: 14px; } }
 .dlg-x { min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--text); font-weight: 600; }
 .dlg-x:hover { border-color: var(--muted); }
 .dlg-body { flex: 1 1 auto; overflow-y: auto; overscroll-behavior: contain; padding: 22px 24px 96px; scroll-padding-top: 12px; }
@@ -716,7 +724,7 @@ dialog.xmas .row { position: sticky; bottom: -24px; margin: 0 -28px -24px; paddi
 /* ---- TEST MODE bar (temporary: delete with testMode) ---- */
 .testbar { position: fixed; left: 12px; bottom: 12px; z-index: 60; max-width: calc(100vw - 24px); padding: 8px 14px; border-radius: 14px; border: 2px dashed var(--gold); background: #0D2118F2; color: var(--text); font-size: 13px; box-shadow: 0 10px 30px #000000AA; }
 .testbar strong { color: var(--gold); font: 700 12px var(--mono); letter-spacing: .12em; }
-.testbar select { min-height: 36px; }
+.testbar select { min-height: 36px; max-width: 100%; min-width: 0; }
 .testbar a { color: var(--gold); }
 .testbar summary { cursor: pointer; display: flex; align-items: center; gap: 10px; min-height: 32px; }
 .testbar .tb-body { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 8px 0 4px; }

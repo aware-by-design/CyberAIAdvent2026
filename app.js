@@ -58,7 +58,7 @@
     const gamified = settings.gamified !== false;
     el("hud").hidden = !gamified;
 
-    let today = A.todayFor(data); // refreshed at midnight by A.onNewDay below
+    let today = A.todayFor(data); // refreshed when a door opens (08:29 CET) by A.onNewDay below
     const total = () => data.modes[state.mode].doors;
     /* Doors follow the dates for everyone: today's door and the days before it are open, later doors stay shut
        and show a note from NESTOR instead. This is a convenience, not access control: all content is
@@ -97,9 +97,15 @@
     function select(n, open) {
       if (!Number.isInteger(n) || n < 1 || n > total()) return;
       if (isLocked(n)) { showNestor(n); return; }
+      // From the top bar's arrows, focus stays on the arrow (render() hands it to the other one at either end)
+      // and a screen reader hears the new door; otherwise focus goes to the door's title.
+      const arrow = !!(document.activeElement && document.activeElement.closest && document.activeElement.closest(".dlg-nav"));
       state.selected = n; state.opened[n] = 1; state.celebrate = false;
       persist(); setUrl(n); render();
-      if (dlg.open) { dbody.scrollTop = 0; focusTitle(); updateDown(); }
+      if (dlg.open) {
+        dbody.scrollTop = 0; updateDown();
+        if (arrow) el("daylive").textContent = `Door ${n} of ${total()}: ${DAYS[n - 1].title}`; else focusTitle();
+      }
       else if (open) window.setTimeout(openDay, open === "now" || A.reducedMotion() ? 0 : 650);
     }
     function focusTitle() { const t = el("daytitle"); if (t) t.focus({ preventScroll: true }); }
@@ -126,6 +132,8 @@
     dbody.addEventListener("scroll", updateDown, { passive: true });
     window.addEventListener("resize", () => { if (dlg.open) updateDown(); });
     el("dayclose").addEventListener("click", () => dlg.close());
+    el("dayprev").addEventListener("click", () => select(state.selected - 1));
+    el("daynext").addEventListener("click", () => select(state.selected + 1));
     onBackdrop(dlg, () => dlg.close());
     dlg.addEventListener("close", () => {
       state.full = false;
@@ -203,7 +211,7 @@
       else if (today < 1) {
         const left = A.daysUntil(data, 1);
         // Before 1 December the counter cell says when it starts; the live countdown beside it has the exact time.
-        num = left <= 0 ? "Starts tonight" : `Starts 1 December`; text = left <= 0 ? `Door 1 opens tonight, ${A.opensLabel(data, 1)}` : `One door a day until ${n} December`; filled = 0; next = 1;
+        num = left <= 0 ? "Starts today" : `Starts 1 December`; text = left <= 0 ? `Door 1 opens today at ${A.opensClock(data, 1)}` : `One door a day until ${n} December`; filled = 0; next = 1;
       } else if (today <= n) { num = `Day ${today} of ${n}`; text = today === n ? "The last door is open" : A.nextOpensText(data, today + 1); filled = today; next = today < n ? today + 1 : 0; }
       else { num = `All ${n} doors open`; text = "Catch up on any you missed"; filled = n; }
       el("dcnum").textContent = num;
@@ -225,11 +233,11 @@
       /* The banner follows the calendar length: dates, the one calendar invite (a reminder for every door at the
          days.json reminder time, Europe/Rome, which is CET in December) and the shortcut to today's door. */
       const n = total(), dates = `1–${n} December ${data.year}`;
-      el("eyebrow").textContent = `${state.mode === "advent" ? "ADVENT CALENDAR" : "31 DAYS"} · ${dates.toUpperCase()} · REMINDERS AT ${data.reminder} CET`;
+      el("eyebrow").textContent = `${state.mode === "advent" ? "ADVENT CALENDAR" : "31 DAYS"} · ${dates.toUpperCase()} · A NEW DOOR EVERY DAY AT ${data.opens} CET`;
       el("bndates").textContent = dates;
       el("ics").setAttribute("href", state.mode === "advent" ? "advent-24.ics" : "days-31.ics");
       el("ics").setAttribute("aria-label", `Download calendar invite: ${n} daily reminders (.ics file)`);
-      el("icsnote").textContent = `One file with ${n} daily reminders, one for each door. No sign-up, no personal data.`;
+      el("icsnote").textContent = `One file with ${n} reminders at ${data.reminder} CET, one for each door. No sign-up, no personal data.`;
       const t = !preview && today >= 1 && today <= n ? today : 0, go = el("bntoday");
       go.hidden = !t; go.textContent = `Open today’s door (${t})`;
     }
@@ -413,6 +421,11 @@
     function renderPanel() {
       const p = el("panel"); p.replaceChildren();
       const n = state.selected, d = DAYS[n - 1];
+      // The top bar: ‹ DOOR 09 OF 24 ›. Next stays usable when the next door is locked (it shows the Nestor note).
+      el("daylabel").replaceChildren(h("strong", { text: `Door ${n}` }), h("span", { text: ` of ${total()}` }));
+      el("dayprev").disabled = n <= 1;
+      el("daynext").disabled = n >= total();
+      el("daynext").setAttribute("aria-label", n < total() && isLocked(n + 1) ? `Next door (opens ${A.inDays(A.daysUntil(data, n + 1))})` : "Next door");
       if (isLocked(n)) {
         p.append(h("div", { class: "locked-msg nestor-inline" }, ...A.nestorNote(data, n, today, "h2", { head: "daytitle", text: null })));
         return;
@@ -456,12 +469,9 @@
       }
       p.append(
         h("div", { class: "nav" },
-          h("button", { type: "button", class: "sq", "aria-label": "Previous door", "data-k": "prev", disabled: n <= 1, onclick: () => select(n - 1) }, svg(P.left)),
-          h("button", { type: "button", class: "sq", "aria-label": isLocked(n + 1) ? `Next door (opens ${A.inDays(A.daysUntil(data, n + 1))})` : "Next door", "data-k": "next", disabled: n >= total(), onclick: () => select(n + 1) }, svg(P.right)),
           h("span", { class: "grow" }),
           h("a", { class: "share", href: briefHref(n) + "#share", "data-k": "sharekit", onclick: (e) => openFull(e, "share"), text: "Share kit for 5 channels" }),
           h("button", { type: "button", class: "back-up", onclick: () => dlg.close() }, "Close")));
-      el("daylabel").textContent = `DOOR ${pad(n)} OF ${total()}`;
     }
 
     /* After an answer the options are disabled, so focus moves to the result; at either end of the
@@ -512,13 +522,14 @@
     el("resetyes").addEventListener("click", () => { rdlg.close("reset"); doReset(); reset.focus(); });
     onBackdrop(rdlg, () => rdlg.close("keep"));
     rdlg.addEventListener("close", () => { if (rdlg.returnValue !== "reset") reset.focus(); });
-    /* 24-26 December: a once-a-year note from NESTOR (copy in days.json "holiday"), shown once per
+    /* 24-26 December (doors 24-26): a once-a-year note from NESTOR (copy in days.json "holiday"), shown once per
        browser. In test mode it shows every time, so the date simulator can bring it up again. */
     const xdlg = el("xmasdlg"), HOLIDAY_KEY = "cyber-advent:holiday-" + data.year;
     let xmasDoor = 0;
     function maybeHoliday() {
-      const t = A.now(), hd = data.holiday;
-      if (!hd || !Array.isArray(hd.tips) || t.getFullYear() !== data.year || t.getMonth() !== data.month - 1 || t.getDate() < 24 || t.getDate() > 26) return;
+      const hd = data.holiday;
+      // From the moment door 24 opens (24 December, 08:29 CET) until door 27 opens.
+      if (!hd || !Array.isArray(hd.tips) || today < 24 || today > 26) return;
       if (dlg.open || ndlg.open || rdlg.open || xdlg.open) return;
       if (!testMode && store.get(HOLIDAY_KEY) === 1) return;
       store.set(HOLIDAY_KEY, 1);
@@ -526,7 +537,7 @@
       const outro = left > 0 ? String(hd.outroMore).replace("{left}", `${left} more ${left === 1 ? "door" : "doors"}`) : hd.outroLast;
       el("xmasbody").replaceChildren(
         h("img", { class: "nestor-img", src: "img/nestor-family.webp", width: "760", height: "714", alt: "" }),
-        h("p", { class: "nestor-eyebrow", text: `${t.getDate()} DECEMBER · ${hd.eyebrow}` }),
+        h("p", { class: "nestor-eyebrow", text: `${today} DECEMBER · ${hd.eyebrow}` }),
         h("h2", { id: "xmasttl", class: "nestor-h", tabindex: "-1", text: hd.title }),
         h("p", { id: "xmasintro", class: "nestor-t", text: hd.intro }),
         h("ul", { class: "xmas-tips" }, hd.tips.map((tp) => h("li", {}, svg(data.icons[tp.icon] || P.star, "ic"),

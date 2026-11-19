@@ -12,9 +12,9 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=f8b7f67188">
-<script src="common.js?v=6c4e469e96" defer></script>
-<script src="app.js?v=36ac4f9b7b" defer></script>
+<link rel="stylesheet" href="styles.css?v=555773851f">
+<script src="common.js?v=05e403cc46" defer></script>
+<script src="app.js?v=16f2f25de7" defer></script>
 </head>
 <body>
 <a class="skip" href="#doors">Skip to the doors</a>
@@ -38,7 +38,7 @@
     <p class="eyebrow bn-eyebrow">A DAILY HELLO FROM NESTOR</p>
     <h1 id="welcome">Welcome to the Winterwatch <em>Cyber &amp; AI Advent Calendar</em></h1>
     <p class="bn-hello">I’m <span class="acro"><b>N</b>ext-gen <b>E</b>thical <b>S</b>afeguards <b>T</b>raining for <b>O</b>rganizational <b>R</b>esilience in Artificial Intelligence</span>, but you can call me <strong>NESTOR</strong>&nbsp;😉</p>
-    <p class="lede">Grown-up or hoglet, mum, dad, daughter or son: every hedgehog in the picture is me. One NESTOR, many forms. Every day I open one door: one do, one don’t and a 20-second challenge. Bite-sized cybersecurity, AI and privacy habits, real case studies from Europe and beyond, activities for every audience and an incident lab, from the boardroom to the kitchen table. Learn something, share something and, most of all, have fun.</p>
+    <p class="lede">Grown-up or hoglet, every hedgehog in the picture is me. One NESTOR, many forms. Every day I open one door: one do, one don’t and a 20-second challenge. Bite-sized cybersecurity, AI and privacy habits, real case studies from Europe and beyond, activities for every audience and an incident lab, from the boardroom to the kitchen table. Learn something, share something and, most of all, have fun.</p>
     <p class="bn-meta" id="eyebrow">1–24 DECEMBER 2026 · REMINDERS AT 08:30 CET</p>
     <div class="bn-actions">
       <a class="bn-cta" id="ics" href="advent-24.ics" type="text/calendar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4M12 13v5M9.5 15.5 12 18l2.5-2.5"/></svg><span id="icstext">Download calendar invite</span></a>
@@ -260,7 +260,15 @@
 </div>
 <!-- Each door opens in this popup: the whole day, a Scroll down button that steps through it, and Close. -->
 <dialog class="daydlg" id="daydlg" aria-labelledby="daytitle">
-  <div class="dlg-bar"><span class="dlg-door" id="daylabel"></span><button type="button" class="dlg-x" id="dayclose" aria-label="Close this door">Close ✕</button></div>
+  <div class="dlg-bar">
+    <div class="dlg-nav">
+      <button type="button" class="sq" id="dayprev" data-k="prev" aria-label="Previous door"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <span class="dlg-door" id="daylabel"></span>
+      <button type="button" class="sq" id="daynext" data-k="next" aria-label="Next door"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+    <span class="sr" id="daylive" aria-live="polite"></span>
+    <button type="button" class="dlg-x" id="dayclose" aria-label="Close this door">Close ✕</button>
+  </div>
   <div class="dlg-body" id="daybody"><div class="panel" id="panel"></div></div>
   <button type="button" class="dlg-down" id="daydown">Scroll down ↓</button>
 </dialog>

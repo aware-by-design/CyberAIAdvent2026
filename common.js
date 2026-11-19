@@ -225,9 +225,9 @@
     let cur = "";
     try { cur = window.localStorage.getItem(TEST_KEY) || ""; } catch (e) { cur = ""; }
     const y = data.year, two = (v) => String(v).padStart(2, "0");
-    const opts = [["", "Real date and time"], [`${y}-11-25T10:00`, "25 Nov · countdown"], [`${y}-11-30T23:59:45`, "30 Nov 23:59:45 · watch Door 1 open"]];
+    const opts = [["", "Real date and time"], [`${y}-11-25T10:00`, "25 Nov · countdown"], [`${y}-12-01T08:28:45`, "1 Dec 08:28:45 · watch Door 1 open"]];
     for (let d = 1; d <= 31; d++) opts.push([`${y}-12-${two(d)}T10:00`, `${d} Dec`]);
-    opts.push([`${y}-12-05T23:59:45`, "5 Dec 23:59:45 · watch Door 6 open"], [`${y}-12-23T23:59:45`, "23 Dec 23:59:45 · watch the Christmas note"], [`${y + 1}-01-02T10:00`, `2 Jan ${y + 1} · after December`]);
+    opts.push([`${y}-12-06T08:28:45`, "6 Dec 08:28:45 · watch Door 6 open"], [`${y}-12-24T08:28:45`, "24 Dec 08:28:45 · Door 24 + Christmas note"], [`${y + 1}-01-02T10:00`, `2 Jan ${y + 1} · after December`]);
     const sel = h("select", { id: "testdate" }, opts.map(([v, t]) => h("option", { value: v, text: t })));
     sel.value = opts.some(([v]) => v === cur) ? cur : "";
     sel.addEventListener("change", () => {
@@ -269,10 +269,11 @@
   let ticker = 0;
   function startTicker() { if (!ticker) ticker = window.setInterval(tick, 1000); tick(); }
 
-  /* When a door opens. Door n opens at local midnight on n December, or when its calendar reminder fires
-     (data.reminder, e.g. 08:30, in data.timezone, e.g. Europe/Rome), whichever comes first. In Europe and
-     Asia midnight always comes first, so nothing changes there. On the Americas' west coast and further west
-     the reminder fires the evening before, and the door opens with it, so "Door n is open" is true when it arrives. */
+  /* When a door opens. Door n opens at data.opens (08:29) on n December in data.timezone (Europe/Rome, so CET in
+     December): one moment for everyone, wherever they are, so every door is open for exactly 24 hours before
+     the next one. It is one minute before the calendar reminder (data.reminder, 08:30), so the door is already
+     open when the reminder arrives. Visitors elsewhere see that moment in their own time (02:29 in New York,
+     23:29 the evening before in Los Angeles, 16:29 in Tokyo). */
   const zoneFmt = {};
   function zoneOffset(tz, t) {
     const f = zoneFmt[tz] || (zoneFmt[tz] = new Intl.DateTimeFormat("en-GB", { timeZone: tz, hourCycle: "h23",
@@ -280,8 +281,8 @@
     const p = {}; f.formatToParts(t).forEach((x) => { p[x.type] = x.value; });
     return Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour, +p.minute, +p.second) - t;
   }
-  function reminderAt(data, n) {
-    const m = /^([01]\d|2[0-3]):([0-5]\d)$/.exec(data.reminder || "08:30") || [0, "08", "30"];
+  function zoneTime(data, n, hhmm, fallback) {
+    const m = /^([01]\d|2[0-3]):([0-5]\d)$/.exec(hhmm || fallback) || /^(\d\d):(\d\d)$/.exec(fallback);
     const wall = Date.UTC(data.year, data.month - 1, n, +m[1], +m[2]);
     try {
       let t = wall - zoneOffset(data.timezone, wall);
@@ -289,30 +290,25 @@
       return new Date(t);
     } catch (e) { return new Date(data.year, data.month - 1, n, +m[1], +m[2]); } // unknown zone: local time
   }
-  function opensAt(data, n) {
-    const midnight = new Date(data.year, data.month - 1, n);
-    const r = reminderAt(data, n);
-    return r < midnight ? r : midnight;
-  }
+  const reminderAt = (data, n) => zoneTime(data, n, data.reminder, "08:30");
+  const opensAt = (data, n) => zoneTime(data, n, data.opens, "08:29");
+  const clock = (t) => t.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
   const DATE_LONG = { weekday: "long", day: "numeric", month: "long" };
-  /* "Tuesday 1 December", or "Monday 30 November at 23:30" where the reminder opens the door before midnight. */
+  /* "Tuesday 1 December at 08:29", in the visitor's own time zone. */
   function opensLabel(data, n) {
-    const t = opensAt(data, n), early = t.getHours() || t.getMinutes();
-    const day = t.toLocaleDateString("en-GB", DATE_LONG);
-    return early ? `${day} at ${t.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}` : day;
+    const t = opensAt(data, n);
+    return `${t.toLocaleDateString("en-GB", DATE_LONG)} at ${clock(t)}`;
   }
-  /* "A new door opens at midnight", or "... at 23:30" for the visitors whose doors open with the reminder. */
-  function nextOpensText(data, n) {
-    const t = opensAt(data, n), early = t.getHours() || t.getMinutes();
-    return early ? `A new door opens at ${t.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}` : "A new door opens at midnight";
-  }
+  /* "A new door opens at 08:29" (the visitor's own time for 08:29 CET). */
+  function nextOpensText(data, n) { return `A new door opens at ${clock(opensAt(data, n))}`; }
+  function opensClock(data, n) { return clock(opensAt(data, n)); }
 
   /* The highest door that is open now (0 before the first one, 99 after the calendar year). */
   function todayFor(data) {
     const t = now();
     if (t.getFullYear() > data.year) return 99;
-    let n = t.getFullYear() === data.year && t.getMonth() === data.month - 1 ? t.getDate() : 0;
-    while (n < 31 && opensAt(data, n + 1) <= t) n++; // a reminder that already fired has opened its door
+    let n = 0;
+    while (n < 31 && opensAt(data, n + 1) <= t) n++;
     return n;
   }
 
@@ -358,9 +354,9 @@
         h(headTag || "h2", { id: ids ? ids.head : null, class: "nestor-h", text: `Door ${n} is open!` }),
         h("p", { id: ids ? ids.text : null, class: "nestor-t", text: "The wait is over. Go on, open it: NESTOR wants to see what’s inside too." })];
     }
-    const k = daysUntil(data, n), label = opensLabel(data, n);
-    const head = k <= 0 ? "Come back tonight!" : k === 1 ? "Come back tomorrow!" : `Come back in ${k} days!`;
-    const when = (k <= 0 ? `Door ${n} opens tonight, ${label}.` : k === 1 ? `Door ${n} opens tomorrow, ${label}.` : `Door ${n} opens on ${label}.`)
+    const k = daysUntil(data, n), label = opensLabel(data, n), at = opensClock(data, n);
+    const head = k <= 0 ? `Come back at ${at}!` : k === 1 ? "Come back tomorrow!" : `Come back in ${k} days!`;
+    const when = (k <= 0 ? `Door ${n} opens today at ${at}.` : k === 1 ? `Door ${n} opens tomorrow, ${label}.` : `Door ${n} opens on ${label}.`)
       + (opts && opts.page ? " Its full briefing appears on this page then." : "");
     const why = today >= 1 ? `Today’s door is ${today}. One door a day keeps the surprise - see you then.`
       : n === 1 ? "Add the reminders to your calendar and we’ll tell you when it opens."
@@ -483,9 +479,8 @@
     return u.pathname + u.search;
   }
 
-  /* "in 12 days" / "tomorrow" / "tonight", for locked doors and the countdown. A locked door opening on the
-     same local day can only be one that opens with its reminder in the evening (see opensAt). */
-  function inDays(k) { return k <= 0 ? "tonight" : k === 1 ? "tomorrow" : `in ${k} days`; }
+  /* "in 12 days" / "tomorrow" / "later today", for locked doors (a door opens at 08:29 CET, see opensAt). */
+  function inDays(k) { return k <= 0 ? "later today" : k === 1 ? "tomorrow" : `in ${k} days`; }
 
   /* Verbatim excerpts from regulations and standards for a door (ids resolved against data.quotes). */
   function quotesFor(data, d) {
@@ -614,5 +609,5 @@
     try { await navigator.clipboard.writeText(text); return true; } catch (e) { return false; }
   }
 
-  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, defaultMode, startMode, modeParam, todayFor, daysUntil, onNewDay, inDays, reminderAt, opensAt, opensLabel, nextOpensText, now, applyTestMode, testBar, fmtLeft, startTicker, nestorNote, toolkitReading, briefingSections, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
+  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, defaultMode, startMode, modeParam, todayFor, daysUntil, opensClock, onNewDay, inDays, reminderAt, opensAt, opensLabel, nextOpensText, now, applyTestMode, testBar, fmtLeft, startTicker, nestorNote, toolkitReading, briefingSections, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
 })();

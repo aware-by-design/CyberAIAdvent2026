@@ -1,6 +1,7 @@
 {
   "year": 2026,
   "timezone": "Europe/Rome",
+  "opens": "08:29",
   "reminder": "08:30",
   "holiday": {
     "eyebrow": "A NOTE FROM NESTOR",
