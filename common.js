@@ -189,28 +189,76 @@
     return out;
   }
 
+  /* When a door opens. Door n opens at local midnight on n December, or when its calendar reminder fires
+     (data.reminder, e.g. 08:30, in data.timezone, e.g. Europe/Rome), whichever comes first. In Europe and
+     Asia midnight always comes first, so nothing changes there. On the Americas' west coast and further west
+     the reminder fires the evening before, and the door opens with it, so "Door n is open" is true when it arrives. */
+  const zoneFmt = {};
+  function zoneOffset(tz, t) {
+    const f = zoneFmt[tz] || (zoneFmt[tz] = new Intl.DateTimeFormat("en-GB", { timeZone: tz, hourCycle: "h23",
+      year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit" }));
+    const p = {}; f.formatToParts(t).forEach((x) => { p[x.type] = x.value; });
+    return Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour, +p.minute, +p.second) - t;
+  }
+  function reminderAt(data, n) {
+    const m = /^([01]\d|2[0-3]):([0-5]\d)$/.exec(data.reminder || "08:30") || [0, "08", "30"];
+    const wall = Date.UTC(data.year, data.month - 1, n, +m[1], +m[2]);
+    try {
+      let t = wall - zoneOffset(data.timezone, wall);
+      t = wall - zoneOffset(data.timezone, t); // second pass settles a clock change between the guess and the answer
+      return new Date(t);
+    } catch (e) { return new Date(data.year, data.month - 1, n, +m[1], +m[2]); } // unknown zone: local time
+  }
+  function opensAt(data, n) {
+    const midnight = new Date(data.year, data.month - 1, n);
+    const r = reminderAt(data, n);
+    return r < midnight ? r : midnight;
+  }
+  const DATE_LONG = { weekday: "long", day: "numeric", month: "long" };
+  /* "Tuesday 1 December", or "Monday 30 November at 23:30" where the reminder opens the door before midnight. */
+  function opensLabel(data, n) {
+    const t = opensAt(data, n), early = t.getHours() || t.getMinutes();
+    const day = t.toLocaleDateString("en-GB", DATE_LONG);
+    return early ? `${day} at ${t.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}` : day;
+  }
+  /* "A new door opens at midnight", or "... at 23:30" for the visitors whose doors open with the reminder. */
+  function nextOpensText(data, n) {
+    const t = opensAt(data, n), early = t.getHours() || t.getMinutes();
+    return early ? `A new door opens at ${t.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}` : "A new door opens at midnight";
+  }
+
+  /* The highest door that is open now (0 before the first one, 99 after the calendar year). */
   function todayFor(data) {
     const now = new Date();
-    return now.getFullYear() > data.year ? 99 : (now.getFullYear() === data.year && now.getMonth() === data.month - 1 ? now.getDate() : 0);
+    if (now.getFullYear() > data.year) return 99;
+    let n = now.getFullYear() === data.year && now.getMonth() === data.month - 1 ? now.getDate() : 0;
+    while (n < 31 && opensAt(data, n + 1) <= now) n++; // a reminder that already fired has opened its door
+    return n;
   }
 
-  /* Whole calendar days from today to door n's date, in the visitor's own time zone. Both dates are
+  /* Whole calendar days from today to the day door n opens, in the visitor's own time zone. Both dates are
      local midnights; rounding absorbs the one-hour difference when clocks change in between. */
   function daysUntil(data, n) {
-    const now = new Date();
+    const now = new Date(), o = opensAt(data, n);
     const t0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    return Math.round((new Date(data.year, data.month - 1, n) - t0) / 86400000);
+    return Math.round((new Date(o.getFullYear(), o.getMonth(), o.getDate()) - t0) / 86400000);
   }
 
-  /* Calls back when the local date changes, so a page left open moves on to the new door: a timer for
-     the next midnight, plus a check whenever the tab comes back into view (timers sleep with the device). */
-  function onNewDay(cb) {
-    let last = new Date().toDateString(), timer = 0;
-    const check = () => { const d = new Date().toDateString(); if (d !== last) { last = d; cb(); } };
+  /* Calls back when the local date changes or a door opens, so a page left open moves on: a timer for the
+     next midnight or door opening, whichever is sooner, plus a check whenever the tab comes back into view
+     (timers sleep with the device). */
+  function onNewDay(cb, data) {
+    const key = () => new Date().toDateString() + (data ? "|" + todayFor(data) : "");
+    let last = key(), timer = 0;
+    const check = () => { const k = key(); if (k !== last) { last = k; cb(); } };
     const arm = () => {
       window.clearTimeout(timer);
       const now = new Date();
-      const next = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 2);
+      let next = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 2);
+      if (data) {
+        const t = todayFor(data);
+        if (t < 31) { const o = new Date(opensAt(data, t + 1).getTime() + 2000); if (o > now && o < next) next = o; }
+      }
       timer = window.setTimeout(() => { check(); arm(); }, Math.min(next - now, 2147483647));
     };
     document.addEventListener("visibilitychange", () => { if (!document.hidden) { check(); arm(); } });
@@ -218,8 +266,9 @@
     arm();
   }
 
-  /* "in 12 days" / "tomorrow" / "today", for locked doors and the countdown. */
-  function inDays(k) { return k <= 0 ? "today" : k === 1 ? "tomorrow" : `in ${k} days`; }
+  /* "in 12 days" / "tomorrow" / "tonight", for locked doors and the countdown. A locked door opening on the
+     same local day can only be one that opens with its reminder in the evening (see opensAt). */
+  function inDays(k) { return k <= 0 ? "tonight" : k === 1 ? "tomorrow" : `in ${k} days`; }
 
   /* Verbatim excerpts from regulations and standards for a door (ids resolved against data.quotes). */
   function quotesFor(data, d) {
@@ -348,5 +397,5 @@
     try { await navigator.clipboard.writeText(text); return true; } catch (e) { return false; }
   }
 
-  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, todayFor, daysUntil, onNewDay, inDays, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
+  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, todayFor, daysUntil, onNewDay, inDays, reminderAt, opensAt, opensLabel, nextOpensText, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
 })();

@@ -1,6 +1,7 @@
 {
   "year": 2026,
   "timezone": "Europe/Rome",
+  "reminder": "08:30",
   "month": 12,
   "modes": {
     "advent": {

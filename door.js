@@ -131,8 +131,7 @@
         h("button", { type: "button", class: "ghost", onclick: () => window.print() }, "Print or save as PDF"));
       r.append(bar);
       if (isLocked(n)) {
-        const wd = new Date(data.year, data.month - 1, n).toLocaleDateString("en-GB", { weekday: "long" });
-        r.append(h("div", { class: "locked-msg" }, svg(P.lock), h("h1", { text: `Door ${n} opens on ${wd} ${n} December` }),
+        r.append(h("div", { class: "locked-msg" }, svg(P.lock), h("h1", { text: `Door ${n} opens on ${A.opensLabel(data, n)}` }),
           h("p", { class: "when", text: `That’s ${A.inDays(A.daysUntil(data, n))}.` }),
           h("p", { text: "No peeking - the briefing unlocks on the day. To explore early, switch off “Follow December dates” on the calendar." })));
         return;
@@ -193,7 +192,7 @@
       render();
     });
     /* Left open overnight, a locked briefing unlocks at midnight without a reload. */
-    A.onNewDay(() => { today = A.todayFor(data); render(); });
+    A.onNewDay(() => { today = A.todayFor(data); render(); }, data);
     render();
   }
 

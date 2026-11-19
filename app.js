@@ -119,9 +119,9 @@
       if (preview) { num = `All ${n} doors open`; text = "Preview link: every door is unlocked"; filled = n; }
       else if (!state.follow) { num = `All ${n} doors open`; text = "Exploring freely: Follow December dates is off"; filled = n; }
       else if (today < 1) {
-        const left = A.daysUntil(data, 1), first = new Date(data.year, data.month - 1, 1);
-        num = `${left} ${left === 1 ? "day" : "days"} to go`; text = `Door 1 opens on ${WD[first.getDay()]} 1 December`; filled = 0;
-      } else if (today <= n) { num = `Day ${today} of ${n}`; text = today === n ? "The last door is open" : "A new door opens at midnight"; filled = today; }
+        const left = A.daysUntil(data, 1);
+        num = left <= 0 ? "Opens tonight" : `${left} ${left === 1 ? "day" : "days"} to go`; text = `Door 1 opens on ${A.opensLabel(data, 1)}`; filled = 0;
+      } else if (today <= n) { num = `Day ${today} of ${n}`; text = today === n ? "The last door is open" : A.nextOpensText(data, today + 1); filled = today; }
       else { num = `All ${n} doors open`; text = "Catch up on any you missed"; filled = n; }
       el("dcnum").textContent = num;
       el("dctext").textContent = text;
@@ -315,8 +315,7 @@
       const p = el("panel"); p.replaceChildren();
       const n = state.selected, d = DAYS[n - 1];
       if (isLocked(n)) {
-        const wd = WD[new Date(data.year, data.month - 1, n).getDay()];
-        p.append(h("div", { class: "locked-msg" }, svg(P.lock), h("h2", { text: `Door ${n} opens on ${wd} ${n} December` }),
+        p.append(h("div", { class: "locked-msg" }, svg(P.lock), h("h2", { text: `Door ${n} opens on ${A.opensLabel(data, n)}` }),
           h("p", { class: "when", text: `That’s ${A.inDays(A.daysUntil(data, n))}.` }),
           h("p", { text: "No peeking. Come back on the day - or add the calendar reminders (the link just below the house) and each door will tell you when it opens." })));
         return;
@@ -416,7 +415,7 @@
       today = A.todayFor(data);
       if (!isLocked(state.selected) && !state.opened[state.selected]) { state.opened[state.selected] = 1; persist(); }
       render();
-    });
+    }, data);
     render();
   }
 
