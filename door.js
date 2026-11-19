@@ -98,7 +98,7 @@
     const qMode = params.get("mode");
     const mode = qMode === "advent" || qMode === "full" ? qMode : (saved.mode || (settings.defaultMode === "advent" ? "advent" : "full"));
     const total = data.modes[mode].doors;
-    const today = A.todayFor(data);
+    let today = A.todayFor(data); // refreshed at midnight by A.onNewDay below
     let follow = saved.follow === null ? settings.lockFuture !== false : saved.follow;
     const isLocked = (n) => follow && !preview && n > today;
     const state = { ...saved, country: saved.country || (data.countries.some((c) => c.id === settings.defaultCountry) ? settings.defaultCountry : "eu") };
@@ -126,7 +126,10 @@
         h("button", { type: "button", class: "ghost", onclick: () => window.print() }, "Print or save as PDF"));
       r.append(bar);
       if (isLocked(n)) {
-        r.append(h("div", { class: "locked-msg" }, svg(P.lock), h("h1", { text: `Door ${n} opens on ${n} December` }), h("p", { text: "No peeking — the briefing unlocks on the day. To explore early, switch off “Follow December dates” on the calendar." })));
+        const wd = new Date(data.year, data.month - 1, n).toLocaleDateString("en-GB", { weekday: "long" });
+        r.append(h("div", { class: "locked-msg" }, svg(P.lock), h("h1", { text: `Door ${n} opens on ${wd} ${n} December` }),
+          h("p", { class: "when", text: `That’s ${A.inDays(A.daysUntil(data, n))}.` }),
+          h("p", { text: "No peeking — the briefing unlocks on the day. To explore early, switch off “Follow December dates” on the calendar." })));
         return;
       }
       if (!state.opened[n]) { state.opened[n] = 1; persist(); } // write only when something changed
@@ -180,6 +183,8 @@
       follow = fresh.follow === null ? settings.lockFuture !== false : fresh.follow;
       render();
     });
+    /* Left open overnight, a locked briefing unlocks at midnight without a reload. */
+    A.onNewDay(() => { today = A.todayFor(data); render(); });
     render();
   }
 

@@ -54,7 +54,7 @@
     const gamified = settings.gamified !== false;
     el("hud").hidden = !gamified;
 
-    const today = A.todayFor(data);
+    let today = A.todayFor(data); // refreshed at midnight by A.onNewDay below
     const total = () => data.modes[state.mode].doors;
     /* "Follow December dates" keeps future doors shut; switching it off opens every door for exploring.
        This is a convenience, not access control: all content is public in days.json (SECURITY.md). */
@@ -106,7 +106,28 @@
       return { days, score, opened, streak, base, ri };
     }
 
+    /* Day counter under the title: a countdown before 1 December, "Day N of 24/31" during the season,
+       and one segment per door, filled up to today. */
+    function renderDayCount() {
+      const n = total(), dc = el("daycount");
+      if (!dc) return;
+      let num, text, filled;
+      if (preview) { num = `All ${n} doors open`; text = "Preview link: every door is unlocked"; filled = n; }
+      else if (!state.follow) { num = `All ${n} doors open`; text = "Exploring freely: Follow December dates is off"; filled = n; }
+      else if (today < 1) {
+        const left = A.daysUntil(data, 1), first = new Date(data.year, data.month - 1, 1);
+        num = `${left} ${left === 1 ? "day" : "days"} to go`; text = `Door 1 opens on ${WD[first.getDay()]} 1 December`; filled = 0;
+      } else if (today <= n) { num = `Day ${today} of ${n}`; text = today === n ? "The last door is open" : "A new door opens at midnight"; filled = today; }
+      else { num = `All ${n} doors open`; text = "Catch up on any you missed"; filled = n; }
+      el("dcnum").textContent = num;
+      el("dctext").textContent = text;
+      const bar = el("dcbar"); bar.replaceChildren();
+      bar.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
+      for (let i = 1; i <= n; i++) bar.append(h("span", { class: i <= filled ? (i === filled && state.follow && !preview && today >= 1 && today <= n ? "on now" : "on") : "" }));
+    }
+
     function renderTop(s) {
+      renderDayCount();
       document.querySelectorAll("#mode button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === state.mode)));
       el("eyebrow").textContent = state.mode === "advent" ? `ADVENT CALENDAR · 1–24 DECEMBER ${data.year} · CYBERSECURITY & AI` : `31 DAYS · 1–31 DECEMBER ${data.year} · CYBERSECURITY & AI`;
       el("ics").setAttribute("href", state.mode === "advent" ? "advent-24.ics" : "days-31.ics");
@@ -280,7 +301,10 @@
       const p = el("panel"); p.replaceChildren();
       const n = state.selected, d = DAYS[n - 1];
       if (isLocked(n)) {
-        p.append(h("div", { class: "locked-msg" }, svg(P.lock), h("h2", { text: `Door ${n} opens on ${n} December` }), h("p", { text: "No peeking. Come back on the day — or add the calendar reminders (the link just below the house) and each door will tell you when it opens." })));
+        const wd = WD[new Date(data.year, data.month - 1, n).getDay()];
+        p.append(h("div", { class: "locked-msg" }, svg(P.lock), h("h2", { text: `Door ${n} opens on ${wd} ${n} December` }),
+          h("p", { class: "when", text: `That’s ${A.inDays(A.daysUntil(data, n))}.` }),
+          h("p", { text: "No peeking. Come back on the day — or add the calendar reminders (the link just below the house) and each door will tell you when it opens." })));
         return;
       }
       const dt = new Date(data.year, data.month - 1, n), occ = data.occasions[n], isAI = d.track !== "cyber";
@@ -367,6 +391,13 @@
       state.opened = {}; state.answers = {}; state.acts = {}; state.celebrate = false;
       state.selected = Math.min(Math.max(today, 1), total());
       persist(); render();
+    });
+    /* A page left open moves on at midnight: the new door unlocks and the counter changes, without a reload.
+       The selected door stays as it is, unless it was the locked one now opening. */
+    A.onNewDay(() => {
+      today = A.todayFor(data);
+      if (!isLocked(state.selected) && !state.opened[state.selected]) { state.opened[state.selected] = 1; persist(); }
+      render();
     });
     render();
   }

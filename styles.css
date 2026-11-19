@@ -91,6 +91,16 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(44px, 5vw, 72
 h1 em { font-style: italic; color: var(--gold); }
 .lede { font-size: 19px; line-height: 1.55; color: var(--muted); max-width: 740px; text-wrap: pretty; }
 .byline { font-size: 14px; color: var(--faint); }
+/* Day counter: countdown before 1 December, "Day N of 24/31" during the season, one segment per door. */
+.daycount { display: flex; flex-direction: column; gap: 10px; width: fit-content; max-width: 100%; padding: 12px 16px 14px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+.dc-line { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.dc-num { font: 600 28px/1.1 var(--serif); color: var(--gold); white-space: nowrap; }
+.dc-text { font-size: 15px; color: var(--muted); }
+.dc-bar { display: grid; gap: 3px; min-width: min(420px, 100%); }
+.dc-bar span { height: 6px; border-radius: 99px; background: var(--line); }
+.dc-bar span.on { background: var(--gold); opacity: .55; }
+.dc-bar span.now { opacity: 1; box-shadow: 0 0 0 2px var(--ground), 0 0 0 3px var(--gold); }
+.locked-msg .when { color: var(--gold); font-weight: 500; }
 .byline strong { color: var(--text); font-weight: 500; }
 
 /* HUD */
@@ -542,7 +552,7 @@ select { min-height: 44px; padding: 0 12px; border-radius: 12px; background: var
     background-image: radial-gradient(circle, #ffffff30 0 1.1px, transparent 1.7px), radial-gradient(circle, #ffffff1e 0 1.4px, transparent 2.1px) !important;
     background-size: 54px 54px, 83px 83px; background-position: 0 0, 27px 41px;
   }
-  .snow, .hsnow, .seg, .hud, .chips, .legend, .nav, .skip, .europe, .confetti, .kit, .brief-cta, .house, .back-up, .sp-wrap .back, .framed-warning { display: none !important; }
+  .snow, .hsnow, .seg, .daycount, .hud, .chips, .legend, .nav, .skip, .europe, .confetti, .kit, .brief-cta, .house, .back-up, .sp-wrap .back, .framed-warning { display: none !important; }
   .lights { display: flex !important; height: 44px; margin: -10mm 0 2mm; }
   .wrap, .bf-wrap, .sp-wrap { padding-left: 14mm !important; padding-right: 14mm !important; max-width: none !important; }
   .bf-bar { display: flex !important; padding: 0 0 8px; }

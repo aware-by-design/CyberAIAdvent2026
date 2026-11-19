@@ -194,6 +194,33 @@
     return now.getFullYear() > data.year ? 99 : (now.getFullYear() === data.year && now.getMonth() === data.month - 1 ? now.getDate() : 0);
   }
 
+  /* Whole calendar days from today to door n's date, in the visitor's own time zone. Both dates are
+     local midnights; rounding absorbs the one-hour difference when clocks change in between. */
+  function daysUntil(data, n) {
+    const now = new Date();
+    const t0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    return Math.round((new Date(data.year, data.month - 1, n) - t0) / 86400000);
+  }
+
+  /* Calls back when the local date changes, so a page left open moves on to the new door: a timer for
+     the next midnight, plus a check whenever the tab comes back into view (timers sleep with the device). */
+  function onNewDay(cb) {
+    let last = new Date().toDateString(), timer = 0;
+    const check = () => { const d = new Date().toDateString(); if (d !== last) { last = d; cb(); } };
+    const arm = () => {
+      window.clearTimeout(timer);
+      const now = new Date();
+      const next = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 2);
+      timer = window.setTimeout(() => { check(); arm(); }, Math.min(next - now, 2147483647));
+    };
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) { check(); arm(); } });
+    window.addEventListener("focus", check);
+    arm();
+  }
+
+  /* "in 12 days" / "tomorrow" / "today", for locked doors and the countdown. */
+  function inDays(k) { return k <= 0 ? "today" : k === 1 ? "tomorrow" : `in ${k} days`; }
+
   /* Verbatim excerpts from regulations and standards for a door (ids resolved against data.quotes). */
   function quotesFor(data, d) {
     return (d.quotes || []).map((id) => data.quotes && data.quotes[id]).filter(Boolean);
@@ -315,5 +342,5 @@
     try { await navigator.clipboard.writeText(text); return true; } catch (e) { return false; }
   }
 
-  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, todayFor, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
+  window.Advent = { svg, h, safeUrl, extLink, getJSON, festive, houseFestive, guardFraming, reducedMotion, STAR, store, sanitize, todayFor, daysUntil, onNewDay, inDays, quotesFor, activitiesBlock, clinker, santaState, shareKit, copyText, art, focusKey, refocus };
 })();
