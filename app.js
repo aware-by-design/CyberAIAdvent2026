@@ -64,6 +64,9 @@
        and show a note from NESTOR instead. This is a convenience, not access control: all content is
        public in days.json (SECURITY.md). */
     const isLocked = (n) => !preview && n > today;
+    /* The highest door that is open now. Progress saved for a later door (for example while testing with a
+       December date) waits behind its cover: it doesn't show, score or reach Santa's list before that day. */
+    const reach = () => (preview ? total() : Math.min(total(), Math.max(today, 0)));
     const correct = (n) => state.answers[n] !== undefined && state.answers[n] === DAYS[n - 1].quiz.answer;
     const wrong = (n) => state.answers[n] !== undefined && !correct(n);
     const persist = () => store.set(KEY, { pick: state.pick, opened: state.opened, answers: state.answers, acts: state.acts, team: state.team, aud: state.aud, country: state.country });
@@ -100,6 +103,7 @@
       // From the top bar's arrows, focus stays on the arrow (render() hands it to the other one at either end)
       // and a screen reader hears the new door; otherwise focus goes to the door's title.
       const arrow = !!(document.activeElement && document.activeElement.closest && document.activeElement.closest(".dlg-nav"));
+      if (!state.opened[n]) swingDoor = n;
       state.selected = n; state.opened[n] = 1; state.celebrate = false;
       persist(); setUrl(n); render();
       if (dlg.open) {
@@ -188,6 +192,7 @@
       const days = DAYS.filter((d) => d.day <= total());
       let score = 0, opened = 0, top = 0;
       days.forEach((d) => {
+        if (isLocked(d.day)) return;
         if (state.opened[d.day]) { opened++; score += 10; top = d.day; }
         if (correct(d.day)) { score += 20; if (state.team && d.for.includes(state.team)) score += 10; }
         for (let i = 0; i < 4; i++) if (state.acts[d.day + "-" + i]) score += 5;
@@ -285,7 +290,7 @@
 
     function renderSanta() {
       const box = el("santa"); box.replaceChildren();
-      const st = A.santaState(data, total(), state.answers, state.acts);
+      const st = A.santaState(data, reach(), state.answers, state.acts);
       const [verdict, tone] = st.verdict;
       box.append(
         h("div", { class: "shead2" }, h("span", { class: "stitle", text: "Santa’s list" }), h("span", { class: "verdict " + tone, text: verdict })),
@@ -313,37 +318,46 @@
     function bow() {
       return A.art("0 0 40 24", [["path", { d: "M20 12L4 3Q0 2 1 7L3 18Q4 21 8 19Z M20 12L36 3Q40 2 39 7L37 18Q36 21 32 19Z", fill: "#B3202F" }], ["circle", { cx: 20, cy: 12, r: 4.5, fill: "#8E1622" }], ["path", { d: "M18 15L13 24M22 15L27 24", stroke: "#B3202F", "stroke-width": 3, "stroke-linecap": "round" }]], "bw");
     }
-    /* A closed door shows only its number and a status icon: a lock until its day, a gift once it can be opened.
-       The title and topic appear only after opening (on the card behind the leaves and in the popup). */
-    function face(n, locked, big) {
-      return h("span", { class: "face" },
-        h("span", { class: "pl" }), h("span", { class: "pr" }), h("span", { class: "seam" }), h("span", { class: "kn" }), h("span", { class: "stt", text: "✦" }),
+    /* Every door keeps its coloured cover with the date (DECEMBER 13). Before its day: a padlock and LOCKED.
+       From its day until the visitor opens it: a gift and OPEN ME (no padlock). Once opened: the same cover
+       and date, with the door's title in small text and the points so far. */
+    function face(n, kind, big, o) {
+      const opened = kind === "open";
+      return h("span", { class: "face" + (opened ? " o" : "") },
+        h("span", { class: "pl" }), h("span", { class: "pr" }), h("span", { class: "seam" }), h("span", { class: "kn" }),
+        h("span", { class: "stt" + (opened && o.done ? " ok" : ""), text: opened && o.done ? "✓" : "✦" }),
         big ? bow() : null,
         h("span", { class: "mo", text: "DECEMBER" }), h("span", { class: "nu", text: pad(n) }),
-        locked ? svg(LOCK, "ic st-lock") : svg(P.gift, "ic st-gift"),
-        h("span", { class: "fs", text: locked ? "LOCKED" : "OPEN ME" }));
+        opened ? h("span", { class: "tt", text: o.title }) : kind === "locked" ? svg(LOCK, "ic st-lock") : svg(P.gift, "ic st-gift"),
+        h("span", { class: "fs" + (opened && o.naughty ? " bad" : ""), text: opened ? o.status : kind === "locked" ? "LOCKED" : "OPEN ME" }));
     }
+    let swingDoor = 0; // the door just opened: its leaves swing open and closed again once
     function renderDoors() {
       const grid = el("doors"); grid.replaceChildren();
       grid.className = "cards" + (state.mode === "advent" ? " m-advent" : "");
       const big = data.modes[state.mode].big;
       DAYS.filter((d) => d.day <= total()).forEach((d) => {
-        const n = d.day, open = !!state.opened[n], locked = isLocked(n), isBig = big.includes(n);
-        const acts = [0, 1, 2, 3].filter((i) => state.acts[n + "-" + i]).length;
-        const pts = (open ? 10 : 0) + (correct(n) ? 20 : 0) + acts * 5, done = pts >= 50;
+        // A locked door keeps its cover closed (padlock) until its day, whatever was saved for it before.
+        const n = d.day, locked = isLocked(n), open = !locked && !!state.opened[n], isBig = big.includes(n);
+        const acts = locked ? 0 : [0, 1, 2, 3].filter((i) => state.acts[n + "-" + i]).length;
+        const pts = locked ? 0 : (open ? 10 : 0) + (correct(n) ? 20 : 0) + acts * 5, done = pts >= 50;
         const isToday = !locked && !preview && n === Math.min(today, total()) && today <= total();
-        const cls = ["card", "p-" + PAL[(n - 1) % PAL.length], open && "open", done && "done", n === state.selected && "sel", locked && "locked", isToday && !open && "today", state.filter !== "all" && !d.for.includes(state.filter) && "dim"].filter(Boolean).join(" ");
+        const cls = ["card", "p-" + PAL[(n - 1) % PAL.length], open && "open", open && n === swingDoor && "swing", done && "done", n === state.selected && "sel", locked && "locked", isToday && !open && "today", state.filter !== "all" && !d.for.includes(state.filter) && "dim"].filter(Boolean).join(" ");
+        const kind = locked ? "locked" : open ? "open" : "closed";
+        const naughty = open && wrong(n);
+        const fo = { title: d.title, done, naughty, status: !gamified ? "OPENED" : done ? "EXPLORED" : naughty ? `NAUGHTY · ${pts}/50` : `${pts}/50 PTS` };
         const name = locked ? `Door ${n}, locked until ${A.opensLabel(data, n)}` : open ? `Door ${n}: ${d.title}, opened${d.track !== "cyber" ? ", includes an AI lesson" : ""}` : `Door ${n}${isToday ? ", today’s door" : ""}, not opened yet`;
         grid.append(h("button", { type: "button", class: cls, "aria-pressed": String(n === state.selected), "data-k": "door-" + n,
           "aria-label": name, "aria-haspopup": "dialog", onclick: () => select(n, true) },
           h("span", { class: "inside", "aria-hidden": "true" },
-            done ? h("span", { class: "tick", text: "✓" }) : null, wrong(n) ? h("span", { class: "ntag", text: "NAUGHTY" }) : null,
+            done ? h("span", { class: "tick", text: "✓" }) : null, !locked && wrong(n) ? h("span", { class: "ntag", text: "NAUGHTY" }) : null,
             h("span", { class: "sp", text: "✦" }), h("span", { class: "it", text: d.title }),
             h("span", { class: "if", text: d.for.slice(0, 2).map((id) => STK[id]).join(" · ") }),
             h("span", { class: "is", text: done ? "50 pts · fully explored ✓" : `${pts} of 50 pts · Play the day →` })),
-          h("span", { class: "leaf l", "aria-hidden": "true" }, face(n, locked, isBig)),
-          h("span", { class: "leaf r", "aria-hidden": "true" }, face(n, locked, isBig))));
+          h("span", { class: "leaf l", "aria-hidden": "true" }, face(n, kind, isBig, fo)),
+          h("span", { class: "leaf r", "aria-hidden": "true" }, face(n, kind, isBig, fo))));
       });
+      swingDoor = 0;
       if (total() === 31) grid.append(h("div", { class: "spare", "aria-hidden": "true" }, h("span", { class: "a", text: "✦" }), h("span", { class: "b", text: "Merry, safe & secure" }), h("span", { class: "c", text: "2027 AWAITS" })));
       el("boardsub").textContent = `Cyber & AI · ${total()} days of cyber, AI & privacy hygiene`;
       el("locknote").textContent = preview ? "Test mode preview: every door is open."
@@ -354,7 +368,7 @@
     /* The Naughty list Clinker keeps in the attic: doors answered wrongly and not yet redeemed. */
     function renderScroll() {
       const box = el("scroll"); box.replaceChildren();
-      const naughty = A.santaState(data, total(), state.answers, state.acts).naughty;
+      const naughty = A.santaState(data, reach(), state.answers, state.acts).naughty;
       box.append(h("span", { class: "st", text: "NAUGHTY LIST" }), h("span", { class: "sh", text: naughty.length ? "DOORS TO REDEEM" : "CLINKER IS WATCHING FOR" }));
       if (naughty.length) naughty.slice(-3).reverse().forEach((e) => box.append(h("button", { type: "button", class: "si", "data-k": "scroll-" + e.n, onclick: () => select(e.n, true) }, h("b", { "aria-hidden": "true", text: "✗ " }), DAYS[e.n - 1].title)));
       else ["Password reuse", "Oversharing", "Blind AI trust"].forEach((t) => box.append(h("span", { class: "si", text: "☐ " + t })));

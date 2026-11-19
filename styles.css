@@ -463,7 +463,8 @@ a.ghost.cal:hover { color: var(--text); border-color: var(--muted); }
 .cards.m-advent { grid-template-columns: repeat(6, minmax(0, calc(10 * var(--u)))); }
 .card { position: relative; aspect-ratio: .78; min-width: 0; padding: 0; border: 0; border-radius: calc(.5 * var(--u)); background: #1A120C; perspective: calc(60 * var(--u)); text-align: center; box-shadow: 0 calc(.4 * var(--u)) calc(.9 * var(--u)) #00000055; transition: opacity .3s ease, transform .25s ease, box-shadow .25s ease; }
 .card.sel { transform: translateY(calc(-.3 * var(--u))); box-shadow: 0 0 0 calc(.25 * var(--u)) var(--gold), 0 calc(.8 * var(--u)) calc(1.6 * var(--u)) #00000077; }
-.card.locked { opacity: .62; cursor: help; } .card.dim { opacity: .28; }
+/* A locked door keeps its full cover (no greying): the padlock and LOCKED say it opens on its day. */
+.card.locked { cursor: help; } .card.dim { opacity: .28; }
 .card:not(:disabled):hover { filter: brightness(1.06); }
 .card .inside { position: absolute; inset: 0; border-radius: calc(.5 * var(--u)); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: calc(.4 * var(--u)); padding: var(--u) calc(.7 * var(--u)); background: #F1EBDD; color: #22392D; box-shadow: inset 0 0 0 calc(.42 * var(--u)) #D4B77A, inset 0 0 0 calc(.56 * var(--u)) #F1EBDD, inset 0 0 0 calc(.62 * var(--u)) #0000001A; opacity: 0; transition: opacity .35s ease .35s; }
 .card.done .inside { box-shadow: inset 0 0 0 calc(.42 * var(--u)) #2C4A3B, inset 0 0 0 calc(.56 * var(--u)) #F1EBDD, inset 0 0 0 calc(.62 * var(--u)) #0000001A; }
@@ -477,7 +478,12 @@ a.ghost.cal:hover { color: var(--text); border-color: var(--muted); }
 .leaf { position: absolute; top: 0; bottom: 0; width: 50%; overflow: hidden; backface-visibility: hidden; transition: transform .9s cubic-bezier(.2,.8,.2,1); }
 .leaf.l { left: 0; border-radius: calc(.5 * var(--u)) 0 0 calc(.5 * var(--u)); transform-origin: left center; }
 .leaf.r { left: 50%; border-radius: 0 calc(.5 * var(--u)) calc(.5 * var(--u)) 0; transform-origin: right center; transition-delay: .06s; }
-.card.open .leaf.l { transform: rotateY(-118deg); } .card.open .leaf.r { transform: rotateY(118deg); }
+/* An opened door keeps its cover (date, small title, points). The moment it is opened, its leaves swing open
+   to show the card behind and close again. */
+@keyframes swingL { 0%, 100% { transform: none; } 40%, 62% { transform: rotateY(-112deg); } }
+@keyframes swingR { 0%, 100% { transform: none; } 40%, 62% { transform: rotateY(112deg); } }
+.card.swing .leaf.l { animation: swingL 1.6s cubic-bezier(.2,.8,.2,1); }
+.card.swing .leaf.r { animation: swingR 1.6s cubic-bezier(.2,.8,.2,1) .06s; }
 .face { --bg: #EEE7D7; --ink: #2F4A3A; --sub: #8A8676; --ln: #D6CCB6; --gd: #B8963F; position: absolute; top: 0; bottom: 0; left: 0; width: 200%; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: calc(.7 * var(--u)) calc(.5 * var(--u)) calc(.55 * var(--u)); background: var(--bg); color: var(--ink); }
 .leaf.r .face { left: -100%; }
 .p-sage .face { --bg: #D9DCC3; --ink: #3E4F32; --sub: #7E8468; --ln: #C0C4A6; --gd: #A8893A; }
@@ -648,11 +654,17 @@ a.ghost.cal:hover { color: var(--text); border-color: var(--muted); }
 .dc-tick strong { color: var(--gold); font-weight: 600; font-variant-numeric: tabular-nums; }
 
 /* ---- Closed doors: number + status icon (lock until its day, gift once it can be opened) ---- */
-.face .ic.st-lock { stroke: #8A8676; }
+.face .ic.st-lock { stroke: var(--ink); stroke-width: 1.8; }
 .face .ic.st-gift { stroke: var(--gd); stroke-width: 1.6; }
-.face .fs { position: relative; font: 600 max(7px, calc(.52 * var(--u))) var(--mono); letter-spacing: .18em; color: var(--sub); }
+.face .fs { position: relative; font: 600 max(7px, calc(.52 * var(--u))) var(--mono); letter-spacing: .18em; color: var(--ink); } /* ink: 6:1 or more on every door colour */
+.face.o .nu { font-size: calc(2.8 * var(--u)); }
+.face.o .tt { max-width: 86%; color: var(--ink); font: 500 max(9px, calc(.84 * var(--u)))/1.15 var(--serif); text-align: center; text-wrap: balance; -webkit-line-clamp: 3; }
+.face.o .kn { display: none; } /* the title sits where the door knobs are */
+.face .stt.ok { font-weight: 700; color: var(--gd); }
+.face .fs.bad { color: #8E1622; }
+.p-brick .face .fs.bad, .p-green .face .fs.bad, .p-pine .face .fs.bad { color: #FFB4A8; }
 .card.today { box-shadow: 0 0 0 calc(.22 * var(--u)) var(--gold), 0 0 calc(1.6 * var(--u)) #F5C45199; animation: todayGlow 2.4s ease-in-out infinite; }
-.card.today .fs { color: var(--gd); font-weight: 700; }
+.card.today .fs { font-weight: 700; }
 @keyframes todayGlow { 0%, 100% { box-shadow: 0 0 0 calc(.22 * var(--u)) var(--gold), 0 0 calc(1.2 * var(--u)) #F5C45166; } 50% { box-shadow: 0 0 0 calc(.22 * var(--u)) var(--gold), 0 0 calc(2.2 * var(--u)) #F5C451CC; } }
 
 /* ---- Day popup ---- */
