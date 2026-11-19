@@ -156,11 +156,22 @@
       renderSanta();
       const team = el("team");
       if (!team.options.length) {
-        team.append(h("option", { value: "", text: "No team" }));
+        team.append(h("option", { value: "", text: "Choose your role" }));
         Object.keys(STK).filter((id) => id !== "everyone").forEach((id) => team.append(h("option", { value: id, text: STK[id] })));
         team.addEventListener("change", () => { if (team.value === "" || Object.prototype.hasOwnProperty.call(STK, team.value)) { state.team = team.value; persist(); render(); } });
       }
       team.value = state.team;
+      // Say what the role does: a "For your role" line on its doors, and +10 on a correct answer there. The lessons are the same for everyone.
+      const tagged = state.team ? DAYS.filter((d) => d.day <= total() && d.for.includes(state.team)).length : 0;
+      el("teamhint").textContent = state.team ? `${tagged} door${tagged === 1 ? "" : "s"} for you · +10 bonus each` : "Pick a role for tips and a +10 bonus";
+    }
+
+    // The "For your role" line under DO / DON'T, when the visitor's role is one of the door's roles.
+    function roleNote(d) {
+      const role = state.team;
+      if (!role || !d.for.includes(role)) return null;
+      const text = (d.roleNotes && d.roleNotes[role]) || `This door is written for ${STK[role]}.`;
+      return h("div", { class: "role-note" }, h("span", { class: "lbl", text: `FOR YOUR ROLE · ${STK[role].toUpperCase()}` }), h("p", { text }));
     }
 
     function renderSanta() {
@@ -287,7 +298,7 @@
         const bonus = ok && state.team && d.for.includes(state.team);
         box.append(h("div", { class: "explain" },
           ok ? null : A.clinker(n + chosen, A.santaState(data, total(), state.answers, state.acts).status(n).line),
-          h("p", { class: "res" + (ok ? " ok" : ""), tabindex: "-1", "data-k": "res", text: ok ? `Correct · +20 pts${bonus ? " · +10 team bonus" : ""}` : "Not quite - the safe move is marked. Here’s why, in the words that suit you." }),
+          h("p", { class: "res" + (ok ? " ok" : ""), tabindex: "-1", "data-k": "res", text: ok ? `Correct · +20 pts${bonus ? " · +10 role bonus" : ""}` : "Not quite - the safe move is marked. Here’s why, in the words that suit you." }),
           h("div", { class: "bar2" }, h("span", { class: "k", text: ok ? "WHY IT MATTERS" : "HERE’S WHY" }),
             h("div", { class: "aud", role: "group", "aria-label": "Explain it for" }, AUD.map(([id, name]) => h("button", { type: "button", "aria-pressed": String(state.aud === id), "data-k": "aud-" + id, onclick: () => { state.aud = id; state.celebrate = false; persist(); render(); } }, name)))),
           h("p", { class: "txt", text: d.explain[state.aud] || d.explain.simple }),
@@ -315,11 +326,13 @@
             h("div", { class: "meta" }, h("span", { text: `DOOR ${pad(n)} OF ${total()}` }), h("span", { "aria-hidden": "true", text: "·" }), h("span", { text: `${WD[dt.getDay()].toUpperCase()} ${n} DECEMBER${occ ? " · " + occ.toUpperCase() : ""}` })),
             h("h2", { text: d.title }),
             h("div", { class: "labels" }, h("span", { class: "track" + (isAI ? " ai" : "") }, isAI ? svg(P.star) : null, TRACK[d.track]), h("span", { class: "topic", text: d.topic })),
-            h("div", { class: "for" }, h("span", { class: "k", text: "FOR" }), d.for.map((id) => h("span", { class: "who", text: STK[id] }))))),
+            h("div", { class: "for" }, h("span", { class: "k", text: "FOR" }), d.for.map((id) => h("span", { class: "who" + (id === state.team ? " me" : ""), text: STK[id] }))))),
         h("div", { class: "stack" },
           h("div", { class: "dd" }, h("span", { class: "dot", "aria-hidden": "true" }, svg(P.check)), h("div", {}, h("span", { class: "lbl", text: "NICE LIST · DO" }), h("p", { text: d.do }))),
           h("div", { class: "dd dont" }, h("span", { class: "dot", "aria-hidden": "true" }, svg(P.x)), h("div", {}, h("span", { class: "lbl", text: "NAUGHTY LIST · DON’T" }), h("p", { text: d.dont }))))
       );
+      const rn = roleNote(d);
+      if (rn) p.append(rn);
       if (gamified) p.append(quiz(n, d));
       p.append(A.activitiesBlock({ data, n, d, acts: state.acts, gamified, P, note: gamified ? A.santaState(data, total(), state.answers, state.acts).status(n).note : null,
         onToggle: (i, on) => { const k = n + "-" + i; if (on) state.acts[k] = 1; else delete state.acts[k]; state.opened[n] = 1; state.celebrate = false; persist(); render(); } }));

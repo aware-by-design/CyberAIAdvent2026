@@ -141,10 +141,14 @@
           h("div", { class: "meta" }, h("span", { text: `DOOR ${pad(n)} OF ${total}` }), h("span", { "aria-hidden": "true", text: "·" }), h("span", { text: `${WD[dt.getDay()].toUpperCase()} ${n} DECEMBER ${data.year}${occ ? " · " + occ.toUpperCase() : ""}` })),
           h("h1", { text: d.title }),
           h("div", { class: "labels" }, h("span", { class: "track" + (isAI ? " ai" : "") }, isAI ? svg(P.star) : null, TRACK[d.track]), h("span", { class: "topic", text: d.topic })),
-          h("div", { class: "for" }, h("span", { class: "k", text: "FOR" }), d.for.map((id) => h("span", { class: "who", text: data.stakeholders[id] }))))));
+          h("div", { class: "for" }, h("span", { class: "k", text: "FOR" }), d.for.map((id) => h("span", { class: "who" + (id === state.team ? " me" : ""), text: data.stakeholders[id] }))))));
       r.append(h("div", { class: "two" },
         h("div", { class: "dd" }, h("span", { class: "dot", "aria-hidden": "true" }, svg(P.check)), h("div", {}, h("span", { class: "lbl", text: "NICE LIST · DO" }), h("p", { text: d.do }))),
         h("div", { class: "dd dont" }, h("span", { class: "dot", "aria-hidden": "true" }, svg(P.x)), h("div", {}, h("span", { class: "lbl", text: "NAUGHTY LIST · DON’T" }), h("p", { text: d.dont })))));
+      // Role lines ("Make it relevant"): every role this door has a line for, the visitor's own role first.
+      const notes = Object.entries(d.roleNotes || {}).sort(([a], [b]) => (b === state.team) - (a === state.team));
+      if (notes.length) r.append(sec("FOR SPECIFIC ROLES", "Pick your role on the calendar page to see this line in the door",
+        h("ul", { class: "role-notes" }, notes.map(([id, text]) => h("li", { class: id === state.team ? "me" : null }, h("strong", { text: data.stakeholders[id] }), h("span", { text: " " + text }))))));
       r.append(sec("WHY IT MATTERS · THREE WAYS TO EXPLAIN IT", null,
         h("div", { class: "why" }, WHY.map(([k, label]) => h("div", {}, h("span", { class: "lk", text: label }), h("p", { text: d.explain[k] }))))));
       r.append(sec("WHAT THE RULES AND STANDARDS SAY", "Verbatim excerpts · […] marks a cut · not legal advice",

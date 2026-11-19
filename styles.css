@@ -179,6 +179,15 @@ select { min-height: 44px; padding: 0 12px; border-radius: 12px; background: var
 .topic { font-size: 13px; color: var(--muted); }
 .for .k { font-size: 11px; color: var(--faint); }
 .who { min-height: 26px; display: inline-flex; align-items: center; padding: 0 10px; border-radius: 999px; background: var(--surface-2); font-size: 13px; }
+.who.me { background: var(--gold); color: #0D2118; font-weight: 600; }
+/* "Make it relevant": the visitor's role line in a door, and the list of role lines in the briefing. */
+.role-note { padding: 14px 16px; border-radius: 14px; border: 1px dashed var(--gold); background: var(--surface-2); animation: rise .45s ease both; }
+.role-note .lbl { display: block; margin-bottom: 6px; font: 600 11px var(--mono); letter-spacing: .1em; color: var(--gold); }
+.role-note p { margin: 0; line-height: 1.5; }
+.role-notes { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.role-notes li { padding: 12px 14px; border-radius: 12px; background: var(--surface-2); line-height: 1.5; }
+.role-notes li.me { outline: 1px dashed var(--gold); }
+.role-notes strong { color: var(--gold); font-weight: 600; }
 .stack { display: flex; flex-direction: column; gap: 10px; }
 .dd { display: flex; gap: 12px; padding: 16px; border-radius: 14px; background: var(--surface-2); animation: rise .45s ease both; }
 .dd.dont { animation-delay: .08s; }

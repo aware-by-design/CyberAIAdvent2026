@@ -655,8 +655,12 @@
       "topic": "Data leakage into chatbots",
       "track": "ai",
       "for": [
-        "everyone"
+        "everyone",
+        "hr"
       ],
+      "roleNotes": {
+        "hr": "CVs, appraisals and sick notes are personal data - keep them out of any AI tool your organisation hasn’t approved for HR data."
+      },
       "icon": "chat",
       "category": "ai",
       "do": "Use your organisation’s approved AI tools for work, with data-protection settings switched on.",
@@ -792,8 +796,14 @@
       "topic": "AI-written phishing",
       "track": "both",
       "for": [
-        "everyone"
+        "everyone",
+        "hr",
+        "marketing"
       ],
+      "roleNotes": {
+        "hr": "An email from a colleague asking to change their salary account is a classic payroll scam - confirm in person or on a number you already hold.",
+        "marketing": "Scammers copy your brand’s emails too - tell customers how you will and won’t contact them, and report look-alike domains."
+      },
       "icon": "hook",
       "category": "awareness",
       "do": "Check the real sender address, hover before you click, and use the Report button.",
@@ -927,8 +937,12 @@
       "track": "cyber",
       "for": [
         "home",
-        "everyone"
+        "everyone",
+        "support"
       ],
+      "roleNotes": {
+        "support": "When a customer forwards a fake text in your name, tell them what you never ask for and point them to your official site."
+      },
       "icon": "parcel",
       "category": "fraud",
       "do": "Track deliveries in the courier’s own app, or type its web address yourself.",
@@ -1183,8 +1197,12 @@
       "topic": "Deepfake fraud",
       "track": "ai",
       "for": [
-        "finance"
+        "finance",
+        "procurement"
       ],
+      "roleNotes": {
+        "procurement": "Supplier asks to change bank details? Confirm on the number already in your supplier file before anyone updates the vendor record."
+      },
       "icon": "mask",
       "category": "fraud",
       "do": "Verify urgent payments and bank-detail changes by calling a number you already trust.",
@@ -1321,8 +1339,12 @@
       "topic": "Governance",
       "track": "both",
       "for": [
-        "leaders"
+        "leaders",
+        "legal"
       ],
+      "roleNotes": {
+        "legal": "NIS2 makes management bodies approve and oversee cyber risk measures - keep their approvals and training on record."
+      },
       "icon": "building",
       "category": "governance",
       "do": "Name an accountable owner for cyber and AI risk, and rehearse a crisis with the board every year.",
@@ -1462,8 +1484,12 @@
       "track": "ai",
       "for": [
         "it",
-        "leaders"
+        "leaders",
+        "procurement"
       ],
+      "roleNotes": {
+        "procurement": "Route every AI purchase - free trials and add-ons included - through the approved-AI list, so no tool reaches staff unchecked."
+      },
       "icon": "eye",
       "category": "ai",
       "do": "Publish an approved-AI list with a fast request path - and fix file over-sharing before AI assistants go live.",
@@ -1862,8 +1888,12 @@
       "topic": "Hallucinations",
       "track": "ai",
       "for": [
-        "everyone"
+        "everyone",
+        "marketing"
       ],
+      "roleNotes": {
+        "marketing": "Check every figure, quote and claim in AI-drafted copy against its source before it goes out under your brand."
+      },
       "icon": "search",
       "category": "ai",
       "do": "Check AI answers against a primary source before you publish, sign or decide.",
@@ -1991,8 +2021,12 @@
       "track": "cyber",
       "for": [
         "home",
-        "finance"
+        "finance",
+        "support"
       ],
+      "roleNotes": {
+        "support": "Tell customers you never ask for payment in gift cards - and treat a call from ‘support’ that asked for them as a scam report."
+      },
       "icon": "card",
       "category": "fraud",
       "do": "Pause and tell someone when a “tax office”, “tech support” or “boss” demands urgent payment.",
@@ -2250,8 +2284,12 @@
       "for": [
         "dev",
         "it",
-        "leaders"
+        "leaders",
+        "finance"
       ],
+      "roleNotes": {
+        "finance": "Give every AI agent a spending cap, set an alert well before it’s reached, and review the bill each month."
+      },
       "icon": "robot",
       "category": "ai",
       "do": "Grant AI agents least privilege, cap their spend, log every action, and require human approval for anything irreversible.",
@@ -3045,8 +3083,12 @@
       "topic": "AI labels & deepfakes",
       "track": "ai",
       "for": [
-        "marketing"
+        "marketing",
+        "legal"
       ],
+      "roleNotes": {
+        "legal": "The AI Act requires deployers to disclose deepfakes - check campaigns against it and keep a record of who signed off each label."
+      },
       "icon": "tag",
       "category": "ai",
       "do": "Label AI-generated or manipulated images, audio and video, and keep a named human sign-off.",
@@ -3165,8 +3207,12 @@
       "topic": "Software & model supply chain",
       "track": "both",
       "for": [
-        "dev"
+        "dev",
+        "procurement"
       ],
+      "roleNotes": {
+        "procurement": "Ask key software suppliers for an SBOM and how fast they fix known vulnerabilities - and write both into the contract."
+      },
       "icon": "chain",
       "category": "supply",
       "do": "Pin dependencies and CI actions to full commit SHAs, keep an SBOM, and verify signatures.",
@@ -3850,8 +3896,12 @@
       "track": "ai",
       "for": [
         "home",
-        "everyone"
+        "everyone",
+        "marketing"
       ],
+      "roleNotes": {
+        "marketing": "If scam ads use your leaders’ faces or your logo, report them to the platform, warn your followers and keep screenshots."
+      },
       "icon": "trend",
       "category": "fraud",
       "do": "Treat celebrity investment ads and “guaranteed returns” as scams, and check your financial regulator’s warning list.",
@@ -4228,8 +4278,16 @@
       "track": "both",
       "for": [
         "everyone",
-        "leaders"
+        "leaders",
+        "marketing",
+        "support",
+        "legal"
       ],
+      "roleNotes": {
+        "marketing": "Keep a holding statement ready so the first public word is accurate, approved and fast.",
+        "support": "Customers often notice first - pass reports of odd logins or strange emails in your name to security straight away.",
+        "legal": "Know the clocks: GDPR asks for notification within 72 hours where feasible, and NIS2 for an early warning within 24 hours."
+      },
       "icon": "megaphone",
       "category": "incident",
       "do": "Report a wrong click, a lost device or a regretted paste into a chatbot straight away - minutes matter.",
@@ -4371,8 +4429,12 @@
       "topic": "Habits for the new year",
       "track": "both",
       "for": [
-        "everyone"
+        "everyone",
+        "finance"
       ],
+      "roleNotes": {
+        "finance": "Make ‘verify before you pay’ a written control: a call-back on a known number for every new payee and bank-detail change."
+      },
       "icon": "star",
       "category": "governance",
       "do": "Carry three habits into 2027: passkeys on, verify before you pay, think before you paste.",
