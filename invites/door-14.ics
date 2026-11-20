@@ -16,7 +16,7 @@ DESCRIPTION:DO: Keep keys in a secrets manager\, scan every commit\, and re
  repo for open AI training data shared an over-permissive storage token\, e
  xposing 38 TB of internal data\, including secrets and private keys.\n\nOp
  en the door: https://aware-by-design.github.io/CyberAIAdvent2026/?day=14\n
- \nAI-assisted · an initiative of ENISA’s ARCH AHWG
+ \nAI-assisted · developed by experts of the ENISA ARCH-AHWG
 X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
  tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
  t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
@@ -55,8 +55,8 @@ X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
  1E8\;text-decoration:none\;">Open door 14 &rarr\;</a></td></tr></table></t
  d></tr><tr><td style="padding:14px 24px 18px\;border-top:1px solid #E2DACB
  \;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:12px\;li
- ne-height:1.5\;color:#5A5060\;">AI-assisted · an initiative of ENISA’s 
- ARCH AHWG</td></tr></table></td></tr></table></body></html>
+ ne-height:1.5\;color:#5A5060\;">AI-assisted · developed by experts of the
+  ENISA ARCH-AHWG</td></tr></table></td></tr></table></body></html>
 IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
  .github.io/CyberAIAdvent2026/img/doors/door-14.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=14

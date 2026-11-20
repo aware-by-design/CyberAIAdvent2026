@@ -16,7 +16,7 @@ DESCRIPTION:DO: Harden internet-facing systems\, patch known-exploited vuln
  Wiz found a publicly accessible DeepSeek database exposing chat history\, 
  API secrets and backend details - no authentication required.\n\nOpen the 
  door: https://aware-by-design.github.io/CyberAIAdvent2026/?day=16\n\nAI-as
- sisted · an initiative of ENISA’s ARCH AHWG
+ sisted · developed by experts of the ENISA ARCH-AHWG
 X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
  tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
  t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
@@ -55,9 +55,9 @@ X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
  ght:bold\;color:#F5F1E8\;text-decoration:none\;">Open door 16 &rarr\;</a><
  /td></tr></table></td></tr><tr><td style="padding:14px 24px 18px\;border-t
  op:1px solid #E2DACB\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif
- \;font-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted · an init
- iative of ENISA’s ARCH AHWG</td></tr></table></td></tr></table></body></
- html>
+ \;font-size:12px\;line-height:1.5\;color:#5A5060\;">AI-assisted · develop
+ ed by experts of the ENISA ARCH-AHWG</td></tr></table></td></tr></table></
+ body></html>
 IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
  .github.io/CyberAIAdvent2026/img/doors/door-16.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=16

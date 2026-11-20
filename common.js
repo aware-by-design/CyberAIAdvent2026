@@ -539,8 +539,8 @@
 
   /* Ready-made summaries of a door for five channels. `link` is this site's own URL for the door. */
   /* The AI disclosure every share text carries (Door 21 asks readers to label AI-assisted content too). */
-  const AI_LABEL = "AI-assisted · an initiative of ENISA’s ARCH AHWG";
-  const AI_SHORT = "AI-assisted · ENISA ARCH AHWG initiative";
+  const AI_LABEL = "AI-assisted · developed by experts of the ENISA ARCH-AHWG";
+  const AI_SHORT = "AI-assisted · by ENISA ARCH-AHWG experts";
 
   function shareKit(data, d, total, link) {
     const enc = encodeURIComponent;

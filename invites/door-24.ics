@@ -15,8 +15,8 @@ DESCRIPTION:DO: Staff an on-call rota\, route alerts to a human\, and keep
  n learnt (British Library\, Oct 2023): Rhysida ransomware crippled service
  s for months. The library’s own lessons-learned report pointed to remote
   access without MFA and legacy systems.\n\nOpen the door: https://aware-by
- -design.github.io/CyberAIAdvent2026/?day=24\n\nAI-assisted · an initiativ
- e of ENISA’s ARCH AHWG
+ -design.github.io/CyberAIAdvent2026/?day=24\n\nAI-assisted · developed by
+  experts of the ENISA ARCH-AHWG
 X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
  tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
  t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
@@ -55,8 +55,8 @@ X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
  ecoration:none\;">Open door 24 &rarr\;</a></td></tr></table></td></tr><tr>
  <td style="padding:14px 24px 18px\;border-top:1px solid #E2DACB\;font-fami
  ly:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:12px\;line-height:1
- .5\;color:#5A5060\;">AI-assisted · an initiative of ENISA’s ARCH AHWG</
- td></tr></table></td></tr></table></body></html>
+ .5\;color:#5A5060\;">AI-assisted · developed by experts of the ENISA ARCH
+ -AHWG</td></tr></table></td></tr></table></body></html>
 IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
  .github.io/CyberAIAdvent2026/img/doors/door-24.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=24
