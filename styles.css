@@ -838,3 +838,10 @@ p.how, p.rules, p.note { max-width: 80ch; }
 .doorkey svg { width: 16px; height: 16px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .doorkey svg.star { fill: currentColor; stroke: none; }
 .doorkey .bad { color: #FF9AA2; }
+/* Footers and the map note fill the width of their page column (owner's request, 20 Nov 2026): the disclosure box
+   spans the column, and the small print flows into columns of comfortable length, one column on phones. */
+.foot .ai-disclosure, .bf-foot .ai-disclosure { max-width: none; }
+.foot .ai-disclosure p, .bf-foot .ai-disclosure p, .europe > p.note { max-width: none; }
+.foot .fine, .bf-foot .fine { max-width: none; }
+.fine-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 8px 40px; align-items: start; }
+.nobr { white-space: nowrap; } /* keeps "Ad-Hoc" together in the credit line */
