@@ -591,6 +591,7 @@ a.ghost.cal:hover { color: var(--text); border-color: var(--muted); }
 .quote blockquote { margin: 0; font: italic 18px/1.5 var(--serif); text-wrap: pretty; }
 .quote .qnote { padding: 8px 12px; border-radius: 8px; background: #FFEFC2; color: #4A3410; font-size: 13px; line-height: 1.5; }
 .quote a { align-self: flex-start; font-size: 13px; font-weight: 600; color: #8A1F2B; }
+.quote .qcredit { font: 12px/1.5 var(--mono); color: #5A5148; } .quote .qcredit a { font-size: 12px; }
 .cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 12px; }
 .case .h4 { font-size: 17px; font-weight: 600; }
 .lab.full .lsec { display: flex; flex-direction: column; gap: 10px; padding-top: 14px; border-top: 1px dashed var(--line); }

@@ -412,7 +412,8 @@
         h("div", { class: "qmeta" }, h("span", { class: "src", text: qt.src }), h("span", { class: "qref", text: qt.ref })),
         h("blockquote", { text: `“${qt.text}”` }),
         qt.note ? h("p", { class: "qnote", text: qt.note }) : null,
-        extLink(qt.url, null, "Read the official text ↗")))));
+        extLink(qt.url, null, "Read the official text ↗"),
+        ((c) => (c ? h("p", { class: "qcredit" }, c.text, c.licence ? " " : null, c.licence ? extLink(c.url, null, c.licence + " ↗") : null) : null))(quoteCredit(data, qt))))));
     if (o.activities) out.push(o.activities);
     out.push(sec("CASE STUDIES · LESSONS LEARNT", null,
       h("div", { class: "cases-grid" }, d.cases.map((c) => h("article", { class: "case" },
@@ -445,6 +446,12 @@
   /* Verbatim excerpts from regulations and standards for a door (ids resolved against data.quotes). */
   function quotesFor(data, d) {
     return (d.quotes || []).map((id) => data.quotes && data.quotes[id]).filter(Boolean);
+  }
+  /* Who owns a quoted text, and its licence where one applies (quoteCredits in days.json; validate.py requires one per source). */
+  function quoteCredit(data, q) {
+    let host = "";
+    try { host = new URL(q.url).hostname; } catch (e) { return null; }
+    return (data.quoteCredits || []).find((c) => Array.isArray(c.hosts) && c.hosts.includes(host)) || null;
   }
 
   function activitiesBlock(o) {
@@ -546,7 +553,7 @@
     const tags = ["#Cybersecurity", ai ? "#AI" : "", (d.activities || []).some((a) => a.type === "p") ? "#Privacy" : "", "#CyberHygiene", (d.owasp || []).length ? "#OWASP" : ""].filter(Boolean).join(" ");
     const q0 = qs[0];
     const li = `🎄 Door ${n} of ${total}: ${d.title}\n\n${dot(d.topic)}\n\n✅ DO: ${d.do}\n❌ DON’T: ${d.dont}\n\n📌 Lesson learnt: ${c0.name} (${c0.when}). ${firstSentence(c0.text)}\n\n` +
-      (q0 ? `📜 ${shortRef(q0)}: “${cut(q0.text, 180)}”\n\n` : "") +
+      (q0 ? `📜 ${shortRef(q0)}: “${cut(q0.text, 180)}”${((c) => (c ? ` (${c.short})` : ""))(quoteCredit(data, q0))}\n\n` : "") +
       `Try today’s 20-second challenge and read the full briefing: ${link}\n\n${tags}\n\n${AI_LABEL}`;
     const wa = `*Door ${n}/${total} · ${d.title}*\n✅ ${d.do}\n❌ ${d.dont}\n🏠 Try today: ${acts[0] || ""}\n👉 ${link}\n_${AI_SHORT}_`;
     const subj = `Door ${n}: ${d.title} - a two-minute security habit`;

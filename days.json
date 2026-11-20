@@ -4605,6 +4605,41 @@
     "a": "AI hygiene",
     "p": "Privacy hygiene"
   },
+  "quoteCredits": [
+    {
+      "hosts": [
+        "owasp.org",
+        "genai.owasp.org"
+      ],
+      "text": "© OWASP Foundation · licensed under",
+      "licence": "CC BY-SA 4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "short": "© OWASP Foundation, CC BY-SA 4.0"
+    },
+    {
+      "hosts": [
+        "eur-lex.europa.eu"
+      ],
+      "text": "Source: EUR-Lex, © European Union",
+      "short": "© European Union"
+    },
+    {
+      "hosts": [
+        "ai-act-service-desk.ec.europa.eu"
+      ],
+      "text": "© European Union · licensed under",
+      "licence": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "short": "© European Union, CC BY 4.0"
+    },
+    {
+      "hosts": [
+        "csrc.nist.gov"
+      ],
+      "text": "Courtesy of the National Institute of Standards and Technology (NIST)",
+      "short": "courtesy of NIST"
+    }
+  ],
   "quotes": {
     "nis2_20_1": {
       "src": "NIS2",
