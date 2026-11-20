@@ -59,7 +59,7 @@
     const total = () => data.modes[state.mode].doors;
     /* Doors follow the dates for everyone: today's door and the days before it are open, later doors stay shut
        and show a note from NESTOR instead. This is a convenience, not access control: all content is
-       public in days.json (SECURITY.md). */
+       public in days.json. */
     const isLocked = (n) => n > today;
     /* The highest door that is open now. Progress saved for a later door (for example while testing with a
        December date) waits behind its cover: it doesn't show, score or reach Santa's list before that day. */

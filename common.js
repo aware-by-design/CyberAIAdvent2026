@@ -1,5 +1,5 @@
 /* Shared helpers for the calendar and the supplier toolkit.
-   Security notes (see SECURITY.md):
+   Security notes:
    - h() only ever sets text via textContent / text nodes - never innerHTML (OWASP A05:2025).
    - safeUrl() lets through https: links only, so a malicious content change cannot inject
      javascript:, data: or http: links.
@@ -165,7 +165,7 @@
   }
 
   /* Progress storage shared by the calendar and the briefing pages. Whatever comes back from
-     localStorage is rebuilt from scratch, keeping only well-formed values (SECURITY.md #3). */
+     localStorage is rebuilt from scratch, keeping only well-formed values. */
   const store = {
     get(key) { try { return JSON.parse(window.localStorage.getItem(key)); } catch (e) { return null; } },
     set(key, val) { try { window.localStorage.setItem(key, JSON.stringify(val)); } catch (e) { /* storage unavailable: play continues in memory */ } }

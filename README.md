@@ -1,7 +1,10 @@
-# Winterwatch · Cyber & AI
+# Winterwatch · Cyber & AI Advent Calendar
 
-This repository holds only the built website, published with GitHub Pages.
-It is updated automatically; please don't open pull requests here.
+A festive calendar of cybersecurity, AI and privacy do's and don'ts for everyone, from the board to the kitchen table. One door opens each day in December, at 08:29 CET.
 
-To report a problem with the calendar, for example something hard to use, open an issue in this repository.
-For security problems, see SECURITY.md: please report them privately, never in a public issue.
+**Open the calendar:** https://aware-by-design.github.io/CyberAIAdvent2026/
+
+Something not working or hard to use? Open an issue: https://github.com/aware-by-design/CyberAIAdvent2026/issues
+A security problem? Please report it privately, as described in SECURITY.md.
+
+An initiative of ENISA's Awareness Raising and Cyber-Hygiene Ad-Hoc Working Group (ARCH AHWG). Drafted with AI and fact-checked against the cited sources. Not legal advice.
