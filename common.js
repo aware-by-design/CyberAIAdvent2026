@@ -208,6 +208,8 @@
 
   /* The current time. One function, so every date check on the site agrees. */
   function now() { return new Date(); }
+  // Test mode was removed on 19 Nov 2026: delete the date it may have left in a tester's browser.
+  try { window.localStorage.removeItem("cyber-advent:test-date"); } catch (e) { /* storage blocked */ }
 
   /* Live countdowns: an element with data-cd="<timestamp>" shows the time left, data-clock the current time;
      one timer refreshes them all every second. */
@@ -645,49 +647,72 @@
      the device is preferred, so the text normally stays on the device. Long text is spoken in short pieces
      (some browsers stop long utterances). */
   const canSpeak = () => !!window.speechSynthesis && typeof window.SpeechSynthesisUtterance === "function";
-  let speakingBtn = null;
+  /* Speech belongs to the page, not to one button: a door re-draws when the visitor opens the full briefing,
+     answers or ticks an activity, and the new Listen button must still say Stop while the voice talks.
+     `speaking` is the id of the reading in progress (0 when silent), so late events from a reading that was
+     stopped never touch a newer one. */
+  let speaking = 0, readings = 0;
+  const showState = (b, on) => { b.setAttribute("aria-pressed", on ? "true" : "false"); b.lastChild.textContent = on ? "Stop" : "Listen"; };
+  const allButtons = (on) => document.querySelectorAll("button.listen").forEach((b) => showState(b, on));
   function pickVoice() {
     const en = window.speechSynthesis.getVoices().filter((v) => /^en([-_]|$)/i.test(v.lang));
     return en.find((v) => v.localService && /GB/i.test(v.lang)) || en.find((v) => v.localService) || en.find((v) => /GB/i.test(v.lang)) || en[0] || null;
   }
   function stopSpeech() {
     if (!canSpeak()) return;
+    speaking = 0;
     window.speechSynthesis.cancel();
-    if (speakingBtn) { speakingBtn.setAttribute("aria-pressed", "false"); speakingBtn.lastChild.textContent = "Listen"; speakingBtn = null; }
+    allButtons(false);
   }
+  // Not every browser stops speaking when the visitor leaves the page.
+  window.addEventListener("pagehide", () => { if (speaking) stopSpeech(); });
+  /* Short pieces: some browsers cut an utterance off after about 15 seconds. Sentences first, then commas
+     and semicolons, then words, so no piece is longer than 220 characters whatever the content. */
   function speakPieces(text) {
-    const parts = String(text).replace(/\s+/g, " ").split(/(?<=[.!?:])\s+/);
-    const pieces = [];
-    parts.forEach((t) => { if (pieces.length && (pieces[pieces.length - 1] + " " + t).length < 220) pieces[pieces.length - 1] += " " + t; else pieces.push(t); });
+    const MAX = 220, pieces = [];
+    const add = (t) => { if (pieces.length && (pieces[pieces.length - 1] + " " + t).length <= MAX) pieces[pieces.length - 1] += " " + t; else pieces.push(t); };
+    String(text).replace(/\s+/g, " ").trim().split(/(?<=[.!?:…])\s+/).forEach((s) => {
+      if (s.length <= MAX) { add(s); return; }
+      s.split(/(?<=[,;])\s+/).forEach((c) => {
+        if (c.length <= MAX) { add(c); return; }
+        let cur = "";
+        c.split(" ").forEach((w) => { if (cur && (cur + " " + w).length > MAX) { add(cur); cur = w; } else cur = cur ? cur + " " + w : w; });
+        if (cur) add(cur);
+      });
+    });
     return pieces.filter(Boolean);
   }
   function listenButton(getText) {
     if (!canSpeak()) return null;
     const b = h("button", { type: "button", class: "listen", "aria-pressed": "false", "data-k": "listen" }, svg(ICON_SPEAK), h("span", { text: "Listen" }));
+    if (speaking) showState(b, true); // drawn again while the voice is still talking
     b.addEventListener("click", () => {
-      if (speakingBtn === b) { stopSpeech(); return; }
-      stopSpeech();
-      const voice = pickVoice(), pieces = speakPieces(getText());
+      if (speaking) { stopSpeech(); return; }
+      const id = ++readings, voice = pickVoice(), pieces = speakPieces(getText());
+      if (!pieces.length) return;
+      speaking = id;
       pieces.forEach((t, i) => {
         const u = new window.SpeechSynthesisUtterance(t);
         if (voice) u.voice = voice;
         u.lang = voice ? voice.lang : "en-GB"; u.rate = 0.95;
-        if (i === pieces.length - 1) u.onend = () => { if (speakingBtn === b) stopSpeech(); };
-        u.onerror = () => { if (speakingBtn === b) stopSpeech(); };
+        if (i === pieces.length - 1) u.onend = () => { if (speaking === id) stopSpeech(); };
+        u.onerror = () => { if (speaking === id) stopSpeech(); };
         window.speechSynthesis.speak(u);
       });
-      speakingBtn = b; b.setAttribute("aria-pressed", "true"); b.lastChild.textContent = "Stop";
+      allButtons(true); showState(b, true);
     });
     return b;
   }
   /* What Listen reads for a door: title, do and don't, the plain explanation, the challenge and the lesson
-     learnt; full adds the other two explanations and every case study (the briefing). */
+     learnt; full adds the other two explanations and every case study (the briefing). A full stop is added
+     only where the text has no closing punctuation of its own (door 29's title ends in one). */
   function doorScript(data, d, full) {
-    const say = [`Door ${d.day}. ${d.title}.`, `Do: ${d.do}`, `Don't: ${d.dont}`, `Why it matters: ${d.explain.simple}`];
-    if (full) say.push(`For IT and security: ${d.explain.technical}`, `For leaders: ${d.explain.business}`);
+    const end = (s) => { const t = String(s).trim(); return /[.!?…]$/.test(t) ? t : t + "."; };
+    const say = [`Door ${d.day}. ${end(d.title)}`, `Do: ${end(d.do)}`, `Don't: ${end(d.dont)}`, `Why it matters: ${end(d.explain.simple)}`];
+    if (full) say.push(`For IT and security: ${end(d.explain.technical)}`, `For leaders: ${end(d.explain.business)}`);
     const cases = full ? d.cases : d.cases.slice(0, 1);
-    cases.forEach((c) => say.push(`Lesson learnt: ${c.name}, ${c.when}. ${c.text}`));
-    if (d.quiz && Array.isArray(d.quiz.options)) say.push(`Today's challenge: ${d.quiz.question}`, ...d.quiz.options.map((o, i) => `Option ${i + 1}: ${o}.`));
+    cases.forEach((c) => say.push(`Lesson learnt: ${c.name}, ${c.when}. ${end(c.text)}`));
+    if (d.quiz && Array.isArray(d.quiz.options)) say.push(`Today's challenge: ${d.quiz.question}`, ...d.quiz.options.map((o, i) => `Option ${i + 1}: ${end(o)}`));
     return say.join(" ");
   }
 

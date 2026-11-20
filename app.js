@@ -163,6 +163,8 @@
     function fillNestor(n) {
       nestorOpen = !isLocked(n);
       el("nestorbody").replaceChildren(...A.nestorNote(data, n, today, "h2", { head: "nestorttl", text: "nestortext" }));
+      // Name the note only once its title exists, so no reference points at nothing (WCAG 4.1.2).
+      for (const [attr, id] of [["aria-labelledby", "nestorttl"], ["aria-describedby", "nestortext"]]) { if (el(id)) el("nestordlg").setAttribute(attr, id); else el("nestordlg").removeAttribute(attr); }
       const t = today >= 1 ? Math.min(today, total()) : 0, go = el("nestortoday");
       goDoor = nestorOpen ? n : t;
       go.hidden = !goDoor || (!nestorOpen && dlg.open && state.selected === t);
@@ -367,7 +369,7 @@
       const naughty = A.santaState(data, reach(), state.answers, state.acts).naughty;
       box.append(h("span", { class: "st", text: "NAUGHTY LIST" }), h("span", { class: "sh", text: naughty.length ? "DOORS TO REDEEM" : "CLINKER IS WATCHING FOR" }));
       if (naughty.length) naughty.slice(-3).reverse().forEach((e) => box.append(h("button", { type: "button", class: "si", "data-k": "scroll-" + e.n, onclick: () => select(e.n, true) }, h("b", { "aria-hidden": "true", text: "✗ " }), DAYS[e.n - 1].title)));
-      else ["Password reuse", "Oversharing", "Blind AI trust"].forEach((t) => box.append(h("span", { class: "si", text: "☐ " + t })));
+      else ["Password reuse", "Oversharing", "Blind AI trust"].forEach((t) => box.append(h("span", { class: "si" }, h("b", { class: "box", "aria-hidden": "true", text: "☐ " }), t)));
     }
 
     function renderMap() {
@@ -556,6 +558,7 @@
         h("p", { class: "xmas-outro", text: outro }),
         h("p", { class: "xmas-sign" }, hd.sign, h("span", { class: "xmas-from", text: hd.from })),
         h("p", { class: "xmas-ps", text: hd.ps }));
+      xdlg.setAttribute("aria-labelledby", "xmasttl"); xdlg.setAttribute("aria-describedby", "xmasintro");
       xmasDoor = today >= 1 ? Math.min(today, total()) : 0;
       const go = el("xmasgo");
       go.hidden = !xmasDoor; go.textContent = `Open door ${xmasDoor}`;

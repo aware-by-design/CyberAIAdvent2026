@@ -12,10 +12,10 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=c4cfd4aa7c">
+<link rel="stylesheet" href="styles.css?v=fedfdae982">
 <script src="prefs.js?v=f26f4744dd"></script>
-<script src="common.js?v=a59e5dc347" defer></script>
-<script src="app.js?v=1e9042f5f5" defer></script>
+<script src="common.js?v=a26e693946" defer></script>
+<script src="app.js?v=6bdf357d4c" defer></script>
 </head>
 <body>
 <a class="skip" href="#doors">Skip to the doors</a>
@@ -34,6 +34,7 @@
   </div>
 </header>
 
+<main id="main">
 <!-- The welcome banner: NESTOR introduces the calendar, the one calendar invite (all the daily reminders) and the day counter. -->
 <section class="hero banner" aria-labelledby="welcome">
   <div class="bn-main">
@@ -251,6 +252,7 @@
       <p class="note">Map: Natural Earth (public domain). Lighter green = EU member states. The UK is shown for its case studies but is not in the EU.</p>
     </section>
 </div>
+</main>
 
 <footer class="foot">
   <div class="ai-disclosure">
@@ -276,13 +278,13 @@
 </dialog>
 <!-- A door that isn't open yet: a note from NESTOR with a live countdown. When it reaches zero the
      note says "Door n is open!" and the button opens it. -->
-<dialog class="nestor" id="nestordlg" aria-labelledby="nestorttl" aria-describedby="nestortext">
+<dialog class="nestor" id="nestordlg">
   <div id="nestorbody"></div>
   <p class="sr" id="nestorlive" aria-live="polite"></p>
   <div class="row"><button type="button" class="keep" id="nestortoday"></button><button type="button" class="quiet" id="nestorclose">Close</button></div>
 </dialog>
 <!-- 24-26 December: Merry Christmas and happy holidays from NESTOR, once per browser (days.json "holiday"). -->
-<dialog class="nestor xmas" id="xmasdlg" aria-labelledby="xmasttl" aria-describedby="xmasintro">
+<dialog class="nestor xmas" id="xmasdlg">
   <div id="xmasbody"></div>
   <div class="row"><button type="button" class="keep" id="xmasgo"></button><button type="button" class="quiet" id="xmasclose">Close</button></div>
 </dialog>
