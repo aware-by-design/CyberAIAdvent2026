@@ -710,16 +710,17 @@
     });
     return b;
   }
-  /* What Listen reads for a door: title, do and don't, the plain explanation, the challenge and the lesson
-     learnt; full adds the other two explanations and every case study (the briefing). A full stop is added
-     only where the text has no closing punctuation of its own (door 29's title ends in one). */
-  function doorScript(data, d, full) {
+  /* What Listen reads: the door's text as the visitor sees it, in the order it appears on screen. The popup: title,
+     do and don't, the challenge (options A, B and C, as lettered on screen) and the first lesson learnt. With the full
+     briefing open: the three explanations and every case study instead of the single lesson. The briefing page
+     (page = true) has no challenge, so none is read there. A full stop is added only where the text has no closing
+     punctuation of its own (door 29's title ends in one). */
+  function doorScript(data, d, full, page) {
     const end = (s) => { const t = String(s).trim(); return /[.!?…]$/.test(t) ? t : t + "."; };
-    const say = [`Door ${d.day}. ${end(d.title)}`, `Do: ${end(d.do)}`, `Don't: ${end(d.dont)}`, `Why it matters: ${end(d.explain.simple)}`];
-    if (full) say.push(`For IT and security: ${end(d.explain.technical)}`, `For leaders: ${end(d.explain.business)}`);
-    const cases = full ? d.cases : d.cases.slice(0, 1);
-    cases.forEach((c) => say.push(`Lesson learnt: ${c.name}, ${c.when}. ${end(c.text)}`));
-    if (d.quiz && Array.isArray(d.quiz.options)) say.push(`Today's challenge: ${d.quiz.question}`, ...d.quiz.options.map((o, i) => `Option ${i + 1}: ${end(o)}`));
+    const say = [`Door ${d.day}. ${end(d.title)}`, `Do: ${end(d.do)}`, `Don't: ${end(d.dont)}`];
+    if (!page && d.quiz && Array.isArray(d.quiz.options)) say.push(`Today's challenge: ${d.quiz.question}`, ...d.quiz.options.map((o, i) => `Option ${"ABC"[i]}: ${end(o)}`));
+    if (full) say.push(`Why it matters: ${end(d.explain.simple)}`, `For IT and security: ${end(d.explain.technical)}`, `For leaders: ${end(d.explain.business)}`);
+    (full ? d.cases : d.cases.slice(0, 1)).forEach((c) => say.push(`Lesson learnt: ${c.name}, ${c.when}. ${end(c.text)}`));
     return say.join(" ");
   }
 
