@@ -8,7 +8,7 @@
 <title>Accessibility · Winterwatch</title>
 <meta name="description" content="How the Winterwatch Cyber &amp; AI Advent Calendar supports accessibility, what is known not to work yet, and how to tell us about a problem.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=fedfdae982">
+<link rel="stylesheet" href="styles.css?v=26d150e9da">
 <script src="prefs.js?v=f26f4744dd"></script>
 <script src="common.js?v=a26e693946" defer></script>
 </head>
@@ -43,10 +43,10 @@
       <h2 id="ac-built">How the calendar is built for accessibility</h2>
       <ul>
         <li>Every door, button and popup works with the keyboard alone, and focus moves to the right place when a popup opens or closes.</li>
-        <li>Doors have names that screen readers announce, including whether they are locked, not yet opened or opened.</li>
+        <li>Doors have names that screen readers announce, including whether they are locked, not yet opened or opened and, once opened, their points and whether they are on the Naughty list.</li>
         <li>When a door opens, or you move to the next or previous door, a screen reader hears it, without being interrupted. The live countdowns stay silent so they don’t keep talking.</li>
         <li>Text meets the WCAG contrast ratios on the page and on every door colour.</li>
-        <li>No information is given by colour alone: locked doors show a padlock and the word LOCKED.</li>
+        <li>No information is given by colour alone: each door cover shows an icon (a padlock, a gift, or a star, cross or tick with the points), and a key under the doors explains the icons.</li>
         <li>Pages work at 360 pixels wide without scrolling sideways, and they print cleanly.</li>
       </ul>
     </section>
@@ -58,7 +58,6 @@
         <li>The map of Europe is an image. The places it shows are listed in text underneath.</li>
         <li>Links to official texts (EUR-Lex, ENISA, OWASP, NIST and others) open other websites, whose accessibility we do not control.</li>
         <li>Listen depends on the voices your browser and device provide. Some browsers have no voices, and then the button is not shown.</li>
-        <li>The small lettering on the door covers (the month, OPEN ME, LOCKED) is part of the cover design and is small. The same information is in each door’s icon, its number and the name a screen reader announces.</li>
         <li>Every door, in the popup and on its briefing page, has been checked with automated tests: keyboard use, contrast in the normal and high-contrast looks, headings, names, the Listen voice, 200% zoom and phones 360 pixels wide with every option on. It has not yet been tested by people who use screen readers or other assistive technology every day.</li>
       </ul>
     </section>

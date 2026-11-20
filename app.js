@@ -317,18 +317,30 @@
     function bow() {
       return A.art("0 0 40 24", [["path", { d: "M20 12L4 3Q0 2 1 7L3 18Q4 21 8 19Z M20 12L36 3Q40 2 39 7L37 18Q36 21 32 19Z", fill: "#B3202F" }], ["circle", { cx: 20, cy: 12, r: 4.5, fill: "#8E1622" }], ["path", { d: "M18 15L13 24M22 15L27 24", stroke: "#B3202F", "stroke-width": 3, "stroke-linecap": "round" }]], "bw");
     }
-    /* Every door keeps its coloured cover with the date (DECEMBER 13). Before its day: a padlock and LOCKED.
-       From its day until the visitor opens it: a gift and OPEN ME (no padlock). Once opened: the same cover
-       and date, with the door's title in small text and the points so far. */
+    /* Every door keeps its coloured cover with the date (DECEMBER 13), all text at least 12 px. Before its day:
+       a padlock. From its day until the visitor opens it: a gift. Once opened: the door's title and the points as
+       an icon and a number (star = points, cross = Naughty list, tick = fully explored). The key under the doors
+       explains the icons; the door's spoken name says the same in words. */
     function face(n, kind, big, o) {
       const opened = kind === "open";
+      const score = !opened ? null : !o.gamified ? [h("span", { text: "OPENED" })]
+        : o.done ? [svg(P.check, "si"), h("span", { text: "50/50" })]
+        : o.naughty ? [svg(P.x, "si"), h("span", { text: o.pts + "/50" })]
+        : [svg(P.badge, "si star"), h("span", { text: o.pts + "/50" })];
       return h("span", { class: "face" + (opened ? " o" : "") },
         h("span", { class: "pl" }), h("span", { class: "pr" }), h("span", { class: "seam" }), h("span", { class: "kn" }),
-        h("span", { class: "stt" + (opened && o.done ? " ok" : ""), text: opened && o.done ? "✓" : "✦" }),
         big ? bow() : null,
         h("span", { class: "mo", text: "DECEMBER" }), h("span", { class: "nu", text: pad(n) }),
         opened ? h("span", { class: "tt", text: o.title }) : kind === "locked" ? svg(LOCK, "ic st-lock") : svg(P.gift, "ic st-gift"),
-        h("span", { class: "fs" + (opened && o.naughty ? " bad" : ""), text: opened ? o.status : kind === "locked" ? "LOCKED" : "OPEN ME" }));
+        opened ? h("span", { class: "fs" + (o.naughty ? " bad" : "") }, ...score) : null);
+    }
+    /* The key to the cover icons, once, under the doors. Points, Naughty list and fully explored only when the
+       calendar keeps score. Hidden from screen readers: each door's name already says it in words. */
+    function doorKey(grid) {
+      if (grid.nextElementSibling && grid.nextElementSibling.classList.contains("doorkey")) return;
+      const item = (d, cls, t) => h("span", { class: cls || null }, svg(d, d === P.badge ? "star" : ""), t);
+      grid.after(h("p", { class: "doorkey", "aria-hidden": "true" }, item(LOCK, "", "Locked"), item(P.gift, "", "Ready to open"),
+        ...(gamified ? [item(P.badge, "", "Points"), item(P.x, "bad", "Naughty list"), item(P.check, "", "Fully explored")] : [])));
     }
     let swingDoor = 0; // the door just opened: its leaves swing open and closed again once
     function renderDoors() {
@@ -343,13 +355,15 @@
         const isToday = !locked && n === Math.min(today, total()) && today <= total();
         const cls = ["card", "p-" + PAL[(n - 1) % PAL.length], open && "open", open && n === swingDoor && "swing", done && "done", n === state.selected && "sel", locked && "locked", isToday && !open && "today", state.filter !== "all" && !d.for.includes(state.filter) && "dim"].filter(Boolean).join(" ");
         const kind = locked ? "locked" : open ? "open" : "closed";
-        const naughty = open && wrong(n);
-        const fo = { title: d.title, done, naughty, status: !gamified ? "OPENED" : done ? "EXPLORED" : naughty ? `NAUGHTY · ${pts}/50` : `${pts}/50 PTS` };
-        const name = locked ? `Door ${n}, locked until ${A.opensLabel(data, n)}` : open ? `Door ${n}: ${d.title}, opened${d.track !== "cyber" ? ", includes an AI lesson" : ""}` : `Door ${n}${isToday ? ", today’s door" : ""}, not opened yet`;
+        const naughty = open && wrong(n) && acts < 4; // all four activities redeem a wrong answer (same rule as Santa’s list)
+        const fo = { title: d.title, done, naughty, pts, gamified };
+        // Spoken name: what the cover shows, in words (points, Naughty list, fully explored).
+        const score = !gamified ? "" : done ? ", fully explored, 50 of 50 points" : `, ${pts} of 50 points${naughty ? ", on the Naughty list" : ""}`;
+        const name = locked ? `Door ${n}, locked until ${A.opensLabel(data, n)}` : open ? `Door ${n}: ${d.title}, opened${score}${d.track !== "cyber" ? ", includes an AI lesson" : ""}` : `Door ${n}${isToday ? ", today’s door" : ""}, not opened yet`;
         grid.append(h("button", { type: "button", class: cls, "aria-pressed": String(n === state.selected), "data-k": "door-" + n,
           "aria-label": name, "aria-haspopup": "dialog", onclick: () => select(n, true) },
           h("span", { class: "inside", "aria-hidden": "true" },
-            done ? h("span", { class: "tick", text: "✓" }) : null, !locked && wrong(n) ? h("span", { class: "ntag", text: "NAUGHTY" }) : null,
+            done ? h("span", { class: "tick", text: "✓" }) : null, !locked && wrong(n) && acts < 4 ? h("span", { class: "ntag", text: "NAUGHTY" }) : null,
             h("span", { class: "sp", text: "✦" }), h("span", { class: "it", text: d.title }),
             h("span", { class: "if", text: d.for.slice(0, 2).map((id) => STK[id]).join(" · ") }),
             h("span", { class: "is", text: done ? "50 pts · fully explored ✓" : `${pts} of 50 pts · Play the day →` })),
@@ -357,6 +371,7 @@
           h("span", { class: "leaf r", "aria-hidden": "true" }, face(n, kind, isBig, fo))));
       });
       swingDoor = 0;
+      doorKey(grid);
       if (total() === 31) grid.append(h("div", { class: "spare", "aria-hidden": "true" }, h("span", { class: "a", text: "✦" }), h("span", { class: "b", text: "Merry, safe & secure" }), h("span", { class: "c", text: "2027 AWAITS" })));
       el("boardsub").textContent = `Cyber & AI · ${total()} days of cyber, AI & privacy hygiene`;
       el("locknote").textContent = today < 1 ? "Doors open one a day from 1 December. Each locked door tells you when."
