@@ -7,4 +7,4 @@ A festive calendar of cybersecurity, AI and privacy do's and don'ts for everyone
 Something not working or hard to use? Open an issue: https://github.com/aware-by-design/CyberAIAdvent2026/issues
 A security problem? Please report it privately, as described in SECURITY.md.
 
-An initiative of ENISA's Awareness Raising and Cyber-Hygiene Ad-Hoc Working Group (ARCH AHWG). Drafted with AI and fact-checked against the cited sources. Not legal advice.
+This material was developed by experts of the ENISA Ad-Hoc Working Group of Awareness Raising and Cyber-Hygiene (ARCH-AHWG). Drafted with AI and fact-checked against the cited sources. Not legal advice.
