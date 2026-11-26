@@ -1,0 +1,45 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Winterwatch Cyber & AI//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:door-26-single-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261226T073000Z
+DTEND:20261226T073500Z
+SUMMARY:Door 26: New gadget\, clean slate
+DESCRIPTION:Door 26 opens on Saturday 26 December at 08:29 (Rome time).\n\n
+ Open the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?da
+ y=26
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Saturday 26 December 2026 · opens at 08:29 (Rome time)</td></
+ tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font
+ -weight:bold\;">Door 26: New gadget\, clean slate</td></tr><tr><td style="
+ padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\
+ ;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T 
+ and lesson appear here when the door opens.</td></tr><tr><td style="paddin
+ g:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0
+ " border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a 
+ href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=26" style="
+ display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text
+ -decoration:none\;">Open the calendar &rarr\;</a></td></tr></table></td></
+ tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=26
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 26 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

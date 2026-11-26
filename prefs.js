@@ -1,0 +1,1 @@
+"use strict";(()=>{try{const p=JSON.parse(window.localStorage.getItem("cyber-advent:a11y")||"{}")||{};const c=document.documentElement.classList;if(p.size===1||p.size===2)c.add("a11y-size-"+p.size);if(p.still===true)c.add("a11y-still");if(p.contrast===true)c.add("a11y-contrast");if(p.readable===true)c.add("a11y-readable");}catch(e){}})();

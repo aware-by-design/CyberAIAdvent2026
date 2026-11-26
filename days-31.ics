@@ -1,0 +1,1219 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Winterwatch Cyber & AI//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Winterwatch · Cyber & AI (31 days)
+X-WR-TIMEZONE:Europe/Rome
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:door-01-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261201T073000Z
+DTEND:20261201T073500Z
+SUMMARY:Door 1: Lock the front door
+DESCRIPTION:Door 1 opens on Tuesday 1 December at 08:29 (Rome time).\n\nOpe
+ n the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=1
+ &mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Tuesday 1 December 2026 · opens at 08:29 (Rome time)</td></tr
+ ><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-w
+ eight:bold\;">Door 1: Lock the front door</td></tr><tr><td style="padding:
+ 0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-si
+ ze:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T and less
+ on appear here when the door opens.</td></tr><tr><td style="padding:0 24px
+  22px\;"><table role="presentation" cellpadding="0" cellspacing="0" border
+ ="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href="ht
+ tps://aware-by-design.github.io/CyberAIAdvent2026/?day=1&amp\;mode=full" s
+ tyle="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,Hel
+ vetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8
+ \;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></table><
+ /td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=1&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 1 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-02-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261202T073000Z
+DTEND:20261202T073500Z
+SUMMARY:Door 2: Length beats complexity
+DESCRIPTION:Door 2 opens on Wednesday 2 December at 08:29 (Rome time).\n\nO
+ pen the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day
+ =2&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Wednesday 2 December 2026 · opens at 08:29 (Rome time)</td></
+ tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font
+ -weight:bold\;">Door 2: Length beats complexity</td></tr><tr><td style="pa
+ dding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;f
+ ont-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T an
+ d lesson appear here when the door opens.</td></tr><tr><td style="padding:
+ 0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" 
+ border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a hr
+ ef="https://aware-by-design.github.io/CyberAIAdvent2026/?day=2&amp\;mode=f
+ ull" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI
+ '\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#
+ F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></t
+ able></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=2&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 2 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-03-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261203T073000Z
+DTEND:20261203T073500Z
+SUMMARY:Door 3: Think before you paste
+DESCRIPTION:Door 3 opens on Thursday 3 December at 08:29 (Rome time).\n\nOp
+ en the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=
+ 3&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Thursday 3 December 2026 · opens at 08:29 (Rome time)</td></t
+ r><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\
+ ,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-
+ weight:bold\;">Door 3: Think before you paste</td></tr><tr><td style="padd
+ ing:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fon
+ t-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T and 
+ lesson appear here when the door opens.</td></tr><tr><td style="padding:0 
+ 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" bo
+ rder="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href
+ ="https://aware-by-design.github.io/CyberAIAdvent2026/?day=3&amp\;mode=ful
+ l" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5
+ F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></tab
+ le></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=3&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 3 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-04-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261204T073000Z
+DTEND:20261204T073500Z
+SUMMARY:Door 4: Polished isn’t proof
+DESCRIPTION:Door 4 opens on Friday 4 December at 08:29 (Rome time).\n\nOpen
+  the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=4&
+ mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Friday 4 December 2026 · opens at 08:29 (Rome time)</td></tr>
+ <tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,A
+ rial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-we
+ ight:bold\;">Door 4: Polished isn’t proof</td></tr><tr><td style="paddin
+ g:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-
+ size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T and le
+ sson appear here when the door opens.</td></tr><tr><td style="padding:0 24
+ px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" bord
+ er="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href="
+ https://aware-by-design.github.io/CyberAIAdvent2026/?day=4&amp\;mode=full"
+  style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,H
+ elvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1
+ E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></table
+ ></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=4&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 4 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-05-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261205T073000Z
+DTEND:20261205T073500Z
+SUMMARY:Door 5: Parcel panic
+DESCRIPTION:Door 5 opens on Saturday 5 December at 08:29 (Rome time).\n\nOp
+ en the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=
+ 5&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Saturday 5 December 2026 · opens at 08:29 (Rome time)</td></t
+ r><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\
+ ,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-
+ weight:bold\;">Door 5: Parcel panic</td></tr><tr><td style="padding:0 24px
+  18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15p
+ x\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T and lesson app
+ ear here when the door opens.</td></tr><tr><td style="padding:0 24px 22px\
+ ;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><
+ tr><td style="background:#102C30\;border-radius:999px\;"><a href="https://
+ aware-by-design.github.io/CyberAIAdvent2026/?day=5&amp\;mode=full" style="
+ display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text
+ -decoration:none\;">Open the calendar &rarr\;</a></td></tr></table></td></
+ tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=5&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 5 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-06-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261206T073000Z
+DTEND:20261206T073500Z
+SUMMARY:Door 6: Smart gifts\, safe setup
+DESCRIPTION:Door 6 opens on Sunday 6 December at 08:29 (Rome time).\n\nOpen
+  the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=6&
+ mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Sunday 6 December 2026 · opens at 08:29 (Rome time)</td></tr>
+ <tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,A
+ rial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-we
+ ight:bold\;">Door 6: Smart gifts\, safe setup</td></tr><tr><td style="padd
+ ing:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fon
+ t-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T and 
+ lesson appear here when the door opens.</td></tr><tr><td style="padding:0 
+ 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" bo
+ rder="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href
+ ="https://aware-by-design.github.io/CyberAIAdvent2026/?day=6&amp\;mode=ful
+ l" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5
+ F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></tab
+ le></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=6&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 6 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-07-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261207T073000Z
+DTEND:20261207T073500Z
+SUMMARY:Door 7: Call back before you pay
+DESCRIPTION:Door 7 opens on Monday 7 December at 08:29 (Rome time).\n\nOpen
+  the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=7&
+ mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Monday 7 December 2026 · opens at 08:29 (Rome time)</td></tr>
+ <tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,A
+ rial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-we
+ ight:bold\;">Door 7: Call back before you pay</td></tr><tr><td style="padd
+ ing:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fon
+ t-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T and 
+ lesson appear here when the door opens.</td></tr><tr><td style="padding:0 
+ 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" bo
+ rder="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href
+ ="https://aware-by-design.github.io/CyberAIAdvent2026/?day=7&amp\;mode=ful
+ l" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5
+ F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></tab
+ le></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=7&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 7 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-08-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261208T073000Z
+DTEND:20261208T073500Z
+SUMMARY:Door 8: Risk lives in the boardroom
+DESCRIPTION:Door 8 opens on Tuesday 8 December at 08:29 (Rome time).\n\nOpe
+ n the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=8
+ &mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Tuesday 8 December 2026 · opens at 08:29 (Rome time)</td></tr
+ ><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-w
+ eight:bold\;">Door 8: Risk lives in the boardroom</td></tr><tr><td style="
+ padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\
+ ;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T 
+ and lesson appear here when the door opens.</td></tr><tr><td style="paddin
+ g:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0
+ " border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a 
+ href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=8&amp\;mode
+ =full" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe 
+ UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color
+ :#F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr><
+ /table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=8&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 8 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-09-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261209T073000Z
+DTEND:20261209T073500Z
+SUMMARY:Door 9: Shine a light on shadow AI
+DESCRIPTION:Door 9 opens on Wednesday 9 December at 08:29 (Rome time).\n\nO
+ pen the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day
+ =9&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Wednesday 9 December 2026 · opens at 08:29 (Rome time)</td></
+ tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font
+ -weight:bold\;">Door 9: Shine a light on shadow AI</td></tr><tr><td style=
+ "padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif
+ \;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T
+  and lesson appear here when the door opens.</td></tr><tr><td style="paddi
+ ng:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="
+ 0" border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a
+  href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=9&amp\;mod
+ e=full" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe
+  UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;colo
+ r:#F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr>
+ </table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=9&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 9 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-10-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261210T073000Z
+DTEND:20261210T073500Z
+SUMMARY:Door 10: Every input is a stranger
+DESCRIPTION:Door 10 opens on Thursday 10 December at 08:29 (Rome time).\n\n
+ Open the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?da
+ y=10&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Thursday 10 December 2026 · opens at 08:29 (Rome time)</td></
+ tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font
+ -weight:bold\;">Door 10: Every input is a stranger</td></tr><tr><td style=
+ "padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif
+ \;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T
+  and lesson appear here when the door opens.</td></tr><tr><td style="paddi
+ ng:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="
+ 0" border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a
+  href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=10&amp\;mo
+ de=full" style="display:inline-block\;padding:12px 22px\;font-family:'Sego
+ e UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;col
+ or:#F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr
+ ></table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=10&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 10 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-11-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261211T073000Z
+DTEND:20261211T073500Z
+SUMMARY:Door 11: Hire the human\, not the deepfake
+DESCRIPTION:Door 11 opens on Friday 11 December at 08:29 (Rome time).\n\nOp
+ en the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=
+ 11&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Friday 11 December 2026 · opens at 08:29 (Rome time)</td></tr
+ ><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-w
+ eight:bold\;">Door 11: Hire the human\, not the deepfake</td></tr><tr><td 
+ style="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans
+ -serif\;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, D
+ ON’T and lesson appear here when the door opens.</td></tr><tr><td style=
+ "padding:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspa
+ cing="0" border="0"><tr><td style="background:#102C30\;border-radius:999px
+ \;"><a href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=11&a
+ mp\;mode=full" style="display:inline-block\;padding:12px 22px\;font-family
+ :'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bol
+ d\;color:#F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></t
+ d></tr></table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=11&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 11 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-12-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261212T073000Z
+DTEND:20261212T073500Z
+SUMMARY:Door 12: Fact-check the machine
+DESCRIPTION:Door 12 opens on Saturday 12 December at 08:29 (Rome time).\n\n
+ Open the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?da
+ y=12&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Saturday 12 December 2026 · opens at 08:29 (Rome time)</td></
+ tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font
+ -weight:bold\;">Door 12: Fact-check the machine</td></tr><tr><td style="pa
+ dding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;f
+ ont-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T an
+ d lesson appear here when the door opens.</td></tr><tr><td style="padding:
+ 0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" 
+ border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a hr
+ ef="https://aware-by-design.github.io/CyberAIAdvent2026/?day=12&amp\;mode=
+ full" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe U
+ I'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:
+ #F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></
+ table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=12&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 12 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-13-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261213T073000Z
+DTEND:20261213T073500Z
+SUMMARY:Door 13: Gift cards are for gifts
+DESCRIPTION:Door 13 opens on Sunday 13 December at 08:29 (Rome time).\n\nOp
+ en the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=
+ 13&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Sunday 13 December 2026 · opens at 08:29 (Rome time)</td></tr
+ ><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-w
+ eight:bold\;">Door 13: Gift cards are for gifts</td></tr><tr><td style="pa
+ dding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;f
+ ont-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T an
+ d lesson appear here when the door opens.</td></tr><tr><td style="padding:
+ 0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" 
+ border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a hr
+ ef="https://aware-by-design.github.io/CyberAIAdvent2026/?day=13&amp\;mode=
+ full" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe U
+ I'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:
+ #F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></
+ table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=13&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 13 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-14-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261214T073000Z
+DTEND:20261214T073500Z
+SUMMARY:Door 14: Keys belong in a vault
+DESCRIPTION:Door 14 opens on Monday 14 December at 08:29 (Rome time).\n\nOp
+ en the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=
+ 14&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Monday 14 December 2026 · opens at 08:29 (Rome time)</td></tr
+ ><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-w
+ eight:bold\;">Door 14: Keys belong in a vault</td></tr><tr><td style="padd
+ ing:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fon
+ t-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T and 
+ lesson appear here when the door opens.</td></tr><tr><td style="padding:0 
+ 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" bo
+ rder="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href
+ ="https://aware-by-design.github.io/CyberAIAdvent2026/?day=14&amp\;mode=fu
+ ll" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'
+ \,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F
+ 5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></ta
+ ble></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=14&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 14 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-15-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261215T073000Z
+DTEND:20261215T073500Z
+SUMMARY:Door 15: Give agents a short leash
+DESCRIPTION:Door 15 opens on Tuesday 15 December at 08:29 (Rome time).\n\nO
+ pen the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day
+ =15&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Tuesday 15 December 2026 · opens at 08:29 (Rome time)</td></t
+ r><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\
+ ,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-
+ weight:bold\;">Door 15: Give agents a short leash</td></tr><tr><td style="
+ padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\
+ ;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T 
+ and lesson appear here when the door opens.</td></tr><tr><td style="paddin
+ g:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0
+ " border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a 
+ href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=15&amp\;mod
+ e=full" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe
+  UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;colo
+ r:#F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr>
+ </table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=15&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 15 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-16-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261216T073000Z
+DTEND:20261216T073500Z
+SUMMARY:Door 16: Defaults are a gift - to attackers
+DESCRIPTION:Door 16 opens on Wednesday 16 December at 08:29 (Rome time).\n\
+ nOpen the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?d
+ ay=16&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Wednesday 16 December 2026 · opens at 08:29 (Rome time)</td><
+ /tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;fon
+ t-weight:bold\;">Door 16: Defaults are a gift - to attackers</td></tr><tr>
+ <td style="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,
+ sans-serif\;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO
+ \, DON’T and lesson appear here when the door opens.</td></tr><tr><td st
+ yle="padding:0 24px 22px\;"><table role="presentation" cellpadding="0" cel
+ lspacing="0" border="0"><tr><td style="background:#102C30\;border-radius:9
+ 99px\;"><a href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=
+ 16&amp\;mode=full" style="display:inline-block\;padding:12px 22px\;font-fa
+ mily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight
+ :bold\;color:#F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a
+ ></td></tr></table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=16&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 16 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-17-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261217T073000Z
+DTEND:20261217T073500Z
+SUMMARY:Door 17: Never trust the output
+DESCRIPTION:Door 17 opens on Thursday 17 December at 08:29 (Rome time).\n\n
+ Open the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?da
+ y=17&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Thursday 17 December 2026 · opens at 08:29 (Rome time)</td></
+ tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font
+ -weight:bold\;">Door 17: Never trust the output</td></tr><tr><td style="pa
+ dding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;f
+ ont-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T an
+ d lesson appear here when the door opens.</td></tr><tr><td style="padding:
+ 0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" 
+ border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a hr
+ ef="https://aware-by-design.github.io/CyberAIAdvent2026/?day=17&amp\;mode=
+ full" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe U
+ I'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:
+ #F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></
+ table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=17&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 17 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-18-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261218T073000Z
+DTEND:20261218T073500Z
+SUMMARY:Door 18: Urgency is not identity
+DESCRIPTION:Door 18 opens on Friday 18 December at 08:29 (Rome time).\n\nOp
+ en the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=
+ 18&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Friday 18 December 2026 · opens at 08:29 (Rome time)</td></tr
+ ><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-w
+ eight:bold\;">Door 18: Urgency is not identity</td></tr><tr><td style="pad
+ ding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fo
+ nt-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T and
+  lesson appear here when the door opens.</td></tr><tr><td style="padding:0
+  24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" b
+ order="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a hre
+ f="https://aware-by-design.github.io/CyberAIAdvent2026/?day=18&amp\;mode=f
+ ull" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI
+ '\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#
+ F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></t
+ able></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=18&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 18 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-19-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261219T073000Z
+DTEND:20261219T073500Z
+SUMMARY:Door 19: Post later\, connect safer
+DESCRIPTION:Door 19 opens on Saturday 19 December at 08:29 (Rome time).\n\n
+ Open the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?da
+ y=19&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Saturday 19 December 2026 · opens at 08:29 (Rome time)</td></
+ tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font
+ -weight:bold\;">Door 19: Post later\, connect safer</td></tr><tr><td style
+ ="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-seri
+ f\;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’
+ T and lesson appear here when the door opens.</td></tr><tr><td style="padd
+ ing:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing=
+ "0" border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><
+ a href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=19&amp\;m
+ ode=full" style="display:inline-block\;padding:12px 22px\;font-family:'Seg
+ oe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;co
+ lor:#F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></t
+ r></table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=19&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 19 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-20-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261220T073000Z
+DTEND:20261220T073500Z
+SUMMARY:Door 20: A safe word for the family
+DESCRIPTION:Door 20 opens on Sunday 20 December at 08:29 (Rome time).\n\nOp
+ en the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=
+ 20&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Sunday 20 December 2026 · opens at 08:29 (Rome time)</td></tr
+ ><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-w
+ eight:bold\;">Door 20: A safe word for the family</td></tr><tr><td style="
+ padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\
+ ;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T 
+ and lesson appear here when the door opens.</td></tr><tr><td style="paddin
+ g:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0
+ " border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a 
+ href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=20&amp\;mod
+ e=full" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe
+  UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;colo
+ r:#F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr>
+ </table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=20&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 20 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-21-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261221T073000Z
+DTEND:20261221T073500Z
+SUMMARY:Door 21: Label the synthetic
+DESCRIPTION:Door 21 opens on Monday 21 December at 08:29 (Rome time).\n\nOp
+ en the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=
+ 21&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Monday 21 December 2026 · opens at 08:29 (Rome time)</td></tr
+ ><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-w
+ eight:bold\;">Door 21: Label the synthetic</td></tr><tr><td style="padding
+ :0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-s
+ ize:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T and les
+ son appear here when the door opens.</td></tr><tr><td style="padding:0 24p
+ x 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" borde
+ r="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href="h
+ ttps://aware-by-design.github.io/CyberAIAdvent2026/?day=21&amp\;mode=full"
+  style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,H
+ elvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1
+ E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></table
+ ></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=21&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 21 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-22-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261222T073000Z
+DTEND:20261222T073500Z
+SUMMARY:Door 22: Know what you ship
+DESCRIPTION:Door 22 opens on Tuesday 22 December at 08:29 (Rome time).\n\nO
+ pen the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day
+ =22&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Tuesday 22 December 2026 · opens at 08:29 (Rome time)</td></t
+ r><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\
+ ,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-
+ weight:bold\;">Door 22: Know what you ship</td></tr><tr><td style="padding
+ :0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-s
+ ize:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T and les
+ son appear here when the door opens.</td></tr><tr><td style="padding:0 24p
+ x 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" borde
+ r="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href="h
+ ttps://aware-by-design.github.io/CyberAIAdvent2026/?day=22&amp\;mode=full"
+  style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,H
+ elvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1
+ E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></table
+ ></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=22&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 22 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-23-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261223T073000Z
+DTEND:20261223T073500Z
+SUMMARY:Door 23: Read the AI small print
+DESCRIPTION:Door 23 opens on Wednesday 23 December at 08:29 (Rome time).\n\
+ nOpen the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?d
+ ay=23&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Wednesday 23 December 2026 · opens at 08:29 (Rome time)</td><
+ /tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;fon
+ t-weight:bold\;">Door 23: Read the AI small print</td></tr><tr><td style="
+ padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\
+ ;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T 
+ and lesson appear here when the door opens.</td></tr><tr><td style="paddin
+ g:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0
+ " border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a 
+ href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=23&amp\;mod
+ e=full" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe
+  UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;colo
+ r:#F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr>
+ </table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=23&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 23 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-24-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261224T073000Z
+DTEND:20261224T073500Z
+SUMMARY:Door 24: Ready when the office is empty
+DESCRIPTION:Door 24 opens on Thursday 24 December at 08:29 (Rome time).\n\n
+ Open the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?da
+ y=24&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Thursday 24 December 2026 · opens at 08:29 (Rome time)</td></
+ tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font
+ -weight:bold\;">Door 24: Ready when the office is empty</td></tr><tr><td s
+ tyle="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-
+ serif\;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DO
+ N’T and lesson appear here when the door opens.</td></tr><tr><td style="
+ padding:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspac
+ ing="0" border="0"><tr><td style="background:#102C30\;border-radius:999px\
+ ;"><a href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=24&am
+ p\;mode=full" style="display:inline-block\;padding:12px 22px\;font-family:
+ 'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold
+ \;color:#F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td
+ ></tr></table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=24&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 24 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-25-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261225T073000Z
+DTEND:20261225T073500Z
+SUMMARY:Door 25: Talk AI with your kids
+DESCRIPTION:Door 25 opens on Friday 25 December at 08:29 (Rome time).\n\nOp
+ en the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=
+ 25&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Friday 25 December 2026 · opens at 08:29 (Rome time)</td></tr
+ ><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-w
+ eight:bold\;">Door 25: Talk AI with your kids</td></tr><tr><td style="padd
+ ing:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;fon
+ t-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T and 
+ lesson appear here when the door opens.</td></tr><tr><td style="padding:0 
+ 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" bo
+ rder="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href
+ ="https://aware-by-design.github.io/CyberAIAdvent2026/?day=25&amp\;mode=fu
+ ll" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'
+ \,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F
+ 5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></ta
+ ble></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=25&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 25 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-26-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261226T073000Z
+DTEND:20261226T073500Z
+SUMMARY:Door 26: New gadget\, clean slate
+DESCRIPTION:Door 26 opens on Saturday 26 December at 08:29 (Rome time).\n\n
+ Open the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?da
+ y=26&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Saturday 26 December 2026 · opens at 08:29 (Rome time)</td></
+ tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font
+ -weight:bold\;">Door 26: New gadget\, clean slate</td></tr><tr><td style="
+ padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\
+ ;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T 
+ and lesson appear here when the door opens.</td></tr><tr><td style="paddin
+ g:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0
+ " border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a 
+ href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=26&amp\;mod
+ e=full" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe
+  UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;colo
+ r:#F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr>
+ </table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=26&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 26 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-27-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261227T073000Z
+DTEND:20261227T073500Z
+SUMMARY:Door 27: Famous face\, fake offer
+DESCRIPTION:Door 27 opens on Sunday 27 December at 08:29 (Rome time).\n\nOp
+ en the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=
+ 27&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Sunday 27 December 2026 · opens at 08:29 (Rome time)</td></tr
+ ><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-w
+ eight:bold\;">Door 27: Famous face\, fake offer</td></tr><tr><td style="pa
+ dding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;f
+ ont-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T an
+ d lesson appear here when the door opens.</td></tr><tr><td style="padding:
+ 0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" 
+ border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a hr
+ ef="https://aware-by-design.github.io/CyberAIAdvent2026/?day=27&amp\;mode=
+ full" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe U
+ I'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:
+ #F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></
+ table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=27&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 27 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-28-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261228T073000Z
+DTEND:20261228T073500Z
+SUMMARY:Door 28: Map your AI\, keep a human
+DESCRIPTION:Door 28 opens on Monday 28 December at 08:29 (Rome time).\n\nOp
+ en the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day=
+ 28&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Monday 28 December 2026 · opens at 08:29 (Rome time)</td></tr
+ ><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\,
+ Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-w
+ eight:bold\;">Door 28: Map your AI\, keep a human</td></tr><tr><td style="
+ padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\
+ ;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T 
+ and lesson appear here when the door opens.</td></tr><tr><td style="paddin
+ g:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0
+ " border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a 
+ href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=28&amp\;mod
+ e=full" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe
+  UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;colo
+ r:#F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr>
+ </table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=28&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 28 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-29-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261229T073000Z
+DTEND:20261229T073500Z
+SUMMARY:Door 29: Leavers leave. Access too.
+DESCRIPTION:Door 29 opens on Tuesday 29 December at 08:29 (Rome time).\n\nO
+ pen the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day
+ =29&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Tuesday 29 December 2026 · opens at 08:29 (Rome time)</td></t
+ r><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\
+ ,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-
+ weight:bold\;">Door 29: Leavers leave. Access too.</td></tr><tr><td style=
+ "padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif
+ \;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T
+  and lesson appear here when the door opens.</td></tr><tr><td style="paddi
+ ng:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="
+ 0" border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a
+  href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=29&amp\;mo
+ de=full" style="display:inline-block\;padding:12px 22px\;font-family:'Sego
+ e UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;col
+ or:#F5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr
+ ></table></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=29&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 29 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-30-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261230T073000Z
+DTEND:20261230T073500Z
+SUMMARY:Door 30: Speak up\, fast
+DESCRIPTION:Door 30 opens on Wednesday 30 December at 08:29 (Rome time).\n\
+ nOpen the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?d
+ ay=30&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Wednesday 30 December 2026 · opens at 08:29 (Rome time)</td><
+ /tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetic
+ a\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;fon
+ t-weight:bold\;">Door 30: Speak up\, fast</td></tr><tr><td style="padding:
+ 0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-si
+ ze:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T and less
+ on appear here when the door opens.</td></tr><tr><td style="padding:0 24px
+  22px\;"><table role="presentation" cellpadding="0" cellspacing="0" border
+ ="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href="ht
+ tps://aware-by-design.github.io/CyberAIAdvent2026/?day=30&amp\;mode=full" 
+ style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,He
+ lvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1E
+ 8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></table>
+ </td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=30&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 30 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:door-31-full-2026@cyber-advent-calendar
+DTSTAMP:20261125T000000Z
+DTSTART:20261231T073000Z
+DTEND:20261231T073500Z
+SUMMARY:Door 31: Three resolutions
+DESCRIPTION:Door 31 opens on Thursday 31 December at 08:29 (Rome time).\n\n
+ Open the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?da
+ y=31&mode=full
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
+ tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
+ tr><td align="center" style="padding:16px 8px\;"><table role="presentation
+ " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
+ 600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
+ dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
+ ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
+ ng:.04em\;">Thursday 31 December 2026 · opens at 08:29 (Rome time)</td></
+ tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica
+ \,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font
+ -weight:bold\;">Door 31: Three resolutions</td></tr><tr><td style="padding
+ :0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-s
+ ize:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T and les
+ son appear here when the door opens.</td></tr><tr><td style="padding:0 24p
+ x 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" borde
+ r="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a href="h
+ ttps://aware-by-design.github.io/CyberAIAdvent2026/?day=31&amp\;mode=full"
+  style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,H
+ elvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1
+ E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></table
+ ></td></tr></table></td></tr></table></body></html>
+URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=31&mode=full
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Door 31 is open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
