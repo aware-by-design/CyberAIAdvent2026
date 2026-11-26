@@ -9,31 +9,44 @@ DTSTAMP:20261125T000000Z
 DTSTART:20261229T073000Z
 DTEND:20261229T073500Z
 SUMMARY:Door 29: Leavers leave. Access too.
-DESCRIPTION:Door 29 opens on Tuesday 29 December at 08:29 (Rome time).\n\nO
- pen the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?day
- =29
+DESCRIPTION:Some elves head home when the season ends. Door 29 is about wha
+ t should leave with them\, and when.\n\nDoor 29 opens on Tuesday 29 Decemb
+ er at 08:29 CET. Today’s DO\, DON’T and lesson appear here when the do
+ or opens.\n\nOpen the calendar: https://aware-by-design.github.io/CyberAIA
+ dvent2026/?day=29
 X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
  tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
  t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
  tr><td align="center" style="padding:16px 8px\;"><table role="presentation
  " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
  600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
- dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
- ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
- ng:.04em\;">Tuesday 29 December 2026 · opens at 08:29 (Rome time)</td></t
- r><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica\
- ,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font-
- weight:bold\;">Door 29: Leavers leave. Access too.</td></tr><tr><td style=
- "padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif
- \;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T
-  and lesson appear here when the door opens.</td></tr><tr><td style="paddi
- ng:0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="
- 0" border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a
-  href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=29" style=
- "display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetic
- a\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;tex
- t-decoration:none\;">Open the calendar &rarr\;</a></td></tr></table></td><
- /tr></table></td></tr></table></body></html>
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=29"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/closed-29.jpg" width="600" height="300"
+  alt="Door 29: Leavers leave. Access too.\, waiting to be opened" style="d
+ isplay:block\;width:100%\;max-width:600px\;height:auto\;border:0\;border-r
+ adius:12px 12px 0 0\;"></a></td></tr><tr><td style="padding:20px 24px 4px\
+ ;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font
+ -size:13px\;letter-spacing:.04em\;">Tuesday 29 December 2026 · opens at 0
+ 8:29 CET</td></tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe
+  UI'\,Helvetica\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-he
+ ight:1.25\;font-weight:bold\;">Door 29: Leavers leave. Access too.</td></t
+ r><tr><td style="padding:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,A
+ rial\,sans-serif\;font-size:16px\;line-height:1.55\;color:#1C1720\;">Some 
+ elves head home when the season ends. Door 29 is about what should leave 
+ with them\, and when.</td></tr><tr><td style="padding:0 24px 18px\;font-fa
+ mily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-height
+ :1.5\;color:#5A5060\;">Today’s DO\, DON’T and lesson appear here when 
+ the door opens.</td></tr><tr><td style="padding:0 24px 22px\;"><table role
+ ="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="
+ background:#102C30\;border-radius:999px\;"><a href="https://aware-by-desig
+ n.github.io/CyberAIAdvent2026/?day=29" style="display:inline-block\;paddin
+ g:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-si
+ ze:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:none\;">Open the
+  calendar &rarr\;</a></td></tr></table></td></tr></table></td></tr></table
+ ></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/closed-29.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=29
 TRANSP:TRANSPARENT
 BEGIN:VALARM

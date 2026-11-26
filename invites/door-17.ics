@@ -9,31 +9,44 @@ DTSTAMP:20261125T000000Z
 DTSTART:20261217T073000Z
 DTEND:20261217T073500Z
 SUMMARY:Door 17: Never trust the output
-DESCRIPTION:Door 17 opens on Thursday 17 December at 08:29 (Rome time).\n\n
- Open the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?da
- y=17
+DESCRIPTION:A gingerbread house only stands if every piece is checked. Door
+  17 is for developers putting AI output into their apps.\n\nDoor 17 opens 
+ on Thursday 17 December at 08:29 CET. Today’s DO\, DON’T and lesson ap
+ pear here when the door opens.\n\nOpen the calendar: https://aware-by-desi
+ gn.github.io/CyberAIAdvent2026/?day=17
 X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
  tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
  t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
  tr><td align="center" style="padding:16px 8px\;"><table role="presentation
  " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
  600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
- dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
- ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
- ng:.04em\;">Thursday 17 December 2026 · opens at 08:29 (Rome time)</td></
- tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetica
- \,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;font
- -weight:bold\;">Door 17: Never trust the output</td></tr><tr><td style="pa
- dding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;f
- ont-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO\, DON’T an
- d lesson appear here when the door opens.</td></tr><tr><td style="padding:
- 0 24px 22px\;"><table role="presentation" cellpadding="0" cellspacing="0" 
- border="0"><tr><td style="background:#102C30\;border-radius:999px\;"><a hr
- ef="https://aware-by-design.github.io/CyberAIAdvent2026/?day=17" style="di
- splay:inline-block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,
- Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-d
- ecoration:none\;">Open the calendar &rarr\;</a></td></tr></table></td></tr
- ></table></td></tr></table></body></html>
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=17"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/closed-17.jpg" width="600" height="300"
+  alt="Door 17: Never trust the output\, waiting to be opened" style="displ
+ ay:block\;width:100%\;max-width:600px\;height:auto\;border:0\;border-radiu
+ s:12px 12px 0 0\;"></a></td></tr><tr><td style="padding:20px 24px 4px\;fon
+ t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-siz
+ e:13px\;letter-spacing:.04em\;">Thursday 17 December 2026 · opens at 08:2
+ 9 CET</td></tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI
+ '\,Helvetica\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-heigh
+ t:1.25\;font-weight:bold\;">Door 17: Never trust the output</td></tr><tr><
+ td style="padding:0 24px 14px\;font-family:'Segoe UI'\,Helvetica\,Arial\,s
+ ans-serif\;font-size:16px\;line-height:1.55\;color:#1C1720\;">A gingerbrea
+ d house only stands if every piece is checked. Door 17 is for developers 
+ putting AI output into their apps.</td></tr><tr><td style="padding:0 24px 
+ 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:14px
+ \;line-height:1.5\;color:#5A5060\;">Today’s DO\, DON’T and lesson appe
+ ar here when the door opens.</td></tr><tr><td style="padding:0 24px 22px\;
+ "><table role="presentation" cellpadding="0" cellspacing="0" border="0"><t
+ r><td style="background:#102C30\;border-radius:999px\;"><a href="https://a
+ ware-by-design.github.io/CyberAIAdvent2026/?day=17" style="display:inline-
+ block\;padding:12px 22px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-s
+ erif\;font-size:15px\;font-weight:bold\;color:#F5F1E8\;text-decoration:non
+ e\;">Open the calendar &rarr\;</a></td></tr></table></td></tr></table></td
+ ></tr></table></body></html>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/closed-17.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=17
 TRANSP:TRANSPARENT
 BEGIN:VALARM

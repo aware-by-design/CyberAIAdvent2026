@@ -9,31 +9,45 @@ DTSTAMP:20261125T000000Z
 DTSTART:20261216T073000Z
 DTEND:20261216T073500Z
 SUMMARY:Door 16: Defaults are a gift - to attackers
-DESCRIPTION:Door 16 opens on Wednesday 16 December at 08:29 (Rome time).\n\
- nOpen the calendar: https://aware-by-design.github.io/CyberAIAdvent2026/?d
- ay=16
+DESCRIPTION:The office lights go off for the holidays\, but some systems st
+ ay online just as they came out of the box. Door 16 is for IT before the b
+ reak.\n\nDoor 16 opens on Wednesday 16 December at 08:29 CET. Today’s DO
+ \, DON’T and lesson appear here when the door opens.\n\nOpen the calenda
+ r: https://aware-by-design.github.io/CyberAIAdvent2026/?day=16
 X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE html><html><body><table role="presen
  tation" width="100%" cellpadding="0" cellspacing="0" border="0" style="fon
  t-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;background:#F5F1E8\;"><
  tr><td align="center" style="padding:16px 8px\;"><table role="presentation
  " width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:
  600px\;width:100%\;background:#FFFFFF\;border:1px solid #E2DACB\;border-ra
- dius:12px\;"><tr><td style="padding:20px 24px 4px\;font-family:'Segoe UI'\
- ,Helvetica\,Arial\,sans-serif\;color:#5A5060\;font-size:13px\;letter-spaci
- ng:.04em\;">Wednesday 16 December 2026 · opens at 08:29 (Rome time)</td><
- /tr><tr><td style="padding:4px 24px 12px\;font-family:'Segoe UI'\,Helvetic
- a\,Arial\,sans-serif\;color:#102C30\;font-size:24px\;line-height:1.25\;fon
- t-weight:bold\;">Door 16: Defaults are a gift - to attackers</td></tr><tr>
- <td style="padding:0 24px 18px\;font-family:'Segoe UI'\,Helvetica\,Arial\,
- sans-serif\;font-size:15px\;line-height:1.5\;color:#3A3440\;">Today’s DO
- \, DON’T and lesson appear here when the door opens.</td></tr><tr><td st
- yle="padding:0 24px 22px\;"><table role="presentation" cellpadding="0" cel
- lspacing="0" border="0"><tr><td style="background:#102C30\;border-radius:9
- 99px\;"><a href="https://aware-by-design.github.io/CyberAIAdvent2026/?day=
- 16" style="display:inline-block\;padding:12px 22px\;font-family:'Segoe UI'
- \,Helvetica\,Arial\,sans-serif\;font-size:15px\;font-weight:bold\;color:#F
- 5F1E8\;text-decoration:none\;">Open the calendar &rarr\;</a></td></tr></ta
- ble></td></tr></table></td></tr></table></body></html>
+ dius:12px\;"><tr><td style="padding:0\;"><a href="https://aware-by-design.
+ github.io/CyberAIAdvent2026/?day=16"><img src="https://aware-by-design.git
+ hub.io/CyberAIAdvent2026/img/doors/closed-16.jpg" width="600" height="300"
+  alt="Door 16: Defaults are a gift - to attackers\, waiting to be opened" 
+ style="display:block\;width:100%\;max-width:600px\;height:auto\;border:0\;
+ border-radius:12px 12px 0 0\;"></a></td></tr><tr><td style="padding:20px 2
+ 4px 4px\;font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;color:#5A50
+ 60\;font-size:13px\;letter-spacing:.04em\;">Wednesday 16 December 2026 · 
+ opens at 08:29 CET</td></tr><tr><td style="padding:4px 24px 12px\;font-fam
+ ily:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;color:#102C30\;font-size:24p
+ x\;line-height:1.25\;font-weight:bold\;">Door 16: Defaults are a gift - to
+  attackers</td></tr><tr><td style="padding:0 24px 14px\;font-family:'Segoe
+  UI'\,Helvetica\,Arial\,sans-serif\;font-size:16px\;line-height:1.55\;colo
+ r:#1C1720\;">The office lights go off for the holidays\, but some systems 
+ stay online just as they came out of the box. Door 16 is for IT before th
+ e break.</td></tr><tr><td style="padding:0 24px 18px\;font-family:'Segoe U
+ I'\,Helvetica\,Arial\,sans-serif\;font-size:14px\;line-height:1.5\;color:#
+ 5A5060\;">Today’s DO\, DON’T and lesson appear here when the door open
+ s.</td></tr><tr><td style="padding:0 24px 22px\;"><table role="presentatio
+ n" cellpadding="0" cellspacing="0" border="0"><tr><td style="background:#1
+ 02C30\;border-radius:999px\;"><a href="https://aware-by-design.github.io/C
+ yberAIAdvent2026/?day=16" style="display:inline-block\;padding:12px 22px\;
+ font-family:'Segoe UI'\,Helvetica\,Arial\,sans-serif\;font-size:15px\;font
+ -weight:bold\;color:#F5F1E8\;text-decoration:none\;">Open the calendar &ra
+ rr\;</a></td></tr></table></td></tr></table></td></tr></table></body></htm
+ l>
+IMAGE;VALUE=URI;DISPLAY=FULLSIZE;FMTTYPE=image/jpeg:https://aware-by-design
+ .github.io/CyberAIAdvent2026/img/doors/closed-16.jpg
 URL:https://aware-by-design.github.io/CyberAIAdvent2026/?day=16
 TRANSP:TRANSPARENT
 BEGIN:VALARM
